@@ -14,7 +14,7 @@
 
 ## 절차
 
-1. `pip install -q requests beautifulsoup4 pdfplumber` 후 `python scripts/fetch_drilling_sources.py`를 한 번 돌린다. 네트워크가 막혀 실패해도 괜찮다. 매주 토요일 07시(KST) GitHub Actions가 같은 수집을 이미 돌려 `inbox/`에 넣어 둔다.
+1. `python -m pip install -q requests beautifulsoup4 pdfplumber` 후 `python scripts/fetch_drilling_sources.py`를 한 번 돌린다. 네트워크가 막혀 실패해도 괜찮다. 매주 토요일 07시(KST) GitHub Actions가 같은 수집을 이미 돌려 `inbox/`에 넣어 둔다.
 2. `inbox/drilling/`의 `.txt`를 날짜순으로 하나씩 읽는다. 첫 줄 `source:`가 회사와 종류(FSR / 8K / PR)다.
 3. 종류별로 아래 규칙에 따라 CSV를 고친다.
 4. 처리한 파일은 내용과 관계없이 `git mv`로 `inbox/drilling/processed/`에 옮긴다. 계약과 무관한 공시(실적 일정, 사채 발행 등)도 옮긴다.
