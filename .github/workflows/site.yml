@@ -1,0 +1,63 @@
+name: site
+# 데이터·템플릿이 바뀌면 검증 → 페이지 생성 → main/docs 에 커밋(GitHub Pages가 docs/ 를 게시).
+# 루틴이 main 에 직접 못 올리고 claude/** 브랜치로 올린 경우 여기서 main 에 합친다.
+on:
+  push:
+    branches: [main, 'claude/**']
+    paths: ['data/drilling/contracts.csv', 'data/drilling/meta.json', 'templates/**', 'scripts/build_drilling.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUNBUFFERED: '1'
+      TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: merge claude branch into main
+        if: startsWith(github.ref_name, 'claude/')
+        run: |
+          git config user.name "invest-hub-bot"
+          git config user.email "invest-hub-bot@users.noreply.github.com"
+          git checkout main
+          git pull origin main
+          git merge --no-edit "origin/${GITHUB_REF_NAME}"
+      - name: build
+        run: python scripts/build_drilling.py
+      - name: commit pages
+        run: |
+          git config user.name "invest-hub-bot"
+          git config user.email "invest-hub-bot@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "site: 페이지 재생성 $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          if [[ "${GITHUB_REF_NAME}" == claude/* ]]; then git push origin --delete "${GITHUB_REF_NAME}" || true; fi
+      - name: telegram
+        # 주간 갱신 커밋(메시지가 'drilling:'으로 시작)일 때만 알린다
+        if: env.TG_TOKEN != '' && startsWith(github.event.head_commit.message, 'drilling:')
+        run: |
+          python - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          m = json.load(open("data/drilling/meta.json", encoding="utf-8"))
+          s = json.load(open("docs/drilling/summary.json", encoding="utf-8"))
+          last = (m.get("update_log") or [{}])[-1]
+          med = f"${round(s['uldw_median_1y']/1000)}k" if s.get("uldw_median_1y") else "-"
+          text = (f"🛢 해양시추 용선료 갱신 {last.get('date','')}\n{last.get('summary','')}\n"
+                  f"7G·8G 최근1년 중앙 {med} (n={s['uldw_n_1y']}) · 누적 {s['contracts']}건\n"
+                  "https://hoee213.github.io/invest-hub/drilling/")
+          data = urllib.parse.urlencode({"chat_id": os.environ["TG_CHAT"], "text": text, "disable_web_page_preview": "true"}).encode()
+          urllib.request.urlopen(f"https://api.telegram.org/bot{os.environ['TG_TOKEN']}/sendMessage", data, timeout=30)
+          PY

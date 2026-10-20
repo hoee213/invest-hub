@@ -1,0 +1,22 @@
+{
+  "title": "해양시추 일당 용선료",
+  "companies": {
+    "RIG": "Transocean",
+    "NE": "Noble",
+    "SDRL": "Seadrill"
+  },
+  "last_fsr": {
+    "RIG": "2026-08-05",
+    "NE": "2026-07-27",
+    "SDRL": "2026-08-10"
+  },
+  "sources_note": "Transocean 8-K FSR 64개 + 수주 보도자료, Noble 8-K/FSR 23개, Seadrill FSR/6-K 57개",
+  "data_through": "2026-10-19",
+  "last_update_run": "2026-10-20",
+  "update_log": [
+    {
+      "date": "2026-10-20",
+      "summary": "초기 적재 1,114건 (2011.1~2026.10.19)"
+    }
+  ]
+}

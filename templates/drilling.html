@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해양시추 일당 용선료</title>
+<style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f4f6f9;--card:#fff;--navy:#1C3D5A;--orange:#E5601F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding:22px 20px 40px}
+h1{font-size:21px;margin:0 0 2px;font-weight:800}
+h1 small{font-size:13px;color:var(--muted);font-weight:400;margin-left:10px}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:16px 0}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.tile .k{font-size:12px;color:var(--muted)}.tile .v{font-size:20px;font-weight:800;margin-top:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+.card h2{font-size:16px;margin:0 0 2px;font-weight:800}
+.card .sub{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;cursor:pointer;background:#fff;color:var(--ink);user-select:none}
+.chip.off{opacity:.35}
+.chip i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.chip b{font-weight:600}.chip span{color:var(--muted)}
+svg{width:100%;height:auto;display:block}
+.ax{font-size:12px;fill:var(--muted)}
+.tip{position:fixed;pointer-events:none;background:#111827;color:#fff;font-size:12px;padding:8px 10px;border-radius:8px;opacity:0;transition:opacity .08s;max-width:300px;z-index:9;line-height:1.45}
+.tip b{color:#f5b58a}
+table{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:8px}
+th{background:var(--navy);color:#fff;text-align:left;padding:7px 9px;font-weight:700;position:sticky;top:0;white-space:nowrap}
+td{padding:5px 9px;border-bottom:1px solid var(--line)}
+tr:nth-child(even) td{background:#f8fafc}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:12.5px;margin:4px 0 8px}
+.ctl label{display:inline-flex;gap:5px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:4px 9px;background:#fff;cursor:pointer}
+.ctl input{margin:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+table.fx td:nth-child(1),table.fx td:nth-child(2),table.fx td:nth-child(3),table.fx td:nth-child(4),table.fx td:nth-child(5),table.fx td:nth-child(6),table.fx td:nth-child(7){white-space:nowrap}
+.nav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-size:12.5px;color:var(--muted);margin-bottom:10px}.nav a{color:var(--navy);font-weight:700;text-decoration:none}.nav span a{font-weight:600}
+.grid2>*{min-width:0}.card{min-width:0}body{overflow-wrap:anywhere}
+@media(max-width:860px){.tiles{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{padding:16px 14px 32px}.tiles{grid-template-columns:repeat(2,1fr)}.tile .v{font-size:16px}.card{padding:14px 14px}}
+</style></head><body><div class="wrap">
+<div class="nav"><a href="../">← 투자 지표 홈</a><span>데이터 기준 {{THROUGH}} · 마지막 점검 {{CHECKED}} · <a href="contracts.csv" download>CSV 받기</a></span></div>
+<h1>해양시추 일당 용선료 — Transocean · Noble · Seadrill <small>{{SUBTITLE}}</small></h1>
+<div class="tiles" id="tiles"></div>
+{{PR_CARD}}
+<div class="card">
+  <h2 id="ctitle"></h2>
+  <div class="sub">가로 체결 시점(FSR 최초 등장) · 세로 일당 용선료(달러) · 색 세대별 · ● 확정 계약 ■ 옵션 · 속 빈 점 = 한 보고서에만 나타난 미확인 값(통계 제외) · <b>◇ 속 빈 마름모 = FSR 이후 수주 보도자료의 백로그÷일수 추정값(KT)</b> · 실선 반기 중앙값 · 짙은 띠 25~75% · 옅은 띠 최소~최대 · 자료 {{SOURCES}} · 색 기준 전환(세대/회사)·회사 칩으로 필터</div>
+  <div class="ctl"><label><input type="checkbox" id="cbBase"> 2011.1 기존 계약·인수편입 계약 포함</label><span style="margin-left:6px;color:var(--muted)">색:</span><label><input type="radio" name="cm" value="gen" checked> 세대</label><label><input type="radio" name="cm" value="co"> 회사</label><label><input type="checkbox" id="cbUnconf"> 미확인 값 통계 포함</label><label><input type="checkbox" id="cbOpt" checked> 옵션 포함</label><label><input type="checkbox" id="cbPR" checked> ◇ 총액÷일수 추정값 포함</label></div>
+  <div id="chart"></div>
+  <div class="chips" id="chips"></div>
+</div>
+<div class="grid2">
+<div class="card"><h2>세대별 반기 중앙값 (US$k/일)</h2><div class="sub">표시 중인 세대만 · 표본 3건 미만 반기는 공란</div><div style="max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:10px"><table id="medtbl"></table></div></div>
+<div class="card"><h2>7G·8G 드릴십 회사별 반기 중앙값 (US$k/일)</h2><div class="sub">확정 계약 기준(옵션·미확인·기존/인수편입 제외) · ◇ 총액÷일수 추정값은 체크박스로 포함/제외 · 표본 2건 미만 반기는 ·n 표시</div><div style="max-height:420px;overflow:auto;border:1px solid var(--line);border-radius:10px"><table id="sevtbl"></table></div></div>
+<div class="card"><h2>방법·주의</h2>
+<ul class="note" style="margin:0;padding-left:18px;font-size:12.5px;line-height:1.6">
+<li><b>최초 등장 규칙</b>: 분기 FSR을 시간순으로 읽어 (리그, 용선료) 조합이 처음 나타난 보고서 날짜를 체결 시점으로 본다. 같은 리그·같은 기간에 ±3.5% 이내로 바뀐 값은 에스컬레이션으로 보고 새 계약으로 세지 않음. 연 단계 인상 계약(Songa·Equinor 장기 등)은 첫 단계만 표시.</li>
+<li><b>세대 분류(KT)</b>: 8G = Titan·Atlas(20K), 7G = Asgard·Invictus·Thalassa·Proteus·Pontus·Poseidon·Conqueror·Aquila·Skyros·Athena·Mylos·Apollo, 6G = Clear Leader·Americas·Inspiration·India·Luanda·Champion·KG1/2·Petrobras 10000·Corcovado·Mykonos·Orion·Olympia·DD3, 5G이하 = Enterprise급·Deepwater Discovery급·DD I/II 등, HE = 극한환경 반잠수식, 중수심 = Deepwater/Midwater floater, 잭업.</li>
+<li><b>공백</b>: 2014Q3(변경분만 공시), 2016Q4(용선료 미공시), 2023Q1·2026Q4(수주 보도자료만) — 해당 분기 신규 계약은 다음 보고서에 처음 등장. 2016년 SEC HTML은 숫자가 유실돼 회사 PDF로 보완(2016Q4 제외).</li>
+<li><b>오차</b>: 보고서 텍스트를 모델로 전사한 값이라 숫자 오독(예 341↔431)이 섞일 수 있음. 한 보고서에만 보이고 사라진 값은 '미확인'으로 분리.</li>
+<li>용선료는 서비스·리임버서블·모빌라이제이션 포함 여부가 보고서마다 달라 ±5~10% 비교 오차. 2011~2015년 표는 $000 단위.</li>
+<li><b>공백 구간</b>: Noble은 2011.7~2021.3 FSR을 SEC에 내지 않고 자사 사이트에만 게시 → 현재 원본을 구할 수 없어 <b>Noble 2011.Q4~2021.Q1은 비어 있음</b>(2011.1~7 3개 보고서, 2021.6~ 보고서만 사용). 공백 직후 보고서에 이미 진행 중이던 계약은 공백기에 체결된 것이라 체결 시점을 알 수 없어 '기존 계약'으로 분리(속 빈 점, 기본 제외). Seadrill은 2013년까지 계약표에 용선료 열이 없어 신규계약 서술분만, 2016.Q3·2017.Q1·2017.Q4~2018.Q1은 직전 보고서로 대체. Noble 2022.Q4는 잭업이 잘린 재게시본이라 플로터만.</li>
+<li><b>총액÷일수 추정값(◇)</b>: 용선료 대신 계약총액만 공시된 계약 — Transocean FSR 이후 수주 보도자료, Noble FSR의 'valued at USD xM'(2023~), Seadrill FSR·보도자료의 TCV(2023.12~; 2025.11부터 Seadrill FSR은 용선료 열 자체를 없앰). 계약총액÷일수(일수 미공시 시 시작~종료 개월×30.4)로 KT가 역산. 모빌·추가서비스 포함 총액은 실제 단가보다 높게 나오며 비고에 표시. 역산값이 플로터 $20만 미만·$65만 초과면 기간·모빌 왜곡으로 보고 제외. 체크박스로 끄면 통계·차트에서 빠짐.</li>
+<li><b>통계 제외</b>: 점은 그리되 중앙값·표에서 빼는 값. 설치 기간 임시 단가, 모빌·서비스가 섞인 총액 역산값 등. 사유는 표 비고와 툴팁에 표시.</li>
+<li><b>주간 갱신</b>: 매주 토요일 각사 SEC 8-K·IR 보도자료·선대현황보고서를 수집하고, 새 계약을 같은 규칙으로 CSV에 추가한다.</li>
+</ul></div>
+</div>
+<div class="card"><h2>계약 목록 <span id="tcount" style="font-weight:400;color:var(--muted);font-size:13px"></span></h2>
+<div style="max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:10px"><table id="tbl"><thead><tr><th>최초 등장</th><th>회사</th><th>리그</th><th>세대</th><th>고객</th><th>지역</th><th>기간</th><th>일당 용선료</th><th>구분</th><th>비고</th></tr></thead><tbody></tbody></table></div></div>
+{{UPDATE_LOG}}
+</div>
+<div class="tip" id="tip"></div>
+<script>
+const FX = /*DATA*/;
+const META = /*META*/;
+const CO = {"RIG":{c:"#E5601F",n:"Transocean"},"NE":{c:"#1C3D5A",n:"Noble"},"SDRL":{c:"#2A9D8F",n:"Seadrill"}};
+const onCo = {"RIG":true,"NE":true,"SDRL":true};
+const GEN = {"8G":{c:"#E5601F",n:"8세대(20K)"},"7G":{c:"#2B6CB0",n:"7세대"},"6G":{c:"#2A9D8F",n:"6세대"},"5G":{c:"#7c8aa0",n:"5세대 이하"},"HE":{c:"#9B5DE5",n:"HE 반잠수식"},"MW":{c:"#b7a67a",n:"심해·중수심(구형)"},"JU":{c:"#c9b7d9",n:"잭업"}};
+const on = {"8G":true,"7G":true,"6G":true,"5G":false,"HE":true,"MW":false,"JU":false};
+const fmt = v => "$"+Math.round(v).toLocaleString("en-US");
+const toX = d => { const [y,m]=d.split("-").map(Number); return y + (m-0.5)/12; };
+function q(arr,p){ const a=[...arr].sort((x,y)=>x-y); if(!a.length) return null; const k=(a.length-1)*p, f=Math.floor(k), c=Math.ceil(k); return f===c? a[f] : a[f]+(a[c]-a[f])*(k-f); }
+const hkey = d => d.slice(0,4)+(+d.slice(5,7)<=6?"H1":"H2");
+const hx = k => +k.slice(0,4) + (k.endsWith("H1")?0.25:0.75);
+
+function render(){
+  const inclBase=document.getElementById("cbBase").checked, inclUn=document.getElementById("cbUnconf").checked, inclOpt=document.getElementById("cbOpt").checked, inclPR=document.getElementById("cbPR").checked; const cmode=document.querySelector("input[name=cm]:checked").value; const colorOf=f=>cmode==="co"?CO[f.co].c:GEN[f.gen].c;
+  const vis = FX.filter(f=>on[f.gen] && onCo[f.co] && (inclBase||!(f.base||f.acq)) && (inclOpt||f.st!=="Option") && (inclPR||!f.pr));
+  const stat = vis.filter(f=>(inclUn||f.conf)&&!f.ex);
+  const rates=stat.map(f=>f.rate), rigs=new Set(vis.map(f=>f.rig));
+  const last=stat.filter(f=>f.date>=META.year_ago).map(f=>f.rate);
+  const tiles=[["계약 수",vis.length+"건"],["리그 수",rigs.size+"척"],["중앙 용선료",rates.length?fmt(q(rates,.5)):"–"],["최근 1년 중앙",last.length?fmt(q(last,.5)):"–"],["최고",rates.length?fmt(Math.max(...rates)):"–"],["구간","2011.01 ~ "+META.through]];
+  document.getElementById("tiles").innerHTML=tiles.map(t=>`<div class="tile"><div class="k">${t[0]}</div><div class="v">${t[1]}</div></div>`).join("");
+  document.getElementById("ctitle").textContent=`해양시추 일당 용선료 — 계약 ${vis.length}건 (RIG ${vis.filter(f=>f.co==="RIG").length} · NE ${vis.filter(f=>f.co==="NE").length} · SDRL ${vis.filter(f=>f.co==="SDRL").length})`;
+  const W=1180,H=560,pl=78,pr=24,pt=22,pb=40,pw=W-pl-pr,ph=H-pt-pb;
+  const x0=2010.9,x1=META.x1,y0=0,y1=800000;
+  const X=v=>pl+(v-x0)/(x1-x0)*pw, Y=v=>pt+ph*(1-(v-y0)/(y1-y0));
+  let s=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+  for(let v=0;v<=y1;v+=100000){ s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="#eceff3"/><text class="ax" x="${pl-8}" y="${Y(v)+4}" text-anchor="end">${v===0?"$0":"$"+v.toLocaleString()}</text>`; }
+  for(let yr=2011;yr<=2027;yr++){ s+=`<line x1="${X(yr)}" x2="${X(yr)}" y1="${pt}" y2="${pt+ph}" stroke="#e3e7ec"/><text class="ax" x="${X(yr)}" y="${H-12}" text-anchor="middle">${yr}</text>`; }
+  // median by half-year on stat set
+  const groups={}; stat.forEach(f=>{(groups[hkey(f.date)]=groups[hkey(f.date)]||[]).push(f.rate);});
+  if(cmode==="co"){ const labs=[]; Object.keys(CO).filter(c=>onCo[c]).forEach(c=>{ const g={}; stat.filter(f=>f.co===c).forEach(f=>{(g[hkey(f.date)]=g[hkey(f.date)]||[]).push(f.rate);}); const ks=Object.keys(g).filter(k=>g[k].length>=2).sort(); if(!ks.length) return; let seg=[]; const flush=()=>{ if(seg.length>1) s+=`<polyline points="${seg.join(" ")}" fill="none" stroke="${CO[c].c}" stroke-width="2.4" stroke-linejoin="round" opacity=".9"/>`; else if(seg.length===1){ const [x,y]=seg[0].split(","); s+=`<line x1="${+x-7}" x2="${+x+7}" y1="${y}" y2="${y}" stroke="${CO[c].c}" stroke-width="2.4"/>`; } seg=[]; }; let prev=null; ks.forEach(k=>{ const hv=hx(k); if(prev!==null && hv-prev>0.51) flush(); seg.push(`${X(hv)},${Y(q(g[k],.5))}`); prev=hv; }); flush(); const lk=ks[ks.length-1]; if(hx(lk)>=2025.7) labs.push({c,y:Y(q(g[lk],.5)),x:Math.max(X(hx(lk)),X(2026.8)),v:q(g[lk],.5)}); }); labs.sort((a,b)=>a.y-b.y); for(let i=1;i<labs.length;i++){ if(labs[i].y-labs[i-1].y<14) labs[i].y=labs[i-1].y+14; } labs.forEach(l=>{ s+=`<text x="${l.x+10}" y="${l.y+4}" font-size="11" font-weight="700" fill="${CO[l.c].c}" paint-order="stroke" stroke="#fff" stroke-width="3">${l.c} ${Math.round(l.v/1000)}k</text>`; }); }
+  const keys=Object.keys(groups).filter(k=>groups[k].length>=3).sort();
+  const med=keys.map(k=>({x:X(hx(k)),m:Y(q(groups[k],.5)),lo:Y(Math.min(...groups[k])),hi:Y(Math.max(...groups[k])),p25:Y(q(groups[k],.25)),p75:Y(q(groups[k],.75))}));
+  if(cmode!=="co" && med.length>1){
+    const outer=med.map(p=>`${p.x},${p.hi}`).join(" ")+" "+[...med].reverse().map(p=>`${p.x},${p.lo}`).join(" ");
+    const inner=med.map(p=>`${p.x},${p.p75}`).join(" ")+" "+[...med].reverse().map(p=>`${p.x},${p.p25}`).join(" ");
+    s+=`<polygon points="${outer}" fill="#1C3D5A" opacity=".06"/><polygon points="${inner}" fill="#1C3D5A" opacity=".10"/>`;
+    s+=`<polyline points="${med.map(p=>`${p.x},${p.p25}`).join(" ")}" fill="none" stroke="#1C3D5A" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/><polyline points="${med.map(p=>`${p.x},${p.p75}`).join(" ")}" fill="none" stroke="#1C3D5A" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>`;
+    s+=`<polyline points="${med.map(p=>`${p.x},${p.m}`).join(" ")}" fill="none" stroke="#1C3D5A" stroke-width="2.4" stroke-linejoin="round"/>`;
+    med.forEach(p=>{s+=`<circle cx="${p.x}" cy="${p.m}" r="3" fill="#1C3D5A"/>`;});
+    const lp=med[med.length-1], lk=keys[keys.length-1]; s+=`<text x="${lp.x-8}" y="${lp.m-10}" font-size="12" font-weight="700" fill="#1C3D5A" text-anchor="end">${lk} 중앙 ${fmt(q(groups[lk],.5))}</text>`;
+  }
+  const cnt={};
+  vis.forEach((f,i)=>{ const k=f.date+"|"+f.rate; cnt[k]=(cnt[k]||0); const j=(cnt[k]%5-2)*4; cnt[k]++;
+    const cx=X(toX(f.date))+j, cy=Y(f.rate), c=colorOf(f), hollow=!f.conf||f.base||f.acq||f.ex;
+    const fill=hollow?"#fff":c, op=f.base?.55:.9;
+    if(f.pr) s+=`<polygon data-i="${FX.indexOf(f)}" points="${cx},${cy-6.5} ${cx+6.5},${cy} ${cx},${cy+6.5} ${cx-6.5},${cy}" fill="#fff" stroke="${c}" stroke-width="2.2" opacity=".95"/>`;
+    else if(f.st==="Option") s+=`<rect data-i="${FX.indexOf(f)}" x="${cx-4.5}" y="${cy-4.5}" width="9" height="9" rx="1.5" fill="${fill}" stroke="${c}" stroke-width="${hollow?2:1.2}" opacity="${op}"/>`;
+    else s+=`<circle data-i="${FX.indexOf(f)}" cx="${cx}" cy="${cy}" r="5.2" fill="${fill}" stroke="${hollow?c:'#fff'}" stroke-width="${hollow?2:1.2}" opacity="${op}"/>`;
+  });
+  const prs=vis.filter(f=>f.pr); if(prs.length){ const latest=prs.filter(f=>f.date===META.latest_pr).sort((a,b)=>b.rate-a.rate).map(f=>`${f.rig.replace("Deepwater ","").replace("Transocean ","")} ${Math.round(f.rate/1000)}k`).join(" · "); s+=`<text x="${W-pr-6}" y="${pt+14}" font-size="11.5" font-weight="700" fill="#E5601F" text-anchor="end">◇ 계약총액÷일수 추정 ${prs.length}건 (속 빈 마름모)${latest?" · "+META.latest_pr_label+" 공시: "+latest:""}</text>`; }
+  s+=`</svg>`;
+  document.getElementById("chart").innerHTML=s;
+  const counts={}; FX.forEach(f=>counts[f.gen]=(counts[f.gen]||0)+1);
+  const ccounts={}; FX.forEach(f=>ccounts[f.co]=(ccounts[f.co]||0)+1);
+  document.getElementById("chips").innerHTML=`<span>회사</span>`+Object.keys(CO).map(c=>`<span class="chip ${onCo[c]?'':'off'}" data-c="${c}"><i style="background:${CO[c].c}"></i><b>${CO[c].n}</b><span>${ccounts[c]||0}</span></span>`).join("")+`<span style="margin-left:10px">세대 (클릭하면 끄고 켬)</span>`+Object.keys(GEN).map(g=>`<span class="chip ${on[g]?'':'off'}" data-g="${g}"><i style="background:${GEN[g].c}"></i><b>${GEN[g].n}</b><span>${counts[g]||0}</span></span>`).join("");
+  document.querySelectorAll(".chip").forEach(el=>el.onclick=()=>{ if(el.dataset.c) onCo[el.dataset.c]=!onCo[el.dataset.c]; else on[el.dataset.g]=!on[el.dataset.g]; render();});
+  // median table by generation
+  const gens=Object.keys(GEN).filter(g=>on[g]); const hs=[...new Set(stat.map(f=>hkey(f.date)))].sort();
+  let t=`<thead><tr><th>반기</th>${gens.map(g=>`<th>${GEN[g].n}</th>`).join("")}<th>전체</th></tr></thead><tbody>`;
+  hs.forEach(h=>{ t+=`<tr><td>${h}</td>`; gens.forEach(g=>{const a=stat.filter(f=>f.gen===g&&hkey(f.date)===h).map(f=>f.rate); t+=`<td>${a.length>=3?Math.round(q(a,.5)/1000)+" <span style='color:#9ca3af'>("+a.length+")</span>":(a.length?"<span style='color:#9ca3af'>·"+a.length+"</span>":"")}</td>`;}); const all=stat.filter(f=>hkey(f.date)===h).map(f=>f.rate); t+=`<td><b>${all.length>=3?Math.round(q(all,.5)/1000):""}</b></td></tr>`; });
+  document.getElementById("medtbl").innerHTML=t+"</tbody>";
+  // 7G/8G by company
+  const sev=FX.filter(f=>(f.gen==="7G"||f.gen==="8G")&&f.conf&&!f.ex&&f.st!=="Option"&&!f.base&&!f.acq&&(inclPR||!f.pr));
+  const sh=[...new Set(sev.map(f=>hkey(f.date)))].sort();
+  let t7=`<thead><tr><th>반기</th>${Object.keys(CO).map(c=>`<th style="color:#fff">${CO[c].n}</th>`).join("")}<th>3사</th></tr></thead><tbody>`;
+  sh.forEach(h=>{ t7+=`<tr><td>${h}</td>`; Object.keys(CO).forEach(c=>{ const a=sev.filter(f=>f.co===c&&hkey(f.date)===h).map(f=>f.rate); t7+=`<td>${a.length>=2?Math.round(q(a,.5)/1000)+" <span style='color:#9ca3af'>("+a.length+")</span>":(a.length?"<span style='color:#9ca3af'>·"+a.length+"</span>":"")}</td>`; }); const all=sev.filter(f=>hkey(f.date)===h).map(f=>f.rate); t7+=`<td><b>${all.length>=2?Math.round(q(all,.5)/1000):""}</b></td></tr>`; });
+  document.getElementById("sevtbl").innerHTML=t7+"</tbody>";
+  // table
+  const rowsHtml=[...vis].sort((a,b)=>b.date.localeCompare(a.date)||b.rate-a.rate).map(f=>`<tr><td>${f.date}</td><td><span class="dot" style="background:${CO[f.co].c}"></span>${f.co}</td><td>${f.rig}</td><td><span class="dot" style="background:${GEN[f.gen].c}"></span>${f.gen}</td><td>${f.cust}</td><td>${f.loc}</td><td>${f.start}~${f.end}</td><td style="font-weight:700${f.conf?'':';color:#9ca3af'}">${fmt(f.rate)}${f.conf?'':' <i style="font-size:11px">미확인</i>'}${f.pr?' <i style="font-size:11px;color:#E5601F">◇ 보도자료 추정</i>':''}${f.ex?' <i style="font-size:11px;color:#b45309">통계 제외</i>':''}</td><td>${f.st}${f.base?' · 기존':''}${f.acq?' · 인수편입':''}</td><td style="color:#6b7280">${f.note}${f.ex?' · <b style="color:#b45309">통계 제외</b> '+f.ex:''}</td></tr>`).join("");
+  document.querySelector("#tbl tbody").innerHTML=rowsHtml; document.getElementById("tcount").textContent=`(${vis.length}건, 표시 중인 세대·옵션 기준)`;
+  const tip=document.getElementById("tip");
+  document.querySelectorAll("#chart [data-i]").forEach(c=>{
+    c.addEventListener("mousemove",e=>{const f=FX[+c.dataset.i]; tip.innerHTML=`<b>${f.rig}</b> · ${CO[f.co].n} · ${GEN[f.gen].n}<br>${f.cust} · ${f.loc}<br>${fmt(f.rate)}/일 · ${f.st}${f.conf?'':' · 미확인'}${f.pr?' · ◇ 보도자료 추정(백로그÷일수)':''}${f.base?' · 2011.1 기존계약':''}${f.acq?' · 인수로 편입(피인수사 체결)':''}<br>${f.start} ~ ${f.end} · 최초 등장 ${f.date}<br><span style="color:#cbd5e1">${f.note}</span>${f.ex?'<br><b>통계 제외</b> '+f.ex:''}`; tip.style.left=(e.clientX+14)+"px"; tip.style.top=(e.clientY+12)+"px"; tip.style.opacity=1;});
+    c.addEventListener("mouseleave",()=>tip.style.opacity=0);
+  });
+}
+["cbBase","cbUnconf","cbOpt","cbPR"].forEach(id=>document.getElementById(id).onchange=render); document.querySelectorAll("input[name=cm]").forEach(el=>el.onchange=render);
+render();
+</script></body></html>

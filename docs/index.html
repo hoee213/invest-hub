@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KT 투자 지표</title>
+<style>
+:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f4f6f9;--card:#fff;--navy:#1C3D5A;--orange:#E5601F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 48px}
+h1{font-size:22px;margin:0;font-weight:800}
+.lead{color:var(--muted);font-size:13px;margin:4px 0 22px}
+h2{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.02em;margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:inherit;text-decoration:none;transition:border-color .12s,box-shadow .12s}
+a.card:hover{border-color:#c7cdd6;box-shadow:0 2px 10px rgba(15,23,42,.06)}
+.card .t{font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
+.card .t i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.card .d{font-size:12.5px;color:var(--muted);margin-top:4px}
+.kpis{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+.kpi .k{font-size:11.5px;color:var(--muted)}.kpi .v{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
+.meta{font-size:11.5px;color:var(--muted);margin-top:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tag{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);font-weight:600}
+.stale{color:#b45309;font-weight:700}
+@media(max-width:600px){.wrap{padding:18px 16px 36px}}
+</style></head><body><div class="wrap">
+<h1>KT 투자 지표</h1>
+<div class="lead">투자 판단에 쓰는 참고 지표 모음. 카드를 누르면 상세 페이지로 이동한다.</div>
+
+<h2>산업 지표</h2>
+<div class="grid">
+  <a class="card" href="drilling/">
+    <div class="t"><i style="background:var(--orange)"></i>해양시추 일당 용선료</div>
+    <div class="d">Transocean · Noble · Seadrill 리그별 계약 일당, 2011년부터. 매주 토요일 갱신</div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">7G·8G 드릴십 최근 1년 중앙</div><div class="v" id="dr-med">–</div></div>
+      <div class="kpi"><div class="k">누적 계약</div><div class="v" id="dr-n">–</div></div>
+    </div>
+    <div class="meta"><span id="dr-through">데이터 기준 –</span><span class="tag">주간</span></div>
+  </a>
+</div>
+
+<h2>매크로 · 시장</h2>
+<div class="grid">
+  <a class="card" href="https://hoee213.github.io/macro-regime-watch/">
+    <div class="t"><i style="background:var(--navy)"></i>변곡점 대시보드</div>
+    <div class="d">재무부·연준 개입 체제, 장기금리, 인플레·재정, AI 크레딧 신호등</div>
+    <div class="meta"><span>매일 아침 갱신</span><span class="tag">일간</span></div>
+  </a>
+  <a class="card" href="https://hoee213.github.io/finviz-charts/">
+    <div class="t"><i style="background:#2A9D8F"></i>Finviz 차트</div>
+    <div class="d">관심 종목 일봉 차트 묶음, 카테고리별</div>
+    <div class="meta"><span>매일 아침 갱신</span><span class="tag">일간</span></div>
+  </a>
+</div>
+</div>
+<script>
+fetch("drilling/summary.json",{cache:"no-store"}).then(r=>r.json()).then(s=>{
+  document.getElementById("dr-med").textContent = s.uldw_median_1y ? "$"+Math.round(s.uldw_median_1y/1000)+"k" : "–";
+  document.getElementById("dr-n").textContent = s.contracts.toLocaleString("en-US")+"건";
+  const days = Math.round((Date.now()-new Date(s.checked+"T00:00:00+09:00"))/864e5);
+  const el = document.getElementById("dr-through");
+  el.innerHTML = "데이터 기준 "+s.through+" · 점검 "+s.checked + (days>9 ? ' <span class="stale">· '+days+'일째 갱신 없음</span>' : "");
+}).catch(()=>{});
+</script>
+</body></html>

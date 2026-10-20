@@ -1,0 +1,33 @@
+name: drilling-fetch
+# 매주 토요일 07:17 KST: 새 공시를 inbox/drilling/ 에 모은다. 반영(CSV 갱신)은 같은 날 12시 Claude 루틴이 한다.
+on:
+  schedule:
+    - cron: '17 22 * * 5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q requests beautifulsoup4 pdfplumber
+      - run: python scripts/fetch_drilling_sources.py
+      - name: commit
+        run: |
+          git config user.name "invest-hub-bot"
+          git config user.email "invest-hub-bot@users.noreply.github.com"
+          git add inbox data/drilling/sources_state.json
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -m "fetch: 공시 수집 $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
