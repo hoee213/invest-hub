@@ -215,32 +215,42 @@ def write_index():
 
 
 def telegram(day, caught=()):
+    """60일 신고가(종가 기준) 전 종목을 업종별로 묶어 보낸다. 업종은 종목 수 많은 순, 업종 안은 등락률 순."""
     tok, chat = os.environ.get("TG_TOKEN"), os.environ.get("TG_CHAT")
     if not tok or not chat:
         return
     c = day["counts"]
-    hits = [x for x in day["items"] if x["c60"]]  # 거래대금 내림차순
     groups = {}
-    for x in hits:
-        groups.setdefault(x["sec"], []).append(x)
-    groups = sorted(groups.items(), key=lambda g: (-len(g[1]), -sum(x["amt"] for x in g[1])))
-    head = f"⏳ KRX 신고가 {day['date']} 장중 잠정 ({day['asof']} 기준)" if day.get("prelim")         else f"📈 KRX 신고가 {day['date']} (종가 기준)"
-    lines = [head,
-             f"20일 {c['c20']}개 · 60일 {c['c60']}개 / {day['universe']}종목",
-             "60일 신고가 업종별 (거래대금순):"]
-    for g, xs in groups[:8]:
-        names = ", ".join(x["name"] + (f" {x['chg']:+.1f}%" if x["chg"] is not None else "") + ("🆕" if x["c60s"] == 1 else "") for x in xs[:4])
-        lines.append(f"▪ {g} {len(xs)} — {names}" + (f" 외 {len(xs) - 4}" if len(xs) > 4 else ""))
-    if len(groups) > 8:
-        lines.append(f"▪ 그 밖의 {len(groups) - 8}개 업종 {sum(len(xs) for _, xs in groups[8:])}종목")
-    if caught:
-        lines.append("밀린 날 확정 반영: " + ", ".join(caught))
-    lines.append(f"https://hoee213.github.io/invest-hub/highs/#{day['date']}")
-    try:
-        requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=30,
-                      data={"chat_id": chat, "text": "\n".join(lines), "disable_web_page_preview": "true"})
-    except requests.RequestException as e:
-        log(f"텔레그램 실패 {e}")
+    for x in day["items"]:
+        if x["c60"]:
+            groups.setdefault(x["sec"], []).append(x)
+    chg = lambda x: x["chg"] if x["chg"] is not None else -1e9
+    for xs in groups.values():
+        xs.sort(key=chg, reverse=True)
+    groups = sorted(groups.items(), key=lambda g: (-len(g[1]), -chg(g[1][0])))
+    head = (f"⏳ KRX 60일 신고가 {day['date']} 장중 잠정 ({day['asof']} 기준)" if day.get("prelim")
+            else f"📈 KRX 60일 신고가 {day['date']} (종가 기준)")
+    blocks = [f"{head}\n60일 {c['c60']}개 · 20일 {c['c20']}개 / {day['universe']}종목"]
+    for g, xs in groups:
+        rows = [f" · {x['name']} ({x['code']}) " + (f"{x['chg']:+.2f}%" if x["chg"] is not None else "–")
+                + (" 🆕" if x["c60s"] == 1 else "") for x in xs]
+        blocks.append(f"📌 {g} ({len(xs)})\n" + "\n".join(rows))
+    tail = ("밀린 날 확정 반영: " + ", ".join(caught) + "\n" if caught else "") + \
+        f"🆕 = 신규 진입 · 업종은 WICS\nhttps://hoee213.github.io/invest-hub/highs/#{day['date']}"
+    blocks.append(tail)
+    msgs, cur = [], ""
+    for blk in blocks:  # 텔레그램 4096자 제한 → 업종 경계에서 나눔
+        if cur and len(cur) + len(blk) + 2 > 3900:
+            msgs.append(cur)
+            cur = ""
+        cur = f"{cur}\n\n{blk}" if cur else blk
+    msgs.append(cur)
+    for m in msgs:
+        try:
+            requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=30,
+                          data={"chat_id": chat, "text": m, "disable_web_page_preview": "true"})
+        except requests.RequestException as e:
+            log(f"텔레그램 실패 {e}")
 
 
 def main():
