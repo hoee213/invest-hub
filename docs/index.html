@@ -38,6 +38,19 @@ a.card:hover{border-color:#c7cdd6;box-shadow:0 2px 10px rgba(15,23,42,.06)}
   </a>
 </div>
 
+<h2>시장 폭</h2>
+<div class="grid">
+  <a class="card" href="highs/">
+    <div class="t"><i style="background:#d0342c"></i>KRX 20일·60일 신고가</div>
+    <div class="d">코스피·코스닥 신고가 종목 리스트, 날짜별 기록. 평일 장 마감 후 갱신</div>
+    <div class="kpis">
+      <div class="kpi"><div class="k">20일 신고가 (종가)</div><div class="v" id="hi-20">–</div></div>
+      <div class="kpi"><div class="k">60일 신고가 (종가)</div><div class="v" id="hi-60">–</div></div>
+    </div>
+    <div class="meta"><span id="hi-date">기준일 –</span><span class="tag">일간</span></div>
+  </a>
+</div>
+
 <h2>매크로 · 시장</h2>
 <div class="grid">
   <a class="card" href="https://hoee213.github.io/macro-regime-watch/">
@@ -59,6 +72,13 @@ fetch("drilling/summary.json",{cache:"no-store"}).then(r=>r.json()).then(s=>{
   const days = Math.round((Date.now()-new Date(s.checked+"T00:00:00+09:00"))/864e5);
   const el = document.getElementById("dr-through");
   el.innerHTML = "데이터 기준 "+s.through+" · 점검 "+s.checked + (days>9 ? ' <span class="stale">· '+days+'일째 갱신 없음</span>' : "");
+}).catch(()=>{});
+fetch("highs/index.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{
+  const d=j.days[j.days.length-1], p=j.days[j.days.length-2];
+  const df=(a,b)=>b==null?"":` <span style="font-size:12px;color:var(--muted);font-weight:600">${a-b>=0?"+":""}${a-b}</span>`;
+  document.getElementById("hi-20").innerHTML=d.c20+"개"+df(d.c20,p&&p.c20);
+  document.getElementById("hi-60").innerHTML=d.c60+"개"+df(d.c60,p&&p.c60);
+  document.getElementById("hi-date").textContent="기준일 "+d.date;
 }).catch(()=>{});
 </script>
 </body></html>
