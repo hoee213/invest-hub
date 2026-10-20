@@ -8,7 +8,8 @@
   상장 N거래일 미만 종목은 제외 (상장 직후 종목이 전부 신고가로 잡히는 것을 막음)
 출력: docs/highs/days/YYYY-MM-DD.json, docs/highs/index.json
 
-  python scripts/krx_highs.py                      # 최근 거래일 1일 계산
+  python scripts/krx_highs.py                      # 최근 거래일 계산 + 빠졌거나 잠정인 날 보충
+  장 마감(15:45) 전에 돌면 오늘은 장중 값으로 '잠정' 파일을 만들고, 마감 후 실행이 확정값으로 덮어쓴다.
   python scripts/krx_highs.py --backfill 2026-07-01   # 그날부터 최근 거래일까지 전부 다시 계산
 """
 import io, json, os, re, sys, time
@@ -25,6 +26,8 @@ DAYS = OUT / "days"
 UNIVERSE = ROOT / "data" / "highs" / "universe.csv"
 KST = timezone(timedelta(hours=9))
 WINDOWS = (20, 60)
+CLOSE_MIN = 15 * 60 + 45  # 이 시각(KST) 전이면 오늘 일봉은 장중 값
+CATCHUP = 10  # 최근 N거래일 안에서 빠진 날·잠정인 날을 다시 계산
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36",
       "Referer": "https://finance.daum.net/"}
 EXCLUDE_NAME = re.compile(r"스팩|리츠|[0-9]+호$|우$|우B$|우C$|\(전환\)$")
@@ -165,35 +168,35 @@ def add_streak_and_new(day, prev):
             x[k + "s"] = (p.get(k + "s", 0) + 1) if x[k] else 0
 
 
-def latest_complete_date(dates):
-    """장 마감(15:45 KST) 전에 돌면 오늘 행은 미완성이므로 뺀다."""
-    now = datetime.now(KST)
-    today = now.date().isoformat()
-    if dates and dates[-1] == today and now.hour * 60 + now.minute < 15 * 60 + 45:
-        return dates[-2]
-    return dates[-1]
+def needs_update(d):
+    f = DAYS / f"{d}.json"
+    return not f.exists() or json.loads(f.read_text(encoding="utf-8")).get("prelim", False)
 
 
 def write_index():
     idx = []
     for f in sorted(DAYS.glob("*.json")):
         d = json.loads(f.read_text(encoding="utf-8"))
-        idx.append({"date": d["date"], "universe": d["universe"], **d["counts"]})
+        idx.append({"date": d["date"], "universe": d["universe"], **d["counts"],
+                    **({"prelim": True, "asof": d["asof"]} if d.get("prelim") else {})})
     (OUT / "index.json").write_text(json.dumps({"updated": datetime.now(KST).isoformat(timespec="minutes"), "days": idx},
                                                ensure_ascii=False), encoding="utf-8")
     return idx
 
 
-def telegram(day):
+def telegram(day, caught=()):
     tok, chat = os.environ.get("TG_TOKEN"), os.environ.get("TG_CHAT")
     if not tok or not chat:
         return
     c = day["counts"]
     top = [x for x in day["items"] if x["c60"]][:10]
-    lines = [f"📈 KRX 신고가 {day['date']} (종가 기준)",
+    head = f"⏳ KRX 신고가 {day['date']} 장중 잠정 ({day['asof']} 기준)" if day.get("prelim")         else f"📈 KRX 신고가 {day['date']} (종가 기준)"
+    lines = [head,
              f"20일 {c['c20']}개 · 60일 {c['c60']}개 / {day['universe']}종목",
              "60일 신고가 거래대금 상위:"]
     lines += [f"• {x['name']} {x['close']:,}원 {x['chg']:+.1f}% · {x['amt']:,.0f}억" + (" 🆕" if x["c60s"] == 1 else "") for x in top]
+    if caught:
+        lines.append("밀린 날 확정 반영: " + ", ".join(caught))
     lines.append(f"https://hoee213.github.io/invest-hub/highs/#{day['date']}")
     try:
         requests.post(f"https://api.telegram.org/bot{tok}/sendMessage", timeout=30,
@@ -211,14 +214,21 @@ def main():
     alive = P["vol"].notna().sum(axis=1)
     P = {k: v[alive > len(data) * 0.5] for k, v in P.items()}
     dates = list(P["close"].index)
-    last = latest_complete_date(dates)
+    now = datetime.now(KST)
+    intraday = bool(dates) and dates[-1] == now.date().isoformat() and now.hour * 60 + now.minute < CLOSE_MIN
+    complete = dates[:-1] if intraday else dates
     DAYS.mkdir(parents=True, exist_ok=True)
-    targets = [d for d in dates if d <= last and (d >= backfill if backfill else d == last)]
-    if not backfill and (DAYS / f"{last}.json").exists() and "--force" not in sys.argv:
-        log(f"{last}는 이미 있음 — 건너뜀 (휴장일이거나 이미 처리됨)")
+    if backfill:
+        targets = [d for d in complete if d >= backfill]
+    else:
+        targets = [d for d in complete[-CATCHUP:] if needs_update(d) or ("--force" in sys.argv and d == complete[-1])]
+    if intraday and not backfill:
+        targets.append(dates[-1])
+    if not targets:
+        log("새로 계산할 날 없음 — 건너뜀 (휴장일이거나 이미 처리됨)")
         write_index()
         return
-    made = None
+    made, finals = None, []
     for d in targets:
         day = compute_day(P, d, uni)
         if day is None:
@@ -228,12 +238,16 @@ def main():
         pf = DAYS / f"{prev_dates[-1]}.json" if prev_dates else None
         prev = json.loads(pf.read_text(encoding="utf-8")) if pf and pf.exists() else None
         add_streak_and_new(day, prev)
+        if intraday and d == dates[-1]:
+            day["prelim"], day["asof"] = True, now.strftime("%H:%M")
+        else:
+            finals.append(d)
         (DAYS / f"{d}.json").write_text(json.dumps(day, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        log(f"{d}: 종가 20일 {day['counts']['c20']} · 60일 {day['counts']['c60']} | 장중 20일 {day['counts']['h20']} · 60일 {day['counts']['h60']}")
+        log(f"{d}{' (잠정)' if day.get('prelim') else ''}: 종가 20일 {day['counts']['c20']} · 60일 {day['counts']['c60']} | 장중 20일 {day['counts']['h20']} · 60일 {day['counts']['h60']}")
         made = day
     write_index()
     if made and not backfill:
-        telegram(made)
+        telegram(made, [d for d in finals if d != made["date"]])
 
 
 if __name__ == "__main__":

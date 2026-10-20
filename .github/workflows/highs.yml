@@ -1,9 +1,10 @@
 name: krx-highs
-# 평일 장 마감 후 KRX 20일·60일 신고가 계산. 16:07 KST 1차, 18:37 KST 2차(GitHub 스케줄 지연 대비).
-# 이미 그날 파일이 있으면 건너뛰므로 두 번 돌아도 텔레그램은 한 번만 간다. 휴장일도 자동으로 건너뜀.
+# 평일 KRX 20일·60일 신고가. 14:03 KST 장중 잠정 → 16:03 KST 확정 → 18:37 KST 예비(GitHub 스케줄 지연 대비).
+# 확정 파일이 이미 있으면 건너뛰고, 최근 10거래일 중 빠졌거나 잠정으로 남은 날은 다음 실행 때 자동 보충. 휴장일도 자동으로 건너뜀.
 on:
   schedule:
-    - cron: '7 7 * * 1-5'
+    - cron: '3 5 * * 1-5'
+    - cron: '3 7 * * 1-5'
     - cron: '37 9 * * 1-5'
   workflow_dispatch:
 permissions:
@@ -32,6 +33,6 @@ jobs:
           git config user.email "invest-hub-bot@users.noreply.github.com"
           git add docs/highs data/highs
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
-          git commit -m "highs: $(ls docs/highs/days | tail -1 | cut -c1-10)"
+          git commit -m "highs: $(ls docs/highs/days | tail -1 | cut -c1-10)$(grep -q '"prelim":true' docs/highs/days/$(ls docs/highs/days | tail -1) && echo ' 잠정')"
           git pull --rebase origin main
           git push origin HEAD:main

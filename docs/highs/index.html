@@ -115,7 +115,7 @@ function render(){
   ].map(t=>`<div class="tile"><div class="k">${t[0]}</div><div class="v">${t[1]}</div><div class="d">${t[2]}</div></div>`).join("");
   const s=st.sort, dir=st.dir;
   rows.sort((a,b)=>{ const va=s==="name"?a.name:(a[s]??-1e18), vb=s==="name"?b.name:(b[s]??-1e18); return (va>vb?1:va<vb?-1:0)*dir; });
-  $("ttitle").textContent=`${cur.date} · ${st.win}일 신고가 (${BASIS[st.basis]} 기준) ${rows.length}종목`;
+  $("ttitle").textContent=`${cur.date}${cur.prelim?` [장중 잠정 ${cur.asof} 기준 · 16시 확정]`:""} · ${st.win}일 신고가 (${BASIS[st.basis]} 기준) ${rows.length}종목`;
   const cols=[["#",null],["종목","name"],["시장","mkt"],["종가","close"],["등락","chg"],["거래대금(억)","amt"],["시총(억)","cap"],["연속(일)",k+"s"]];
   $("tbl").querySelector("thead").innerHTML="<tr>"+cols.map(c=>`<th data-s="${c[1]||""}">${c[0]}${c[1]===s?(dir<0?" ▾":" ▴"):""}</th>`).join("")+"</tr>";
   $("tbl").querySelectorAll("th").forEach(th=>th.onclick=()=>{ const v=th.dataset.s; if(!v) return; if(st.sort===v) st.dir*=-1; else { st.sort=v; st.dir=v==="name"||v==="mkt"?1:-1; } render(); });
@@ -156,7 +156,7 @@ function chart(){
   let hl=null;
   svg.querySelectorAll("rect[data-i]").forEach(r=>{
     r.addEventListener("pointermove",e=>{ const d=INDEX[+r.dataset.i];
-      tip.innerHTML=`<b>${d.date}</b><br>${S.map(se=>`<span style="color:${se.c}">●</span> ${se.n} ${d[se.k]}개`).join("<br>")}<br><span style="color:#cbd5e1">${(d[b+"20"]/d.universe*100).toFixed(1)}% · 거래 ${d.universe}종목</span>`;
+      tip.innerHTML=`<b>${d.date}${d.prelim?" (잠정 "+d.asof+")":""}</b><br>${S.map(se=>`<span style="color:${se.c}">●</span> ${se.n} ${d[se.k]}개`).join("<br>")}<br><span style="color:#cbd5e1">${(d[b+"20"]/d.universe*100).toFixed(1)}% · 거래 ${d.universe}종목</span>`;
       tip.style.left=Math.min(e.clientX+14,innerWidth-170)+"px"; tip.style.top=(e.clientY+12)+"px"; tip.style.opacity=1;
       if(hl) hl.remove(); hl=document.createElementNS("http://www.w3.org/2000/svg","line"); const x=X(+r.dataset.i);
       hl.setAttribute("x1",x);hl.setAttribute("x2",x);hl.setAttribute("y1",pt);hl.setAttribute("y2",H-pb);hl.setAttribute("stroke","var(--ink2)");hl.setAttribute("opacity",".5");hl.style.pointerEvents="none"; svg.appendChild(hl); });
@@ -172,7 +172,7 @@ function chart(){
   $("q").oninput=e=>{ st.q=e.target.value.trim(); render(); };
   const r=await fetch("index.json",{cache:"no-store"}); const j=await r.json(); INDEX=j.days;
   $("upd").textContent="최근 갱신 "+j.updated.replace("T"," ");
-  $("date").innerHTML=[...INDEX].reverse().map(d=>`<option value="${d.date}">${d.date} · ${["일","월","화","수","목","금","토"][new Date(d.date+"T00:00:00+09:00").getDay()]}</option>`).join("");
+  $("date").innerHTML=[...INDEX].reverse().map(d=>`<option value="${d.date}">${d.date} · ${["일","월","화","수","목","금","토"][new Date(d.date+"T00:00:00+09:00").getDay()]}${d.prelim?" · 잠정 "+d.asof:""}</option>`).join("");
   $("date").onchange=e=>go(e.target.value);
   $("prev").onclick=()=>{ const i=INDEX.findIndex(x=>x.date===cur.date); if(i>0) go(INDEX[i-1].date); };
   $("next").onclick=()=>{ const i=INDEX.findIndex(x=>x.date===cur.date); if(i<INDEX.length-1) go(INDEX[i+1].date); };
