@@ -1,6 +1,7 @@
 """KRX 20일·60일 신고가 일간 리스트.
 
 가격: 다음 금융 종목별 일봉 API (KRX 정규장 기준, NXT 체결가 섞이지 않음). 종목당 최근 100거래일.
+업종: 다음 금융 종목 정보의 WICS 업종명(매 실행 갱신, 실패 시 저장본).
 종목군: 코스피·코스닥 보통주 (FinanceData KRX 상장목록 캐시, 실패 시 마지막 저장본). 스팩·우선주·리츠 제외.
 정의 (기존 S&P500 신고가 알림과 같은 방식):
   종가 기준 N일 신고가: 오늘 종가 == 최근 N거래일(오늘 포함) 최고 종가
@@ -24,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "highs"
 DAYS = OUT / "days"
 UNIVERSE = ROOT / "data" / "highs" / "universe.csv"
+SECTORS = ROOT / "data" / "highs" / "sectors.csv"
 KST = timezone(timedelta(hours=9))
 WINDOWS = (20, 60)
 CLOSE_MIN = 15 * 60 + 45  # 이 시각(KST) 전이면 오늘 일봉은 장중 값
@@ -108,6 +110,33 @@ def fetch_all(codes, pages):
     return data
 
 
+def load_sectors(codes):
+    """종목별 WICS 업종. 조회 실패한 종목은 마지막 저장본 값을 쓴다."""
+    old = pd.read_csv(SECTORS, dtype=str).set_index("code")["sec"].to_dict() if SECTORS.exists() else {}
+
+    def one(code):
+        for i in range(3):
+            try:
+                r = S.get(f"https://finance.daum.net/api/quotes/A{code}", timeout=20,
+                          params={"summary": "false", "changeStatistics": "true"})
+                if r.status_code == 200:
+                    return code, r.json().get("wicsSectorName")
+            except (requests.RequestException, ValueError):
+                pass
+            time.sleep(1 + 2 * i)
+        return code, None
+
+    t = time.time()
+    with ThreadPoolExecutor(6) as ex:
+        new = dict(ex.map(one, codes))
+    sec = {c: new.get(c) or old.get(c) or "기타" for c in codes}
+    miss = sum(1 for c in codes if not new.get(c))
+    log(f"업종 {len(set(sec.values()))}개, 조회 실패 {miss}종목 ({time.time() - t:.0f}초)")
+    SECTORS.parent.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame({"code": list(sec), "sec": list(sec.values())}).to_csv(SECTORS, index=False, encoding="utf-8")
+    return sec
+
+
 def panels(data):
     recs = []
     for code, rows in data.items():
@@ -125,7 +154,7 @@ def panels(data):
     return P
 
 
-def compute_day(P, d, uni):
+def compute_day(P, d, uni, sec):
     names = uni.set_index("code")
     i = P["close"].index.get_loc(d)
     out, counts = [], {}
@@ -148,15 +177,16 @@ def compute_day(P, d, uni):
             continue
         c, prev = float(row["close"][code]), float(row["prev"][code] or 0)
         out.append({
-            "code": code, "name": names.at[code, "name"], "mkt": names.at[code, "mkt"],
+            "code": code, "name": names.at[code, "name"], "mkt": names.at[code, "mkt"], "sec": sec.get(code, "기타"),
             "close": int(c), "chg": round((c / prev - 1) * 100, 2) if prev else None,
             "amt": round(float(row["amt"][code]) / 1e8, 1),
             "cap": round(c * float(row["shares"][code] or 0) / 1e8),
             **{k: bool(v[code]) for k, v in flags.items()},
         })
     out.sort(key=lambda x: -x["amt"])
-    traded_n = int((P["vol"].iloc[i].fillna(0) > 0).sum())
-    return {"date": d, "universe": traded_n, "counts": counts, "items": out}
+    traded = P["vol"].iloc[i].fillna(0) > 0
+    sec_n = pd.Series([sec.get(c, "기타") for c in traded[traded].index]).value_counts()
+    return {"date": d, "universe": int(traded.sum()), "counts": counts, "sec_n": sec_n.to_dict(), "items": out}
 
 
 def add_streak_and_new(day, prev):
@@ -189,12 +219,20 @@ def telegram(day, caught=()):
     if not tok or not chat:
         return
     c = day["counts"]
-    top = [x for x in day["items"] if x["c60"]][:10]
+    hits = [x for x in day["items"] if x["c60"]]  # 거래대금 내림차순
+    groups = {}
+    for x in hits:
+        groups.setdefault(x["sec"], []).append(x)
+    groups = sorted(groups.items(), key=lambda g: (-len(g[1]), -sum(x["amt"] for x in g[1])))
     head = f"⏳ KRX 신고가 {day['date']} 장중 잠정 ({day['asof']} 기준)" if day.get("prelim")         else f"📈 KRX 신고가 {day['date']} (종가 기준)"
     lines = [head,
              f"20일 {c['c20']}개 · 60일 {c['c60']}개 / {day['universe']}종목",
-             "60일 신고가 거래대금 상위:"]
-    lines += [f"• {x['name']} {x['close']:,}원 {x['chg']:+.1f}% · {x['amt']:,.0f}억" + (" 🆕" if x["c60s"] == 1 else "") for x in top]
+             "60일 신고가 업종별 (거래대금순):"]
+    for g, xs in groups[:8]:
+        names = ", ".join(x["name"] + (f" {x['chg']:+.1f}%" if x["chg"] is not None else "") + ("🆕" if x["c60s"] == 1 else "") for x in xs[:4])
+        lines.append(f"▪ {g} {len(xs)} — {names}" + (f" 외 {len(xs) - 4}" if len(xs) > 4 else ""))
+    if len(groups) > 8:
+        lines.append(f"▪ 그 밖의 {len(groups) - 8}개 업종 {sum(len(xs) for _, xs in groups[8:])}종목")
     if caught:
         lines.append("밀린 날 확정 반영: " + ", ".join(caught))
     lines.append(f"https://hoee213.github.io/invest-hub/highs/#{day['date']}")
@@ -209,6 +247,7 @@ def main():
     backfill = sys.argv[sys.argv.index("--backfill") + 1] if "--backfill" in sys.argv else None
     uni = load_universe()
     data = fetch_all(uni["code"].tolist(), pages=2 if backfill else 1)
+    sec = load_sectors(uni["code"].tolist())
     P = panels(data)
     # 거래일 달력: 삼성전자처럼 거래가 꾸준한 종목이 다수 있는 날만 남긴다
     alive = P["vol"].notna().sum(axis=1)
@@ -230,7 +269,7 @@ def main():
         return
     made, finals = None, []
     for d in targets:
-        day = compute_day(P, d, uni)
+        day = compute_day(P, d, uni, sec)
         if day is None:
             log(f"{d}: 이력 부족으로 건너뜀")
             continue
