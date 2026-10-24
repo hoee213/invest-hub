@@ -12,7 +12,7 @@
   },
   "sources_note": "Transocean 8-K FSR 64개 + 수주 보도자료, Noble 8-K/FSR 23개, Seadrill FSR/6-K 57개",
   "data_through": "2026-10-19",
-  "last_update_run": "2026-10-20",
+  "last_update_run": "2026-10-24",
   "update_log": [
     {
       "date": "2026-10-20",
@@ -21,6 +21,10 @@
     {
       "date": "2026-10-20",
       "summary": "새 계약 공시 없음"
+    },
+    {
+      "date": "2026-10-24",
+      "summary": "새 계약 공시 없음 (inbox 비어 있음; 수집기는 네트워크 차단으로 전 출처 응답 없음)"
     }
   ]
 }
