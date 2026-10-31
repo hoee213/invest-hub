@@ -7,12 +7,12 @@
   },
   "last_fsr": {
     "RIG": "2026-08-05",
-    "NE": "2026-07-27",
+    "NE": "2026-10-26",
     "SDRL": "2026-08-10"
   },
   "sources_note": "Transocean 8-K FSR 64개 + 수주 보도자료, Noble 8-K/FSR 23개, Seadrill FSR/6-K 57개",
-  "data_through": "2026-10-19",
-  "last_update_run": "2026-10-24",
+  "data_through": "2026-10-26",
+  "last_update_run": "2026-10-31",
   "update_log": [
     {
       "date": "2026-10-20",
@@ -25,6 +25,10 @@
     {
       "date": "2026-10-24",
       "summary": "새 계약 공시 없음 (inbox 비어 있음; 수집기는 네트워크 차단으로 전 출처 응답 없음)"
+    },
+    {
+      "date": "2026-10-31",
+      "summary": "신규 2건 (NE Developer ExxonMobil $375k, NE BlackHawk Apache ◇$500k) · NE 10월 FSR 반영 · 보류: Globetrotter I Occidental $400k(8-K는 $400k, 같은 날 FSR은 미공시로 상충), Deliverer Woodside $121M(일수 불명확), Venturer Shell $606M(FSR 표 배치 모호)"
     }
   ]
 }
