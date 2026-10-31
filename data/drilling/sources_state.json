@@ -1,10 +1,11 @@
 {
  "broken_sources": [],
- "last_run": "2026-10-24",
+ "last_run": "2026-10-31",
  "seen": {
   "nefsr:2272": "2026-10-20",
   "nefsr:2293": "2026-10-20",
   "nefsr:3701": "2026-10-20",
+  "nefsr:4015": "2026-10-31",
   "rigfsr:/documents/FleetStatusReport/2025/October%202025%20Fleet%20Status%20Report.pdf": "2026-10-20",
   "rigfsr:/documents/FleetStatusReport/2026/August%202026%20Fleet%20Status%20Report.pdf": "2026-10-20",
   "rigfsr:/documents/FleetStatusReport/2026/February%202026%20Fleet%20Status%20Report.pdf": "2026-10-20",
@@ -41,6 +42,7 @@
   "sdrlpr:1755": "2026-10-20",
   "sec:0001451505-26-000072:rig-ex99d1.htm": "2026-10-20",
   "sec:0001451505-26-000075:rig-ex99d1.htm": "2026-10-20",
-  "sec:0001451505-26-000077:rig-ex99d1.htm": "2026-10-20"
+  "sec:0001451505-26-000077:rig-ex99d1.htm": "2026-10-20",
+  "sec:0001895262-26-000147:exhibit991-q32026pressrele.htm": "2026-10-31"
  }
 }

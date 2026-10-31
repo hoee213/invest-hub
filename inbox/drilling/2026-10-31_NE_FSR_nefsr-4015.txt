@@ -1,0 +1,216 @@
+source: NE FSR
+date: 
+title: Noble Fleet Status Report (noble-corporation-fleet-status-report-4, id 4015)
+url: https://noblecorp.com/download/noble-corporation-fleet-status-report-4/?wpdmdl=4015
+fetched: 2026-10-31
+
+
+===== page 1 =====
+Fleet Status Report
+October 26, 2026
+===== page 2 =====
+Recent Commercial Activity
+since July 27, 2026 report
+Floaters Jackups
+Noble BlackHawk One-well contract with Apache in Uruguay expected to commence in Q4 2027, with an estimated Noble Interceptor One-well contract with DNO in Norway expected to commence in Q3 2027, with an estimated
+duration of 50 days. Contract value of approximately $25 million excludes additional fees for duration of 50-90 days. Thereafter, the rig is expected to commence, in direct continuation, a
+mobilization and demobilization. long-term P&A scope for ConocoPhillips in Norway on the Ekofisk field, with an estimated
+duration of 670 days.
+Noble BlackRhino Four-well contract with TotalEnergies in Nigeria expected to commence in Q4 2026, with an
+estimated duration of 150 days plus six priced option wells. Noble Intrepid One-well contract with ORLEN in Norway expected to commence in Q3 2027, with an
+estimated duration of 40-60 days.
+Noble Faye Kozack Five-well contract with Tullow in Ghana expected to commence in mid-2027, with an estimated
+duration of 250 days, plus five priced option wells.
+Noble Globetrotter I Two-well contract with Occidental expected to commence in Q2 2027. Terms of the contract, which
+includes additional fees for mobilization and demobilization, are not disclosed. Thereafter, the rig
+is expected to commence a contract with TotalEnergies in West Africa under a 3-year Capacity
+Reservation Agreement (CRA) for light well intervention services, providing a minimum
+commitment of 150 days per year. The first call-off service order is expected to commence in
+Angola in Q3/Q4 2027.
+Commercial activity listed reflects all publicly announced contracts and option exercises since prior Fleet Status Report dated July 27, 2026.
+The information contained in this fleet status report is as of the date of the report only and is subject to change without notice to the recipient, and we assume no duty to update any portion of the information contained herein. This fleet
+status report contains statements that are not historical facts, which are “forward-looking statements” within the meaning of the U.S. federal securities laws. Forward-looking statements include, but are not limited to, statements about
+the estimated duration of client contracts, contract values and dayrate amounts, future contract commencement and end dates, shipyard projects, project status and project schedules, our business, financial performance, and prospects,
+the offshore drilling market and demand fundamentals, backlog, contract status, contract negotiations, terminations, options and extensions, contract awards and expected future contracts, mobilization and demobilization fees,
+customer actions, needs and the general customer landscape, and fleet condition, utilization and strategy. Although we believe that the expectations reflected in such forward-looking statements are reasonable, we cannot assure you that
+such expectations will prove to have been correct. Various factors could cause actual results to differ materially. The following information should be read in conjunction with Noble Corporation plc’s (”Noble”) filings with the Securities &
+Exchange Commission (the ”SEC”), including its annual report on Form 10-K and its subsequent quarterly reports on Form 10-Q, and in particular the description of, and assumptions with respect to, Noble’s backlog and the associated
+risks as well as the other risk factors contained therein. Such filings are available on Noble’s website at www.noblecorp.com and on the SEC’s website at www.sec.gov.
+Contract Backlog
+The duration and timing (including both starting and ending dates) of the customer contracts are estimates only, and customer contracts are subject to cancellation, suspension, delays for a variety of reasons, and for certain customers,
+reallocation of term among contracted rigs, including some beyond Noble’s control. The contract backlog represents the maximum contract drilling revenues that can be earned when only considering the contractual operating dayrate in
+effect during the firm contract period. The actual average dayrate will depend upon a number of factors (rig downtime, suspension of operations, etc.) including some beyond Noble’s control. The dayrates do not include revenue for
+mobilizations, demobilizations, upgrades, contract preparation, shipyards or recharges, unless specifically otherwise stated. Dayrates may include revenue associated with performance, including, for example, approximately 40% assumed
+performance revenue realized on a combined basis under certain long-term contracts with Shell (US) and TotalEnergies (Suriname).
+2
+===== page 3 =====
+Floater Fleet Contract Status
+Drillships (7G)
+Rated Water
+Rig Name Design Built Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+Brazil Petrobras Jul-24 Jan-27 Undisclosed
+Noble Faye Kozack Samsung 96K 2013 12,000
+Five-well contract (estimated 250 days), plus five priced option
+Ghana Tullow Mid 2027 Q1 2028 Undisclosed
+wells.
+Noble Stanley Lafosse Samsung 96K 2014 12,000 US Gulf Murphy Feb-25 Jan-27 Undisclosed
+16-well contract (estimated 1,060 days), plus four one-well options
+Noble Valiant Samsung 96K 2014 12,000 Suriname TotalEnergies Dec-26 Q4-29 Undisclosed
+across both TotalEnergies Suriname contracts.
+Ghana Planet One Oct-26 Nov-26 $430,000 Plus two unpriced option wells.
+US Gulf Shell Q4-27 Q3-31 Undisclosed Four-year contract, base dayrate value of $606 million (including
+Noble Venturer Samsung 96K 2014 12,000 upgrades and services, excluding mob/demob), plus potential
+performance incentives of up to 20% of base value, subject to
+achieving specific performance targets. Plus four 1-year options at
+mutually agreed rates.
+Noble Viking Samsung 96K 2014 12,000 Asia Pac Undisclosed Q1-28 Q4-28 Undisclosed Plus options to Q1 2029.
+Four-year contract, base dayrate value of $606 million (including
+upgrades and services, excluding mob/demob), plus potential
+Noble Voyager Samsung 96K 2015 12,000 US Gulf Shell Sep-26 Sep-30 Undisclosed performance incentives of up to 20% of base value, subject to
+achieving specific performance targets. Plus four 1-year options at
+mutually agreed rates.
+Noble Tom Madden Gusto P10000 2014 12,000 Guyana ExxonMobil Dec-19 Feb-29 Market based Contract award under CEA - See Note #1.
+Noble Sam Croft Gusto P10000 2014 12,000 Guyana ExxonMobil Apr-19 Feb-29 Market based Contract award under CEA - See Note #1.
+Noble Don Taylor Gusto P10000 2013 12,000 Guyana ExxonMobil Nov-19 Feb-29 Market based Contract award under CEA - See Note #1.
+Noble Bob Douglas Gusto P10000 2013 12,000 Guyana ExxonMobil Apr-18 Feb-29 Market based Contract award under CEA - See Note #1.
+1) Following the pricing reset on March 1, 2026, dayrates under the CEA framework will henceforth occur on January 1 and July 1 each year.
+Key changes in bold
+3
+===== page 4 =====
+Floater Fleet Contract Status
+Drillships (7G, cont)
+Rated Water
+Rig Name Design Built Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+Two-year contract valued at $350 million, excluding potential
+Occidental Nov-24 Nov-26 Undisclosed
+additional fees for MPD services.
+Noble
+Gusto P10000 2014 12,000 US Gulf
+BlackHawk
+One-well contract (estimated 50 days) valued at $25 million,
+Apache Q4 2027 Q4 2027 Undisclosed
+excluding additional fees for mobilization.
+Undisclosed Two-year contract valued at $350 million.
+Noble Feb-25 Feb-27
+Gusto P10000 2014 12,000 US Gulf bp
+BlackHornet Feb-27 Feb-29 Two-year contract valued at $310 million, plus a one-year priced
+Undisclosed option.
+Noble Two-year contract valued at $310 million, plus a one-year priced
+Gusto P10000 2015 12,000 US Gulf bp Sep-26 Sep-28 Undisclosed
+BlackLion option.
+Noble Four-well contract (estimated 150 days) plus six priced option
+Gusto P10000 2014 12,000 Nigeria TotalEnergies Nov-26 Apr-27 Undisclosed
+BlackRhino wells.
+Drillships (6G)
+Rated Water
+Rig Name Design Built Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+Peru Occidental Q2-27 Q2-27
+Undisclosed Two-well contract with Occidental expected to commence in Q2
+Noble 2027.
+Globetrotter Class 2011 10,000 West Africa TotalEnergies Q3/Q4-27 2030
+Globetrotter I Undisclosed Three-year capacity reservation agreement (CRA) for light well
+intervention services (minimum 150 days per year).
+Noble Gerry Two-year contract valued at $292 million. Plus three unpriced one-
+Samsung 12,000 2011 12,000 Nigeria ExxonMobil Aug-26 Aug-28 Undisclosed
+de Souza year options.
+Key changes in bold
+4
+===== page 5 =====
+Floater Fleet Contract Status
+Semisubmersibles (6G)
+Rated Water
+Rig Name Design Built Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+Five-well contract valued at $121 million, excluding additional services
+Noble Deliverer DSS21-DPS2 2010 10,000 Australia Woodside Q2-27 Q1-28 Undisclosed
+and potential rig upgrades. Plus two priced option wells.
+Suriname Petronas Jul-25 Oct-26 Undisclosed
+Noble Developer DSS21-DPS2 2009 10,000 Guyana ExxonMobil Nov-26 Jan-27 $375,000 One well contract (estimated 50 days) valued at approximately $22
+million, including mobilization and demobilization fees.
+Trinidad Bp Jan-27 Sep-27 $375,000 Plus three unpriced well options.
+16-well contract (estimated 1,060 days), plus four one-well options
+Noble Discoverer DSS21-DPS2 2009 10,000 Suriname TotalEnergies Dec-26 Q4-29 Undisclosed
+across both TotalEnergies Suriname contracts.
+United Kingdom bp Mar-27 Sep-27 $320,000 Plus a $5 million mobilization fee.
+Noble Claus
+Moss CS-60E 2016 10,000
+Bachmann
+Norway Aker BP Sep-27 Sep-30 Undisclosed Three-year contract valued at $473M, including mobilization fee and
+excluding integrated services and potential performance bonus.
+Noble Courage F&G ExD Millennium 2009 10,000 Brazil Petrobras Dec-23 Dec-30 Undisclosed
+Semisubmersibles (other)
+Rated Water
+Rig Name Design Built 1 Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+1975 / Plus performance bonus potential and mobilization/demobilization
+Noble Endeavor Enhanced Victory 10,000 South America Undisclosed Jan-27 Jun-28 $300,000
+2006 fees.
+Noble Patriot Bingo 3000 1983 1,500 United Kingdom TAQA Jan-25 Jun-28 Undisclosed Contract comprises 52 well P&A scope.
+1Noble Endeavor reflects year of original construction as well as year of major upgrade.
+Key changes in bold
+5
+===== page 6 =====
+Jackup Fleet Contract Status
+Ultra-Harsh Environment
+Rated Water
+Rig Name Design Built Location Operator Start Date End Date Dayrate Comments
+Depth (ft)
+Noble Innovator MSC CJ70-XL 2003 492 United Kingdom Available
+Noble Integrator MSC CJ70-XLE 2015 492 Norway Aker BP Apr-24 Nov-27 Undisclosed Contracts to be delivered under the terms of the frame agreement.
+Aker BP Sep-26 Jan-27 Undisclosed 150-day accommodation scope valued at $38.7 million, including
+mobilization and demobilization fees, plus up to 90 days of options.
+Noble Interceptor MSC CJ70-XLE 2014 492 Norway
+DNO Q3-27 Q3-27 Undisclosed One-well contract (estimated 50-90 days).
+ConocoPhillips Q3-27 Q3-29 Undisclosed P&A campaign (estimated 670 days).
+United Kingdom bp Apr-26 Sep-27 $150,000 Plus four priced option wells.
+Noble Intrepid MSC CJ70-XLE 2014 492
+Norway ORLEN Sep-27 Nov-27 Undisclosed One-well contract (estimated 40-60 days).
+Noble Invincible MSC CJ70-XLE 2016 492 Norway Aker BP Dec-24 Nov-27 Undisclosed Contracts to be delivered under the terms of the frame agreement.
+Key changes in bold
+6
+===== page 7 =====
+Drillships Contract Timeline
+2026 2027 2028
+J F M A M J J A S O N D J F M A M J J A S O N D J F M A M J J A S O N D
+Noble Faye Kozack
+Noble Stanley Lafosse
+Noble Valiant
+Noble Venturer
+Noble Viking
+Noble Voyager
+Noble Tom Madden
+Noble Sam Croft
+Noble Don Taylor
+Noble Bob Douglas
+Noble BlackHawk
+Noble BlackHornet
+Noble BlackLion
+Noble BlackRhino
+Noble Globetrotter I
+Noble Gerry de Souza
+Firm contract period Options
+1) Capacity Reservation Agreement (CRA) comprises a minimum commitment of 150 days per year over 3 years for Light Well Intervention services.
+7
+===== page 8 =====
+Semisubmersibles and Jackups Contract Timeline
+2026 2027 2028
+J F M A M J J A S O N D J F M A M J J A S O N D J F M A M J J A S O N D
+Semisubmersibles
+Noble Deliverer
+Noble Developer
+Noble Discoverer
+Noble Claus Bachmann
+Noble Courage
+Noble Endeavor
+Noble Patriot
+Jackups
+Noble Innovator
+Noble Integrator
+Noble Interceptor
+Noble Intrepid
+Noble Invincible
+Firm contract period Options
+8

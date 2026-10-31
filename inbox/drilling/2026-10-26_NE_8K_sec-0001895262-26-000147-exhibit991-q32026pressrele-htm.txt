@@ -1,0 +1,478 @@
+source: NE 8K
+date: 2026-10-26
+title: 8-K 0001895262-26-000147 exhibit991-q32026pressrele.htm items 2.02,7.01,9.01
+url: https://www.sec.gov/Archives/edgar/data/1895262/000189526226000147/exhibit991-q32026pressrele.htm
+fetched: 2026-10-31
+
+EX-99.1
+2
+exhibit991-q32026pressrele.htm
+EX-99.1
+
+Document
+EXHIBIT 99.1
+
+PRESS RELEASE
+
+NOBLE CORPORATION PLC ANNOUNCES THIRD QUARTER 2026 RESULTS
+•Approximately $560 million in new contract value awarded since the July fleet status report; backlog stands at $6.7 billion.
+•$0.50 per share cash dividend declared for Q4, maintaining consistent return of capital program.
+•Q3 Net Loss of $(117) million, Diluted Loss per Share of $(0.73), Adjusted Diluted Earnings (Loss) per Share of $(0.57), Adjusted EBITDA of $201 million, net cash provided by operating activities of $144 million, and Free Cash Flow of $(48) million.
+•Full Year 2026 Guidance for Revenue and Adjusted EBITDA narrowed within prior guidance ranges; Capital Expenditures guidance increased, primarily attributable to higher customer reimbursable Capital Expenditures.
+HOUSTON, TEXAS, October 26, 2026 - Noble Corporation plc (NYSE: NE, “Noble” or the “Company”) today reported third quarter 2026 results.
+
+Three Months Ended
+
+(in millions, except per share amounts) | September 30, 2026 | September 30, 2025 | June 30, 2026
+
+Total Revenue | $ | 729 | $ | 798 | $ | 720
+
+Contract Drilling Services Revenue | 684 | 757 | 679
+
+Net Income (Loss) | (117) | (21) | (37)
+
+Adjusted EBITDA* | 201 | 254 | 212
+
+Adjusted Net Income (Loss)* | (92) | 30 | 2
+
+Basic Earnings (Loss) Per Share | (0.73) | (0.13) | (0.23)
+
+Diluted Earnings (Loss) Per Share | (0.73) | (0.13) | (0.23)
+
+Adjusted Diluted Earnings (Loss) Per Share* | (0.57) | 0.19 | 0.01
+
+* A Non-GAAP supporting schedule is included with the statements and schedules in this press release.
+
+Robert W. Eifler, President and Chief Executive Officer of Noble, stated, “The third quarter, which featured a 5% sequential decrease in Adjusted EBITDA, marked the successful resumption of operations for both of our rigs in Brazil, but was also impacted by several other rigs across the fleet transitioning between contracts. On the commercial front, we have recently secured approximately $560 million in new contract awards, including a number of key programs that support a strengthening fleet utilization profile as we move through 2027.”
+Third Quarter Results
+Contract drilling services revenue for the third quarter of 2026 totaled $684 million compared to $679 million in the prior quarter. Utilization of the 28 marketed rigs was 70% in the third quarter of 2026 compared to 67% in the prior quarter. Contract drilling services costs for the third quarter were $469 million, up from $446 million in the prior quarter. Net income decreased to a $(117) million loss in the third quarter of 2026 compared to a net loss of $(37) million in the prior quarter, and Adjusted EBITDA decreased to $201 million in the third quarter of 
+1
+
+2026, down from $212 million in the prior quarter. Net cash provided by operating activities in the third quarter of 2026 was $144 million, Capital Expenditures were $192 million, and Free Cash Flow was $(48) million.
+Balance Sheet & Capital Allocation
+The Company's balance sheet as of September 30, 2026, reflected total debt principal value of $1.9 billion and cash (and cash equivalents) of $337 million. On October 9, 2026, the sale of the Noble Resolve was finalized with the Company receiving the remaining $45 million of proceeds. Further, the sale of the Noble Globetrotter II is expected to close in the fourth quarter of 2026 for a purchase price of $38 million.
+On October 26, 2026, Noble’s Board of Directors approved an interim quarterly cash dividend on our ordinary shares of $0.50 per share for the fourth quarter of 2026. The $0.50 per share dividend is expected to be paid on December 17, 2026, to shareholders of record at close of business on November 25, 2026. Future quarterly dividends and other shareholder returns will be subject to, amongst other things, approval by the Board of Directors.
+Operating Highlights and Backlog
+Noble's fleet of 23 marketed floaters was 66% contracted during the third quarter compared with 64% in the prior quarter. Recent contract awards since last quarter have added approximately 44 months of new floater backlog, with leading edge dayrates for Tier-1 drillships ranging between the mid-$400,000s and $500,000. Utilization of Noble's 5 marketed ultra harsh jackups was 86% in the third quarter versus 80% during the prior quarter. Recent contract awards since last quarter have added approximately 26 months of new jackup backlog, with leading edge dayrates ranging between $230,000 and $300,000.
+Subsequent to last quarter’s earnings press release, new contracts with a total contract value of approximately $560 million include the following:
+•Noble BlackRhino was awarded a four-well contract with TotalEnergies in Nigeria expected to commence in Q4 2026, with an estimated duration of 150 days plus six priced option wells.
+•Noble Faye Kozack was awarded a five-well contract with Tullow in Ghana expected to commence in mid-2027, with an estimated duration of 250 days, plus five priced option wells.
+•Noble Interceptor was awarded a one-well contract with DNO in Norway expected to commence in Q3 2027, with an estimated duration of 50-90 days. Thereafter, the rig is expected to commence, in direct continuation, a long-term P&A scope for ConocoPhillips in Norway on the Ekofisk field, with an estimated duration of 670 days.
+•Noble BlackHawk was awarded a one-well contract with Apache in Uruguay expected to commence in Q4 2027, with an estimated duration of 50 days. Contract value of approximately $25 million excludes additional fees for mobilization and demobilization.
+•Noble Globetrotter I was awarded a two-well contract with Occidental in Peru expected to commence in Q2 2027 at a dayrate of $400,000, plus a mobilization fee. Thereafter, the rig is expected to commence a contract with TotalEnergies in West Africa under a 3-year Capacity Reservation Agreement (CRA) for light well intervention services, providing a minimum commitment of 150 days per year. The first call-off service order is expected to commence in Angola in Q3/Q4 2027.
+•Noble Intrepid was awarded a one-well contract with ORLEN in Norway that is expected to commence in Q3 2027 with an estimated duration of 40-60 days.
+Backlog as of October 26, 2026, stands at $6.7 billion. Backlog excludes mobilization and demobilization revenue.
+Outlook
+For the full year 2026, Revenue guidance is narrowed to $2,850-$2,900 million (versus $2,800-$2,900 million previously); Adjusted EBITDA guidance is narrowed to $850-$900 million (versus $850-$925 million previously); and Capital Expenditures guidance is increased to $680-$705 million (versus $615-$665 million previously), with the increase primarily attributable to higher customer reimbursable Capital Expenditures. Excluding this $40 million increase in customer reimbursable Capital Expenditures (from $25 million to $65 million), our Capital Expenditures guidance would remain within the prior range.
+2
+
+Commenting on Noble’s outlook, Mr. Eifler stated, “Forward contract coverage and dayrate trends for both deepwater and ultra harsh environment jackups continue to methodically improve, despite limited apparent demand tailwinds arising from higher oil prices during 2026 thus far. Noble’s recent contract fixtures encompass a diversity of customers and regions, spanning frontier exploration to late-cycle well operations. We continue to build backlog that supports an expected meaningful inflection in fleet utilization and cash flow starting H2 2027, with already approximately 20% more contracted capacity in our fleet in H2 2027 compared to H1 2027.”
+Due to the forward-looking nature of Adjusted EBITDA and Capital Expenditures (net of proceeds from insurance claims), management cannot reliably predict certain of the necessary components of the most directly comparable forward-looking GAAP measure, Net Income and Capital Expenditures, respectively. Accordingly, the Company is unable to present a quantitative reconciliation of such forward-looking non-GAAP financial measures to the most directly comparable forward-looking GAAP financial measure without unreasonable effort. The unavailable information could have a significant effect on Noble’s full year 2026 GAAP financial results.
+Conference Call
+Noble will host a conference call related to its third quarter 2026 results on Tuesday, October 27, 2026, at 8:00 a.m. U.S. Central Time. Interested parties may dial +1 800-715-9871 and refer to conference ID 4018911 approximately 15 minutes prior to the scheduled start time. Additionally, a live webcast link will be available on the Investor Relations section of the Company’s website. A webcast replay will be accessible for a limited time following the call.
+Contact Noble Corporation plc
+Ian Macpherson
+Vice President - Investor Relations
++1 713-239-6019
+imacpherson@noblecorp.com
+About Noble Corporation plc
+Noble is a leading offshore drilling contractor for the oil and gas industry. The Company owns and operates one of the most modern, versatile, and technically advanced fleets in the offshore drilling industry. Noble and its predecessors have been engaged in the contract drilling of oil and gas wells since 1921. Noble performs, through its subsidiaries, contract drilling services with a fleet of offshore drilling units focused largely on ultra-deepwater and high specification jackup drilling opportunities in both established and emerging regions worldwide. Additional information on Noble is available at www.noblecorp.com.
+Forward-looking Statements
+This communication includes “forward-looking statements” within the meaning of Section 27A of the Securities Act and Section 21E of the Exchange Act, as amended. All statements other than statements of historical facts included in this communication are forward looking statements, including, but not limited to, those regarding future guidance (including for 2027), including revenue, earnings and earnings per share, EBITDA and adjusted EBITDA, margins, leverage, operating results, project status and project schedules, expenses, tax rates and deferred taxes, future cash benefit expectations, the offshore drilling market and demand fundamentals, costs, amount, effect or timing of cost savings, debt, the benefits or results of asset acquisitions and dispositions, cash flows and free cash flow expectations, capital expenditures expectations, including reimbursable capital expenditures and related customer reimbursements, capital allocations expectations, including planned dividends and share repurchases, backlog, including the 2027 backlog profile and projections for the achievement of revenue associated with performance, rig demand, contract status, contract negotiations, terminations, options and extensions, contract awards and expected future contracts, anticipated contract start dates, contracted capacity, dayrates and duration, mobilization and demobilization fees, customer actions, needs and the general customer landscape, operational suspensions, projections, strategies and objectives of management for current or future operations and business, any asset sales or the retirement of rigs, access to capital, fleet condition, utilization and strategy, timing and amount of insurance recoveries, current or future market outlook and current or future economic trends or events and their impact on the Company, 2026 and 2027 financial guidance and any statements or descriptions of assumptions underlying any of the above. Forward-looking statements involve risks, uncertainties and assumptions, and actual results may differ materially from any future results expressed or implied by such forward-looking statements. When used in this communication, or in the documents incorporated by reference, the words “guidance,” “anticipate,” “aim,” “believe,” “continue,” “could,” “estimate,” “expect,” “future,” “goal,” “intend,” “likely,” “likelihood,” “may,” “might,” “on track,” “outlook,” “plan,” “possible,” “potential,” “predict,” “project,” “should,” “schedule,” “would,” “achieve,” “shall,” 
+3
+
+“seek,” “strategy,” “target,” “will” and similar expressions are intended to be among the statements that identify forward looking statements. Although we believe that the expectations reflected in such forward-looking statements are reasonable, we cannot assure you that such expectations will prove to be correct. These forward-looking statements speak only as of the date of this communication and we undertake no obligation to revise or update any forward-looking statement for any reason, except as required by law. Actual results may differ materially from any future results expressed or implied by such forward-looking statements and the expectations expressed in forward-looking statements are subject to a number of risks, uncertainties and assumptions which could affect our business, operating results, and financial condition and include, but are not limited to, market conditions and changes in customer demand, the level of activity in the oil and gas industry and the offshore contract drilling industry, current and future prices of oil and gas, customer actions and the general customer landscape, new or substitute contracts, awards and expected future contracts, contract duration, renewal, terminations, and repricing, dayrates and contract duration, operational suspensions, realization of our current backlog of contract drilling revenue, operating hazards, natural disasters, seasonal weather events and related damages or liabilities, acts of war, geopolitical conflicts, including the conflict involving Iran and related geopolitical instability in the Middle East, and their impact on commodity prices, global energy markets and regional and global shipping flows, risks relating to operations in international locations, upgrades, refurbishment, operation, and maintenance of our rigs and related operational interruptions and delays, sales of drilling units, supplier capacity constraints or shortages, nonperformance by third-parties, suppliers and subcontractors, regulatory changes, the impact of governmental laws and regulations on our costs and the offshore drilling industry, potential impacts, liabilities and costs from pending or potential investigations, claims and tax or other disputes, and other factors, including those detailed in Noble’s most recent Annual Report on Form 10-K, Quarterly Reports on Form 10-Q and other filings with the U.S. Securities and Exchange Commission. We cannot control such risk factors and other uncertainties, and in many cases, we cannot predict the risks and uncertainties that could cause our actual results to differ materially from those indicated by the forward-looking statements. You should consider these risks and uncertainties when you are evaluating us. With respect to our capital allocation policy, distributions to shareholders in the form of either dividends or share buybacks are subject to the Board of Directors’ assessment of factors such as business development, growth strategy, current leverage and financing needs. There can be no assurance that a dividend or buyback program will be declared or continued.
+Contract Backlog 
+The duration and timing (including both starting and ending dates) of the customer contracts are estimates only, and customer contracts are subject to cancellation, suspension, delays for a variety of reasons, and for certain customers, reallocation of term among contracted rigs, including some beyond Noble’s control. The contract backlog represents the maximum contract drilling revenues that can be earned when only considering the contractual operating dayrate in effect during the firm contract period. The actual average dayrate will depend upon a number of factors (e.g., rig downtime, suspension of operations, etc.) including some beyond Noble’s control. The dayrates do not include revenue for mobilizations, demobilizations, upgrades, contract preparation, shipyards, or recharges, unless specifically otherwise stated. Dayrates may include revenue associated with performance including, for example, approximately 40% assumed performance revenue realized on a combined basis under certain long-term contracts with Shell (US) and TotalEnergies (Suriname).
+4
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS
+(In thousands, except per share amounts)
+(Unaudited)
+
+Three Months Ended September 30, | Nine Months Ended September 30,
+
+2026 | 2025 | 2026 | 2025
+
+Operating revenues
+
+Contract drilling services | $ | 683,650 | $ | 757,405 | $ | 2,105,647 | $ | 2,401,910
+
+Reimbursables and other | 45,114 | 40,612 | 128,495 | 119,246
+
+728,764 | 798,017 | 2,234,142 | 2,521,156
+
+Operating costs and expenses
+
+Contract drilling services | 468,516 | 479,894 | 1,364,950 | 1,444,420
+
+Reimbursables | 32,026 | 30,547 | 96,246 | 90,691
+
+Depreciation and amortization | 143,432 | 147,260 | 420,354 | 437,482
+
+General and administrative | 27,286 | 33,301 | 84,278 | 103,485
+
+Merger and integration costs | — | 2,145 | 2,615 | 22,367
+
+(Gain) loss on sale of operating assets, net | (2,579) | (6,232) | (92,437) | (10,983)
+
+Loss on Impairment | — | 60,702 | 42,270 | 60,702
+
+668,681 | 747,617 | 1,918,276 | 2,148,164
+
+Operating income (loss) | 60,083 | 50,400 | 315,866 | 372,992
+
+Other income (expense)
+
+Interest expense, net of amounts capitalized | (34,990) | (40,490) | (111,752) | (120,954)
+
+Gain (loss) on extinguishment of debt, net | — | — | (17,603) | —
+
+Interest income and other, net | (9,070) | 726 | 2,791 | 7,275
+
+Income (loss) before income taxes | 16,023 | 10,636 | 189,302 | 259,313
+
+Income tax benefit (provision) | (133,047) | (31,731) | (222,285) | (129,233)
+
+Net income (loss) | $ | (117,024) | $ | (21,095) | $ | (32,983) | $ | 130,080
+
+Basic earnings (loss) per share | $ | (0.73) | $ | (0.13) | $ | (0.21) | $ | 0.82
+
+Diluted earnings (loss) per share | $ | (0.73) | $ | (0.13) | $ | (0.21) | $ | 0.80
+
+5
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+CONDENSED CONSOLIDATED BALANCE SHEETS
+(In thousands)
+(Unaudited)
+
+September 30, 2026 | December 31, 2025
+
+ASSETS
+
+Current assets
+
+Cash and cash equivalents | $ | 337,186 | $ | 471,399
+
+Accounts receivable, net | 611,981 | 589,597
+
+Prepaid expenses and other current assets | 314,033 | 211,286
+
+Total current assets | 1,263,200 | 1,272,282
+
+Property and equipment, at cost | 7,159,641 | 6,639,045
+
+Accumulated depreciation | (1,646,785) | (1,236,222)
+
+Property and equipment, net | 5,512,856 | 5,402,823
+
+Other assets | 382,077 | 854,662
+
+Total assets | $ | 7,158,133 | $ | 7,529,767
+
+LIABILITIES AND EQUITY
+
+Current liabilities
+
+Accounts payable | $ | 369,290 | $ | 298,751
+
+Accrued payroll and related costs | 59,298 | 81,754
+
+Other current liabilities | 288,167 | 379,224
+
+Total current liabilities | 716,755 | 759,729
+
+Long-term debt | 1,888,681 | 1,975,791
+
+Other liabilities | 264,468 | 245,397
+
+Total liabilities | 2,869,904 | 2,980,917
+
+Commitments and contingencies
+
+Total shareholders’ equity | 4,288,229 | 4,548,850
+
+Total liabilities and equity | $ | 7,158,133 | $ | 7,529,767
+
+6
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS
+(In thousands)
+(Unaudited)
+
+Nine Months Ended September 30,
+
+2026 | 2025
+
+Cash flows from operating activities
+
+Net income (loss) | $ | (32,983) | $ | 130,080
+
+Adjustments to reconcile net income (loss) to net cash flow from operating activities:
+
+Depreciation and amortization | 420,354 | 437,482
+
+Amortization of intangible assets and contract liabilities, net | — | (8,366)
+
+(Gain) loss on extinguishment of debt, net | 17,603 | —
+
+(Gain) loss on sale of operating assets, net | (92,437) | (10,983)
+
+Loss on impairment | 42,270 | 60,702
+
+Net changes in operating assets and liabilities | 207,109 | 155,638
+
+Net cash provided by (used in) operating activities | 561,916 | 764,553
+
+Cash flows from investing activities
+
+Capital expenditures | (500,362) | (367,776)
+
+Proceeds from insurance claims | 1,584 | 22,201
+
+Proceeds from disposal of assets, net | 216,000 | 101,898
+
+Net cash provided by (used in) investing activities | (282,778) | (243,677)
+
+Cash flows from financing activities
+
+Issuance of debt | 800,000 | —
+
+Repayments of debt | (850,000) | —
+
+Debt extinguishment costs | (40,727) | —
+
+Debt issuance costs | (17,642) | —
+
+Warrants exercised | 3,267 | 41
+
+Share repurchases | — | (20,000)
+
+Dividend payments | (243,090) | (240,442)
+
+Withholding tax related to employee stock transactions | (9,918) | (9,713)
+
+Finance lease payments | (63,624) | (18,525)
+
+Net cash provided by (used in) financing activities | (421,734) | (288,639)
+
+Net increase (decrease) in cash, cash equivalents and restricted cash | (142,596) | 232,237
+
+Cash, cash equivalents and restricted cash, beginning of period | 479,960 | 252,279
+
+Cash, cash equivalents and restricted cash, end of period | $ | 337,364 | $ | 484,516
+
+7
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+OPERATIONAL INFORMATION 
+(Unaudited)
+
+Average Rig Utilization (1)
+
+Three Months Ended | Three Months Ended | Three Months Ended
+
+September 30, 2026 | September 30, 2025 | June 30, 2026
+
+Floaters | 63 | % | 65 | % | 59 | %
+
+Jackups | 79 | % | 54 | % | 83 | %
+
+Total | 67 | % | 61 | % | 65 | %
+
+Operating Days
+
+Three Months Ended | Three Months Ended | Three Months Ended
+
+September 30, 2026 | September 30, 2025 | June 30, 2026
+
+Floaters | 1,398 | 1,488 | 1,335
+
+Jackups | 579 | 627 | 651
+
+Total | 1,977 | 2,115 | 1,986
+
+Average Dayrates
+
+Three Months Ended | Three Months Ended | Three Months Ended
+
+September 30, 2026 | September 30, 2025 | June 30, 2026
+
+Floaters | $ | 403,113 | $ | 423,489 | $ | 412,650
+
+Jackups | 207,651 | 202,982 | 197,380
+
+Total | $ | 345,846 | $ | 358,126 | $ | 342,080
+
+(1) Average Rig Utilization statistics include all marketed and cold stacked rigs.
+8
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+CALCULATION OF BASIC AND DILUTED EARNINGS/(LOSS) PER SHARE
+(In thousands, except per share amounts)
+(Unaudited)
+The following tables present the computation of basic and diluted earnings (loss) per share:
+
+Three Months Ended September 30, | Nine Months Ended September 30,
+
+2026 | 2025 | 2026 | 2025
+
+Numerator:
+
+Net income (loss) | $ | (117,024) | $ | (21,095) | $ | (32,983) | $ | 130,080
+
+Denominator:
+
+Weighted average shares outstanding - basic | 159,648 | 158,834 | 159,482 | 158,879
+
+Dilutive effect of share-based awards | — | — | — | 1,999
+
+Dilutive effect of warrants | — | — | — | 835
+
+Weighted average shares outstanding - diluted | 159,648 | 158,834 | 159,482 | 161,713
+
+Earnings (loss) per share data:
+
+Basic | $ | (0.73) | $ | (0.13) | $ | (0.21) | $ | 0.82
+
+Diluted | $ | (0.73) | $ | (0.13) | $ | (0.21) | $ | 0.80
+
+9
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+NON-GAAP MEASURES AND RECONCILIATION
+Certain non-GAAP measures and corresponding reconciliations to GAAP financial measures for the Company have been provided for meaningful comparisons between current results and prior operating periods. Generally, a non-GAAP financial measure is a numerical measure of a company’s performance, financial position, or cash flows that excludes or includes amounts that are not normally included or excluded in the most directly comparable measure calculated and presented in accordance with generally accepted accounting principles.
+The Company defines “Adjusted EBITDA” as Net Income (Loss) adjusted for interest expense, net of amounts capitalized; interest income and other, net; income tax benefit (provision); and depreciation and amortization expense, as well as, if applicable, gain (loss) on extinguishment of debt, net; (gain) loss on sale of operating assets, net; losses on economic impairments; amortization of intangible assets and contract liabilities, net; restructuring and similar charges; costs related to mergers and integrations; and certain other infrequent operational events. We believe that the Adjusted EBITDA measure provides greater transparency of our core operating performance. We prepare Adjusted Net Income (Loss) by eliminating from Net Income (Loss) the impact of a number of non-recurring items we do not consider indicative of our on-going performance. We prepare Adjusted Diluted Earnings (Loss) per Share by eliminating from Diluted Earnings (Loss) per Share the impact of a number of non-recurring items we do not consider indicative of our on-going performance. Similar to Adjusted EBITDA, we believe these measures help identify underlying trends that could otherwise be masked by the effect of the non-recurring items we exclude in the measure.
+The Company also discloses Free Cash Flow as a non-GAAP liquidity measure. Free Cash Flow is calculated as net cash provided by (used in) operating activities less cash paid for Capital Expenditures, net of any proceeds from insurance claims, if applicable. We believe Free Cash Flow is useful to investors because it measures our ability to generate or use cash. Once business needs and obligations are met, this cash can be used to reinvest in the company for future growth or to return to shareholders through dividend payments or share repurchases. We may have certain obligations such as non-discretionary debt service that are not deducted from the measure. Such business needs, obligations, and other non-discretionary expenditures that are not deducted from Free Cash Flow would reduce cash available for other uses including return of capital.
+We believe that these non-GAAP financial measures provide useful information about our financial performance, enhance the overall understanding of our past performance and future prospects, and allow for greater transparency with respect to key metrics used by our management team for financial and operational decision-making. We are presenting these non-GAAP financial measures to assist investors in seeing our financial performance through the eyes of management, and because we believe that these measures provide an additional tool for investors to use in comparing our core financial performance over multiple periods with other companies in our industry.
+These non-GAAP adjusted measures should be considered in addition to, and not as a substitute for, or superior to, contract drilling revenue, contract drilling costs, contract drilling margin, average daily revenue, operating income, cash flows from operations, or other measures of financial performance prepared in accordance with GAAP. Please see the following non-GAAP Financial Measures and Reconciliations for a complete description of the adjustments.
+10
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+NON-GAAP MEASURES AND RECONCILIATION
+(In thousands, except per share amounts)
+(Unaudited)
+
+Reconciliation of Adjusted EBITDA
+
+Three Months Ended September 30, | Three Months Ended
+
+2026 | 2025 | June 30, 2026
+
+Net income (loss) | $ | (117,024) | $ | (21,095) | $ | (36,684)
+
+Income tax (benefit) provision | 133,047 | 31,731 | 16,291
+
+Interest expense, net of amounts capitalized | 34,990 | 40,490 | 36,203
+
+Interest income and other, net | 9,070 | (726) | (3,664)
+
+Depreciation and amortization | 143,432 | 147,260 | 139,582
+
+(Gain) loss on extinguishment of debt, net | — | — | 18,329
+
+Merger and integration costs | — | 2,145 | —
+
+(Gain) loss on sale of operating assets, net | (2,579) | (6,232) | —
+
+Loss on impairment | — | 60,702 | 42,270
+
+Adjusted EBITDA | $ | 200,936 | $ | 254,275 | $ | 212,327
+
+Reconciliation of Adjusted Income Tax Benefit (Provision)
+
+Three Months Ended September 30, | Three Months Ended
+
+2026 | 2025 | June 30, 2026
+
+Income tax benefit (provision) | $ | (133,047) | $ | (31,731) | $ | (16,291)
+
+Adjustments
+
+Discrete tax items | 15,781 | (5,280) | (23,039)
+
+Total adjustments | 15,781 | (5,280) | (23,039)
+
+Adjusted income tax benefit (provision) | $ | (117,266) | $ | (37,011) | $ | (39,330)
+
+11
+
+NOBLE CORPORATION plc AND SUBSIDIARIES
+NON-GAAP MEASURES AND RECONCILIATION
+(In thousands, except per share amounts)
+(Unaudited)
+
+Reconciliation of Adjusted Net Income (Loss)
+
+Three Months Ended September 30, | Three Months Ended
+
+2026 | 2025 | June 30, 2026
+
+Net income (loss) | $ | (117,024) | $ | (21,095) | $ | (36,684)
+
+Adjustments
+
+Joint taxation scheme compensation | (1,066) | — | 1,093
+
+Merger and integration costs | — | 2,145 | —
+
+(Gain) loss on sale of operating assets, net | (2,579) | (6,232) | —
+
+Loss on impairment | — | 60,702 | 42,270
+
+(Gain) loss on extinguishment of debt, net | — | — | 18,329
+
+Discrete tax items | 15,781 | (5,280) | (23,039)
+
+Other, net | 13,383 | — | —
+
+Total adjustments | 25,519 | 51,335 | 38,653
+
+Adjusted net income (loss) | $ | (91,505) | $ | 30,240 | $ | 1,969
+
+Reconciliation of Adjusted Diluted EPS
+
+Three Months Ended September 30, | Three Months Ended
+
+2026 | 2025 | June 30, 2026
+
+Unadjusted diluted EPS | $ | (0.73) | $ | (0.13) | $ | (0.23)
+
+Adjustments
+
+Joint taxation scheme compensation | (0.01) | — | 0.01
+
+Merger and integration costs | — | 0.01 | —
+
+(Gain) loss on sale of operating assets, net | (0.01) | (0.04) | —
+
+Loss on impairment | — | 0.38 | 0.26
+
+(Gain) loss on extinguishment of debt, net | — | — | 0.11
+
+Discrete tax items | 0.10 | (0.03) | (0.14)
+
+Other, net | 0.08 | — | —
+
+Total adjustments | 0.16 | 0.32 | 0.24
+
+Adjusted diluted EPS | $ | (0.57) | $ | 0.19 | $ | 0.01
+
+Reconciliation of Free Cash Flow and Capital Expenditures, net of Proceeds from Insurance Claims
+
+Three Months Ended September 30, | Three Months Ended
+
+2026 | 2025 | June 30, 2026
+
+Net cash provided by (used in) operating activities | $ | 144,467 | $ | 277,136 | $ | 144,159
+
+Capital expenditures | (191,979) | (137,659) | (204,530)
+
+Proceeds from insurance claims | — | — | 1,584
+
+Free cash flow | $ | (47,512) | $ | 139,477 | $ | (58,787)
+
+12
