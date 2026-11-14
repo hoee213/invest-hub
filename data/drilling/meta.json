@@ -12,7 +12,7 @@
   },
   "sources_note": "Transocean 8-K FSR 64개 + 수주 보도자료, Noble 8-K/FSR 23개, Seadrill FSR/6-K 57개",
   "data_through": "2026-10-26",
-  "last_update_run": "2026-11-07",
+  "last_update_run": "2026-11-14",
   "update_log": [
     {
       "date": "2026-10-20",
@@ -33,6 +33,10 @@
     {
       "date": "2026-11-07",
       "summary": "신규 2건 (RIG Enabler Equinor $402k, RIG Deepwater Atlas Beacon $505k) · RIG 11월 FSR 반영: 보도자료 추정 4건을 공시값으로 교체 (Conqueror 적도기니 ◇$471k→$465k, Conqueror 미 걸프 ◇$500k→$499k, Proteus ◇$464k→$465k, Norge-Shell ◇$517k→$517k) + KG2 ONGC ◇$411k→$389k · SDRL 3분기 실적 PR의 West Carina/Capella는 10.12 행과 동일해 중복 제외, Libongos·Sevan Louisiana는 금액 미공시 · 보류: Pontus Shell $499k(기존 $477k와 4.6% 차이, 기간 동일), Poseidon Shell $501k(기존 $519k와 3.5% 경계), Barents Vår $470k(기존 $451k, 시작월 변경), Encourage Equinor $516k(기존 $463k와 11% 차이), Equinox $540k/$485k(기존 옵션 행과 혼재), Enabler $440k(기존 단계 행과 혼재)"
+    },
+    {
+      "date": "2026-11-14",
+      "summary": "새 계약 공시 없음"
     }
   ]
 }
