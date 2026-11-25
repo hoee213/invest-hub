@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에이치브이엠(HVM) 콥데이 IR 미팅 정리 — 2026.09</title>
+<style>
+  :root{--navy:#0f1b2a;--navy2:#1C3D5A;--orange:#E5601F;--bg:#f3f5f8;--line:#dde3ea;--text:#1f2a36;--muted:#5a6a7a;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-size:15px;line-height:1.7}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 0 60px}
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:52px 48px 40px}
+  .cover .tick{font-size:13px;letter-spacing:.06em;opacity:.8}
+  .cover h1{margin:10px 0 6px;font-size:34px;line-height:1.25;font-weight:800}
+  .cover .sub{font-size:16px;opacity:.9;margin-bottom:28px}
+  .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .meta div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 14px}
+  .meta b{display:block;font-size:12px;opacity:.75;font-weight:500;margin-bottom:3px}
+  .meta span{font-size:17px;font-weight:700}
+  .meta span small{font-size:12px;font-weight:400;opacity:.8}
+  section{background:#fff;margin:18px 24px 0;padding:28px 32px;border-radius:10px;border:1px solid var(--line)}
+  h2{margin:0 0 14px;font-size:21px;color:var(--navy2);border-left:5px solid var(--orange);padding-left:12px;line-height:1.3}
+  h3{margin:22px 0 8px;font-size:16px;color:var(--navy)}
+  h3:first-of-type{margin-top:8px}
+  ul{margin:6px 0 6px 0;padding-left:22px}
+  li{margin:4px 0}
+  li ul{margin:3px 0}
+  .box{border-radius:8px;padding:14px 18px;margin:14px 0;border:1px solid var(--line);background:#f7f9fc}
+  .box.blue{border-left:5px solid var(--navy2)}
+  .box.warn{border-left:5px solid var(--orange);background:#fff7f2}
+  .box b.t{display:block;color:var(--navy2);margin-bottom:6px}
+  .badge{display:inline-block;background:var(--orange);color:#fff;font-size:12px;font-weight:700;padding:2px 9px;border-radius:12px;margin-right:6px;vertical-align:middle}
+  .badge.n{background:var(--navy2)}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th{background:var(--navy2);color:#fff;padding:9px 10px;text-align:left;font-weight:600}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr.self td{background:#fff3ea;font-weight:600}
+  .qa{margin:16px 0 4px}
+  .q{display:flex;gap:10px;align-items:flex-start;margin-top:14px}
+  .q .lbl{flex:0 0 auto;background:var(--orange);color:#fff;font-weight:700;font-size:12px;padding:2px 8px;border-radius:4px;margin-top:5px}
+  .q p{margin:0;font-weight:700;color:var(--navy)}
+  .a{margin:6px 0 0 0;padding:10px 16px;background:#f7f9fc;border-radius:8px;border-left:4px solid var(--navy2)}
+  .a ul{margin:0;padding-left:20px}
+  .legend{font-size:13px;color:var(--muted);margin-top:6px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:#fbfcfe}
+  .card b{display:block;color:var(--navy2);margin-bottom:6px}
+  footer{margin:22px 24px 0;padding:18px 24px;font-size:12.5px;color:var(--muted);border-top:2px solid var(--navy2)}
+  @media (max-width:720px){.meta{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.cover{padding:36px 22px 28px}section{margin:14px 10px 0;padding:20px 16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="tick">에이치브이엠 (KOSDAQ) · IR 미팅 정리 · 콥데이 2026.09</div>
+  <h1>에이치브이엠(HVM) 콥데이 미팅 정리</h1>
+  <div class="sub">문승호 대표 발표 + Q&amp;A · 초내열합금(슈퍼알로이) 일괄생산 · SpaceX 랩터3 소재 공급 · 3공장 증설</div>
+  <div class="meta">
+    <div><b>2026년 매출 가이던스</b><span>약 1,200억 <small>(2025년 약 660억)</small></span></div>
+    <div><b>SpaceX향 2026 예상</b><span>약 800억 <small>(우주 비중 60~70%)</small></span></div>
+    <div><b>3공장 투자</b><span>약 1,200~1,300억 <small>(보조금 ~300억 포함)</small></span></div>
+    <div><b>2030년 목표</b><span>매출 1조 <small>(우주 6천억 + 에너지 2천억 등)</small></span></div>
+  </div>
+</div>
+
+<!-- 0 -->
+<section>
+<h2>핵심 요약</h2>
+<div class="box warn">
+<ul>
+  <li><b>SpaceX 랩터3·스타십 소재 독점 공급 + 물량 급증</b>: 2022년 공동 개발 이후 누적 1천억 이상 납품. 1·2단 모두 공급, 팔콘은 미납품. 발사대용 소재까지 수주 진행 중. 스타십 프레임용 고강도 합금은 미국 생산 실패분을 HVM이 양산화해 사실상 전량 공급</li>
+  <li><b>2026 가이던스</b>: 매출 약 1,200억(2025년 660억), SpaceX향 약 800억. 하반기는 당초 2배 증량 계획에서 SpaceX 스펙 그레이드 상향으로 상반기 대비 20~30% 증가로 조정(테스트 통과 후 확대). 2027년 약 2천억, 2027~28년 연 1.7배 성장 목표</li>
+  <li><b>2Q 마진 하락은 일시적</b>: 헤인즈 특허(2026.3 만료) 대체용 IGT 프리미엄 합금 개발비 + 잔여 소재 보수적 평가 → 3Q 정상화 전망. 현재 영업이익률 15~20%, 3공장 안정 시 20~30% 기대</li>
+  <li><b>3공장 증설 착수</b>: 부지 2만평(+1만평 추가 예정), 투자 약 1,200~1,300억(유증 900억 + 보조금 ~300억 + 차입). VAR 3대·ESR 2대 추가, 한국 최초 독일 RF 단조기 도입(장비 투자의 절반 이상). 목적 1순위는 하공정 병목 해소, 2순위는 6m/8m 표준품으로 글로벌 디스트리뷰터 판매. 내년 말 완공, 2028년 본격 가동</li>
+  <li><b>신규 성장축 — 산업용 가스터빈</b>: AI 전력수요로 미국 메이저 납기 붕괴. 국내 가스터빈사와 부품 개발·테스트 중 → 2027년 매출 개시, 2028년 본격. 프리미엄 합금 단가 10만원 중반/kg(일반 8만원), 마진 양호. 3공장 캐파 배분: 우주 6천억 · 가스터빈 2천억</li>
+  <li><b>장기 목표</b>: 2030년 매출 1조(기존 5천억에서 상향), ATI의 30% 규모. 항공(GE Tier1 승인)은 추진 중이나 목표 미반영. 미국 메이저는 캐파 풀·증설에 4~5년 소요 → 향후 2~3년이 진입 최적 타이밍이라는 판단</li>
+</ul>
+</div>
+</section>
+
+<!-- 1 -->
+<section>
+<h2>1. 회사 개요</h2>
+<ul>
+  <li><b>사업</b>: 첨단 금속 일괄생산 전문업체 — 진공 용해부터 완제품(단조·압연 등)까지 자체 공장(서산)에서 일괄 생산. 창업 23년차</li>
+  <li><b>주력 제품</b>
+    <ul>
+      <li>초내열합금(슈퍼알로이): 우주발사체 엔진, 산업용 가스터빈 등 고온 환경용 금속. 최근 수요가 급증하는 핵심 품목</li>
+      <li>고순도 청정금속: 반도체·디스플레이용</li>
+    </ul>
+  </li>
+  <li><b>설비</b>: 진공 용해로 기반 — 국내 최초 도입, 국내 최대 생산 캐파</li>
+  <li><b>포지션</b>: 선진국(미국·독일)에서만 하던 슈퍼알로이를 국내 최초로 우주발사체에 납품. 국산 슈퍼알로이를 세계 시장에 내놓은 첫 회사라는 설명</li>
+  <li><b>연구 인력</b>: 연구원 약 20명(국내 최대 규모). 슈퍼알로이 특화, 미세조직부터 물성까지 전수 검수 체계</li>
+  <li><b>공정 핵심</b>: 진공에서 청정하게 용해 → 합금 원소 균일 분산 → 롤링·단조로 내부 조직 치밀화 → 고온에서 견디는 석출물을 균일 분산. 편석(segregation) 발생 시 고온 내구성이 떨어지므로 연구소가 생산 라인을 매일 검토</li>
+</ul>
+</section>
+
+<!-- 2 -->
+<section>
+<h2>2. 우주 발사체 — SpaceX 랩터3·스타십</h2>
+<h3>공급 현황</h3>
+<ul>
+  <li>2022년부터 SpaceX와 랩터3 엔진 소재를 공동 개발. 현재 누적 약 1천억 이상 납품, 최근 스타십 발사에 실제 사용</li>
+  <li>랩터3 엔진: 연소압을 잘 견디고 엔진 무게 대비 효율이 역대 최고 수준 → 스타십 1단·2단에 총 33개 엔진 탑재, 100~150톤 탑재 능력. 이 엔진에 들어가는 다수 소재를 HVM이 공급</li>
+  <li>스타십 1단·2단 모두 공급 중. 슈퍼알로이 4~5종이 들어가나 어느 부위에 어떤 소재인지는 보안상 비공개</li>
+  <li>팔콘(팔콘9)에는 미납품 — 오직 랩터·스타십에만 공급. 팔콘은 향후 단종 예정으로 파악</li>
+  <li>특정 품목은 미국 경쟁사(ATI·카펜터) 대비 우수해 SpaceX에 사실상 독점적으로 공급 중</li>
+</ul>
+<h3>소재 종류</h3>
+<ul>
+  <li><b>슈퍼알로이(니켈계)</b>: 엔진 고온부</li>
+  <li><b>고강도 합금</b>: 우주 공간의 극저온에서 충격을 견디는 소재. SpaceX가 자체 개발했으나 미국 생산에 실패 → HVM이 공정 개선으로 양산화. 현재 스타십 프레임 대부분이 HVM 소재. 수요를 쫓아가기 벅찰 정도로 사용량 증가 중 (ESR 설비로 생산)</li>
+  <li><b>프리미엄급 슈퍼알로이(니켈-코발트계 등)</b>: 상반기 개발 성공 → SpaceX 엔진 일부 부품 발주 수령, 가스터빈 테스트 진행 중</li>
+  <li><b>발사대용 소재</b>: 발사 시 로켓을 붙잡았다 놓는 발사대 구조물은 큰 힘과 열을 동시에 견뎌야 함. 올해 관련 미션 수행 완료 → 발사대용 소재 수주 진행 중. 발사대 증설에 따라 추가 물량 기대</li>
+</ul>
+<h3>SpaceX 계획과 시장 전망 (대표 발언 기준)</h3>
+<ul>
+  <li>과거 '2~3주에 1대, 연 40대' 생산 계획은 구 버전으로, 현재는 연 1,000대 규모로 상향. 최근 루이지애나에 138조원 투자, 발사대 10기, 하루 30회 발사 계획으로 기지 건설 착수 — 2028~29년경 가동 전망</li>
+  <li>스타링크 대량 발사, 우주 데이터센터 구상의 기반이 랩터3의 추력·안정성이며, 그 안에 HVM 소재의 역할이 크다고 설명</li>
+  <li>현재는 연간 십수 회 발사 수준. 하루 30회가 현실화되면 HVM 캐파를 10배 늘려도 부족하다는 설명</li>
+  <li>발사 대수↑ + 더 높은 내열 요구 → 프리미엄급 슈퍼알로이 수요 증가</li>
+</ul>
+</section>
+
+<!-- 3 -->
+<section>
+<h2>3. 글로벌 슈퍼알로이 시장·경쟁 구도</h2>
+<ul>
+  <li><b>수요</b>: 우주항공·방산에 더해 AI 전력수요발 가스터빈 투자로 초내열합금 수요 폭증. 전쟁으로 방산 소재 재고 소진 → 미국 정부가 방산업체 생산 압박</li>
+  <li><b>공급</b>: 미국 메이저(카펜터·ATI·헤인즈)는 캐파가 꽉 참. 리드타임이 코로나 시기처럼 다시 크게 길어짐. 카펜터는 매출 정체에도 마진을 높여 판매 중</li>
+  <li><b>증설 소요</b>: 해외는 캐파 증설에 4~5년 이상, HVM은 약 2년 → 공급 부족은 향후 4~5년 지속 전망. HVM은 짧은 리드타임으로 수혜</li>
+  <li><b>국내 가스터빈 업체 사례</b>: 수주 후 소재가 없어 미국으로 달려가 웃돈을 주고 몇 년 지연된 계약을 간신히 체결</li>
+</ul>
+<table>
+  <tr><th>회사</th><th>규모(대표 언급)</th><th>특징</th></tr>
+  <tr><td>ATI (미국)</td><td>매출 약 5~6조</td><td>항공기 엔진·민항 승인(Tier1), RF 단조기 보유</td></tr>
+  <tr><td>Carpenter (미국)</td><td>매출 약 4~5조</td><td>캐파 풀가동, 마진 인상 중, 증설 진행</td></tr>
+  <tr><td>Haynes (미국)</td><td>—</td><td>산업용 가스터빈(IGT)용 니켈-코발트 프리미엄 합금을 특허로 20년 독점 → 2026년 3월 특허 만료</td></tr>
+  <tr class="self"><td>HVM</td><td>2026E 약 1,200억</td><td>우주 분야 승인 보유, SpaceX 독점 공급 품목 보유, 항공 승인 추진 중. 장기 목표: ATI의 30% 규모</td></tr>
+</table>
+<div class="box blue"><b class="t">헤인즈 특허 만료 대응</b>
+헤인즈가 독점하던 IGT용 니켈-코발트계 프리미엄 슈퍼알로이(녹취상 '헤인즈 28' — Haynes 282로 추정)의 특허가 올해 3월 만료. HVM은 연초 해당 합금 개발에 성공, 현재 가스터빈 회사에 지속 제시 중. 독점 시장을 나눠 가지는 것이 목표.</div>
+</section>
+
+<!-- 4 -->
+<section>
+<h2>4. 분야별 사업 현황</h2>
+<div class="grid2">
+  <div class="card"><b>항공 (진입 추진 중)</b>
+    <ul>
+      <li>항공기용 구조재·엔진 소재는 용해 회사(밀)의 승인이 있어야 사용 가능. 민항기 엔진은 카펜터·ATI 등 미국 회사만 승인</li>
+      <li>HVM은 우주 분야 승인은 보유, 항공은 미승인. 프레임 등 일부는 공급하나 엔진은 GE 등 미국 항공사 승인 필요</li>
+      <li>절충교역 경로 등으로 GE 측에 지속 접촉 → Tier1 등급 확보 시 전 세계 항공기에 장착 가능한 원소재 자격 획득</li>
+      <li>국내 전투기 엔진 국산화 R&amp;D에 참여 중 → 국내 승인·납품은 몇 년 내 가능 전망</li>
+      <li>아시아권 소재는 거의 채택되지 않음(일본 포함). 진입은 매우 어렵지만 진입 후 이익이 큼 — 항공 Tier1 회사는 대부분 매출 1~2조 이상</li>
+    </ul>
+  </div>
+  <div class="card"><b>에너지 — 산업용 가스터빈 (2027년 매출 개시 전망)</b>
+    <ul>
+      <li>AI발 가스터빈 수요로 카펜터·ATI·헤인즈가 매우 바빠지고 납기 붕괴</li>
+      <li>국내 가스터빈 제조사와 연초부터 핵심 부품 공동 개발·테스트 중. 테스트 완료 시점 접근 → 내년 가시적 매출, 후년부터 본격 확대. 미국산 구매분을 국산으로 대체 목표</li>
+      <li>진입장벽: 항공 &gt; 우주 &gt; 에너지 순으로 에너지가 상대적으로 낮음</li>
+      <li>얇은 판재(말아서 용접해 관 형태로 사용)가 주 형태. 포스코에서 가져온 압연기가 두께 정밀도·힘이 좋아 제조에 유리 — 이런 압연기를 보유한 회사가 드묾. 동일 판재가 미국 로켓 일부 부위에도 쓰여 일부 발주 수령</li>
+      <li>단가: 일반 슈퍼알로이 약 8만원/kg vs 프리미엄급 10만원 중반 이상. 경쟁 덜 치열, 마진 양호</li>
+    </ul>
+  </div>
+  <div class="card"><b>반도체</b>
+    <ul>
+      <li>꾸준히 성장 중이고 영업이익률도 좋으나 사용량이 작아 전사 매출 기여는 제한적 (수백억~수천억 단위 시장은 아님)</li>
+    </ul>
+  </div>
+  <div class="card"><b>디스플레이 (폴더블)</b>
+    <ul>
+      <li>폴더블 힌지부에 들어가는, 굽혔다 폈을 때 변형률을 잘 견디는 금속 — 재료연구소와 특허 계약 보유 (대외 미공개)</li>
+      <li>폴더블 소재는 일본 업체가 장악해 진입 못하다가, 주름 제거용 고성능 금속 수요로 공동 개발 진행 중. 가시화까지는 시간 필요, 물량도 크지 않아 전사 방향에서 일부 비중</li>
+    </ul>
+  </div>
+  <div class="card"><b>원전 (우선순위 낮음)</b>
+    <ul>
+      <li>원전은 증기터빈이라 슈퍼알로이보다 인코넬 690(파이프), 모넬 등 내식성 합금 사용. 핵반응 제어용 합금 구성</li>
+      <li>과거 원전·수자원 쪽 납품 경험 있으나 경쟁 치열·마진 낮음 → 마진 높은 분야 위주로 계획</li>
+    </ul>
+  </div>
+  <div class="card"><b>소재 재활용</b>
+    <ul>
+      <li>SpaceX의 '엔진 재활용'은 발사 후 엔진을 세척해 재사용하는 것으로 고객사 몫</li>
+      <li>HVM의 재활용은 소재 단위 — 부품 형상을 따고 남은 잔재를 다시 용해해 재생산하는 순환 구조</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- 5 -->
+<section>
+<h2>5. 실적·가이던스</h2>
+<table>
+  <tr><th>구분</th><th>2023</th><th>2025</th><th>2026E</th><th>2027~28E</th><th>2030 목표</th></tr>
+  <tr><td>매출</td><td>약 400억</td><td>약 660억</td><td>약 1,200억</td><td>연 1.7배 성장</td><td>약 1조</td></tr>
+  <tr><td>SpaceX·우주</td><td>—</td><td>—</td><td>약 800억 (60~70%)</td><td>2027E 약 2,000억 근접</td><td>우주 약 6,000억</td></tr>
+  <tr><td>에너지(가스터빈)</td><td>—</td><td>—</td><td>테스트 단계</td><td>2027 매출 개시, 2028 본격</td><td>약 2,000억</td></tr>
+  <tr><td>항공</td><td colspan="4">승인 불확실로 목표 미반영</td><td>미반영</td></tr>
+</table>
+<ul>
+  <li>2공장(2025년 완공) 덕분에 2023년 대비 매출 약 3배(1,200억) 달성 가능</li>
+  <li>기존 2030년 목표는 5천억이었으나 수요·요청 증가로 1조로 상향. 2~3년 내 3~4배 성장 후 1조 목표</li>
+  <li>수익성: 현재 개발비·수요 요인으로 영업이익률 15~20% 수준. 미국 공장은 안정 수율에서 약 20%. 3공장 안정화 후 미국과 동일 가격을 받으면 30%(~40%)까지도 가능하나 관세·경쟁 감안 약 20% 목표</li>
+  <li>2Q 마진율 하락·재고자산 급증 원인: IGT용 프리미엄 니켈-코발트 합금(헤인즈 대체) 개발 테스트 비용. 테스트 잔여 소재를 회계법인이 보수적으로 평가해 로스 반영 → 일시적, 3Q 정상화 전망. 개발비는 일회성이며 주요 개발이 상당 부분 완료돼 향후 수익률 급락 가능성은 낮다는 설명</li>
+  <li>수주잔고: 2Q 기준 약 500억 → 연내 대부분 소진, 일부는 내년 초 이월</li>
+</ul>
+<div class="box warn"><b class="t">하반기 SpaceX 물량 — 스펙 상향으로 증가폭 조정</b>
+당초 하반기 2배 증량 계획이었으나 SpaceX가 소재 스펙 그레이드를 한 단계 상향 → 현재 스펙 테스트 진행 중(설득에 약 2개월 소요). 기존 버전 물량은 그대로 출하하되, 새 그레이드 통과 후 확대 예정. 하반기는 상반기 대비 20~30% 증가 전망. 내년 초부터 또 한 번 버전업이 이어질 예정.</div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>6. 설비 투자 — 2공장 회고와 3공장 증설</h2>
+<h3>2공장 (완료)</h3>
+<ul>
+  <li>2023년 상장(2024년 기술특례) 1년 전에 장비 선발주(장비 리드타임 약 2년) → 2024년 상장 자금으로 잔금 납부 → 2025년 상반기 용해로 등 완공. 투자액 약 400억(상장 자금 전액 투입)</li>
+  <li>1공장 7,300평 + 2공장 ≈ 총 약 1만평. 2공장 장표상 캐파는 매출 약 3,500억 규모이나, 용해 이후 하공정(단조·압연 등) 병목으로 실제 매출은 이에 못 미침. 내년 매출 약 2천억 도달 시 캐파 거의 소진</li>
+</ul>
+<h3>3공장 (증설 착수)</h3>
+<ul>
+  <li><b>부지</b>: 약 2만평 계약 완료 + 인접 1만평 추가 매입 협의 중(조만간 구매) → 총 3만평. 착공 후 내년 말 공장 완공, 장비 반입, 후년(2028년)부터 본격 가동. "지금이 가장 좋은 타이밍"</li>
+  <li><b>투자 협약</b>: 미팅 전일 충남도와 투자협약 체결(약 1,300억 투자). 1,200억 투자 시 약 360억 보조금</li>
+  <li><b>재원</b>: 유상증자 약 900억 + 정부 보조금 약 300억 + 은행 차입 등 → 약 1,200억 투자. 올해 총 투자는 1,200~1,500억 전망 ("있는 돈 다 털어서")</li>
+  <li><b>증설 내용</b>
+    <ul>
+      <li>용해 캐파 확대: VAR 3대, ESR 2대 추가 (ESR은 고강도 합금 라인)</li>
+      <li>하공정 병목 해소가 1순위: 대형 단조기, 자동화 봉재 라인</li>
+      <li><b>RF 단조기(독일)</b>: 한국 최초 도입. 장비 투자금의 절반 이상 차지. 당초 약 600억 제안 → 약 1/3 수준으로 할인 구매. 인곳을 넣고 유압으로 눌러 봉재를 만들며 시뮬레이션대로 내부 미세조직을 제어 → 석출물 형상이 균일·안정. 전 세계 이 독일 회사만 제조, 카펜터·ATI 모두 사용. 용해·단조 이력을 그대로 보여줄 수 있어 항공기 업체 설득 도구</li>
+    </ul>
+  </li>
+  <li><b>3공장 캐파 배분(설계 기준)</b>: 우주 약 6천억, 가스터빈 약 2천억, 나머지 일반산업(표준품). 항공은 미반영</li>
+  <li><b>표준품 전략</b>: 지금까지는 엔드유저 맞춤(커스터마이징) 생산으로 성장. 3공장에서는 12m 생산 → 6m/8m 표준 규격으로 절단해 전 세계 디스트리뷰터(스토키스트)에 공급. 디스트리뷰터는 승인된 밀의 표준 규격 봉재를 재고로 쌓아두고 절단 판매(마진 약 30%). 현 공장은 약 3m 길이가 한계라 표준품 판매·가격경쟁력이 부족했음. SpaceX 외 에너지·화학 설비 등으로 고객 다변화 목적. 제품만 나오면 판매는 어렵지 않다는 판단</li>
+  <li><b>수율 효과</b>: RF 단조기 등 신설비로 수율·품질 안정 → 수익성에 크게 기여 전망</li>
+</ul>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>7. 미국 전략·세아그룹 비교</h2>
+<ul>
+  <li><b>세아그룹(세아창원특수강)</b>: 항공 쪽은 알루미늄 위주로 GE 공급. 미국에 SpaceX·항공향 특수금속 공장 설립 — 3D 프린팅용 파우더/잉곳 생산이 주력(용해 시설 중심). 랩터 엔진도 3D 프린팅 부품이 많음. HVM의 단조품 중심과는 다른 영역</li>
+  <li><b>왜 한국에서 생산하나</b>: 용해·캐스팅은 인원이 적어 미국에서도 가능하지만, 용해부터 단조까지 긴 공정은 국내에서도 쉽지 않고 미국은 더 어려움. 국내 안정화 후 미국 진출 계획 — 시행착오가 있어도 한국에서 가져와 파는 전략 병행</li>
+  <li><b>관세 경쟁력</b>: 관세를 내고 있지만 미국 경쟁사 가격이 워낙 올라 관세 후에도 충분히 경쟁력 있음. 향후 2~3년 미국 증설·수요 안정 후에는 가격 경쟁이 불가피하나 현재는 여유</li>
+</ul>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>8. Q&amp;A</h2>
+<div class="legend">녹취 순서와 무관하게 주제별로 묶어 정리. 답변은 문승호 대표.</div>
+
+<h3>경쟁력·스케일업</h3>
+<div class="q"><span class="lbl">Q</span><p>핵심 경쟁력은 레시피인가, 수율·리드타임 등 생산 측면인가? 7천억~1조 규모로 증설할 때 안정적 스케일링의 난점은?</p></div>
+<div class="a"><ul>
+  <li>레시피는 결국 경험. 미국·독일 경쟁사는 대부분 100년 이상 업력. 논문의 레시피를 따라 해서 만들어지지 않으며, 조건이 조금만 바뀌어도 아웃풋이 달라지는데 그 원인을 찾으려면 많이 해봐야 함</li>
+  <li>HVM은 진공 용해 23년, 수천 차례 용해 경험 → 문제 발생 시 대응력은 국내 최고. 주어진 합금 미션을 해결하는 능력이 최대 강점. SpaceX가 생산 라인이 부족한 HVM과 협업한 것도 연구원 역량과 용해 테크닉 때문</li>
+  <li>미국은 표준화된 제품 생산에 강하나 업그레이드된 새 미션 수행은 느림</li>
+  <li>스케일업: 과거에는 자금이 없어 설비를 직접 만들었으나 지금은 수백억을 들여 전문 스케일업 업체에 맡기고 협업 → 연구 능력 + 경험 + 자금력 기반 설비의 조화로 안정 생산 체계 구축</li>
+</ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>2공장 캐파가 장표상 3,500억인데 매출 1,200억에 거의 풀캐파인 이유는?</p></div>
+<div class="a"><ul>
+  <li>내년 매출은 2천억 가까이 가며 그때 캐파가 거의 참. 3,500억은 용해 캐파 기준이고 하공정 병목으로 놓치는 물량이 있음</li>
+  <li>이를 해소하려면 지금 증설해야 내년 말 완공·후년 본격 생산이 가능 — 타이밍상 지금이 최적</li>
+</ul></div>
+
+<h3>SpaceX·우주</h3>
+<div class="q"><span class="lbl">Q</span><p>지난 미팅에서 하반기 연간 생산량 2~3배 증가를 언급했는데 올해 SpaceX 800억 가이던스면 분기 200억 수준으로 성장률이 크지 않다. 보수적인 것인가?</p></div>
+<div class="a"><ul>
+  <li>SpaceX가 내부적으로 소재 그레이드를 한 단계 높여 스펙 테스트 진행 중. 기존 버전은 그대로 출하하되 2배 증량은 새 스펙 통과 후 → 하반기는 전반기 대비 20~30% 증가 전망</li>
+  <li>새 스펙 설득에 약 2개월 소요. 내년 초부터도 추가 버전업 예정. 테스트품 테스트와 물성 크로스체크가 계속 늘어나는 구조</li>
+</ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>2Q 수주잔고 증가분은 연말~내년 초 소진되는 물량인가?</p></div>
+<div class="a"><ul><li>약 500억 규모로 올해 거의 소진, 일부 내년 초 이월. 올해 매출 약 1,200억·SpaceX 약 800억 예상 유지</li></ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>버전업되면 2단 엔진에도 들어가는가? 해수면용·진공용 모두?</p></div>
+<div class="a"><ul><li>현재 1단·2단 모두 공급 중. 슈퍼알로이 4~5종이 들어가나 부위별 소재는 보안이 철저해 비공개</li></ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>스타십 연 20대 생산 시 연간 매출 기여는?</p></div>
+<div class="a"><ul>
+  <li>현재는 양산보다 테스트 물량이 더 많고, SpaceX도 연 20대 생산을 아직 못 함. 엔진 개수가 모자라 급하게 조달하는 상황(다음 주 발사 예정 언급)</li>
+  <li>공정이 길어 HVM 납품분이 곧바로 엔진 1기가 되는 구조가 아님 → "몇 대 발사 = 매출 얼마" 매칭은 미지수</li>
+  <li>올해까지 스타십향 누적 매출 약 1천억(3Q 공시 시점). 랩터3 8~9번째 이후 후기 버전 위주로 진입했고 상당 부분은 테스트용</li>
+</ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>팔콘 비중은?</p></div>
+<div class="a"><ul><li>팔콘에는 안 들어감. 랩터·스타십 전용. 팔콘은 단종될 것</li></ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>SpaceX 발사 단가와 회사가 보는 소재 비중은?</p></div>
+<div class="a"><ul><li>발사 단가는 외부 추정치로 천수백억 수준으로 파악. 엔진 가격 중 HVM 소재비는 약 15% 정도로 판단</li></ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>엔진 재활용은 한국으로 가져와 하는 것인가?</p></div>
+<div class="a"><ul><li>엔진 재활용은 SpaceX가 발사 후 엔진을 세척해 재사용하는 것. HVM은 엔진이 아닌 소재를 재활용 — 부품 형상을 따고 남은 잔재를 재용해해 계속 순환 사용</li></ul></div>
+
+<h3>실적·수익성</h3>
+<div class="q"><span class="lbl">Q</span><p>2Q 마진율과 재고자산 급증 배경은? (원자재 문제는 아닌 듯)</p></div>
+<div class="a"><ul>
+  <li>두세 가지 요인 중 핵심은 소재 개발비. IGT용 프리미엄 니켈-코발트계 합금(헤인즈 대체, 총 3개 합금) 개발 테스트 비용이 회당 크고, 잔여 소재를 회계법인이 보수적으로 평가해 로스 반영</li>
+  <li>일시적 요인으로 3Q에는 상당 부분 해소돼 원래 수준 복귀 전망</li>
+</ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>풀캐파인데도 개발비·수요 요인으로 수익성이 덜 나온다. 3공장 안정·수율 확보 시 레버리지는 몇 % 수준인가?</p></div>
+<div class="a"><ul>
+  <li>미국 공장(카펜터 등)은 안정 수율에서 약 20%. HVM이 동일 조건이면 30~40%도 가능. 현재는 15~20%</li>
+  <li>3공장에서 미국과 동일 가격을 받으면 30%까지 가능하나 관세·경쟁 감안해 약 20% 목표, 수율 개선분은 추가 업사이드</li>
+  <li>개발비는 일회성. 주요 개발이 많이 완료돼 향후 수익률 급락 가능성은 낮음</li>
+</ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>우주와 항공의 수익성 차이는?</p></div>
+<div class="a"><ul><li>둘 다 비슷하다고 봄</li></ul></div>
+
+<h3>신규 사업 — 가스터빈·원전</h3>
+<div class="q"><span class="lbl">Q</span><p>엔진 외 가스터빈 쪽 테스트는 우주향 신규 제품인가?</p></div>
+<div class="a"><ul>
+  <li>우주가 아닌 산업용 가스터빈(두산 등). AI 전력 수요로 필요한 내열 금속을 헤인즈가 특허로 독점했으나 올해 3월 만료 → 본격 경쟁 진입</li>
+  <li>해당 판재는 만들기 어렵지만 HVM은 용해로 + 포스코에서 가져온 고정밀 압연기 조합으로 제조에 적합. 얇은 판재를 말아 용접해 관 형태로 사용. 미국 로켓 일부 부위에도 쓰여 일부 발주 수령</li>
+  <li>단가 일반 슈퍼알로이 약 8만원/kg vs 프리미엄급 10만원 중반 이상, 경쟁 덜 치열</li>
+</ul></div>
+<div class="q"><span class="lbl">Q</span><p>마진율도 좋은가?</p></div>
+<div class="a"><ul><li>마진 양호. HVM 진입 후 가격이 내려가겠지만 당분간 수요 &gt; 공급. 미국 시장이 AI·방산 수요로 납기가 무너져 SpaceX 구매 책임자들도 어려움 → 양산하며 미국과 경쟁, 우수한 제품으로 버티는 것이 과제</li></ul></div>
+
+<div class="q"><span class="lbl">Q</span><p>원전은 증기터빈이라 고내열합금이 적을 텐데 두각을 낼 부분이 있나?</p></div>
+<div class="a"><ul><li>원전은 인코넬 690(파이프), 모넬 등 내식성·핵반응 제어용 합금. 과거 원전·수자원 납품 경험 있으나 진입이 쉬운 만큼 경쟁 치열·마진 낮음 → 마진 높은 분야 위주로 계획</li></ul></div>
+
+<h3>3공장·표준화 전략</h3>
+<div class="q"><span class="lbl">Q</span><p>3공장의 표준화 제품 목적을 자세히 설명해달라.</p></div>
+<div class="a"><ul>
+  <li>항공·SpaceX 등 엔드유저는 밀에 직접 사지 않고 디스트리뷰터 3~4곳을 통해 구매. 디스트리뷰터(스토키스트)는 승인된 밀의 6m/8m 표준 봉재를 재고로 쌓아두고 잘라서 판매(마진 약 30%)</li>
+  <li>HVM은 현재 특정 사이즈 맞춤 생산. 표준품은 길어야 좋은데(6~8m) 현 공장은 약 3m가 한계라 디스트리뷰터가 잘 사지 않고 가격경쟁력도 낮음</li>
+  <li>3공장(제품센터)에서 12m 생산 → 6m 절단해 스토키스트에 판매</li>
+</ul></div>
+<div class="q"><span class="lbl">Q</span><p>6m 절단품을 기존 고객사에도 납품 가능한 형태인가? 병목 해소 목적도 있는가?</p></div>
+<div class="a"><ul><li>병목 해소가 1순위. 그다음이 표준품 안정 생산으로 SpaceX 외 에너지·화학 설비 등 재고 보유 중개상向 판매 확대</li></ul></div>
+<div class="q"><span class="lbl">Q</span><p>시장 진출 순서는 항공 인증 → 디스트리뷰터인가?</p></div>
+<div class="a"><ul>
+  <li>디스트리뷰터는 매우 많아 제품만 나오면 가격 조율만으로 쉽게 판매 가능. 항공은 인명이 걸려 회사에 와서 장시간 검사하므로 계속 시간 소요</li>
+  <li>진입은 어렵지만 진입 후 이익이 큼. 항공 Tier1 승인 회사 중 매출 1조 이하는 거의 없고 대부분 2조 이상</li>
+</ul></div>
+<div class="q"><span class="lbl">Q</span><p>3공장 디자인 캐파를 세그먼트로 나누면 가스터빈 2천억, 나머지 우주인가?</p></div>
+<div class="a"><ul><li>우주 약 6천억, 가스터빈 약 2천억. 항공은 진입 여부 불확실로 미반영. 나머지는 표준품 일반산업向 판매</li></ul></div>
+<div class="q"><span class="lbl">Q</span><p>독일 장비(RF 단조기) 사용 시 수율이 현재 대비 크게 좋아지나?</p></div>
+<div class="a"><ul><li>수율·품질 등 여러 부분이 안정돼 큰 도움이 될 것</li></ul></div>
+
+<h3>항공 규제</h3>
+<div class="q"><span class="lbl">Q</span><p>항공이 어려운 건 사람이 타서 규제가 높기 때문인가, 우주보다 품질 요구가 높기 때문인가?</p></div>
+<div class="a"><ul>
+  <li>사람이 타기 때문. 품질 그레이드는 우주가 더 높지만 항공은 안정성·시스템 검증을 더 타이트하게 봄(불량 시 인명사고)</li>
+  <li>항공은 100년간 검증된 표준 금속을 사용 — 더 좋은 금속이 있어도 표준화된 것을 씀. 우주는 더 좋은 금속이 나오면 바로 채택(프리미엄급 차이)</li>
+</ul></div>
+
+<h3>경쟁사·미국 전략</h3>
+<div class="q"><span class="lbl">Q</span><p>세아그룹은 항공向으로 미국에 공장을 증설 중인데 HVM과 경영 전략이 다른 것 같다.</p></div>
+<div class="a"><ul>
+  <li>세아는 항공向 알루미늄(GE 공급)과 미국 특수금속 공장의 파우더/잉곳(3D 프린팅용)이 주력 — 용해 설비 중심. 랩터도 3D 프린팅 부품이 많고, 카펜터·ATI도 단조품과 파우더 두 부류를 생산. HVM은 단조품 쪽으로 세아와 다른 영역</li>
+</ul></div>
+<div class="q"><span class="lbl">Q</span><p>세아는 미국, HVM은 한국인 이유는?</p></div>
+<div class="a"><ul>
+  <li>용해·캐스팅은 인원이 적어 미국도 가능하나, 용해→단조까지 긴 공정은 손이 많이 가 국내에서도 쉽지 않고 미국은 더 어려움</li>
+  <li>국내 안정화 후 미국 진출 계획. 미국에서 시행착오가 있어도 한국에서 가져와 파는 전략 병행</li>
+  <li>3공장 완공 시 카펜터(4~5조)·ATI(6조) 대비 1조 규모. 관세를 내도 미국 가격이 워낙 올라 경쟁력 충분. 목표는 ATI의 30% 규모이며 라인도 그 규모로 세팅 중. 향후 2~3년 미국 증설·수요 안정 후엔 가격 경쟁 필요하나 지금은 여유가 있어 최적 타이밍</li>
+</ul></div>
+</section>
+
+<footer>
+  <b>소싱</b>: 에이치브이엠 콥데이 IR 미팅 STT 녹취(2026.09) 기반 정리. 발표자 문승호 대표. 수치는 대표 발언 기준 개략치(추정·전망)이며 공시 확정치가 아님. 녹취 STT 오류로 불명확한 명칭은 추정 표기(예: '헤인즈 28' → Haynes 282 추정). 참석자 반응·잡담은 제외.<br>
+  본 자료는 미팅 내용의 정리이며 투자 판단·의견을 포함하지 않음.
+</footer>
+
+</div>
+</body>
+</html>

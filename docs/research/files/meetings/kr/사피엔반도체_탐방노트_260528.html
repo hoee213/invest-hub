@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사피엔반도체 (452430) — IR 미팅노트 | HYPR_Hyperfine</title>
+<style>
+  :root{
+    --navy-deep:#0f1b2a; --navy:#1C3D5A; --orange:#E5601F;
+    --bg:#f5f6f8; --card:#ffffff; --line:#e2e6ec; --txt:#1c2530; --sub:#5b6878;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;font-size:15px;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+
+  /* Cover */
+  .cover{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 70%,#2a5478 100%);color:#fff;border-radius:0 0 18px 18px;padding:44px 34px 30px;margin-bottom:28px;}
+  .cover .tick{font-size:13px;letter-spacing:.14em;color:#9fb8cf;text-transform:uppercase;}
+  .cover .tick b{color:var(--orange);}
+  .cover h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-0.02em;}
+  .cover .subtitle{font-size:15px;color:#c8d6e4;margin-bottom:26px;}
+  .metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+  .metagrid .m{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;}
+  .metagrid .m .k{font-size:11px;color:#9fb8cf;letter-spacing:.06em;margin-bottom:4px;}
+  .metagrid .m .v{font-size:15px;font-weight:700;}
+  .metagrid .m .v small{font-size:11px;font-weight:400;color:#b9c9d8;}
+  @media(max-width:640px){.metagrid{grid-template-columns:repeat(2,1fr);} .cover h1{font-size:24px;}}
+
+  /* Sections */
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-bottom:22px;}
+  h2{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--orange);letter-spacing:-0.01em;}
+  h3{font-size:15.5px;font-weight:700;color:var(--navy);margin:20px 0 8px;}
+  p{margin-bottom:12px;}
+  strong{color:var(--navy-deep);}
+  .accent{color:var(--orange);font-weight:700;}
+
+  /* Key questions badges */
+  .qwrap{display:flex;flex-direction:column;gap:12px;}
+  .qrow{display:flex;gap:12px;align-items:flex-start;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .badge{flex:0 0 auto;background:var(--orange);color:#fff;font-weight:800;font-size:12.5px;border-radius:7px;padding:4px 10px;margin-top:2px;}
+  .badge.navy{background:var(--navy);}
+  .qrow .qt{font-weight:700;color:var(--navy-deep);margin-bottom:3px;}
+  .qrow .qa{font-size:14px;color:var(--sub);}
+
+  /* TLDR */
+  .tldr{background:#f2f6fb;border-left:4px solid var(--navy);border-radius:8px;padding:16px 20px;margin-bottom:16px;}
+  .tldr ol{padding-left:20px;}
+  .tldr li{margin-bottom:8px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media(max-width:640px){.grid3,.grid2{grid-template-columns:1fr;}}
+  .card{background:#fbfcfe;border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .card .h{font-size:12px;color:var(--orange);font-weight:800;letter-spacing:.05em;margin-bottom:6px;text-transform:uppercase;}
+  .card .b{font-size:14px;color:var(--txt);}
+  .card .num{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:2px;}
+
+  /* boxes */
+  .box{border-radius:10px;padding:14px 18px;margin:14px 0;font-size:14.5px;border:1px solid;}
+  .box.blue{background:#eef4fb;border-color:#c3d6ec;}
+  .box.warn{background:#fdf3ec;border-color:#f0cdb4;}
+  .box.bull{background:#eef8f0;border-color:#bfe0c6;}
+  .box.bear{background:#fbeeee;border-color:#e8c4c4;}
+  .box .bt{font-weight:800;margin-bottom:6px;font-size:13px;letter-spacing:.04em;}
+  .box.blue .bt{color:var(--navy);} .box.warn .bt{color:#b0521a;}
+  .box.bull .bt{color:#1f7a35;} .box.bear .bt{color:#a33232;}
+  .box ul{padding-left:18px;} .box li{margin-bottom:5px;}
+
+  /* moat cards */
+  .diff{background:linear-gradient(180deg,#fbfcfe,#f4f7fb);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:14px 16px;}
+  .diff .h{font-weight:800;color:var(--navy);margin-bottom:5px;font-size:14.5px;}
+  .diff .b{font-size:13.5px;color:var(--sub);}
+
+  /* quote */
+  blockquote.q{background:#f8f9fb;border-left:4px solid var(--orange);border-radius:0 10px 10px 0;padding:14px 18px;margin:14px 0;}
+  blockquote.q .kr{font-size:14.5px;color:var(--txt);}
+  blockquote.q .who{display:block;margin-top:8px;font-size:12.5px;color:var(--sub);font-weight:700;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+  th{background:var(--navy);color:#fff;padding:9px 10px;text-align:left;font-weight:700;white-space:nowrap;}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr.self td{background:#fdf3ec;font-weight:600;}
+  .star{color:var(--orange);letter-spacing:.1em;}
+  .tbl-scroll{overflow-x:auto;}
+
+  .legend{font-size:12px;color:var(--sub);margin-top:-6px;margin-bottom:8px;}
+
+  /* verdict */
+  .verdict{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#fff;border-radius:14px;padding:26px 28px;margin-bottom:22px;}
+  .verdict h2{color:#fff;border-bottom-color:var(--orange);}
+  .verdict p{color:#dbe6f0;}
+  .verdict .vq{margin:12px 0;padding:12px 16px;background:rgba(255,255,255,.06);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;}
+  .verdict .vq b{color:#fff;}
+  .verdict .vq span{color:#c4d3e2;font-size:14px;}
+
+  footer{font-size:12px;color:var(--sub);padding:18px 6px;line-height:1.8;}
+  footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ COVER ============ -->
+  <div class="cover">
+    <div class="tick"><b>KOSDAQ 452430</b> · 사피엔반도체 · IR MEETING NOTE · 2026.08 · HYPR_Hyperfine</div>
+    <h1>사피엔반도체 — "공시가 줄어드는 것이 성장의 증거"</h1>
+    <div class="subtitle">AR 스마트글라스 LEDoS 백플레인 IR 미팅노트 · Type 3 빅테크 정정공시 해석 · 양산 전환 타임라인 점검</div>
+    <div class="metagrid">
+      <div class="m"><div class="k">사업 모델</div><div class="v">LEDoS 팹리스 <small>CMOS 백플레인·DDIC</small></div></div>
+      <div class="m"><div class="k">'26 매출 가이던스</div><div class="v">전년比 약 2배 <small>3Q부터 양산 매출 본격화</small></div></div>
+      <div class="m"><div class="k">기술 격차</div><div class="v">2.5μm 픽셀 <small>시장 주류 4μm 대비 · 전력 50%</small></div></div>
+      <div class="m"><div class="k">파운드리</div><div class="v">GlobalFoundries <small>미국 · 향후 멀티파운드리 확대</small></div></div>
+    </div>
+  </div>
+
+  <!-- ============ 핵심질문 ============ -->
+  <section>
+    <h2>핵심질문 — 이 미팅에서 확인해야 했던 것</h2>
+    <div class="qwrap">
+      <div class="qrow"><span class="badge">Q1</span><div><div class="qt">양산 매출은 언제부터 '의미 있게' 나오는가?</div><div class="qa">회사 답변: 올해 3분기부터. 올해 매출 전년比 2배, 내년 또 2배, 2027~28년은 다수 제품 동시 양산 누적으로 가속 성장 전망.</div></div></div>
+      <div class="qrow"><span class="badge">Q2</span><div><div class="qt">빅테크向 Type 3 NRE 정정공시(기간·금액 증액)는 악재인가?</div><div class="qa">회사 답변: 정반대. 고객이 평가 완료 전부터 양산 준비를 <b>병행(parallel)</b>하자며 리소스 추가 투입을 요청 → 추가 NRE 수취. "그만큼 이 친구들이 급하다."</div></div></div>
+      <div class="qrow"><span class="badge">Q3</span><div><div class="qt">왜 대규모 '양산 공시'가 안 나오는가?</div><div class="qa">구조적 이유. 연간 포캐스트는 확정이 아니라 공시 불가, 월별 확정 PO(펌오더 50~200장)는 금액이 공시 기준(전년 매출 10%) 미달. → <b>공시가 아니라 분기 매출로 추적</b>해야 하는 국면 전환.</div></div></div>
+      <div class="qrow"><span class="badge">Q4</span><div><div class="qt">LCoS 진영의 AR 얼라이언스는 LEDoS에 위협인가?</div><div class="qa">회사 답변: 생존을 위한 몸부림으로 평가. 설비투자 흐름을 보면 LCoS에 신규 투자하는 곳이 없고 LEDoS에 자금이 집중. 표준화→검증→양산까지 가더라도 10년 관점 → 현재 위협으로 보지 않음.</div></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 1. TL;DR ============ -->
+  <section>
+    <h2>1. 한눈에 보기 (TL;DR)</h2>
+    <div class="tldr">
+      <ol>
+        <li><strong>산업 변곡점 확인:</strong> 메타 레이밴 국내 출시(Type 1), 삼성·구글 발표에 이어 <span class="accent">내년부터 구글·메타·삼성의 디스플레이 탑재(Type 2) 제품이 출시</span>되며, 회사 파악으로는 <strong>전부 LEDoS 채택</strong>으로 결정된 상태.</li>
+        <li><strong>양산 전환의 원년:</strong> 작년 개발 완료 제품(800×600)의 양산이 올해 하반기 개시. 빅테크는 ES 전달 1~2개월 만에 양산용 수백 장 웨이퍼 오더 발주(회사 기준 수백만 달러, 고객 기준 파일럿). <span class="accent">3Q26부터 제품(양산) 매출이 본격 반영</span>.</li>
+        <li><strong>이원화된 사업 구조:</strong> 저해상도(Type 2)는 마이크로LED 업체와 표준품으로 다변화 공급(물량), 고해상도(Type 3)는 캘리포니아 빅테크와 다이렉트 독점 계약(마진). 글라스당 백플레인 ASP 평균 약 $30.</li>
+        <li><strong>공시 프레임의 전환:</strong> 매출이 커질수록 10% 공시 기준을 못 넘는 계약이 늘어남 → 신규 수주·양산이 없는 게 아니라 <strong>공시 의무에서 벗어나는 것</strong>. 향후 투자 추적 지표는 분기 매출(NRE vs 제품 매출 비중)과 분기 가이던스.</li>
+      </ol>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="h">매출 구조 목표</div><div class="num">3.5 : 6.5</div><div class="b">올해 NRE : 제품 매출 목표 비중. 장기 이상형은 2 : 8 (수천억 매출 도달 시점).</div></div>
+      <div class="card"><div class="h">신제품 출시 속도</div><div class="num">연 4~5개</div><div class="b">올해 상반기에만 5개 ES 전달(중국2·일본·미국·유럽). ES→양산 리드타임 9~12개월.</div></div>
+      <div class="card"><div class="h">인력 확충</div><div class="num">연 20명</div><div class="b">설계 인력 연 20명 충원 기조(상반기 7명 입사). 부족분은 세미파이브 디자인서비스 MOU로 보완.</div></div>
+    </div>
+  </section>
+
+  <!-- ============ 2. 시장 구도 ============ -->
+  <section>
+    <h2>2. 시장 구도 — 스마트글라스 3단계 로드맵</h2>
+    <p>회사는 재작년부터 동일한 프레임으로 시장을 설명해 왔고, 예측대로 진행 중이라는 점을 강조. 메타 레이밴의 한국 출시(프리미엄 가격 판매)와 삼성·구글의 참전이 그 근거.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>구분</th><th>디스플레이</th><th>대표 제품/주체</th><th>시장 시점</th><th>사피엔 포지션</th></tr>
+      <tr><td><b>Type 1</b></td><td>없음 (음성 AI + 스피커)</td><td>메타 레이밴, 삼성×구글(젠틀몬스터 협업 추정)</td><td>현재 출시</td><td>해당 없음. 가격대 $300 이하</td></tr>
+      <tr class="self"><td><b>Type 2</b></td><td>탑재 (VGA~SVGA급, 기능 제한)</td><td>구글·메타·삼성 — <span class="accent">전부 LEDoS 채택 파악</span>. 중국 업체 다수 선출시</td><td>내년부터 본격</td><td>마이크로LED 업체 경유 표준품 공급. 모노 $500 / 풀컬러 $1,000 세트가</td></tr>
+      <tr class="self"><td><b>Type 3</b></td><td>고사양 (자체 통신, 고해상도, 3D 양안)</td><td>캘리포니아 빅테크</td><td>약 2년 후 제품 출시</td><td>빅테크 다이렉트 계약(2024.8~). 독점 공급, 고마진</td></tr>
+    </table>
+    </div>
+    <div class="box blue"><div class="bt">모듈 부피 Q&A — 폼팩터 우려 해소</div>
+    RGB 3패널(양안 6패널) 구조라도 패널 하나가 <b>쌀알 크기</b>, 프리즘(X-cube) 결합 모듈 전체가 <b>약 0.1cc</b>로 안경 프레임 측면에 수납. LCoS 대비 오히려 훨씬 작다는 답변. 사용자 부피 부담은 사실상 없음.</div>
+  </section>
+
+  <!-- ============ 3. 제품·기술 ============ -->
+  <section>
+    <h2>3. 제품·기술 — 백플레인이 곧 해자</h2>
+    <p>사피엔의 제품은 마이크로LED 디스플레이의 '눈' 역할을 하는 <strong>CMOS 백플레인</strong>(+DDIC). 고객사가 그 위에 마이크로LED를 본딩해 디스플레이 모듈을 만들고, R·G·B 3개 모듈을 X-cube 프리즘으로 결합하면 풀컬러 프로젝터가 완성되는 구조.</p>
+    <div class="grid2">
+      <div class="diff"><div class="h">① 픽셀 미세화 로드맵</div><div class="b">시장 주류 4μm 대비 <b>2.5μm 양산 공급 중</b>, 1μm로 미세화 진행. 해상도가 올라갈수록(Type 2→3) 다이 사이즈 압박이 커져 픽셀 미세화 역량이 곧 진입장벽.</div></div>
+      <div class="diff"><div class="h">② 전력·사이즈 우위</div><div class="b">작년 출시 800×600(SVGA)은 경쟁사 640×480(VGA)보다 고해상도인데도 칩 사이즈가 더 작고 <b>소비전력은 경쟁사의 50%</b>.</div></div>
+      <div class="diff"><div class="h">③ 풀컬러 단일패널 선점</div><div class="b">단일 패널 풀컬러를 <b>2년 전 세계 최초 구현</b>. 고객 조립 기술이 미성숙해 상용화 대기 중이나 검증용 샘플은 활발히 출하. 상용화 시 회로 부가가치 3배 → 마진 개선 방향.</div></div>
+      <div class="diff"><div class="h">④ 개발 생산성 학습곡선</div><div class="b">초기 6~9개월 걸리던 파생 제품 개발이 절반으로 단축. 연 4~5개 신제품을 소화하는 인력 효율성 자체가 경쟁력.</div></div>
+    </div>
+    <div class="box warn"><div class="bt">기술 제약 — 레드 LED</div>
+    GaN 기반으로 R 효율 확보가 어려워 단일패널 풀컬러 상용화의 병목은 <b>마이크로LED(고객) 쪽</b>에 있음. 고객사들이 물질 대체 등 다양한 접근으로 해결 중이며 회사는 2~3년 내 가능 전망. 사피엔 백플레인은 이미 준비 완료 → 병목 해소 시 수혜.</div>
+  </section>
+
+  <!-- ============ 4. 사업모델 ============ -->
+  <section>
+    <h2>4. 사업모델 — NRE → ES → 양산 사이클</h2>
+    <p>개발 계약(NRE) 체결 → 엔지니어링 샘플(ES) 전달 → 고객이 LED 본딩(4~6개월)·신뢰성 평가 → <strong>ES 전달 후 9~12개월 뒤 양산</strong> 진입. ES 전달 후 1년 내 파일럿 웨이퍼 수령 등 모든 액션이 이루어지는 게 통상 패턴이며, <span class="accent">ES에서 양산 전환율은 80% 이상</span>이라고 언급.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>채널</th><th>계약 상대</th><th>제품 성격</th><th>물량/마진</th></tr>
+      <tr><td>저해상도 (Type 2)</td><td>마이크로LED(모듈) 업체와 설계 수주</td><td>표준품 — LED 업체가 자기 제품으로 여러 세트업체에 판매. 최종 탑재처는 사피엔이 특정 불가</td><td>물량 大 · 마진 상대적 낮음 (양산 확대 시 볼륨디스카운트 가능성, 절대 영업이익은 증가 방향)</td></tr>
+      <tr class="self"><td>고해상도 (Type 3)</td><td>빅테크 세트업체 다이렉트</td><td>커스텀 — 해당 고객 독점 공급 (타판매 불가가 단점이나 사실상 독점 지위)</td><td>마진 高 · 시스템/설계 역량 축적</td></tr>
+    </table>
+    </div>
+    <p><strong>가격:</strong> 글라스당 백플레인 ASP는 고사양·저사양 블렌디드 <span class="accent">평균 $30</span> 가이드 유지. 올해 하반기~내년 양산 물량 확대에 맞춰 업데이트 예정.</p>
+    <p><strong>공시 카운트 기준 고객사 6개</strong>(NRE 계약 공시 기준). 실제로는 방산 포함 미공시 샘플 공급처가 다수이며, 국내 고객도 존재.</p>
+  </section>
+
+  <!-- ============ 5. 공시 해석 ============ -->
+  <section>
+    <h2>5. 최근 공시 해석 — NRE 정정 vs 웨이퍼 양산 오더</h2>
+    <p>이번 미팅에서 가장 공들여 설명한 파트. 최근 두 건의 공시는 <strong>성격이 완전히 다름</strong>:</p>
+    <div class="grid2">
+      <div class="card"><div class="h">① 정정공시 (개발 NRE)</div><div class="b">2024년 8월 시작된 빅테크 Type 3 개발 계약의 <b>기간·금액 증액</b>. 고객이 평가 완료를 기다리지 않고 양산 준비를 병행하자며 리소스 추가 투입 요청 → 추가 NRE 수취. 제품 결함 때문이 아니라 <b>가속</b> 때문. 계약 문구 조율로 공시가 늦어졌을 뿐 실질은 이미 확정.</div></div>
+      <div class="card"><div class="h">② 양산 공시 (웨이퍼 오더)</div><div class="b">약 두 달 전 공시. 개발 단계 샘플은 웨이퍼 25장 수준인데, 고객이 <b>수백 장 확정 발주</b>(수백만 달러 규모). 원래 순서보다 오더가 먼저 나올 만큼 고객이 급함. DDIC 포함 웨이퍼 상태로 납품 시 <b>제품 매출로 인식</b>. Type 3용.</div></div>
+    </div>
+    <div class="box blue"><div class="bt">향후 공시 감소는 구조적 — 추적 지표를 바꿔야</div>
+    <ul>
+      <li>연간 포캐스트(예: 1,000장)는 확정이 아니어서 공시 불가, 월별 펌오더(50~200장)는 전년 매출 10% 기준 미달로 공시 대상 아님.</li>
+      <li>매출이 커질수록 공시 기준을 넘는 계약이 줄어듦 → <b>공시 공백 ≠ 수주 공백</b>.</li>
+      <li>회사가 제시한 대안: 분기 실적에서 <b>개발(NRE) 매출 vs 제품 매출 구분 공개 + 다음 분기 가이던스 제공</b>. 이 두 지표가 향후 핵심 트래킹 포인트.</li>
+    </ul></div>
+  </section>
+
+  <!-- ============ 6. 실적·가이던스 ============ -->
+  <section>
+    <h2>6. 실적 · 가이던스</h2>
+    <div class="grid3">
+      <div class="card"><div class="h">2026</div><div class="num">전년比 ~2배</div><div class="b">상반기는 NRE 중심, 하반기 양산 물량 반영. 의미 있는 양산 매출 첫 시점은 3Q26.</div></div>
+      <div class="card"><div class="h">2027</div><div class="num">추가 ~2배</div><div class="b">Type 2 양산 확산 + Type 3 파일럿→양산 전환.</div></div>
+      <div class="card"><div class="h">2027~28</div><div class="num">가속 구간</div><div class="b">다수 제품 동시 양산 누적("쌓이고 쌓여") — 성장률 추가 상승 전망.</div></div>
+    </div>
+    <p style="margin-top:14px;">매출 믹스는 올해 목표 5:5였으나 현실적으로 <strong>NRE 3.5 : 제품 6.5</strong> 전망. IR은 "매출이 수천억대에 도달하면 2:8 안정 구조가 되고, 그때는 NRE가 잘 보이지도 않을 것"이라며 현재의 개발 매출 비중 논쟁 자체가 초기 국면의 특징임을 시사.</p>
+    <blockquote class="q">
+      <div class="kr">"공시는 아마 그냥 줄어들 겁니다. 그렇다고 해서 아무것도 안 하고 있는 게 아니고 — 그 대신 분기 매출을 좀 봐주십사 부탁드립니다. 매출 포션이 개발이 얼마, 제품이 얼마, 그리고 다음 분기 가이던스는 이렇습니다, 이렇게 말씀드릴 겁니다."</div>
+      <span class="who">— 경영진 (IR 미팅, 공시 정책 관련 · STT 원문 일부 보정)</span>
+    </blockquote>
+    <blockquote class="q">
+      <div class="kr">"순서가 약간 [통상과] 반대인 게 맞는데, 그만큼 이 친구들이 급해요. 빨리 출시하고 싶은 겁니다."</div>
+      <span class="who">— 경영진 (빅테크의 조기 웨이퍼 발주 관련)</span>
+    </blockquote>
+  </section>
+
+  <!-- ============ 7. 신사업 ============ -->
+  <section>
+    <h2>7. 포트폴리오 확장 — AR HUD · 방산 · CPO</h2>
+    <h3>차량용 AR HUD / 방산</h3>
+    <p>차량용 AR HUD 신제품 개발 완료 후 유럽·국내 프로모션 진행 중. 방산은 개인용 고글뿐 아니라 야외용 AR 기반 컨트롤러 등 다양한 애플리케이션으로 프로모션 중 — 방산 업황 호조와 맞물린 옵션.</p>
+    <h3>CPO(광통신) — CEO의 원점 회귀 <span style="font-size:12px;color:var(--sub);font-weight:400;">※ STT 원문 "CPU"는 문맥상 CPO(광 인터커넥트)로 해석</span></h3>
+    <p>대표이사는 닷컴버블기 미국에서 광통신 모듈 개발을 이끈 이력(세계 최초 VCSEL 병렬 광모듈 출시 언급). 현재 논의되는 마이크로LED 기반 광 인터커넥트는 <strong>당시 VCSEL 레이저를 마이크로LED로 대체하는 구조</strong>로, 백플레인 설계·고속 회로 IP는 이미 확보. 마이크로LED 파트너 발굴과 표준화(인터페이스·파이버 규격)가 관건.</p>
+    <div class="box blue"><div class="bt">CPO 타임라인 (경영진 관점)</div>
+    당분간 레이저 기반 유지 → 2~3년 후 서서히 교체 시작 → 표준 성숙까지 3~4년. 회사는 3~5년 후 제품 포트폴리오 확장을 위해 <b>반드시 진입해야 할 사업으로 내부 확정, 로드맵 구축 완료</b>. 다만 현시점 매출 기여는 없는 순수 옵션 가치.</div>
+  </section>
+
+  <!-- ============ 8. 리스크 ============ -->
+  <section>
+    <h2>8. 리스크 점검</h2>
+    <div class="legend">강도: ★☆☆ 낮음 · ★★☆ 중간 · ★★★ 높음</div>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>리스크</th><th>강도</th><th>내용 및 완화 요인</th></tr>
+      <tr><td>양산 일정 지연</td><td class="star">★★☆</td><td>ES→양산 9~12개월 + LED 본딩 병목은 고객사 영역. 다만 빅테크의 병행 양산준비·조기 발주가 지연 리스크를 일부 상쇄.</td></tr>
+      <tr><td>단일 빅테크 의존 (Type 3)</td><td class="star">★★☆</td><td>독점 공급 계약이라 타판매 불가. 프로젝트 취소·연기 시 고마진 축 훼손. 반면 Type 2 다변화 채널이 완충.</td></tr>
+      <tr><td>중국 경쟁사 추격</td><td class="star">★★☆</td><td>중국 메이저 개발 완료 제품 출시 중. 다만 현재 사피엔 스펙(해상도·전력·사이즈) 동급 제품 부재 주장 — 검증 필요.</td></tr>
+      <tr><td>LCoS 등 대체 기술</td><td class="star">★☆☆</td><td>AR 얼라이언스 결성은 LCoS 진영 생존 시도로 평가. 설비투자 흐름상 LEDoS 우위, 양산까지 10년 관점.</td></tr>
+      <tr><td>설계 인력 수급</td><td class="star">★★☆</td><td>반도체 설계 인력난으로 충원 목표 미달(상반기 7/20명 페이스). "인력 부족으로 수주 못 한 사례 有" — 세미파이브 MOU로 보완 중이나 외주 의존은 마진·IP 관리 변수.</td></tr>
+      <tr><td>볼륨 확대 시 ASP 하락</td><td class="star">★☆☆</td><td>저사양 물량 집중 시 블렌디드 마진 하락 가능. 회사는 물량 증가에 따른 절대 영업이익 증가로 상쇄 전망.</td></tr>
+      <tr><td>공시 가시성 저하</td><td class="star">★★☆</td><td>수주 흐름이 공시로 안 보이는 구조 전환 — 시장이 이를 "수주 공백"으로 오독할 경우 주가 변동성 확대 가능. 분기 IR 커뮤니케이션 품질이 관건.</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <!-- ============ 9. Bull / Bear ============ -->
+  <section>
+    <h2>9. Bull vs Bear</h2>
+    <div class="grid2">
+      <div class="box bull"><div class="bt">BULL — 강세 논리</div>
+        <ul>
+          <li>내년 출시될 구글·메타·삼성 Type 2 제품 전부 LEDoS 채택 파악 — 산업 표준 전쟁에서 사실상 승기.</li>
+          <li>빅테크가 평가 완료 전 양산 준비 병행 + 조기 수백 장 웨이퍼 발주 — 수요의 절박함이 계약 구조로 확인됨.</li>
+          <li>2.5μm·전력 50%·풀컬러 단일패널 세계최초 등 스펙 격차 + 학습곡선(개발기간 반감).</li>
+          <li>3Q26 양산 매출 개시 → 올해 2배 → 내년 2배 → 27~28 가속의 명시적 성장 경로.</li>
+          <li>AR HUD·방산·CPO라는 무비용 옵션 3종.</li>
+        </ul>
+      </div>
+      <div class="box bear"><div class="bt">BEAR — 약세 논리</div>
+        <ul>
+          <li>양산 전환율 80%·2배 성장·ASP $30 모두 회사 측 가이던스 — 3자 검증 불가, 하회 이력(3Q25 컨센 하회) 존재.</li>
+          <li>풀컬러 상용화 병목(레드 LED)이 고객사 손에 있어 사피엔이 통제 불가.</li>
+          <li>Type 3 독점 계약 = 단일 고객 집중 리스크의 다른 이름.</li>
+          <li>공시 가시성 하락 국면에서 밸류에이션이 이미 성장 기대를 상당 부분 반영했을 가능성 (PBR 高·이익 미실현 구간).</li>
+          <li>중국 저가 경쟁 + Type 2 표준품 채널의 볼륨디스카운트 압력.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VERDICT ============ -->
+  <div class="verdict">
+    <h2>10. 결론 — 핵심질문에 대한 답</h2>
+    <div class="vq"><b>Q1. 양산 매출 시점 →</b> <span>3Q26. 이번 하반기 실적이 "개발회사 → 제품회사" 전환의 첫 증거가 됨. NRE:제품 비중이 3.5:6.5로 실제 이동하는지가 1차 검증 포인트.</span></div>
+    <div class="vq"><b>Q2. 정정공시 성격 →</b> <span>악재 아님. 고객 주도의 양산 가속 + 추가 NRE 수취라는 설명은 조기 웨이퍼 발주(수백 장) 공시와 정합적. 다만 "고객이 급하다"는 서사는 고객 프로젝트 일정에 종속된다는 뜻이기도 함.</span></div>
+    <div class="vq"><b>Q3. 공시 추적 →</b> <span>양산 공시를 기다리는 전략은 이제 유효하지 않음. 분기별 (a)제품 매출 절대액 (b)NRE 대비 비중 (c)다음 분기 가이던스 이행률 — 이 3개로 트래킹 프레임 교체.</span></div>
+    <div class="vq"><b>Q4. 기술 대체 위협 →</b> <span>LCoS 얼라이언스는 현시점 노이즈. 설비투자 방향(LEDoS 집중)이 가장 신뢰할 만한 선행 지표라는 회사 논리는 타당. 단 "10년 안 온다"는 단정은 할인해서 수용.</span></div>
+    <p style="margin-top:16px;">종합: 이번 미팅의 핵심 메시지는 <strong>"공시가 줄어드는 것이 오히려 성장의 증거"</strong>라는 프레임 전환 요청. 산업 채택(전 빅테크 LEDoS)과 고객 행동(조기 발주·병행 양산준비)이라는 두 개의 외부 증거가 회사 서사를 뒷받침하나, 수치 가이던스는 전부 미검증 상태. <strong>3Q26 실적 발표가 이 스토리의 첫 실질 검증대</strong>이며, 그 전까지는 서사 대비 밸류에이션 부담을 관리하는 접근이 합리적.</p>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <b>소싱 및 유의사항</b><br>
+    · <b>[확정]</b> 2024.8 빅테크 Type 3 개발계약 개시, NRE 정정공시(기간·금액 증액), 웨이퍼 확정 발주 양산공시, 세미파이브 디자인서비스 MOU, 파운드리 GlobalFoundries — 미팅 발언 및 공시 기반.<br>
+    · <b>[회사 가이던스·추정]</b> 매출 2배 성장 경로, ES→양산 전환율 80%+, ASP $30, NRE:제품 3.5:6.5, LCoS 10년 지연 전망, CPO 타임라인 — 전부 경영진 발언으로 3자 검증되지 않음.<br>
+    · 본 노트는 STT 변환 녹취를 기반으로 하며 다음 용어를 문맥상 보정함: 에도스/네도스/레더스→LEDoS, 에코스→LCoS, 리마이크론→1μm, 타입 7→Type 3, CPU→CPO, 세인5/세티파이브→세미파이브, 휴대팩→HP(추정), 아바보→Avago(추정). 보정 오류 가능성 있음.<br>
+    · 시가총액·주가 등 시장 데이터는 조회 시점에 따라 상이하여 본문에서 제외. 본 자료는 정보 제공 목적이며 투자 권유가 아님. 투자 판단과 책임은 투자자 본인에게 있음.<br>
+    <span style="color:#98a4b3;">HYPR_Hyperfine · IR Meeting Note · 2026.08</span>
+  </footer>
+
+</div>
+</body>
+</html>

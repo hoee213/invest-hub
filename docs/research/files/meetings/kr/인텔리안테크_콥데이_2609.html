@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인텔리안테크 콥데이 IR 미팅 정리</title>
+<style>
+  :root{--navy:#0f1b2a;--navy2:#1C3D5A;--orange:#E5601F;--bg:#f4f6f9;--line:#dde3ea;--txt:#1f2933;--muted:#5b6b7b;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;font-size:15px;line-height:1.65;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px 60px;}
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:44px 36px 36px;border-radius:0 0 14px 14px;margin-bottom:28px;}
+  .cover .ticker{font-size:13px;color:#c9d6e3;letter-spacing:.3px;}
+  .cover h1{font-size:30px;margin:8px 0 6px;font-weight:800;}
+  .cover .sub{font-size:15px;color:#dbe4ee;margin-bottom:22px;}
+  .metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .metagrid div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:12px 14px;}
+  .metagrid .k{font-size:12px;color:#b8c7d6;}
+  .metagrid .v{font-size:15px;font-weight:700;margin-top:3px;}
+  .note{background:#fff;border-left:4px solid var(--orange);border-radius:6px;padding:12px 16px;font-size:13.5px;color:var(--muted);margin-bottom:26px;}
+  h2{font-size:21px;color:var(--navy2);margin:38px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--navy2);}
+  h3{font-size:16.5px;color:var(--navy);margin:24px 0 10px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:14px;}
+  ul{margin:6px 0 6px 18px;padding:0;}
+  li{margin:4px 0;}
+  li ul{margin-top:3px;}
+  li li{color:#34434f;font-size:14.5px;}
+  .badge{display:inline-block;background:var(--orange);color:#fff;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:6px;vertical-align:middle;}
+  .badge.g{background:var(--navy2);}
+  .q{font-weight:700;color:var(--navy2);margin:14px 0 4px;}
+  .q span{display:inline-block;background:var(--navy2);color:#fff;font-size:11.5px;padding:1px 7px;border-radius:4px;margin-right:6px;}
+  .a{margin-left:4px;}
+  .a .lbl{display:inline-block;background:var(--orange);color:#fff;font-size:11.5px;padding:1px 7px;border-radius:4px;margin-right:6px;}
+  table{width:100%;border-collapse:collapse;background:#fff;font-size:14px;margin:10px 0 14px;}
+  th{background:var(--navy2);color:#fff;padding:9px 10px;text-align:left;font-weight:600;}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .unc{color:var(--muted);font-size:12.5px;}
+  .footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);}
+  @media(max-width:640px){.metagrid{grid-template-columns:repeat(2,1fr);} .cover{padding:30px 22px;} .cover h1{font-size:24px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">인텔리안테크 (189300 KQ) · 콥데이 IR 미팅 녹취 정리</div>
+  <h1>저궤도(LEO) 위성통신 인프라 프로바이더로의 전환</h1>
+  <div class="sub">회사 설명 내용 정리 + Q&A · 2026년 9월 · 발표: IR 담당자(발화자1), IR 팀장(발화자2)</div>
+  <div class="metagrid">
+    <div><div class="k">사업 영역</div><div class="v">유저터미널(VSAT·평판) + 게이트웨이</div></div>
+    <div><div class="k">실적 추이</div><div class="v">작년 3Q 턴어라운드 → 올해 1Q·2Q 흑자</div></div>
+    <div><div class="k">올해 성장 가이던스</div><div class="v">연간 매출 +30% 수준</div></div>
+    <div><div class="k">신규 이벤트</div><div class="v">美 캘리포니아 공장 6월 완공, 8/29 첫 출하</div></div>
+  </div>
+</div>
+
+<div class="note">본 문서는 STT 변환 녹취를 기반으로 정리한 것입니다. 음성 인식 오류로 판독이 불명확한 수치·고유명사는 <span class="unc">[STT 불명확]</span>으로 표시했습니다. 발표자가 익명 처리한 고객사는 원문대로 “A사”로 표기합니다.</div>
+
+<!-- ================= PART 1 ================= -->
+<h2>1. 회사 설명 (발화자1: 사업 개요)</h2>
+
+<h3>1-1. 위성통신 시장 구조와 인텔리안의 위치</h3>
+<div class="card">
+<ul>
+  <li>위성통신 시장은 크게 <b>업스트림</b>(위성 제작·발사)과 <b>다운스트림</b>(위성과 통신 서비스를 연결)으로 구분</li>
+  <li>인텔리안은 다운스트림 3개 카테고리 중 <b>그라운드 네트워크 인프라(게이트웨이)</b>와 <b>유저 세그먼트(안테나)</b> 두 영역을 영위</li>
+  <li>서비스 구조: 우주의 위성 ↔ 대형 파라볼릭 안테나(게이트웨이) ↔ 백본망 대용량 데이터 송수신 → 해양·지상·항공 등 각 영역에 설치된 안테나(유저터미널)로 데이터 전달
+    <ul><li>인텔리안은 이 중 게이트웨이 인프라와 유저 안테나 양쪽에서 중추 역할</li></ul>
+  </li>
+  <li>뉴스페이스 핵심 플레이어: 스페이스X(스타링크)가 가장 유명하나, 위성통신은 주권·국방·정부 이슈로 한 민간사에 귀속되기 어려운 산업
+    <ul>
+      <li>이에 따라 “반(反) 스타링크” 진영이 형성: 유텔샛 원웹(Eutelsat OneWeb), 텔레샛(Telesat), AST 스페이스모바일, SES, 블루오리진 등</li>
+      <li>인텔리안은 스페이스X 공급망에는 들어가 있지 않으나(스페이스X는 자체 수직계열화), 스페이스X에 맞서는 도전자들이 모두 인텔리안의 주요 협력사</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h3>1-2. 5대 사업 영역</h3>
+<div class="card">
+<ul>
+  <li>기존 해양 사업을 기반으로 <b>육상(기업) → 모빌리티 → 지상 안테나(게이트웨이) → 정부·국방</b>으로 영역 확대</li>
+  <li><b>해양(Maritime)</b>: 가장 오래 영위한 사업. GEO·MEO·LEO 등 다양한 궤도의 위성망을 지원하며 선박에 안정적 위성통신 제공</li>
+  <li><b>육상·기업</b>: 고정형 통신, 기업형 커넥티비티 등 다양한 수요 대응</li>
+  <li><b>모빌리티</b>: 항공기, UAM 등으로 확대 중</li>
+  <li><b>게이트웨이</b>: 주요 위성 사업자들과 동일하게 진행 중인 인프라 사업</li>
+  <li><b>풀 라인업이 최대 강점</b>: 저궤도 시대에 선제적으로 R&D 투자 → VSAT을 넘어 평판 안테나, GMDSS, 게이트웨이 등으로 제품군 확대. 이 제품 기술력이 글로벌 경쟁력</li>
+</ul>
+</div>
+
+<h3>1-3. 시장 패러다임 변화와 포트폴리오 전환</h3>
+<div class="card">
+<ul>
+  <li>정지궤도(GEO) 중심 → 스타링크·아마존 카이퍼 등 <b>저궤도(LEO) 중심</b>으로 시장 축 이동</li>
+  <li>2022년까지는 해상용 위성통신 안테나 시장 1위로 입지를 다졌고, 이후 선제적 R&D 투자로 다각화
+    <ul><li>현재 해상뿐 아니라 육상·항공·국방을 아우르는 전방위 포트폴리오 → “위성통신 프로바이더”로 재정의</li></ul>
+  </li>
+</ul>
+</div>
+
+<h3>1-4. 핵심 파트너사 및 개발 로드맵</h3>
+<div class="card">
+<table>
+  <tr><th>파트너</th><th>협력 내용</th></tr>
+  <tr><td>유텔샛 원웹(OneWeb)</td><td>다양한 분야 제품을 이미 양산 공급 중</td></tr>
+  <tr><td>SES / 텔레샛</td><td>평판 안테나 및 게이트웨이 개발 중</td></tr>
+  <tr><td>파나소닉 에비오닉스</td><td>작년(2025년 9월) 계약, 항공용 평판 안테나 개발 중 → 올해 초 파일럿 제품 출하</td></tr>
+  <tr><td>A사</td><td>게이트웨이 사업의 핵심 파트너. 지속적으로 계약 수주 중</td></tr>
+  <tr><td>AST 스페이스모바일</td><td>게이트웨이 개발 진행 중 (Q/V밴드)</td></tr>
+</table>
+<ul>
+  <li>로드맵 상단의 <b>수주 장부(오더북)</b>가 추후 실제 매출로 이어지는 부분 → 안정적 매출 창출의 핵심</li>
+</ul>
+</div>
+
+<h3>1-5. 사업부별 상세</h3>
+<div class="card">
+<p><span class="badge g">해양</span><b>하이브리드(다중궤도) 환경으로 전환</b></p>
+<ul>
+  <li>해상 시장은 GEO 중심 → MEO·LEO를 포함한 하이브리드 환경으로 빠르게 변화 중</li>
+  <li>모든 궤도를 지원하는 <b>멀티오빗 안테나 라인업 완성</b></li>
+  <li>작년 3Q 선박 의무 장비인 <b>GMDSS</b>(해상 조난·안전 시스템) 신제품 출시 → 기존 해상용 안테나와 함께 적극 공략 예정</li>
+  <li>인말샛(Inmarsat)과의 협력은 다중궤도 서비스가 실제 상업화되는 사례
+    <ul>
+      <li>저궤도 서비스도 장애가 발생하므로, 이를 겪은 글로벌 선사들은 여러 네트워크를 단일 서비스로 묶는 하이브리드 솔루션 선호</li>
+      <li>휴대폰이 5G→LTE로 전환되듯, 바다에서는 오직 위성 안테나에만 의존해야 하므로 하이브리드 트렌드가 더 강함</li>
+    </ul>
+  </li>
+</ul>
+
+<p><span class="badge g">평판 안테나</span><b>스타링크 이후 세계 두 번째 자체 개발</b></p>
+<ul>
+  <li>저궤도 위성을 빠르고 정확하게 추적해야 하는 차세대 통신의 필수 기술</li>
+  <li>기존 파라볼릭(접시형) 대비 <b>콤팩트·설치 용이·저렴</b> → 대중화 가능. 주택 옥상, 요트, 주행 차량 등 다양한 활용</li>
+  <li>기존 통신망 사용이 어려운 전장에서도 저궤도 안테나 활용 증가 → 이에 맞춰 작년 말 휴대형 제품 <b>“엠팩(M-Pack)”</b> <span class="unc">[STT 불명확]</span> 출시, 현재 매출 발생 중. 기존 백색 저궤도 안테나보다 더 가볍고 콤팩트</li>
+</ul>
+
+<p><span class="badge g">게이트웨이</span><b>저궤도 시장 확대와 함께 성장하는 인프라 사업</b></p>
+<ul>
+  <li>SES, 텔레샛, A사 등 글로벌 위성 사업자들과 지상국 안테나(게이트웨이 인프라) 사업 진행. 최근 AST 스페이스모바일도 주요 협력사로 추가되어 양산·개발 진행</li>
+  <li>인프라 사업 특성상 저궤도 시장이 확대될수록 함께 성장. 설치로 끝나지 않고 <b>신규 주파수 개발에 따라 제품 세대 교체가 반복</b>되는 안정적 사업</li>
+  <li>현재 SES, AST, A사 등과 <b>Gen 1 계약</b>이 진행 중이며, 사업자들이 <b>Gen 2</b>를 준비 중 → 게이트웨이 점유율이 높은 만큼 Gen 2에서도 신규 기회 창출 기대</li>
+</ul>
+</div>
+
+<h3>1-6. 재무 성과 요약</h3>
+<div class="card">
+<ul>
+  <li>작년 3Q 턴어라운드 성공 → 올해 1Q에 이어 <b>2Q도 흑자</b></li>
+  <li>매출 제품 믹스가 다양화되어 안정적 매출원 확보. 2023~24년 대비 믹스 구조가 개선
+    <ul>
+      <li>과거 VSAT 위주 → 현재 게이트웨이·평판 안테나·VSAT이 나란히 매출 기여</li>
+      <li><b>게이트웨이 + 평판 안테나가 이미 매출의 약 70%</b> 차지</li>
+    </ul>
+  </li>
+  <li>전방 산업(저궤도 위성통신) 성장과 회사 성장이 나란히 이루어지는 구조</li>
+</ul>
+</div>
+
+<!-- ================= PART 2 ================= -->
+<h2>2. 회사 설명 (발화자2: IR 팀장 – 산업 배경과 숫자 리뷰)</h2>
+
+<h3>2-1. 왜 저궤도인가 – 산업 배경</h3>
+<div class="card">
+<ul>
+  <li>“우주”는 막연한 테마가 아니라 실제 매출이 발생하는 산업으로 자리 잡는 중. 과거 “저궤도가 정말 돈이 되느냐”는 의문이 많았으나, 정지궤도 위성으로 네트워크를 써 온 기존 시장이 더 가깝고·빠르고·대용량인 저궤도로 옮겨가며 큰 패러다임 변화 진행</li>
+  <li>지구 표면의 70~80%인 바다에서 유일한 통신망은 위성 → 기존에는 GEO를 비싼 요금으로 사용. 머스크(스타링크)와 고객사 원웹이 저궤도 네트워크를 구축하며 <b>위성 네트워크의 대중화·보편화</b> 진행
+    <ul><li>안테나 가격 하락 + 통신 요금 하락이 동시에 진행</li></ul>
+  </li>
+  <li>“심리스(seamless) 통신”: 유선을 깔아야만 가능했던 통신이 이제 북극·바다·사막 어디서나 연결 가능 → 위성통신의 Before/After</li>
+  <li>활용 영역이 해상 → 지상 → 항공으로 확장. 최근 대한항공·아시아나 기내 WiFi 뉴스처럼 항공기 위에 안테나를 달아 기내에서도 사용</li>
+</ul>
+</div>
+
+<h3>2-2. 사업 구조 변화의 핵심: 유저터미널 업체가 지상국(게이트웨이)까지</h3>
+<div class="card">
+<ul>
+  <li>기존 해상·육상 송수신부(유저터미널) 업체였던 인텔리안이 <b>지상국 안테나(게이트웨이)</b>라는 신규 사업을 추가한 것이 가장 큰 변화</li>
+  <li>위성 네트워크 구성: 데이터센터 → 지상국(게이트웨이) → 위성 → 유저터미널
+    <ul><li>게이트웨이 사업부는 <b>작년 매출 약 3,200억 중 약 35%</b> 차지</li></ul>
+  </li>
+  <li>유저터미널은 파라볼릭(접시형)과 평판형 두 가지 타입으로 사업 영위 → 크게 <b>지상국 안테나 / 유저터미널</b> 양축으로 정리</li>
+</ul>
+</div>
+
+<h3>2-3. 경쟁 구도: 스타링크는 자체 조달, 후발주자는 인텔리안에 의존</h3>
+<div class="card">
+<ul>
+  <li>현재 실제 서비스 중인 저궤도 통신 사업자는 <b>스페이스X와 원웹 두 곳</b>뿐. 스타링크는 B2C에서 매우 탄력적으로 성장 중이며, B2B도 큰 후보로 경계 대상</li>
+  <li>후발주자(A사, SES, AST 스페이스모바일 등)가 자체 컨스텔레이션을 준비 중이나, 스타링크는 자기 안테나·게이트웨이·위성·로켓을 모두 자체 제작할 뿐 <b>타사에 제품을 공급·개발해주지 않음</b>
+    <ul><li>→ 후발주자들이 원웹 레퍼런스를 보고 인텔리안에 “우리 것도 개발해 달라”고 찾아오는 구조</li></ul>
+  </li>
+  <li>진행 중인 개발·양산 사례
+    <ul>
+      <li>원웹 안테나 양산 공급 중</li>
+      <li>SES 파라볼릭 안테나, 텔레샛 안테나 개발 중</li>
+      <li>평판형 안테나를 해양용·차량용으로 개발하자 SES가 자사용도 개발 요청 → 계약 완료</li>
+      <li>군용 → 항공용 확장: 파나소닉 에비오닉스 항공용 안테나 개발을 작년 9월 수주, 올해 초 파일럿 제품 출하</li>
+      <li>게이트웨이: A사 레퍼런스를 통해 SES·텔레샛·AST 스페이스모바일까지 확장</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h3>2-4. 실적 리뷰: 성장률·마진</h3>
+<div class="card">
+<ul>
+  <li><b>영업이익률이 시장 컨센서스보다 낮은 이유</b>: 작년 동기 마진이 밀리터리·드론 등 프로젝트성 매출이 포함되어 비정상적으로 높았던 착시. 과거 이익률 추이를 보면 <b>30~40% 수준의 (매출총이익률)</b> <span class="unc">[STT 불명확]</span>이 적정 → 이번 분기는 고정비 흡수 과정에서 정상화된 수치로 봐야 함</li>
+  <li><b>성장률</b>: 1Q +39% YoY, 2Q +30% YoY → 연간 +30% 성장 가이던스 대비 상반기 숫자만으로도 이행 확인
+    <ul>
+      <li>3Q도 30% 성장을 타깃. 4Q는 계절적으로 숫자가 잘 나오는 시즌이라 30%까지는 아니어도 성장 그림 유지 → 연간 가이던스 달성 가능하다고 판단</li>
+    </ul>
+  </li>
+  <li><b>이익</b>: 작년 상반기는 적자였으나 올해는 흑자로 시작. 2Q 영업이익 <b>약 70억</b> → 마진은 최종 정산 필요하나 좋은 수준으로 마무리 노력 중</li>
+</ul>
+</div>
+
+<h3>2-5. 제품별 매출 동향</h3>
+<div class="card">
+<ul>
+  <li><b>게이트웨이 + 평판 안테나가 성장의 70%</b>를 차지하며 견인</li>
+  <li><b>VSAT(정지궤도 안테나)</b>: “줄어드는 것 아니냐”는 우려에 대해
+    <ul>
+      <li>선박 볼륨 자체가 증가하고 있고, 저궤도 투자가 메인 시장으로 커지는 가운데 VSAT은 안정적 매출을 유지 → 제로가 되는 시장은 아님</li>
+      <li>기존 GEO 사용자들은 안정적 네트워크를 위해 GEO를 유지하면서 저궤도를 덧붙이는 구조</li>
+      <li>저궤도 VSAT 비중 약 30% <span class="unc">[STT 불명확]</span></li>
+    </ul>
+  </li>
+  <li><b>평판 안테나</b>: 해상용 평판, 차량용, 밀리터리 안테나로 구성
+    <ul>
+      <li>밀리터리 안테나는 작년 4Q부터 본격 매출 시작 → 올해 1Q·2Q 매출을 잘 보완</li>
+      <li>배경: 원웹이 네트워크를 새로 오픈했는데 거기에 필요한 “휴대폰(단말)”이 없었던 상황 → 인텔리안이 개발·공급 시작</li>
+      <li>미국·유럽(전쟁 지역 포함)에서 수요 지속. 위성 네트워크의 50% 이상이 국방에서 활용되며, 군도 GEO → LEO로 대체 중</li>
+      <li>기존 미 군함 납품 안테나까지 공급 중</li>
+      <li>해상용 평판 안테나도 매출 상승 중 → 해상·육상·밀리터리 세 축으로 평판 시장 점유율 지속 확대</li>
+    </ul>
+  </li>
+  <li><b>게이트웨이</b>: 재작년 매출 약 300억 → 작년 약 1,000억(양산 물량 본격화). 올해 1Q도 전년 동기 대비 증가 추세
+    <ul>
+      <li>A사 외에도 AST 스페이스모바일(미국에서 잘 알려진 D2C 업체)에 <b>Q/V밴드 게이트웨이 안테나</b> 공급. 재작년 수주 물량은 올해 파일럿 제품 공급 완료 → <b>내년부터 실제 양산 물량</b> 수주 예정(협의 마무리 단계)</li>
+      <li>텔레샛, SES까지 추가 매출 예정 → 게이트웨이가 성장의 큰 축</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h3>2-6. 미국 캘리포니아 공장</h3>
+<div class="card">
+<ul>
+  <li>올해 6월 말 완공, <b>8월 29일 첫 매출 출하</b></li>
+  <li>“왜 미국 공장인가”: Buy America 흐름 속에 조선 등 대기업들도 미국 진출 중. 고객사 요청도 있었으나, 국방·정부 관련 프로젝트를 공급하려면 <b>현지 생산이 사실상 필수</b>이며 가점도 높음</li>
+  <li>생산 거점 분리: 국내(평택) 공장은 아시아·유럽 물량, 미국 공장은 북미·남미 물량 → 북·남미 물량만 소화해도 상당한 매출 가능</li>
+</ul>
+</div>
+
+<h3>2-7. 차세대(Next Generation) 게이트웨이와 원웹 Gen 2</h3>
+<div class="card">
+<ul>
+  <li>기존 모든 사업자는 Ku/Ka밴드를 활용 → 차세대는 <b>Q/V밴드(40GHz 대역)</b> 생산·개발 요청이 들어온 상황</li>
+  <li>향후 4~5년 후 물량까지 준비하며 물량 확보가 되어 있는 상태</li>
+  <li>원웹도 2028년 Gen 2 준비 중. 현재 세대 위성이 계속 추가되며 더 빠르고 광대역인 네트워크로 진화. 이미 스타링크에서도 용량 부족 얘기가 나오기 시작 → 초기 셋업 이후 추가 세대 교체가 지속적으로 사업 기회로 전개될 것</li>
+</ul>
+</div>
+
+<h3>2-8. 밀리터리 사업의 부상</h3>
+<div class="card">
+<ul>
+  <li>밀리터리 매출 비중: 2023년 전체의 약 7% → 작년 말 상승 → <b>올해 상반기 15%</b>까지 상승</li>
+  <li>중요한 이유는 <b>마진</b>: 민수 대비 마진이 상당히 좋고, 신규 제품은 50% 이상 마진</li>
+  <li>미 군함 납품 안테나는 <b>대당 약 10억</b> 수준으로 여러 대 공급. 평판형 밀리터리 안테나는 수백만원대 <span class="unc">[STT 불명확]</span>. 전쟁에서 활용도가 높아지며 국방 투자도 점진적으로 개선 전망</li>
+  <li>군용 제품은 보안·EMS 등 여러 요구사항이 추가되어 단가도 상승</li>
+</ul>
+</div>
+
+<h3>2-9. 종합</h3>
+<div class="card">
+<ul>
+  <li>사업 구성이 작년·재작년과 많이 달라짐. 원웹 등 사업자 네트워크가 안정화되며 그들의 매출이 두 배 수준으로 증가 → 인텔리안 안테나 수요도 증가</li>
+  <li>후발주자들이 자체 인프라를 구축하며 게이트웨이 영역도 동반 성장</li>
+  <li>VSAT은 안정적으로 유지, 회사 전체는 30% 이상 성장하는 해. 마진 목표치는 제시한 수준을 목표로 관리 중</li>
+</ul>
+</div>
+
+<!-- ================= PART 3 ================= -->
+<h2>3. Q&A (주제별 정리)</h2>
+
+<h3>3-1. 미국 공장 – 생산 규모·전용 여부</h3>
+<div class="card">
+<div class="q"><span>Q</span>미국 공장의 생산 규모와 전용 여부는?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>연간 약 500대 규모로 논의되어 세팅. 1차로 약 300대 생산 후 단계적으로 확대</li>
+  <li>“전용”이라는 표현이 맞긴 하나, 다른 용도로도 활용할 수 있도록 협의되어 있음. 군용·군함용 안테나 등도 가능하며, 유휴 라인 활용은 고객사와 논의 가능한 수준</li>
+  <li>24시간 가동하는 구조는 아니며(삼성전자식 풀가동 아님) 현재 협의된 수준으로 운영</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>공장 투자 규모(금액)는?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>가격은 구체적으로 밝힐 수 없으나 약 2,000만 달러 수준 <span class="unc">[STT 불명확]</span>. 실질적으로 빠른 회수(페이백)가 가능한 구조로 보면 됨</li>
+</ul>
+</div>
+</div>
+
+<h3>3-2. 게이트웨이 시장 규모와 수요 논리</h3>
+<div class="card">
+<div class="q"><span>Q</span>게이트웨이 시장 규모를 어떻게 봐야 하나? 계속 확대되는 시장인가?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>전체 위성통신 시장은 약 5,000억 달러이며, 이 중 70~80%가 서비스 프로바이더·통신 사업자 시장</li>
+  <li>원웹은 작년 말 기준 약 150개 사이트를 구축했으나 아프리카·중동 등 아직 커버되지 않은 지역이 많음</li>
+  <li>수요 논리: 컨스텔레이션이 늘수록 유저터미널이 증가 → 사용자가 몰리면 데이터가 몰림 → 위성도 더 올리고 게이트웨이도 더 필요. 모바일폰 시장에서 기지국이 필요한 것과 동일</li>
+  <li>아마존도 4,000기 이상 추가 발사를 FCC에 승인 신청. 위성이 많아질수록 유저·게이트웨이 인프라도 커지는 것은 디폴트</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>내년 게이트웨이 매출은 변동성이 있지 않나? (올해 크게 확대된 후)</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>긍정적으로 판단. 그동안은 돈을 투자해 인프라를 구축하는 시기였다면, 2023~24년부터 서비스가 개통되어 <b>실제 매출로 이어지는 시기</b>가 도래</li>
+  <li>유저가 늘고 있고, 우주 시장 내 합종연횡(이리디움-로켓랩 결합, 발사체-통신사업자 연결, GEO-LEO 연결 등)이 활발 → 시장이 긍정적이지 않다면 이런 제휴가 일어나지 않을 것. 수혜는 관련 공급사에게 돌아감</li>
+</ul>
+</div>
+</div>
+
+<h3>3-3. 후발 사업자·기술 비교 및 시장 초기성</h3>
+<div class="card">
+<div class="q"><span>Q</span>각 사업자별 게이트웨이 필요 수량 등 기준이 다른가? 내년 글로벌 수요를 어떻게 보나?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>매우 초기 시장이며 스타링크·원웹이 첫 스타트를 끊은 단계. 사업자마다 위성 수, 위성 무게(1,200kg vs 500kg 등), 고도, 위성 성능이 모두 달라 동일 기준으로 비교 불가</li>
+  <li>새 플레이어들(아마존 300~500km 고도에 3,000~4,000기, SES 중궤도, 텔레샛 등)이 각자 컨스텔레이션을 구축 중. 이들이 Next Gen으로 넘어갈지 여부는 1차 성공 여부에 달려 있음</li>
+  <li>그런 타이밍마다 인텔리안이 게이트웨이·유저터미널로 계속 대응할 수 있다고 판단 → 그래서 지금 투자하고 신제품을 개발 중</li>
+</ul>
+</div>
+</div>
+
+<h3>3-4. 지역별·고객 구조</h3>
+<div class="card">
+<div class="q"><span>Q</span>분기별 매출을 국가별로 보면 미국 비중이 가장 높은가?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>확인은 필요하나, 원웹은 미국보다 <b>유럽 쪽 판매가 많음</b>(독일, 우크라이나 등에 지속 납품). 미국이 높다고 보기보다 유럽이 높은 것으로 파악</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>최종 고객(엔드유저) 데이터를 파악하고 있나?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>엔드유저와 직접 거래하지 않음. 원웹(사업자)에 공급하면 원웹이 최종 고객(예: 군)에게 공급하는 구조 → 상세 데이터는 없으며 “어디로 나갔다” 정도만 파악 가능</li>
+</ul>
+</div>
+</div>
+
+<h3>3-5. 기술 대체 위험: D2D(Direct-to-Device)</h3>
+<div class="card">
+<div class="q"><span>Q</span>텔레샛 등에서 안테나 없이 휴대폰으로 직접 통신하는 D2D 기술이 상용화되고 있는데, 우리 안테나 시장이 사라지는 것 아닌가?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>그 정도까지는 가지 않음. D2D는 휴대폰 수준의 소량 데이터를 받는 수준으로 보면 됨</li>
+  <li>대용량 데이터는 사용 밀집 지역에 게이트웨이를 촘촘히 배치해야 활용 가능 → D2D는 <b>제한적 활용도</b>에 국한</li>
+  <li>기본 표준은 게이트웨이-위성-유저터미널 구조가 가장 안정적이고 대용량 데이터를 쓸 수 있는 구조</li>
+</ul>
+</div>
+</div>
+
+<h3>3-6. 수주 규모의 해석 및 신규 기회(IRIS²)</h3>
+<div class="card">
+<div class="q"><span>Q</span>공시된 수주 금액(수백억 단위)이 작아 보이는데, 신규 제품·고객 관점에서 어떻게 봐야 하나?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>현재 공시 물량은 <b>양산 물량이 아닌 파일럿 물량</b>. A사 예시로 처음 300대급 파일럿 물량 → 개발·인증·고객사 테스트 통과 후 수백억~수천억 단위 양산 발주가 나오는 구간으로 진입</li>
+  <li>SES·텔레샛 게이트웨이도 1~2년 전부터 개발한 것들이 마무리되어 제품이 나가기 시작하는 타이밍 → 100억 단위 공급 후 다음 양산 PO 여부가 관건</li>
+  <li>항공용 안테나도 마찬가지로 현재는 파일럿 물량 계약 → 파일럿 통과 후 본격 공급 계약으로 이어지는 구조</li>
+  <li>공식적으로 언급 가능한 신규 기회: <b>EU IRIS²</b>. 유럽이 갈릴레오(GPS)처럼 자기 주권 네트워크를 원해 LEO·MEO·GEO 연합 네트워크를 2030년 목표로 구축 중. 중궤도는 SES, 저궤도는 원웹 등 인텔리안 고객사가 포함되어 있어 좋은 기회 예상</li>
+</ul>
+</div>
+</div>
+
+<h3>3-7. 우주 데이터센터·위성 탑재 안테나</h3>
+<div class="card">
+<div class="q"><span>Q</span>위성 탑재용 안테나(우주 R&D)는 검토하나?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>위성 탑재 안테나는 하지 않음. 구조·동작 원리는 동일하나 우주 환경(방사선·온도 등)에서 살아남는 소자·소재가 필요해 아직 접근하지 않음</li>
+  <li>지상에 먹거리가 충분하므로 당분간 지상 게이트웨이 → 위성 → 유저터미널 구조에 집중. 3년 후 로드맵은 아직 확정하지 않았으며, 방향은 엔지니어·국가 정책에서 계속 제시되고 있으나 시점을 말하기 어려움</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>우주 데이터센터 관련 기존 제품이나 수혜 영역, 개발 중인 것이 있나?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>아직 먼 이야기. 현존하는 사업에 집중 중. 다만 AI·데이터 수요 증가로 위성 네트워크 필요성이 강화되면 데이터센터와 위성을 연결하는 <b>게이트웨이는 반드시 필요</b>하므로 간접 수혜 가능. 현재는 검토 초기 단계</li>
+</ul>
+</div>
+</div>
+
+<h3>3-8. 경쟁력·점유율</h3>
+<div class="card">
+<div class="q"><span>Q</span>점유율을 유지·확대하기 위한 가장 중요한 요소는?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>개발·생산·글로벌 네트워크(A/S) <b>세 가지를 모두</b> 잘해야 하는 시장. 한쪽만 잘해서 되는 마켓이 아님</li>
+  <li>국내 매출은 약 3%에 불과하며 시장 자체가 미국·유럽 업체들의 영역이었음 → 이를 뚫는 데 약 20년 소요. 개발·생산·A/S 인프라와 네트워크를 하나하나 구축해 왔기 때문에, 누가 갑자기 뛰어든다고 뺏길 수 있는 시장이 아님</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>A사 내 점유율 90% 이상을 여전히 유지하고 있나? 개발 중인 건들도 모두 단독 진행인가?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li><b>솔벤더(단독 공급)</b>이므로 점유율은 유지될 수밖에 없음</li>
+  <li>배경: 원래 원웹은 솔벤더 구조가 아니었음. 5년 전 5개 업체가 첫 RFP를 받아 판매했으나 해외 업체들이 탈락, 최종 미국 C업체와 남았다가 그마저도 파일럿 단계에서 공급 실패·품질 이슈로 자연스럽게 솔벤더가 됨</li>
+  <li>공급받는 입장에서는 단일 공급사가 리스크이므로 솔벤더로 가져가는 것이 쉽지는 않으나, 상황에 따라 솔벤더가 됐고 잘하고 있어 새로운 기회도 인텔리안으로 오고 있음</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>다른 회사(대형 경쟁사)와 비교하면?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>규모 자체가 달라 직접 비교는 어려움. 연간 매출 수천억 단위 회사와 비교하는 것은 무리이며, 이제 시작하는 단계로 결과는 예단할 수 없음</li>
+</ul>
+</div>
+</div>
+
+<h3>3-9. R&D 비중과 영업 레버리지</h3>
+<div class="card">
+<div class="q"><span>Q</span>R&D 비용 비중이 8% 정도로 높은 편인데?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>R&D를 많이 하는 것이 회사의 특성. 남들이 없는 영역에서 새 제품을 창출하며 성장하는 구조이므로 일정 시점까지는 선행 투자 지속</li>
+  <li>안테나 개발에 큰 투자를 했던 부분이 이제 양산으로 진행되면서 R&D 비중은 다소 줄어듦(재작년 대비 감소)</li>
+</ul>
+</div>
+<div class="q"><span>Q</span>안정화된 시기의 마진(두 자릿수, 20% 가능성)은?</div>
+<div class="a"><span class="lbl">A</span>
+<ul>
+  <li>고정비는 분기 약 40억 <span class="unc">[STT 불명확]</span> 수준으로 꾸준히 유지. 저궤도 신시장은 P보다 <b>Q(물량)</b> 성장에 따른 레버리지가 있는 구조로 이에 맞춰 공장 등을 준비</li>
+  <li>고정비 세팅이 완료된 상태에서 Q와 매출을 얼마나 올리느냐에 따라 영업 레버리지 발생 → 두 자릿수, 20% 마진 가능성은 있다고 판단</li>
+</ul>
+</div>
+</div>
+
+<div class="footer">
+  <b>소싱</b>: 인텔리안테크 콥데이 IR 미팅 STT 녹취(발화자1 IR 담당, 발화자2 IR 팀장, 발화자3~5 참석 기관). 본문의 모든 수치·발언은 회사 측 발표·답변을 정리한 것이며, 별도 검증·분석 의견은 포함하지 않음. STT 오류로 판독이 불명확한 항목은 [STT 불명확]으로 표기.<br>
+  <b>Disclaimer</b>: 본 자료는 내부 참고용 미팅 정리 노트이며 투자 권유가 아닙니다.
+</div>
+
+</div>
+</body>
+</html>

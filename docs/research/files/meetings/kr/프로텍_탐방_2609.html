@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>프로텍 IR 미팅 정리 (2026.09)</title>
+<style>
+:root{
+  --navy:#0f1b2a; --navy2:#1C3D5A; --orange:#E5601F;
+  --bg:#f4f6f9; --card:#ffffff; --text:#1f2933; --muted:#5b6b7b; --line:#e3e8ee;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#0b1119; --card:#151f2b; --text:#e6ebf1; --muted:#9fb0c1; --line:#2a3644; } }
+:root[data-theme="dark"]{ --bg:#0b1119; --card:#151f2b; --text:#e6ebf1; --muted:#9fb0c1; --line:#2a3644; }
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Apple SD Gothic Neo","Malgun Gothic",-apple-system,sans-serif;line-height:1.65;font-size:15px}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+.cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 70%,#2a5a80 100%);color:#fff;padding:36px 22px;border-radius:0 0 18px 18px;margin:0 -18px 26px}
+.cover .ticker{font-size:13px;letter-spacing:.08em;color:#f2b28c;text-transform:uppercase;margin-bottom:8px}
+.cover h1{margin:0 0 6px;font-size:28px;line-height:1.25}
+.cover .sub{color:#cfdae6;font-size:14px;margin-bottom:18px}
+.metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metagrid div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 12px}
+.metagrid .k{font-size:11px;color:#b9c7d6}
+.metagrid .v{font-size:15px;font-weight:700;margin-top:2px}
+@media (max-width:600px){.metagrid{grid-template-columns:repeat(2,1fr)}.cover h1{font-size:23px}}
+h2{font-size:19px;color:var(--navy2);margin:34px 0 12px;padding-left:12px;border-left:5px solid var(--orange);line-height:1.3}
+h3{font-size:15px;color:var(--orange);margin:20px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+.key{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:16px 18px 16px 20px;margin:0 0 6px}
+ul{margin:6px 0 6px 18px;padding:0}
+li{margin:5px 0}
+li li{margin:3px 0;color:var(--text)}
+.sub-ul li{font-size:14px}
+.q{font-weight:700;color:var(--navy2)}
+.qa{border-top:1px dashed var(--line);padding:12px 0 4px;margin-top:10px}
+.qa:first-of-type{border-top:0;margin-top:0;padding-top:0}
+.qa .a{margin-top:6px}
+.qa .a ul{margin-top:2px}
+.badge{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:middle}
+.badge.blue{background:var(--navy2)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th{background:var(--navy2);color:#fff;padding:8px 10px;text-align:left;font-weight:600}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl{overflow-x:auto}
+.legend{font-size:12px;color:var(--muted);margin-top:6px}
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.tag{color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">KOSDAQ · 프로텍 · IR 미팅 정리</div>
+  <h1>프로텍 IR 미팅 정리</h1>
+  <div class="sub">반도체 후공정 디스펜서 · 본딩 · 레이저 장비 — 2026년 9월 IR 미팅 (2Q26 실적 이후)</div>
+  <div class="metagrid">
+    <div><div class="k">주력 사업</div><div class="v">디스펜서 (30년)</div></div>
+    <div><div class="k">신사업</div><div class="v">본딩·레이저·레이저본더</div></div>
+    <div><div class="k">신제품 매출 (25년)</div><div class="v">약 500억 (약 30%)</div></div>
+    <div><div class="k">적정 OPM (회사 시각)</div><div class="v">25~30%</div></div>
+  </div>
+</div>
+
+<h2>핵심 요약</h2>
+<div class="key">
+<ul>
+  <li><b>실적 회복의 본질은 하이엔드(어드밴스드 패키징) 투자</b> — 23년 레거시 다운사이클 이후 24년 말부터 HBM·2.5D·AI가속기·데이터센터향 고사양 투자가 시작되며 실적이 21~22년 수준으로 회복. 고사양 장비는 단가가 높아 같은 매출이라도 고사양:저사양 비중이 과거 5:5 → 현재 7:3.</li>
+  <li><b>2Q26 호실적 = 별도 개선 + 자회사 효과</b> — 별도 재무제표는 작년부터 지속 개선. 작년 연결이익을 갉아먹던 PMT(연 약 230~250억 적자)가 가동률 회복으로 적자폭 축소, PNM 등 후공정 부품 자회사는 프로텍 매출과 연동돼 동반 개선.</li>
+  <li><b>분기 편차는 구조적</b> — 고사양 장비는 단가 10~20억 이상, 납기 4~6개월이라 분기 내 매출 반영이 고르지 않음. QoQ가 아닌 반기·연간 기준으로 볼 것. 연간으로는 증가 방향이며 하반기 급변 요인 없음.</li>
+  <li><b>고객 투자 변화는 3~4개월(최대 6개월) 후 반영</b> — 연초 발표된 OSAT(ASE·Amkor·JCET) 투자계획이 진행 중. 후공정 전문 OSAT의 설비투자 항목이 프로텍과 직접 연동되는 지표.</li>
+  <li><b>중장기 성장축은 본딩</b> — 디스펜서 시장이 1조라면 본딩 시장은 3~5조(후공정 최대). 25년 본딩+레이저 합산 약 500억 → 800·1,000·1,500·2,000억 단계 성장 계획. 삼성전자의 본딩 장비 채택이 첫 변곡점, 레이저본더의 메모리 진입이 다음 변곡점.</li>
+  <li><b>레이저본더</b> — TC본더와 동일 역할(마이크로범프 접합), 열원이 레이저. 메모리(HBM)에서는 TC본더 후발 추격, 비메모리(2.5D, 24년경 시작)에서 먼저 사업화(Amkor 공동개발 → ASE 확대). 25년 200억 초반 → 26년 250~300억 → 27년 추가 증가 전망.</li>
+  <li><b>수익성</b> — 주문제작 방식이라 매출 증가 시 고정비 레버리지가 큼(분기 500억 이상이면 OPM 20%+). 다만 세계 1위 Nordson도 20% 후반~30%인 시장이라 40~50%는 독점 아닌 이상 비현실적. 25~30% 적정, 규모 확대(1,000억×30% → 2,000억×30%)로 이익 성장.</li>
+  <li><b>레거시는 27년 회복 기대</b> — 부품사(가동률)가 먼저 회복, 이후 장비사가 따라오는 사이클. 내년 레거시 턴+고사양 지속으로 믹스는 다소 희석될 수 있으나 고정비 커버로 OPM 25~30% 유지 가능하다는 입장.</li>
+</ul>
+</div>
+
+<h2>1. 회사 설명 — 사업 구조</h2>
+
+<h3>디스펜서 장비의 역할</h3>
+<div class="card">
+<ul>
+  <li>반도체 후공정: 전공정에서 만든 칩을 기판에 붙이거나 칩끼리 적층해 <b>전기적 접합</b>을 만드는 단계. 전기만 넣으면 작동하는 패키지(메모리·GPU·AI가속기 등)를 만드는 공정.</li>
+  <li>전기적 연결 방식의 진화: 와이어본딩 → 칩 하단 솔더볼(플립칩) → 더 미세한 TSV(구멍에 구리 충전). 칩 미세화에 맞춰 후공정 기술도 함께 고도화.</li>
+  <li>전기적 통로 사이는 모두 <b>빈 공간</b>. 여기에 절연체 용액(반도체에서는 주로 에폭시 계열)을 채워 내구성·신뢰성·열방출을 높임. 이 용액을 정밀·미세하게 뿌려주는 설비가 디스펜서.</li>
+  <li>매출이 늘어나는 두 가지 경로
+    <ul class="sub-ul">
+      <li>① 공정 변화 없이 <b>칩 생산량이 늘어</b> 장비 대수가 필요한 경우</li>
+      <li>② 생산량은 그대로여도 <b>공정이 바뀌어</b>(미세화·신공법) 새 장비가 들어가는 경우</li>
+    </ul>
+  </li>
+  <li>모든 설비는 <b>주문제작 방식</b>. 고정 스펙이 없고 고객·공정에 맞춰 제작.</li>
+</ul>
+</div>
+
+<h3>고객 구조 — 메모리 vs 비메모리, IDM vs OSAT</h3>
+<div class="card">
+<ul>
+  <li><b>메모리 고객</b>: 신제품이 몇 년에 한 번 나오고, 나오면 몇 년간 대량 양산. 신제품 전환 시 대규모 투자 후 2~3년 공백 → 장비 수요가 한꺼번에 들어왔다 끊기는 패턴. HBM 덕에 그나마 신제품 사이클이 빨라진 편.</li>
+  <li><b>비메모리 고객</b>: 다품종 소량 생산. 인텔·브로드컴·퀄컴·애플 등 칩 종류·업체가 많아 개별 칩에 맞춘 소량 장비가 <b>매년 꾸준히</b> 들어감.</li>
+  <li><b>주요 고객군</b>
+    <ul class="sub-ul">
+      <li>글로벌 OSAT(패키징 전문): 미국 Amkor, 중국 JCET, 대만 ASE가 최대. 그 아래 대만·중국 패키징 업체들.</li>
+      <li>종합반도체(삼성전자·SK하이닉스·인텔): 전공정 투자가 주력, 후공정 라인도 보유. 후공정 투자를 크게 할 때만 반짝 비중 상승.</li>
+    </ul>
+  </li>
+  <li>고객 비중은 <b>투자 시점에 따라 이동</b>. 작년엔 삼성전자가 투자를 많이 해 비중이 높았고, 올해 삼성이 줄이면 다른 업체 비중이 올라가는 식. 비중을 나누는 것 자체는 의미가 크지 않다는 설명(고객은 이미 정해져 있고 제2의 삼성·TSMC가 나오기 어려운 장치산업).</li>
+  <li>메모리 업체가 후공정 투자를 늘려도 후공정이 메인은 아님. 전공정 100%를 자체 후공정으로 다 소화하지 않고 남는 물량은 글로벌 OSAT가 받음 → 프로텍 입장에선 메모리 업체 직납이냐 OSAT 경유냐의 비중 차이일 뿐 전체 파이는 같음.</li>
+</ul>
+</div>
+
+<h3>업황 흐름 (회사 설명)</h3>
+<div class="card">
+<div class="tbl">
+<table>
+<tr><th style="width:110px">시기</th><th>내용</th></tr>
+<tr><td>~2019</td><td>완만한 증가</td></tr>
+<tr><td>2020</td><td>코로나로 수출 급감, 한 차례 꺾임</td></tr>
+<tr><td>2021~22</td><td>비대면 전자기기 수요로 반도체 특수 → 빠른 회복, 투자·생산 확대</td></tr>
+<tr><td>2023</td><td>수요 둔화 → 재고조정·감산·가동률 축소. 보유 설비도 안 돌리는 상황에서 신규 설비 투자 중단 → 레거시 다운사이클 시작</td></tr>
+<tr><td>2024</td><td>어드밴스드 패키징 등장 — 메모리 HBM, 비메모리 2.5D, AI가속기·데이터센터. 하이엔드 R&D·생산 투자만 급증. 하이엔드 하는 회사만 실적 회복</td></tr>
+<tr><td>2024 말~</td><td>프로텍 실적 회복 시작(저사양~고사양 모두 대응). 21~22년 수준 회복</td></tr>
+<tr><td>2025~</td><td>고사양 투자 지속으로 분기 매출 꾸준. 레거시는 재고 소진 후 부품사부터 회복 시작</td></tr>
+</table>
+</div>
+<ul>
+  <li>고사양 시장(AI가속기·데이터센터)이 없었다면 23년 저점(분기 300~500억)이 이어졌을 것. 현재는 분기 500억~많을 때 900억 수준.</li>
+  <li>고사양 장비는 단가가 높고 수량이 적음. 같은 500억이라도 23년엔 저사양 위주, 지금은 고사양 위주 → 비중 5:5에서 7:3으로.</li>
+  <li>고사양 사이클은 24년 말 시작 → 25·26·27년은 아직 초입이라 성장성이 높다고 보는 시장 시각에 동의.</li>
+</ul>
+</div>
+
+<h3>디스펜서 경쟁 구도</h3>
+<div class="card">
+<ul>
+  <li>세계 1위는 미국 <b>Nordson</b> — 북미·유럽·아시아 전부 커버, 점유율 50~60% 과반, 영업이익률 20% 후반~30%. 규모는 조 단위(여러 장비군 보유).</li>
+  <li>일본 무사시엔지니어링(일본·아시아, 3,000~5,000억), 한국 프로텍(한국·아시아, 디스펜서 약 2,000억 → 대략 3위권), 유럽(독일·스웨덴 Mycronic 등).</li>
+  <li>미국·일본·유럽이 먼저 선점한 시장을 한국이 국산화로 추격한 구조. 고객이 정해져 있어 점유율이 엎치락뒤치락하지 않고 <b>1위를 추종하는 안정적 시장</b>. 변동이 적은 대신 이익이 어느 정도 보장.</li>
+  <li>디스펜서 단일 품목으로는 매출 상한(1,000~2,000억)이 있음. 조 단위 선진 장비사는 본딩·검사 등 후공정 여러 단계 장비를 보유 → 프로텍도 롤모델 삼아 본딩·레이저로 제품 확장.</li>
+</ul>
+</div>
+
+<h3>신사업 — 본딩 · 레이저 · 레이저본더</h3>
+<div class="card">
+<ul>
+  <li>디스펜서는 30년 캐시카우. 본딩·레이저는 약 10년간 개발·육성해 온 미래 먹거리. 고사양 장비 위주로 대응하면서 시장에 알려지기 시작.</li>
+  <li><b>25년 본딩+레이저 합산 약 500억, 전체 매출의 약 30%</b>. 레이저 기술은 10년 누적 매출 1,000억 이상.</li>
+  <li>기술은 2개(본딩·레이저), 제품은 3개: 본더 단독, 레이저 단독, 두 기술을 융합해 2024년 출시한 <b>레이저본더</b>. 기존 레이저 장비와 레이저본더는 다른 제품이나 기반 기술이 같아 묶어서 설명.</li>
+  <li><b>본딩 시장 규모</b>: 디스펜서 1조 대비 본딩 3~5조로 후공정 최대. 다이본더·플립칩본더·칩마운터·픽앤플레이스·TC본더·레이저본더·하이브리드본더 등 공정 곳곳에서 "칩을 정렬해 붙인다"는 개념이 모두 본딩.</li>
+  <li>기존 강자: 유럽 Besi·ASM·EVG, 일본 신카와·시바우라 등이 TSMC·삼성·하이닉스·인텔 라인을 이미 점유, 본딩만으로 각 수천억 매출. 국산화 시도 업체는 많으나 <b>양산·대규모 진입</b>이 어려움. 프로텍 본딩 500억은 아직 새싹 단계이며 500 → 800 → 1,000 → 1,500 → 2,000억 단계 성장이 목표.</li>
+  <li>진입 여지: 안정화된 라인은 잘 바꾸지 않아 진입장벽이 높지만, 하이엔드 신공정은 정형화되지 않아 수율·생산성 개선을 위해 새 장비를 활발히 시험 → 후발주자 공간이 넓음. TC본더에서 한미반도체·한화세미텍이 24년 HBM 시장 급성장에 올라탄 사례.</li>
+</ul>
+</div>
+
+<h3>레이저본더 상세</h3>
+<div class="card">
+<ul>
+  <li>TC본더를 후발로 쫓아가기 위해 보유 기술(본딩+레이저)로 <b>TC본더와 동일 역할(마이크로범프 접합)</b>을 하는 장비를 개발. 열원이 레이저라는 점이 차이.</li>
+  <li>원래 <b>메모리(HBM) 타깃</b>으로 개발했으나 TC본더 시장이 갑자기 커지며 메모리에서는 후발 추격 입장. 메모리는 이미 TC본더로 양산 중이라 개발·테스트는 하되 양산 채택까지는 시간이 걸림.</li>
+  <li><b>비메모리에서 먼저 사업화</b>: 비메모리 2.5D는 24년경 시작 단계라 TC본더·레이저본더가 같은 출발선. 현재 비메모리에서 TC본더와 경쟁적으로 양산 사용 중. Amkor와 공동개발해 납품 → ASE로 확대 중.</li>
+  <li>메모리(HBM 적층)와 비메모리(완성된 HBM·GPU를 인터포저에 붙이는 2.5D/3D)는 요구 사양이 달라 공정 자체가 다름.</li>
+  <li><b>매출</b>: 24년 개발·테스트·데모 → 25년 매출 시작, 레이저본더 200억 초반. 26년 250~300억, 27년 추가 증가(400억대 언급). 비메모리 특성상 완만하지만 오랜 기간 꾸준히 성장. 메모리 채택 시 급증 가능.</li>
+  <li>규모감: 메모리 TC본더는 100~300대 한 번에 → 5,000억 이상. 비메모리도 50~100대 수준이면 연 3,000~5,000억이 매년 나올 수 있는 시장. 현재는 대수가 적은 양산 초기.</li>
+  <li>경쟁 구도: 메모리 TC본더 업체는 변동성 낮은 비메모리로, 프로텍은 규모가 큰 메모리로 진입하고 싶어 서로 교차 경쟁.</li>
+  <li><b>하이브리드본더와의 차이</b>: TC·레이저본더는 마이크로m 단위, 하이브리드본더는 나노m 단위 + 진공·플라즈마 등 전공정 수준 난이도 → 완전히 다른 기술. 장비 단가 50~80억. 업체들 개발이 진행되면 단가 하락으로 도입이 빨라질 수 있음.</li>
+</ul>
+<div class="tbl">
+<table>
+<tr><th>제품군</th><th>25년 매출</th><th>26년 전망</th><th>비고</th></tr>
+<tr><td>디스펜서</td><td>약 2,000억</td><td>꾸준, 수익성 개선</td><td>30년 캐시카우, 매출 비중 최대</td></tr>
+<tr><td>본딩 장비 (레이저 제외)</td><td>약 300억</td><td>100~200억</td><td>삼성 메모리 양산 채택. 메모리 특성상 격년 등락, 27년 재증가 예상</td></tr>
+<tr><td>레이저본더</td><td>200억 초반</td><td>250~300억</td><td>비메모리(Amkor·ASE) 양산 초기, 27년 증가</td></tr>
+</table>
+<div class="legend">회사 발언 기준 개략 수치. 본딩+레이저 합산 25년 약 500억(≈30%).</div>
+</div>
+</div>
+
+<h3>수익성 구조</h3>
+<div class="card">
+<ul>
+  <li>주문제작 설비 → 매출이 늘어도 고정비가 급증하지 않아 이익 레버리지가 큼.</li>
+  <li>분기 매출 100~200억: OPM 한 자리 / 300억 이상: 두 자리 / 500억 이상: 20% 이상.</li>
+  <li>30%를 찍었다고 40~50%로 가는 구조는 아님. 독점기업이 되면 가능하지만, 세계 1위도 20% 후반~30%. 정보 비대칭이 사라져(누구나 경쟁사 실적 조회 가능) 이익률이 과도하면 고객이 단가 인하를 요구.</li>
+  <li><b>적정 OPM 25~30%</b>(20~35% 등락의 평균). 이익 성장은 규모 확대로: 1,000억×30%=300억 → 2,000억×30%=600억.</li>
+  <li>레이저 장비 단가 10~20억, 레이저본더·TC본더는 그보다 비쌈 → 대수는 적어도 금액이 큼.</li>
+</ul>
+</div>
+
+<h3>연결 종속회사</h3>
+<div class="card">
+<ul>
+  <li>PNM 등 후공정 설비·부품 자회사: 프로텍 장비에 들어가는 공압실린더·리니어 등 기계 부품 생산. 생산의 약 90%를 프로텍에 납품 → <b>프로텍 매출과 연동</b>. 25년 매출 약 470억, 순이익 약 100억. 외판을 늘리려면 캐파 100→200 확장이 필요해 공장 확장 투자 진행 중.</li>
+  <li><b>PMT</b>: 반도체 검사 부품 업체(삼성전자 1차 벤더, NAND 위주)로 프로텍과 성격이 다름. 부품 라인은 고정비가 커서 가동률에 이익이 좌우. 풀캐파 연 600~700억, 500억 이상이면 흑자.
+    <ul class="sub-ul">
+      <li>지난 몇 년 본업 부진 속 신제품 시도로 비용이 커져 적자 확대. 작년 연간 약 230~250억 적자로 연결이익을 잠식(별도 이익이 실제보다 작게 보인 효과).</li>
+      <li>올해 부품사 가동률 회복으로 적자폭 축소. 상반기 약 300억 매출. 유상증자 완료, 자금은 생산능력 확장에 투입해 기본 매출을 600억~1,000억대로 올려 경기 하강 시(200~300억) 적자 재발을 막는 것이 우선. DRAM 등 신제품 확장은 기본기를 다진 이후.</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h2>2. Q&amp;A</h2>
+
+<h3><span class="badge">A</span>고객 비중·투자 사이클</h3>
+<div class="card">
+<div class="qa"><div class="q">Q. 고객사 비중을 나눠보면? 삼성이 작년에 이어 올해도 후공정 투자를 많이 하는 것 아닌가?</div>
+<div class="a"><ul>
+  <li>비중을 나눌 필요가 없음. 고객은 정해져 있고, 어느 업체가 그 해 투자를 많이 하면 그 업체 비중이 올라가는 식으로 계속 이동.</li>
+  <li>삼성이 투자를 "안 한다"가 아니라 작년 대비 규모가 줄어 비중이 낮아졌다는 의미. 다른 업체가 더 많이 하면 그쪽이 올라감. 비중 차이일 뿐.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 어드밴스드 패키징으로 가면 장비 대수가 늘어나나, 사양만 업그레이드되나?</div>
+<div class="a"><ul>
+  <li>"투자 안 하던 데가 투자하는" 개념. 추가 수요로 대수·매출이 함께 늘어남.</li>
+  <li>고사양 장비는 단가가 높고 수량은 적음. 같은 매출이면 고사양 비중이 5:5 → 7:3으로 올라간 구조.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 믹스 개선으로 OPM이 구조적으로 좋아지는 것인가? 이미 30%대까지 왔는데.</div>
+<div class="a"><ul>
+  <li>고사양 비중 상승으로 개선된 것은 맞음. 다만 40~50%는 독점기업이나 가능. 적정 25~30%로 보고 매출 규모를 키워 이익 절대액을 늘리는 방향.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 전방(27~28년)은 계속 좋아지는 게 맞나?</div>
+<div class="a"><ul>
+  <li>고사양은 24년 말 시작한 초입이라 성장 지속. 본딩도 500→800억으로 키우겠지만 아직은 디스펜서 비중이 압도적으로 높음.</li>
+  <li>레거시는 25년부터 부품사가 먼저 회복(가동률 상승) → 장비사는 27년 회복 기대. 경기는 오르내리므로 계속 줄지는 않음.</li>
+</ul></div></div>
+</div>
+
+<h3><span class="badge">B</span>경쟁 구도·신사업</h3>
+<div class="card">
+<div class="qa"><div class="q">Q. 고사양 디스펜서를 하는 업체는 극소수 아닌가? 경쟁사 간 점유율 변동은?</div>
+<div class="a"><ul>
+  <li>Nordson이 50~60%로 압도적 1위, 나머지(무사시·프로텍·유럽)와 격차가 큼. 점유율 엎치락뒤치락은 거의 없고 산업 성장을 같이 누리는 구조. 1위가 이익을 많이 내니 나머지도 이익이 보장되는 시장.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 500억 규모의 본딩·레이저본더는 기존 시장 침투인가, 새로 만든 시장인가?</div>
+<div class="a"><ul>
+  <li>기존 업체가 이미 다 깔려 있는 시장. 안정화 라인은 가격경쟁으로도 진입이 어렵지만, 하이엔드 신공정은 정형화 전이라 새 장비를 넣어 수율·생산성을 높이려는 수요가 활발 → 후발주자 공간. TC본더의 한미·한화세미텍 사례처럼 시장이 갑자기 커지며 국산화가 안착한 경우.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 레이저본더는 OSAT향으로 어떤가? 메모리와 비메모리 차이는?</div>
+<div class="a"><ul>
+  <li>메모리는 HBM1·2·3부터 TC본더를 10년 넘게 써 온 성숙 시장이라 후발 추격. 비메모리 2.5D는 24년경 시작이라 TC본더와 같은 출발선 → 비메모리에서 먼저 양산 진입, 현재 TC본더와 병행 사용 중.</li>
+  <li>메모리는 한 번에 100대 이상 들어가 수천억이 나오지만 등락이 큼. 비메모리는 다품종 소량이라 꾸준히 오래 성장. 두 시장의 성격이 상반됨.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 삼성·하이닉스는 하이브리드본더로 가는 것 아닌가?</div>
+<div class="a"><ul>
+  <li>하이브리드본더는 TC·레이저본더(마이크로m)와 달리 나노m 단위, 진공·플라즈마 등 전공정 수준 기술로 완전히 다른 영역. 단가가 매우 높아 업체들의 개발로 단가가 내려와야 도입이 빨라짐.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 고객사가 대량 채택해 줘야 하는데 변곡점은 무엇인가? (피에스케이홀딩스처럼 리플로우로 커진 사례 언급)</div>
+<div class="a"><ul>
+  <li>10년 개발 끝에 삼성전자가 본딩 장비를 채택해 준 것이 첫 변곡점. 다음은 레이저본더의 메모리 진입 — TC본더와 가격경쟁이 가능한 수준이 되어야 함.</li>
+  <li>롤모델인 본딩 회사들(Besi·신카와 등)은 연 5,000억 수준. 프로텍 본딩은 500억으로 아직 새싹, 잘 키워야 하는 단계.</li>
+</ul></div></div>
+</div>
+
+<h3><span class="badge">C</span>2Q26 실적·자회사</h3>
+<div class="card">
+<div class="qa"><div class="q">Q. 2Q 실적이 시장 예상보다 훨씬 잘 나온 이유는? PMT 효과인가?</div>
+<div class="a"><ul>
+  <li>별도 재무제표는 작년부터 계속 좋아지고 있음. 연결에서는 작년 PMT 적자(연 230~250억)가 별도 이익을 잠식했는데, 올해 PMT 적자폭이 줄면서 연결이 정상적으로 보이기 시작. 본업 개선 + 자회사 연동 개선 + PMT 적자 축소가 겹친 결과.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. PMT 현황과 유상증자 자금 용도는? 고객이 삼성 NAND에 한정돼 있는데 DRAM 등으로 확장하나?</div>
+<div class="a"><ul>
+  <li>부품사라 캐파 상한(연 600~700억)이 있고 500억 이상이면 흑자. 상반기 약 300억. 유상증자 자금은 생산능력 확장에 투입해 기본 매출을 1,000억대로 끌어올리는 게 목표.</li>
+  <li>지난 몇 년 본업이 안 되는 상황에서 신제품을 시도하다 비용만 늘어 적자가 커진 경험. 우선 본업(NAND) 기본기를 탄탄히 해 경기 하강 시 200~300억으로 떨어져도 적자가 안 나는 체력을 만든 뒤 신제품은 그 다음.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. PNM은 작년(매출 약 470억, 순이익 약 100억) 수준을 올해도 유지하나? 외부 판매도 고려한다고 했는데.</div>
+<div class="a"><ul>
+  <li>프로텍과 연동되므로 프로텍 매출이 늘면 같이 좋아짐. 작년보다는 나아지는 그림. 프로텍 장비용 공압실린더·리니어 등 기계 부품이며 생산의 90%가 프로텍향.</li>
+  <li>외판을 하려면 100 → 200으로 캐파를 늘려 100은 프로텍, 100은 외부(다른 장비사)로 파는 구조가 필요 → 현재 공장 확장 설비투자 진행 중.</li>
+</ul></div></div>
+</div>
+
+<h3><span class="badge">D</span>3Q·하반기·가이던스</h3>
+<div class="card">
+<div class="qa"><div class="q">Q. 3Q는 어떻게 진행되나? 예전처럼 하반기로 갈수록 좋아지는 패턴인가?</div>
+<div class="a"><ul>
+  <li>장비사는 급격한 변동이 없음. 하반기 계절성은 시장 이슈가 없을 때 고객 투자부서의 관행(1Q 계획, 2·3Q 집행, 4Q 마무리)에서 나오던 것이고, 지금은 AI가속기·데이터센터 고사양 투자에 맞춰 물량을 빨리 쳐내는 것이 시장 포커스.</li>
+  <li>이미 수주·발주된 물량은 하반기 시장과 무관하게 납품. 고객이 투자를 줄인다고 해도 3~4개월(최대 6개월) 후 반영.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 2Q가 너무 좋아서 3Q·4Q에 QoQ로 꺾일 우려는?</div>
+<div class="a"><ul>
+  <li>QoQ 변동은 원래 큼. 저사양 장비(1~2억, 납기 1~2개월)는 분기 내 반영이 되지만, 고사양 장비(10~20억, 납기 4~6개월)는 분기에 다 담기지 않아 어떤 분기는 몰리고 어떤 분기는 비는 구조. <b>반기·연간</b>으로 볼 것. 연간으로는 증가.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 다른 장비사처럼 수주잔고를 공시하지 않는 이유는?</div>
+<div class="a"><ul>
+  <li>후공정은 전공정처럼 라인 단위로 미리 계획·발주하지 않음. 가동률이 10%→20%로 올라오면 급하게 2대→4대 추가하는 식으로 <b>가동률에 연동해 단기 발주</b>되므로 변동이 커 잔고 공시가 의미가 적음.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 후공정 가동률은 풀 아닌가? 참고할 지표는?</div>
+<div class="a"><ul>
+  <li>"풀"이라기보다 기존 라인에서 100→120으로 조금씩 올리는 분위기. 시장은 고사양에만 관심.</li>
+  <li>ASE·Amkor·JCET 등 상장 OSAT의 연초(2월) 실적발표에 나오는 <b>capex 세부 항목 중 설비투자</b>가 프로텍과 직접 연동. IDM(삼성·하이닉스·TSMC·인텔) capex는 전공정 위주라 후공정 비중을 가늠하기 어려워 간접 지표로만.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. LS증권 정홍식 위원 추정치(26년 영업이익 746억)가 부담스럽지 않나? 상반기 380억이니 하반기가 상반기 수준이어야 하는데.</div>
+<div class="a"><ul>
+  <li>갑자기 바뀔 요인이 없고 오히려 좋아지고 있어 무리 없다는 시각. 분위기가 바뀌면 3~4개월(고객 투자 축소 시 약 6개월) 후 반영되는 것이 장비사의 정석.</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 내년 레거시 턴 + 고사양이 같이 가면 믹스가 나빠질 수 있지 않나?</div>
+<div class="a"><ul>
+  <li>고정비를 커버하면 기본 20%대는 유지. 적정 25~30%(20~35% 등락) 범위 안에서 움직일 것. PMT 적자도 더 이상 보지 않을 것.</li>
+  <li>사이클 순서: 회복 시 부품사(가동률) → 설비사, 하강 시 부품사 → 설비사(수주분은 납품 완료 후 반영).</li>
+</ul></div></div>
+<div class="qa"><div class="q">Q. 최근 시장 관심 이슈, 생산 캐파는?</div>
+<div class="a"><ul>
+  <li>디스펜서는 상장 20년(설립 30년)으로 잘 알려져 있어 관심이 적고, 시장 관심은 신제품(본딩·레이저)과 종속회사에 집중. 본딩·레이저가 잘 되면 무조건 좋아지는 구조.</li>
+  <li>생산 캐파는 충분. 본사 외 수원 공장 운영(인천은 운영 어려워 임대로 전환). 2,000억 이상 소화했고 3,000억 이상도 대응 가능.</li>
+</ul></div></div>
+</div>
+
+<footer>
+<b>소싱</b>: 2026년 9월 프로텍 IR 미팅 STT 녹취 정리. 숫자는 회사 발언 기준 개략치(확정 공시 수치 아님). STT 특성상 일부 고유명사·수치는 문맥으로 보정했으며, 종속회사명 등 불명확한 부분은 제외.<br>
+<b>Disclaimer</b>: 본 자료는 미팅 내용 정리이며 투자 판단이나 추천이 아닙니다.
+</footer>
+
+</div>
+</body>
+</html>

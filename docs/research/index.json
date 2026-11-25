@@ -1,0 +1,228 @@
+{
+ "sections": [
+  {
+   "key": "analysis",
+   "label": "기업분석"
+  },
+  {
+   "key": "meetings",
+   "label": "탐방·콥데이·컨콜"
+  }
+ ],
+ "markets": [
+  {
+   "key": "kr",
+   "label": "국내주식"
+  },
+  {
+   "key": "us",
+   "label": "해외주식"
+  }
+ ],
+ "items": [
+  {
+   "id": "analysis-us-1",
+   "section": "analysis",
+   "market": "us",
+   "kind": "기업분석",
+   "company": "COGT",
+   "code": "",
+   "date": "2026-11-24",
+   "title": "Cogent Biosciences (COGT) 기업분석 · KT · 2026.11.24",
+   "path": "files/analysis/us/COGT_KT_기업분석_20261124.html",
+   "kb": 128
+  },
+  {
+   "id": "meetings-us-16",
+   "section": "meetings",
+   "market": "us",
+   "kind": "컨콜",
+   "company": "Nebius",
+   "code": "",
+   "date": "2026-11-12",
+   "title": "Nebius Group 3Q26 컨퍼런스콜 정리",
+   "path": "files/meetings/us/Nebius_3Q26_컨콜_261112.html",
+   "kb": 124
+  },
+  {
+   "id": "meetings-us-15",
+   "section": "meetings",
+   "market": "us",
+   "kind": "컨콜",
+   "company": "Cisco",
+   "code": "",
+   "date": "2026-11-12",
+   "title": "Cisco 1Q FY27 컨퍼런스콜 정리",
+   "path": "files/meetings/us/Cisco_1Q_FY27_컨콜_261112.html",
+   "kb": 124
+  },
+  {
+   "id": "meetings-kr-14",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "프로텍",
+   "code": "",
+   "date": "2026-09",
+   "title": "프로텍 IR 미팅 정리 (2026.09)",
+   "path": "files/meetings/kr/프로텍_탐방_2609.html",
+   "kb": 29
+  },
+  {
+   "id": "meetings-kr-12",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "콥데이",
+   "company": "지엔씨에너지",
+   "code": "",
+   "date": "2026-09",
+   "title": "지엔씨에너지 코퍼레이트 데이 미팅노트 — 2026.09",
+   "path": "files/meetings/kr/지엔씨에너지_콥데이_2609.html",
+   "kb": 23
+  },
+  {
+   "id": "meetings-kr-10",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "콥데이",
+   "company": "인텔리안테크",
+   "code": "",
+   "date": "2026-09",
+   "title": "인텔리안테크 콥데이 IR 미팅 정리",
+   "path": "files/meetings/kr/인텔리안테크_콥데이_2609.html",
+   "kb": 31
+  },
+  {
+   "id": "meetings-kr-9",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "콥데이",
+   "company": "에이치브이엠",
+   "code": "",
+   "date": "2026-09",
+   "title": "에이치브이엠(HVM) 콥데이 IR 미팅 정리 — 2026.09",
+   "path": "files/meetings/kr/에이치브이엠_콥데이_2609.html",
+   "kb": 33
+  },
+  {
+   "id": "meetings-kr-5",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "콥데이",
+   "company": "마키나락스",
+   "code": "",
+   "date": "2026-09",
+   "title": "마키나락스 코퍼레이트 데이 미팅노트 — 2026.09",
+   "path": "files/meetings/kr/마키나락스_콥데이_2609.html",
+   "kb": 26
+  },
+  {
+   "id": "meetings-kr-6",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "마키나락스",
+   "code": "",
+   "date": "2026-09",
+   "title": "마키나락스 IR 미팅 정리",
+   "path": "files/meetings/kr/마키나락스_탐방_2609.html",
+   "kb": 34
+  },
+  {
+   "id": "meetings-kr-4",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "마이크로컨텍솔",
+   "code": "",
+   "date": "2026-09",
+   "title": "마이크로컨텍솔 IR 미팅노트",
+   "path": "files/meetings/kr/마이크로컨텍솔_탐방_2609.html",
+   "kb": 30
+  },
+  {
+   "id": "meetings-kr-3",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "로보티즈",
+   "code": "",
+   "date": "2026-09",
+   "title": "로보티즈 IR 미팅 정리 (2026.09)",
+   "path": "files/meetings/kr/로보티즈_탐방_2609.html",
+   "kb": 42
+  },
+  {
+   "id": "analysis-kr-0",
+   "section": "analysis",
+   "market": "kr",
+   "kind": "기업분석",
+   "company": "씨이랩",
+   "code": "189330",
+   "date": "2026-08-19",
+   "title": "씨이랩 수주 해부",
+   "path": "files/analysis/kr/씨이랩_189330_260819.html",
+   "kb": 92
+  },
+  {
+   "id": "meetings-kr-8",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "씨이랩",
+   "code": "",
+   "date": "2026-08-19",
+   "title": "씨이랩(189330) IR 미팅노트 — 2026.8",
+   "path": "files/meetings/kr/씨이랩_탐방_260819.html",
+   "kb": 39
+  },
+  {
+   "id": "meetings-kr-13",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "콜마비앤에이치",
+   "code": "",
+   "date": "2026-07-14",
+   "title": "콜마비앤에이치(200130) IR 미팅노트 — 2026.7.14",
+   "path": "files/meetings/kr/콜마비앤에이치_탐방_260714.html",
+   "kb": 42
+  },
+  {
+   "id": "meetings-kr-11",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "자이에스앤디",
+   "code": "",
+   "date": "2026-07-13",
+   "title": "자이에스앤디(317400) IR 미팅노트 — 2026.7.13",
+   "path": "files/meetings/kr/자이에스앤디_탐방_260713.html",
+   "kb": 28
+  },
+  {
+   "id": "meetings-kr-2",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "노바렉스",
+   "code": "",
+   "date": "2026-07-08",
+   "title": "노바렉스(194700) IR 미팅노트 — 2026.7.8",
+   "path": "files/meetings/kr/노바렉스_탐방_260708.html",
+   "kb": 26
+  },
+  {
+   "id": "meetings-kr-7",
+   "section": "meetings",
+   "market": "kr",
+   "kind": "탐방",
+   "company": "사피엔반도체",
+   "code": "",
+   "date": "2026-05-28",
+   "title": "사피엔반도체 (452430) — IR 미팅노트",
+   "path": "files/meetings/kr/사피엔반도체_탐방노트_260528.html",
+   "kb": 28
+  }
+ ]
+}

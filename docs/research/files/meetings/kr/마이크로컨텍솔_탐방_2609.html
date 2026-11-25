@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>마이크로컨텍솔 IR 미팅노트 | HYPR_Hyperfine</title>
+<style>
+  :root{--navy:#0f1b2a;--navy2:#1C3D5A;--orange:#E5601F;--bg:#f4f6f9;--line:#e1e6ec;--txt:#1f2933;--mute:#5b6b7b;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;font-size:15px;line-height:1.7}
+  .wrap{max-width:960px;margin:0 auto;padding:0 0 60px}
+  .cover{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:44px 40px 36px}
+  .cover .ticker{font-size:13px;letter-spacing:.5px;color:#f7c3a2;margin-bottom:8px}
+  .cover h1{margin:0 0 6px;font-size:30px;line-height:1.25}
+  .cover .sub{color:#cbd6e2;font-size:15px;margin-bottom:26px}
+  .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .meta div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:12px 14px}
+  .meta b{display:block;font-size:12px;color:#f7c3a2;font-weight:600;margin-bottom:3px}
+  .meta span{font-size:14px}
+  .body{padding:26px 40px 0}
+  h2{font-size:20px;color:var(--navy2);border-left:5px solid var(--orange);padding-left:12px;margin:38px 0 14px}
+  h3{font-size:16px;color:var(--navy);margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:12px 0}
+  .box{border-radius:8px;padding:14px 18px;margin:12px 0;font-size:14px}
+  .box.blue{background:#eaf1f8;border-left:4px solid var(--navy2)}
+  .box.warn{background:#fdf1e9;border-left:4px solid var(--orange)}
+  ul{margin:6px 0 6px 18px;padding:0}
+  li{margin:3px 0}
+  li ul{margin-top:2px}
+  .qa{margin:14px 0}
+  .q{font-weight:700;color:var(--navy2);margin:0 0 4px;padding-left:28px;position:relative}
+  .q::before{content:"Q";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:4px;background:var(--orange);color:#fff;font-size:12px;text-align:center;line-height:20px}
+  .a{padding-left:28px;position:relative}
+  .a::before{content:"A";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:4px;background:var(--navy2);color:#fff;font-size:12px;text-align:center;line-height:20px}
+  .a ul{margin-left:16px}
+  table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;margin:10px 0}
+  th{background:var(--navy2);color:#fff;padding:9px 10px;text-align:left;font-weight:600}
+  td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .badge{display:inline-block;background:var(--orange);color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;margin-right:6px;vertical-align:middle}
+  .note{font-size:13px;color:var(--mute)}
+  .foot{margin-top:44px;padding-top:16px;border-top:2px solid var(--navy2);font-size:12.5px;color:var(--mute)}
+  @media (max-width:640px){.meta{grid-template-columns:repeat(2,1fr)}.cover,.body{padding-left:20px;padding-right:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">KOSDAQ 098120 · 마이크로컨텍솔 · IR 미팅노트</div>
+  <h1>마이크로컨텍솔 IR 미팅 정리</h1>
+  <div class="sub">2Q26 실적 이후 기관투자자 방문 미팅 — 회사 설명 및 Q&amp;A (녹취 기반)</div>
+  <div class="meta">
+    <div><b>미팅 시점</b><span>2026년 9월 초 (2Q 실적 발표 후)</span></div>
+    <div><b>회사측</b><span>IR·재무 담당 / 기술·영업 본부장</span></div>
+    <div><b>2Q26 매출 (언급)</b><span>연결 377억 · MSL 137억</span></div>
+    <div><b>주요 주제</b><span>2Q 호실적 배경 · 캐파/외주 · 고객별 현황 · 증설 · 주주환원</span></div>
+  </div>
+</div>
+
+<div class="body">
+
+<div class="box warn">
+  <b>정리 기준</b> · STT 녹취를 기반으로 정리했으며, 음성 인식이 불명확한 수치·고유명사는 <span class="note">(녹취 불명확)</span>으로 표시. 참석자 간 잡담(점심, 애널리스트 연결 등)은 제외. 발언은 회사측 설명을 그대로 옮긴 것으로 별도 판단을 담지 않음.
+</div>
+
+<h2>1. 회사측 오프닝 설명</h2>
+<div class="card">
+  <ul>
+    <li><b>업황 총평</b>: 현재 메모리 반도체 업황이 이어지고 있어, 후공정(번인 소켓) 업체로서 실적·전체 흐름이 좋다고 포괄적으로 설명</li>
+    <li><b>IR 한계 언급</b>: 삼성·SK하이닉스·해외 고객 관련 기술적 질문이 많은데 회사가 답할 수 있는 범위에 한계가 있음 (모르는 부분도 있고, 알아도 말할 수 없는 부분도 있음) — 가능한 범위 내에서 답변하겠다고 안내</li>
+    <li><b>사업 구성 (미팅 중 언급 기준)</b>
+      <ul>
+        <li>세미콘(번인 소켓): 삼성·SK하이닉스·해외(CXMT 등) 메모리 고객 대상, 회사 실적의 핵심</li>
+        <li>MSL: 별도 가동률·매출로 관리되는 부문. 7~8년 누적 적자였다가 흑자 전환, 상반기 누적 이익률 약 40%</li>
+        <li>어플라이언스: LS 관련(LSA) 물량 중심. 현재 적자 폭 관리가 관건</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<h2>2. Q&amp;A — 2Q 실적과 고객 믹스</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">2Q 실적이 좋게 나온 이유는? (번인 소켓 가동률이 크게 좋아진 것인지)</p>
+    <div class="a"><ul>
+      <li>2Q는 삼성 매출뿐 아니라 <b>SK하이닉스와 해외(CXMT 등) 매출이 크게 증가</b></li>
+      <li>DDR5 관련 소켓 매출이 상승했고, 메모리 쪽 아이템 전반이 증가</li>
+      <li><b>매출 비중 변화</b>: 과거 삼성이 50~60%였으나 현재는 삼성 30%대 / SK하이닉스 30%대 / 해외가 나머지 수준으로 분산</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">5월 간담회에서 DDR5 기존 제품 ASP는 하락 국면이라 했는데, 2Q GP·OP가 잘 나온 이유는? 단가 효과인지 볼륨 효과인지, 지속 가능한지?</p>
+    <div class="a"><ul>
+      <li><b>단가가 아니라 볼륨</b>이 커진 효과</li>
+      <li>지속성은 뒤의 '하반기 전망' 항목 참조 — 회사측은 "연말까지는 시장에서 이야기하는 트렌드를 따라간다"는 입장</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">고객사별로 어떤 부분이 굵직하게 좋아졌나? SK하이닉스 물량이 확 늘었다는데 어떤 제품·아이템에서 늘었는지 구체적으로?</p>
+    <div class="a"><ul>
+      <li>특정 타입이 아니라 <b>전체적으로 증가</b>. 기존에 하던 소켓 타입, PCR 관련 소켓(녹취 불명확) 모두 함께 늘어나는 추세</li>
+      <li>근본 원인은 <b>고객사 캐파(생산량)가 커진 것</b>이고, 그에 맞춰 회사도 생산 캐파를 키움 (설비 도입 + 인원 충원·교육 진행 중)</li>
+      <li>DDR5·NAND·LPDDR 중 어느 것이 제일 늘었냐는 질문에는 "정량적으로 계산해봐야 하지만 다 같이 늘었다"고 답변</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">2Q 매출 볼륨이 확 튀었는데, 이 정도 수준이 분기마다 유지될 수 있나?</p>
+    <div class="a"><ul>
+      <li>확답은 어렵지만 "나쁘지 않다"는 입장. 그래서 설비 투자와 외주업체 확보를 진행 중</li>
+      <li>결국 늘어난 메모리 수요 속에서 번인 소켓 벤더 간 경쟁이므로, <b>품질·가격·납기(QCD)</b>로 얼마나 포지션을 가져오느냐의 문제</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>3. Q&amp;A — 캐파·설비 투자·외주</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">2Q 기준 번인 소켓 가동률이 115% 정도로 계산되는데, 추가 장비 도입 계획은?</p>
+    <div class="a"><ul>
+      <li>설비는 고정이고 <b>아이템별 캐파에 따라 달라지는 구조</b>. 캐파는 두 가지로 관리
+        <ul>
+          <li>① 내재화 부품 캐파 (몰드·프레스 등 부품 자체 생산)</li>
+          <li>② 조립 캐파</li>
+        </ul>
+      </li>
+      <li>상반기 이전부터 투자 진행 중. 핵심은 <b>자삽기(컨택 핀 자동 삽입 설비)</b>
+        <ul>
+          <li>컨택 핀(예: 200핀, 800핀급)을 사람이 수삽하던 것을 기계로 자동 삽입</li>
+          <li>기존 39대 보유 → 8월 5대 입고(테스트 후 9월 초 양산 투입, 현재 가동 중) → 10월까지 12대 추가 입고 예정 → <b>총 17대 증가</b></li>
+          <li>신규 설비는 기존 자삽기보다 속도·캐파가 우수</li>
+        </ul>
+      </li>
+      <li>투자 금액은 회사 규모 대비 크지만 "큰 금액은 아니다"라는 표현 (구체 금액 미언급)</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">자삽기 도입으로 인건비가 줄어드나?</p>
+    <div class="a"><ul>
+      <li>외주도 함께 쓰고 있어 인건비가 크게 줄지는 않음. 기존 자삽기도 계속 가동해야 하기 때문</li>
+      <li>신규 설비는 속도가 좋아 캐파 증가·인건비 절감 효과는 있지만, 물량 증가에 맞춰 <b>오히려 인원 채용이 필요한 상황</b></li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">인력 확보가 어려워 외주를 준다고 했는데, 어떤 공정을 외주로 주고 어떤 공정을 내부에서 하나?</p>
+    <div class="a"><ul>
+      <li>소켓 1개 제품에 약 10~20가지 부품이 들어감</li>
+      <li><b>외주</b>: 조립 일부, 내부적으로 '프리어셈블리'라 부르는 사전 준비 작업 (일부 부품을 서브 조립하여 자동화 공정에 투입 가능한 상태로 만드는 단계)</li>
+      <li><b>내부</b>: 핵심 제조 공정(자동화), 최종 조립, 검사. 몰드·프레스 등 핵심 부품은 내재화 생산</li>
+      <li>사전 준비까지 모두 내부 생산하면 많은 인력이 필요해 원가 분석 결과 이 방식이 최적이라고 판단</li>
+      <li>삼성·SK하이닉스가 단납기이므로 납기·가격을 맞추려면 내부 검토·투자가 계속 필요. 설비도 기성품을 그대로 쓰는 것이 아니라 협력사와 함께 회사 검사 기준에 맞춰 설계·제작</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">외주 업체는 구하기 수월한가?</p>
+    <div class="a"><ul>
+      <li>쉽지 않음. 올해는 <b>해외 외주까지 진출</b>했고, 그래서 자삽기 투자도 병행</li>
+      <li>3Q 볼륨 대응은 외주 활용 + 자삽기 투자로 이해해 달라는 설명</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">3Q 들어 2Q 대비 볼륨은 어떤가?</p>
+    <div class="a"><ul>
+      <li>영업에서는 "바쁘다"는 이야기만 하는 상황. 어디서 얼마 오더를 받았다는 식의 구체 답변은 어려움</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>4. Q&amp;A — MSL 부문</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">MSL 2Q 가동률은? (공시에 별도 표기가 없음)</p>
+    <div class="a"><ul>
+      <li>MSL 2Q 매출 137억 (1Q 42억 → +95억, 3배 이상). 연결 전체 377억</li>
+      <li>가동률을 별도로 명시해 받지는 않았으나, <b>풀가동 상태로 주말에도 가동 중</b>. 2Q와 현재 모두 동일</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">MSL 장비 8월 입고분 양산 시점, 향후 도입 타임라인은?</p>
+    <div class="a"><ul>
+      <li>8월 입고 → 테스트 → 9월 초 양산 (자삽기 관련 답변으로, 위 3항과 동일 내용)</li>
+      <li>MSL 쪽 추가 도입은 <b>공간 문제</b>가 선행. 기존 건물 1층만 사용해 왔는데 매출이 커지고(상반기까지 140억 목표였는데 이미 100억 초과 — 녹취 불명확) 장비·인원이 늘어 <b>새 건물을 요청</b>받은 상태, 검토 중</li>
+      <li>추가 설비 셋업을 하려면 공사가 필요하며, 현재 여유 공간이 없어 이후 투자는 건물 확보를 중심으로 진행해야 함</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>5. Q&amp;A — 제품·고객별 현황</h2>
+<div class="card">
+  <h3>LPDDR5 / LPDDR6 / SOCAMM</h3>
+  <div class="qa">
+    <p class="q">LPDDR5 매출이 2Q부터 늘고 있다는데, CXMT와 SK하이닉스 쪽 LPDDR5·LPDDR6 관련 매출은?</p>
+    <div class="a"><ul>
+      <li>영업에서는 아이템별 내용을 인지하고 있으나 <b>LPDDR 매출을 별도로 구분해 관리하지는 않음</b></li>
+      <li><b>CXMT</b>: LP는 아직 크게 확장되지 않았고 시작 단계. 퀄 테스트는 통과한 모델·안 된 모델·진행 중인 모델이 섞여 있고, 일부 모델은 매출 발생. CXMT 내 LP 비중은 높지 않음</li>
+      <li><b>SK하이닉스</b>: LPDDR5 소켓 공급이 지속되고 있음</li>
+      <li><b>LPDDR6</b>: 초도 물량 단계, 시장이 크게 확장된 상황은 아님</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">3Q·4Q부터 SOCAMM 물량이 크게 늘어난다는데, LPDDR 안에서 SOCAMM용은 구분되나? 1Q→2Q→3Q·4Q로 늘어난다고 봐도 되나?</p>
+    <div class="a"><ul>
+      <li>SOCAMM 등 모듈에 들어가는 메모리 모델이 있긴 하지만 모든 메모리가 다 들어가는 것은 아니고 특정 모델. <b>그 모델들이 현재 생산을 많이 하고 있는 것은 사실</b></li>
+      <li>분기별 트렌드는 별도 분석이 필요하며, 현재 꾸준히 오더가 들어오는 상황</li>
+      <li>특정 세대·특정 메모리에 집중된 것이 아니라 <b>전체 물량이 늘어나는 것</b>으로 보면 됨</li>
+      <li>회사는 <b>SOCAMM용 번인 소켓 자체</b>와, 그 소켓에 들어가는 <b>LP 메모리용 번인 소켓</b>을 모두 공급</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">SOCAMM 1→2→3 세대 교체, 메모리 커스터마이징이 진행되면 소켓 업체에 유리한가?</p>
+    <div class="a"><ul>
+      <li>세대 교체가 발생하면 메모리가 바뀌고, 바뀐 메모리에 맞는 소켓을 공급하게 됨</li>
+      <li>다만 세대 교체 자체로 갑자기 물량이 늘어나는 것은 아님. 해당 모듈의 수요가 얼마나 발생하느냐에 따라 들어가는 메모리·소켓 수요가 결정되며, 다음 세대 모듈에 메모리가 얼마나 들어갈지는 예측 불가</li>
+    </ul></div>
+  </div>
+
+  <h3>CXMT</h3>
+  <div class="qa">
+    <p class="q">CXMT는 원래 DDR 솔벤더였는데, LPDDR 쪽으로 매출이 발생하고 있다고 이해하면 되나?</p>
+    <div class="a"><ul>
+      <li>CXMT 디자인은 2월 이후 계속 늘어나고 있음. DDR에는 오킨스도 들어가 있는 상황 (녹취 기준)</li>
+      <li>LPDDR은 위와 같이 퀄 통과·진행 중이 혼재, 비중은 아직 낮음</li>
+    </ul></div>
+  </div>
+
+  <h3>키옥시아 (NAND)</h3>
+  <div class="qa">
+    <p class="q">키옥시아 관련 진전이 있었나? 퀄 통과·PO 유입 등 하반기 매출 가능성은?</p>
+    <div class="a"><ul>
+      <li><b>승인은 받았고 양산 준비 단계</b>. 아직 매출 단계는 아님</li>
+      <li>전체 모델을 받은 것은 아니고 회사가 참여한 특정 모델 기준. <b>NAND 번인 소켓</b>으로 이해하면 됨</li>
+    </ul></div>
+  </div>
+
+  <h3>AMD (HBM 관련)</h3>
+  <div class="qa">
+    <p class="q">AMD 쪽 진행 상황은? 홀드라면 이유는? 퀄 결과는 올해 안에 알 수 없나?</p>
+    <div class="a"><ul>
+      <li>HBM 관련 퀄 테스트 진행 단계에서 현재 <b>홀드 상태</b>. 이유는 "바쁘다"는 표현 외에 정확히 파악 못 함</li>
+      <li>AMD 담당자가 지난달 회사 방문 (이 건 때문에 온 것은 아님). 이야기를 들어보면 <b>새로운 솔루션을 찾고 있는 상황</b>이며 가장 신경 쓰는 부분은 코스트로 보임</li>
+      <li>진행 중인 퀄과 별개로 <b>신규 모델을 준비 중</b></li>
+    </ul></div>
+  </div>
+
+  <h3>CLT 소켓</h3>
+  <div class="qa">
+    <p class="q">상반기 간담회에서 CLT 소켓이 삼성전자 애프터형(녹취 불명확)으로 들어간다고 했는데, 네오셈·엑시콘 쪽으로도 CLT 소켓이 공급되고 있나?</p>
+    <div class="a"><ul>
+      <li>CLT 소켓은 특별한 것이 아니라 <b>CS 소켓과 근본적으로 동일</b>. 소켓 서비스도 같음</li>
+      <li>고객사가 후공정 뒤쪽에 있던 테스트 공정 일부를 앞쪽으로 가져온 것이며, 거기에 맞는 소켓이 약간 다를 뿐</li>
+      <li>네오셈·엑시콘 양쪽 모두에 납품 중</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">CLT가 번인과 주파수 테스트를 합친 것이면 기존 번인 테스트가 축소되거나 이중으로 하는 것 아닌가?</p>
+    <div class="a"><ul>
+      <li>두 번 하는 것이 아니라 <b>같이 하는 것</b>. 회사가 아는 범위에서는 파이널 테스트의 저주파 항목 일부를 번인 쪽으로 합친 것</li>
+      <li>CLT 어떤 범위까지 후공정을 가져왔는지 정확히는 모름. 이로 인해 캐파가 확 늘어나는 것은 아니며, 모든 제품을 그렇게 하는 것도 아님</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">왜 삼성전자만 CLT를 하고 SK하이닉스는 안 하나?</p>
+    <div class="a"><ul>
+      <li>CLT 개발 배경은 <b>테스트 코스트 절감</b>. 마지막 공정의 펑션 테스트 설비는 시간·비용이 많이 드는데, 그 일부를 다른 공정으로 옮기면 남는 설비로 다른 모듈을 테스트할 수 있음</li>
+      <li>메모리 빅2가 각자 결정할 문제. SK하이닉스도 검토는 했겠지만 굳이 할 필요가 없다고 판단한 것 아니겠느냐는 <b>개인 의견</b></li>
+    </ul></div>
+  </div>
+
+  <h3>번인 테스트 트렌드</h3>
+  <div class="qa">
+    <p class="q">과거 사이클에서는 모델 변경 시 번인을 하다가 수율이 안정되면 축소하는 경향이 있었는데, 데이터센터·LP 확대로 전수 번인 수요가 계속된다는 이야기가 들린다. 실제로 어떤가?</p>
+    <div class="a"><ul>
+      <li>번인 시간이 변경될 수는 있어도 <b>전수 번인은 빠지지 않고 있음</b>. 향후에는 바뀔 수 있음</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>6. Q&amp;A — 단가·원가·이익률</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">업황이 좋아지면서 고객사가 단가·마진을 유연하게 챙겨준다는 이야기가 있는데?</p>
+    <div class="a"><ul>
+      <li>원자재 가격이 전반적으로 상승해 고객사에 전가해야 하는 상황. 영업 쪽에서 <b>원자재 가격 연동제</b>를 검토 중</li>
+      <li>어플라이언스 사업부는 LS와 원자재 연동제를 이미 진행 중</li>
+      <li>세미콘은 단가 협의는 하고 있지만 <b>원자재 상승분만큼 단가 인상이 되지는 않음</b> (압박이 덜해졌을 뿐)</li>
+      <li>도금업체 등 협력사로부터는 회사가 1차 인상을 받아준 상태. 이후 변동폭은 안정 추세지만 회사도 당장 고객 단가를 못 올려 유지 중</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">DDR5→6, SOCAMM 같은 새 제품 등 세대·마디가 바뀔 때 회사에 좋아지는 측면이 있나?</p>
+    <div class="a"><ul>
+      <li>좋아짐. <b>초기 개발 투자 비용을 고객사가 인정</b>해 주기 때문</li>
+      <li>고객·아이템별 진행 순서에 따라 순차적으로 좋아지는 구조로 볼 수 있으나, 현재는 특정 아이템이 아니라 메모리 부족에 따른 전체 볼륨 증가가 주된 요인</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">하반기에도 2Q 수준의 이익률이 유지되나?</p>
+    <div class="a"><ul>
+      <li>내부 이익률 목표를 말하기는 어려움. 연말까지는 시장 트렌드를 따라갈 것</li>
+      <li>하반기 변수: ① 원자재 <b>재고 확보</b>를 많이 해야 하는 상황 ② 설비 투자 발생 (큰 금액은 아님)</li>
+      <li><b>부문별 이익률 트렌드</b></li>
+    </ul>
+    <table>
+      <tr><th>부문</th><th>이익률 (회사 언급)</th><th>비고</th></tr>
+      <tr><td>세미콘</td><td>20~30% 사이 유지</td><td>이제까지 큰 이변 없이 이 범위 유지</td></tr>
+      <tr><td>MSL</td><td>상반기 누적 약 40%</td><td>7~8년 누적 적자 후 흑자 전환, 이번 실적 업그레이드에 기여</td></tr>
+      <tr><td>어플라이언스</td><td>적자</td><td>LS 관련 물량으로 적자 폭 최소화 중, 적자 폭 유지가 관건</td></tr>
+    </table>
+    </div>
+  </div>
+</div>
+
+<h2>7. Q&amp;A — 하반기 전망·시장 view</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">삼성 직납, SK하이닉스, CXMT로 고객이 구성되는데, 고객사별 하반기 분위기는?</p>
+    <div class="a"><ul>
+      <li>고객사가 직접 물어봐도 <b>명확히 알려주지 않음</b></li>
+      <li>과거 PO 없이 선행 생산했다가 고객 내부 사정으로 중단되어 자재값만 받은 경험이 있어 <b>선행 생산은 하지 않음</b></li>
+      <li>대신 단납기 대응을 위해 과거 데이터 기준 사용 비중이 높은 원자재(핀 등, 일부 레진류)는 <b>재고 확보 중</b></li>
+      <li>분위기는 연말까지 시장에서 이야기하는 대로 좋음</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">고객사가 역대급 증설 중인데, 회사도 체감할 정도로 증설 규모가 커야 하는 상황인가? 증설 후 온기 반영 시점은?</p>
+    <div class="a"><ul>
+      <li>이미 투자했고 진행 중인 부분(자삽기 등)으로 우선 판단해 달라는 설명</li>
+      <li>추가 투자를 해도 <b>들어올 공간이 없어</b> 우선 공장(건물) 확보가 선행돼야 함</li>
+      <li><b>시장 view (본부장 개인 의견)</b>
+        <ul>
+          <li>현재 메모리 부족 사태로 전체 볼륨·캐파가 늘어난 상황이며 당분간 지속되겠지만, <b>장기적으로 가지는 않을 것</b></li>
+          <li>거품이 빠지고 나면 급격하게 식을 수 있어 장기 투자는 신중히 결정해야 하는 단계</li>
+          <li>지금까지 투자한 부분은 내부 캐파로 충분히 감당 가능하나, <b>추가 증설은 고민이 많이 필요</b>. 공격적 증설을 한다면 그만큼 확신이 있을 때 하는 것으로 이해해도 됨</li>
+        </ul>
+      </li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">소부장 업계 파업 이슈가 많은데 회사는 영향이 있나? 명절에도 근무하나?</p>
+    <div class="a"><ul>
+      <li>파업 관련 영향 없음</li>
+      <li>명절·황금연휴에도 <b>거의 90% 가동</b>. 삼성·SK하이닉스·마이크론·CXMT 등 고객 납기 대응과, 연말 고객사의 개발비 소진 수요 때문에 쉬는 시기에 오히려 많이 가동</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>8. Q&amp;A — 증설·부지·공시</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">증축 관련 타임라인이 정해진 게 있나? 공시 대상 규모인가?</p>
+    <div class="a"><ul>
+      <li>MSL 관련 증축은 확정된 것 없음</li>
+      <li>기존에 언급했던 <b>약 3,000평 부지 매입</b>은 완료, 현재 <b>개발행위 허가 진행 중</b> (완료 아님)</li>
+      <li>캐파·설비가 늘어 현 공장에 공간이 없으므로 신규 부지로 이전할 예정이나, 이사회 결의 등 절차가 필요해 일정은 내부 검토 단계</li>
+      <li>공시: 투자비가 자산총계의 10% 미만이면 별도 공시 없이, 과거처럼 <b>주석에 토지 매입 사실·목적·진행 상황을 기재</b>할 예정</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">하반기~2027·28년 내부 경영 계획의 큰 윤곽은?</p>
+    <div class="a"><ul>
+      <li>중장기 계획은 별도로 수립하지 않고 매년 사업계획을 수립</li>
+      <li>올해는 세미콘·MSL 모두 매출이 크게 성장. 내년 투자는 검토 필요</li>
+      <li><b>어플라이언스가 관건</b>. LSA 쪽에 주력하다 보니 그 영향을 많이 받으며, 볼륨은 커질 것</li>
+      <li>신공장 건립 등도 함께 검토해야 하는 상황</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>9. Q&amp;A — 어플라이언스 사업부</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">LS 쪽 아마존 관련 건은 3Q에 진전이 있었나?</p>
+    <div class="a"><ul>
+      <li>아마존 MCC 건(녹취 기준): 현재 <b>수동 라인으로 소량 생산 진행 중</b>. 자동 라인이 아닌 수동 라인으로 오더를 받은 상태</li>
+      <li>당초 계획(연 150억 규모로 언급됐던 건 — 녹취 불명확)보다 <b>일정이 지연</b>. 회사 사유가 아니라 LSA가 아마존과 진행하면서 늦어지는 것</li>
+      <li>4Q부터 일부 매출 발생 예상</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">그러면 4Q나 내년부터 어플라이언스 BEP가 가능한가?</p>
+    <div class="a"><ul>
+      <li>아직 어려움. 시장에서 해당 소켓 가격이 이미 형성되어 있어 이익을 내기 쉽지 않은 구조</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>10. Q&amp;A — R&amp;D·해외·환율</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">반기보고서 기준 연구개발 실적이 1Q 대비 2Q에 4건 정도 늘었는데 이유는? 품목 다변화인지?</p>
+    <div class="a"><ul>
+      <li>삼성·SK하이닉스 등 <b>고객사 개발 요청</b>에 따른 개선·개발 건 (녹취상 특정 모델명·소켓 언급 있으나 불명확)</li>
+      <li>모델이 바뀌어 대응하는 경우와 신제품(세대 교체) 모두 포함. 회사가 선행 개발해 제안하는 방식은 아니고, 고객이 "이거 필요하니 만들어 달라"는 방식</li>
+      <li>매출에 애드되는 것인지 기존 모델 대체인지는 케이스별로 다름 — 세대 교체로 이해하면 편함</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">해외 매출은 대부분 CXMT(중국)인가? 마이크론 등 비중은?</p>
+    <div class="a"><ul>
+      <li>매출을 엔드유저 기준으로 나눠 놓지 않아 정확한 구분이 어려움</li>
+      <li>지역별로는 중국(대리점 다수 분포)이 가장 크고, 이어 대만, 미국, 일본 순 (녹취 기준)</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">해외 거래는 각국 통화로 받나? 환헤지는?</p>
+    <div class="a"><ul>
+      <li>기본 <b>달러 결제</b>, 일본은 엔화</li>
+      <li>별도 환헤지는 하지 않음. 환전·물품대 결제로 자연 상쇄</li>
+      <li>원화 강세 시 해외 ASP가 원화 기준으로 낮아지는 영향은 있으나 크지 않음</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>11. Q&amp;A — 경쟁 구도</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">국내 오킨스, 해외 경쟁사 대비 현재 경쟁 상황은? 서로 M/S를 침범하는 국면인지, 업황이 좋아 다 같이 좋아지는 국면인지?</p>
+    <div class="a"><ul>
+      <li>국내 경쟁사 오킨스, 해외 야마이치</li>
+      <li>둘 다 준비해야 하는 상황. 번인 소켓 벤더는 <b>삼성 4개사, SK하이닉스 5개사</b> 수준으로 경쟁 (녹취 기준)</li>
+      <li>어느 벤더가 탑이냐는 <b>QCD(품질·가격·납기)</b>로 결정되므로, 결국 전체 매출 증가 속에서 얼마나 가져오느냐로 판단하면 됨. 아무리 좋은 제품이 있어도 경쟁사 대비 QCD가 밀리면 점유율은 낮아질 수밖에 없음</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">오킨스 대비 회사의 강점·약점은?</p>
+    <div class="a"><ul>
+      <li>오킨스를 특별히 경쟁 대상으로 의식하지는 않는다는 취지의 답변 (녹취 불명확). 구체적 강약점 비교는 답하지 않음</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">방문 기록에 엑시콘이 있던데 어떤 형태의 방문이었나?</p>
+    <div class="a"><ul>
+      <li>SK하이닉스 등 신입사원 대상 교육 목적으로 소켓을 받아 교육하는 건과 관련된 방문으로 파악 (정확히는 확인 필요)</li>
+    </ul></div>
+  </div>
+</div>
+
+<h2>12. Q&amp;A — 주주환원·지배구조</h2>
+<div class="card">
+  <div class="qa">
+    <p class="q">주주환원(배당·자사주) 계획은?</p>
+    <div class="a"><ul>
+      <li>현재는 배당·자사주보다 <b>IR 소통 강화</b>에 집중하겠다는 입장. 향후 볼륨이 더 커지면 검토</li>
+      <li>과거 자사주와 무상증자 두 가지를 검토했으나, 회계사 검토 결과 재무제표 기준 자사주 매입 가능 규모가 약 5억원에 불과해 의미 없다고 판단</li>
+      <li>자사주 신탁도 검토했으나 10억원 규모로는 시장 효과가 없다고 봄 (회사 입장에서는 큰 금액)</li>
+      <li>투자자들이 타사와 비교하는 것은 알고 있으나 실제 주가 영향은 없었다는 인식. 참고로 경쟁사(오킨스)는 이익이 나도 배당하지 않는데 회사는 배당해 왔음 (경영진 판단)</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">승계 계획이나 회사 매각·M&amp;A 방향은?</p>
+    <div class="a"><ul>
+      <li>승계 계획 없음</li>
+      <li>컨설팅사 등 외부에서 연락은 많이 오지만 <b>매각 계획 없음</b>. 현재 본부장 체제로 사업 운영 중이며 당분간 유지</li>
+    </ul></div>
+  </div>
+  <div class="qa">
+    <p class="q">경쟁사보다 실적이 좋은데 시가총액이 낮은 것은 증권사 리포트 부재 때문 아닌가? 애널리스트 컨택은 있나?</p>
+    <div class="a"><ul>
+      <li>애널리스트 컨택은 많음. 기관투자자 방문 시 애널리스트도 함께 참석하는 경우가 있고, 8월에도 방문이 있었음</li>
+      <li>9월 16일 IR 관련 행사(녹취 불명확)가 예정되어 있음</li>
+    </ul></div>
+  </div>
+</div>
+
+<div class="foot">
+  <b>소싱</b> · 본 노트는 2026년 9월 마이크로컨텍솔 기관투자자 방문 미팅의 STT 녹취를 기반으로 작성. 수치(연결 377억 / MSL 137억·1Q 42억 / 자삽기 39대+17대 / 부지 3,000평 / 이익률 범위 등)는 모두 회사측 구두 언급이며 공시 확인 전 <b>추정·언급치</b>로 취급. 음성 인식 오류 가능성이 있는 부분은 본문에 표시.<br>
+  <b>Disclaimer</b> · 본 자료는 IR 미팅 내용 정리를 목적으로 하며 투자 권유가 아님. 회사측 발언의 해석·판단은 포함하지 않음. HYPR_Hyperfine.
+</div>
+
+</div>
+</div>
+</body>
+</html>

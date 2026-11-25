@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>콜마비앤에이치(200130) IR 미팅노트 — 2026.7.14</title>
+<style>
+:root{--navy-deep:#0f1b2a;--navy:#1C3D5A;--orange:#E5601F;--bg:#f4f6f8;--card:#fff;--line:#dde3ea;--txt:#22303e;--sub:#5b6b7c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;font-size:15px}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 60px}
+.cover{background:linear-gradient(135deg,var(--navy-deep),var(--navy) 70%,#2a5580);color:#fff;padding:38px 30px 32px;border-radius:0 0 14px 14px;margin-bottom:24px}
+.cover .ticker{font-size:12.5px;letter-spacing:.08em;color:#9db8d0;margin-bottom:10px}
+.cover h1{font-size:25px;line-height:1.35;font-weight:800;margin-bottom:8px}
+.cover h1 em{color:var(--orange);font-style:normal}
+.cover .subtitle{font-size:14px;color:#c6d5e2;margin-bottom:22px}
+.metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metagrid .m{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px 8px;text-align:center}
+.metagrid .m b{display:block;font-size:16px}
+.metagrid .m span{font-size:11px;color:#9db8d0}
+@media(max-width:640px){.metagrid{grid-template-columns:repeat(2,1fr)}.cover{padding:28px 18px}.cover h1{font-size:21px}}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:20px}
+@media(max-width:640px){section{padding:18px 15px}}
+h2{font-size:18.5px;font-weight:800;color:var(--navy);margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid var(--navy)}
+h2 .num{color:var(--orange);margin-right:8px}
+h3{font-size:15px;font-weight:700;color:var(--navy);margin:16px 0 8px;padding-left:9px;border-left:3px solid var(--orange)}
+p{margin-bottom:9px}
+ul{margin:0 0 10px 20px}li{margin-bottom:5px}
+strong{color:var(--navy)}
+.tldr{background:#f2f6fa;border-left:4px solid var(--orange);border-radius:8px;padding:15px 17px;margin-bottom:14px}
+.tldr ol{margin-left:19px}.tldr li{margin-bottom:7px}
+.box{border-radius:10px;padding:13px 15px;margin:11px 0;font-size:13.5px}
+.box.blue{background:#eef4fa;border:1px solid #c3d6e8}
+.box.warn{background:#fdf3ec;border:1px solid #f0cdb4}
+.box.bull{background:#edf7f0;border:1px solid #bcdcc7}
+.box.bear{background:#fbeeec;border:1px solid #ecc4be}
+.box .bt{font-weight:800;font-size:12.5px;margin-bottom:5px;letter-spacing:.03em}
+.box.blue .bt{color:#2a5d8f}.box.warn .bt{color:#a3671a}.box.bull .bt{color:#1a7a4a}.box.bear .bt{color:#b0322c}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-weight:700}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.self td{background:#fdf1e8;font-weight:700}
+/* Q&A */
+.qa{margin:14px 0 20px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa .q{background:#f2f6fa;padding:12px 16px;font-weight:700;color:var(--navy);font-size:14px;display:flex;gap:9px}
+.qa .q::before{content:"Q";flex:none;width:22px;height:22px;border-radius:6px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.qa .a{padding:13px 16px;font-size:14px;display:flex;gap:9px}
+.qa .a::before{content:"A";flex:none;width:22px;height:22px;border-radius:6px;background:var(--orange);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.qa .a .body{flex:1}
+.qa .a .body p{margin-bottom:8px}
+.qa .a .body p:last-child{margin-bottom:0}
+.qa .a .body ul{margin-bottom:0}
+.fix{color:#a3671a;font-weight:600}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;padding:1px 7px;border-radius:12px;background:#fdeadd;color:var(--orange);vertical-align:2px;margin-left:5px}
+.verdict{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#dbe6ef;border-radius:12px;padding:20px 22px;margin-top:14px;font-size:14px}
+.verdict .vt{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:.06em;margin-bottom:8px}
+.verdict b{color:#fff}
+footer{font-size:12px;color:var(--sub);padding:18px 6px 0;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">KOLMAR BNH · 콜마비앤에이치 · 200130 KOSDAQ · 건강기능식품 ODM · IR 미팅노트 · 2026.7.14</div>
+  <h1>애터미 그늘에서 나오다 — <em>"건기식의 TSMC"</em>를 재건하는<br>신임 경영진과의 첫 대면 미팅</h1>
+  <div class="subtitle">2026.2월 합류한 PEF 출신 신임 경영진 대면(약 54분 녹취). 비핵심 사업 정리 완료 → 별도 기준 우상향, 공헌이익 중심 영업 전환, Boots·Haleon·GNC 글로벌 파이프라인, 자사주 소각 예고까지 — 턴어라운드 설계도 전체 공유.</div>
+  <div class="metagrid">
+    <div class="m"><b>350억+</b><span>'26 별도 OP 가이던스(예산)</span></div>
+    <div class="m"><b>~80%</b><span>가동률(1교대 기준) · 여유 2배</span></div>
+    <div class="m"><b>300억+ → 1,000~1,500억</b><span>자체개척 해외 매출('26E → 2~3년)</span></div>
+    <div class="m"><b>자사주 소각</b><span>조만간 예정 · 배당 재개 검토</span></div>
+  </div>
+</div>
+
+<!-- 1 TLDR -->
+<section>
+  <h2><span class="num">1.</span>TL;DR — 미팅 핵심 4줄</h2>
+  <div class="tldr">
+    <ol>
+      <li><strong>실적은 별도 기준으로:</strong> 마스크·화장품 원료 사업의 계열사 매각으로 연결 매출 감소는 착시. 별도 기준 코어 건기식이 국내·해외 동시 성장, 1Q 확인·2Q 양호 전망, 연간 별도 영업이익 <strong>350억+</strong> 목표.</li>
+      <li><strong>캐펙스 없는 레버리지 구간:</strong> 2024년 완공 신공장 수율 안정화 + 1교대 기준 가동률 ~80%(실질 여유 매출 2배). 캐파 소진까지가 영업 레버리지 최대 구간이며, 이 여유가 <strong>공헌이익 기준 공격 수주</strong>를 가능케 하는 무기.</li>
+      <li><strong>성장의 원천 교체:</strong> 애터미는 싱글디짓 성장의 고마진 캐시카우로 유지. 성장은 국내 3채널(제약사·온라인 인디·유통 PB)과 <strong>글로벌 직납(Boots PB 개시 → Walgreens 옵션, Haleon 센트룸, GNC)</strong>에서. 자체개척 해외 매년 ~100% 성장 중.</li>
+      <li><strong>주주환원·거버넌스 정상화:</strong> 주식반환 소송 취하 등 분쟁 정리, 전임 대표 완전 퇴직. 자사주 조만간 소각, 배당 재개 등 "긍정적 시그널 지속" 방침. 피어(노바렉스·코스맥스엔비티) 급등으로 <strong>상대 저평가 역전</strong> + 본사 부동산 자산가치 대비 PBR 극단 저평가 주장.</li>
+    </ol>
+  </div>
+  <div class="box warn"><span class="bt">⚠ 공시 정정 예고</span>기존 공시 가동률은 <strong>1일 8시간(1교대) 기준으로 잘못 산정</strong>됐고 일부 항목은 100~150%로 오기재 — 실제는 그 절반 수준. 사업보고서에서 정정 공시 예정. 과거 공시 기반 가동률 시계열은 재해석 필요.</div>
+</section>
+
+<!-- 2 발표 요약 -->
+<section>
+  <h2><span class="num">2.</span>모두발언 요약 — 무엇이 좋아졌나</h2>
+  <h3>① 비핵심 정리와 비교가능성</h3>
+  <p>작년 순이익 기준으로 기수익(비핵심) 사업들을 걷어내며 정리 완료 — 마스크 사업과 화장품 원료[대조] 사업을 계열사에 매각. 연결 기준 매출은 감소한 것처럼 보이지만 <strong>비교가능성 측면에서 별도 기준이 맞고, 향후 IR 커뮤니케이션도 별도 기준으로 일원화</strong>. 현재는 별도·연결 차이가 거의 없는 순수 건기식 회사 구조.</p>
+  <h3>② 원가 개선 — 신공장 안정화</h3>
+  <p>공장이 2024년 완공된 후 초기 수율·품질 이슈가 빠르게 개선. 2025년부터 물량이 올라오며 원가율 하락 + 영업 레버리지 발현. 판관비는 1Q에 개선폭 크지 않았음 — 코로나 호황기에 과도하게 늘린 헤드카운트를 작년부터 축소 중이고 "계속 필요한 작업". 신임 경영진 합류 후 헤드카운트 다운사이징과 판관비 효율화 병행.</p>
+  <h3>③ 탑라인 — 시장 자체가 좋다</h3>
+  <p>가장 큰 개선 요인은 탑라인 성장. 국내는 안정적 우상향, 수출은 수요가 매우 강함. 애터미향은 기저 물량으로 유지하고, 애터미 외 대표 고객으로 <span class="fix">[Haleon(헤일리온) — 센트룸]</span> 한국 물량 90% 이상 담당 + 중국 물량 급성장, GNC, 중국 대형 로컬 브랜드까지 인바운드 문의 다수.</p>
+  <h3>④ 영업 체질 전환</h3>
+  <p>작년 하반기 리더십 교체 이후 영업을 공격적으로 전환. 과거에는 애터미라는 "편한 고객"(단일 고객 대량 반복 생산) 때문에 외부 영업에 소극적이었으나, 애터미 단독 성장에는 한계가 있어 이제 외부 영업을 본격화.</p>
+</section>
+
+<!-- 3 QA 실적 가이던스 -->
+<section>
+  <h2><span class="num">3.</span>Q&amp;A ① 실적·마진·가이던스</h2>
+
+  <div class="qa">
+    <div class="q">1Q에 개선된 마진이 2분기와 하반기에도 유지되거나 추가 개선될 수 있나? 분기 편차가 커 보이는데.</div>
+    <div class="a"><div class="body">
+      <p>맞다. 작년만 봐도 분기별 편차가 있었고, 지난 4~5년간 실적이 계속 내리막이었던 것이 밸류에이션이 낮아진 원인이었다. 다만 영업 활동을 공격적으로 하면서 <strong>성장세는 계속 이어질 것</strong>으로 본다.</p>
+      <p>냉정하게는, 콜마비앤에이치가 오랫동안 좋아지는 모습을 못 보여줬기 때문에 <strong>"1개 분기 개선"으로는 시장에 확신을 주지 못한다</strong>고 생각한다. 분기별로 데이터포인트를 쌓아야 외부에서도 펀더멘털 개선을 인정할 것이고, 시간이 걸릴 것이다. 올해는 그렇게 계속 운영해 나갈 수 있을 것 같다. 2분기도 괜찮아질 것으로 본다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">올해 이익 가이던스는?</div>
+    <div class="a"><div class="body">
+      <p><strong>연말 기준 별도 영업이익 350억 이상</strong>은 할 수 있지 않을까 생각한다(내부 예산 기준). 가이던스나 IR 커뮤니케이션은 이제부터 하려고 한다 — 그동안은 IR 커뮤니케이션 자체가 거의 없었고, 사실 (보여줄 것도) 별로 없었다. 별도 기준 [한 자릿수 중반 이상] 수준의 매출 성장을 계속 만들 수 있을 것으로 본다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">연결회사 정리·공장 감가 등 초기 비용은 다 반영됐는데, 추가로 비용단에서 증가할 요인은 없나?</div>
+    <div class="a"><div class="body">
+      <p>특별히 없을 것이다. 코스트 구조가 매우 단순하다 — 결국 <strong>인건비 + 원재료 + 부재료</strong>가 전부라 기타 비용에서 컨트롤할 것도 많지 않다. 원·부재료는 이란 전쟁으로 이슈가 됐었으나 대부분 완화됐다.</p>
+      <p>인건비 효율화는 디시플린을 갖고 계속해야 하는 일이며, 단순 통제뿐 아니라 <strong>AI 기반 내부 자동화</strong>를 적극 추진 중이다. 콜마 그룹 차원에서 AI에 매우 적극적이고, 제조업 특성상 사람이 하던 일의 자동화 여지가 크다. 한국콜마(화장품)의 베스트 프랙티스를 그대로 가져와 쓸 수 있어 — 사업이 비슷하기 때문에 — 고정비 축소를 지속하고 있다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 4 QA 수출 CBEC -->
+<section>
+  <h2><span class="num">4.</span>Q&amp;A ② 수출 — 중국 CBEC와 '메이드 인 코리아'</h2>
+
+  <div class="qa">
+    <div class="q">중국 로컬 브랜드가 한국에서 만들어 달라고 요청까지 하는 배경은? 왜 이렇게 수출이 크게 나오나?</div>
+    <div class="a"><div class="body">
+      <p>업계에서 <span class="fix">CBEC[크로스보더 이커머스, 전사상 'C100/CBDC']</span>라고 부르는 구조 때문이다. 배경은 세 가지다:</p>
+      <ul>
+        <li><strong>소비자 불신:</strong> 먹는 것이다 보니 중국 소비자들은 여전히 중국 내 생산 제품에 대한 (불신의) 공감대가 있고, 프리미엄 제품은 해외 생산이어야 인정받는다.</li>
+        <li><strong>규제 차익:</strong> 중국 내 보건 규제는 비타민 등 고함량 제품 생산을 제한한다. 그런데 <strong>해외에서 생산·판매 중인 제품이 CBEC로 들어와 판매되는 것에는 별다른 규제가 없다</strong> — 안정적 보건 규제를 가진 국가의 제품을 인정해 주는 구조.</li>
+        <li><strong>K프리미엄:</strong> 예전에는 호주산이 각광받았으나 지금은 K컬처와 연결된 한국 이미지가 워낙 좋아 '메이드 인 코리아' 인식이 매우 우호적.</li>
+      </ul>
+      <p>그래서 해외 브랜드는 물론이고 <strong>중국 로컬 브랜드조차 자기 브랜드를 해외(한국)에서 만들어 역수입하는 것을 더 원한다.</strong> 그렇게 수주 문의가 많이 들어오고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">국내 ODM끼리 경쟁 환경은? 같은 브랜드가 SKU를 여러 ODM에 나눠 주나?</div>
+    <div class="a"><div class="body">
+      <p>하나의 SKU를 지역별·업체별로 쪼개서 주지는 않는다. 보통 품목 단위로 나눈다. 신제품 출시 때 "이건 누구에게 맡길까"를 정하는 방식이고, 어차피 수출용이라 특정 ODM이 특정 지역만 담당하는 구조도 아니다. 결국 차별화는 <strong>각 사가 가진 제형, 소재의 특이점, 그리고 가격</strong>에서 갈린다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 5 QA 국내 채널 -->
+<section>
+  <h2><span class="num">5.</span>Q&amp;A ③ 국내 영업 — 3채널과 다이소의 경제학</h2>
+
+  <div class="qa">
+    <div class="q">작년부터 영업을 본격화했다는데, B2B 영업을 구체적으로 어떤 식으로 하나?</div>
+    <div class="a"><div class="body">
+      <p>국내는 크게 <strong>3개 채널</strong>이다:</p>
+      <ul>
+        <li><strong>제약사(전통 채널):</strong> 콜마 그룹 내 제약사가 있고 창업자부터 회사 뿌리가 제약이라 네트워크가 있다. 국내 영업 특성상 탑매니지먼트 간 관계에서 시작되는 경우가 많은데, 그동안 관계가 소원했거나 적극적이지 않았다. 작년부터 <strong>각 제약사 탑매니지먼트를 전부 만나</strong> 우리가 할 수 있는 것들을 소개했고, 많은 프로젝트를 시작하고 있다.</li>
+        <li><strong>온라인 인디브랜드:</strong> 화장품에서 건기식으로 옮겨오는 브랜드 포함. 접점을 늘리고 영업사원 바텀업 + 매니저 차원 영업으로 SKU를 점차 늘리는 중.</li>
+        <li><strong>유통 PB:</strong> 다이소(간접 공급 중 + 직접 입점 제안받음), 올리브영(PB 논의 중 + 브랜드 경유 입점 진행).</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">다이소·올리브영 채널이 급성장 중인데, 마진이 박하지 않나? 어떻게 대응하나?</div>
+    <div class="a"><div class="body">
+      <p>다이소는 예상대로 마진이 박할 수밖에 없다. <strong>5,000원 판가를 먼저 세팅해 놓고 타겟 단가를 제시하는 "할래요 말래요" 구조</strong>라 무작정 들어갈 이유가 없다. 실제로 들어가 있는 제품들을 보면 이름 없는 지방의 라인 1개짜리 공장에서 싸게 제조한 것들이고, 5,000원을 맞추려면 결국 함량을 확 줄여 구색만 맞춘 제품이 된다.</p>
+      <p>우리는 <strong>선택적으로</strong> 본다. 제형(분말·정제·연질·액상)별로 생산성·수율·캐파에 따라 생산 비용이 다르므로, 이를 감안해 <strong>타겟 이익률(공헌이익) 안에 들어오면 가고, 아니면 안 간다.</strong> 유사 제품을 다이소에 너무 낮은 가격에 공급하면 다른 브랜드 고객에게 견적 낼 때 가격 명분이 훼손되는 문제도 있다. 애터미라는 기저 물량이 있으니 이익이 안 되는 물량을 억지로 따라갈 이유가 없다.</p>
+      <p>이 업계 회사들이 일반 제조업처럼 타이트하게 관리해 오지 않았던 것 같은데, 회사 차원에서 이런 부분(견적·공헌이익 관리)이 개선됐고, 아직 갈 길이 남아 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">다이소에서 콜마 브랜드로 직접 들어오라는 제안도 있다던데?</div>
+    <div class="a"><div class="body">
+      <p>있다. 다만 우리는 ODM 업체인데 브랜드를 직접 가져가는 것이 <strong>기존 고객(브랜드사)들에게 어떤 임팩트를 줄지</strong> 고민이 있어 신중하게 보고 있다. 올리브영은 PB를 논의 중이고, 브랜드를 통한 입점도 만들어가고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">국내 시장 자체의 성장은 어떻게 전망하나? 홈쇼핑 정도였던 채널이 다이소·약국까지 열리고 있는데.</div>
+    <div class="a"><div class="body">
+      <p>국내는 꾸준히 계속 클 것이다. 장기 트렌드를 보면 코로나 때 매출이 이상 급등했다가 조정된 것이라, 그 구간만 잘라 보면 시장이 꺾이는 것처럼 보이지만 <strong>스파이크를 걷어내면 그냥 꾸준한 우상향</strong>이다. 건기식은 소득이 늘면 자연스럽게 지출이 늘어나는 영역이고, 젊은 층도 회식·음주 대신 운동하고 몸에 좋은 것을 챙기는 문화라 구조적으로 성장한다.</p>
+      <p>정확한 시장 통계는 없지만, 재밌는 것은 우리도 경쟁사들도 수출뿐 아니라 <strong>국내도 꽤 성장한다</strong>는 점이다. 경기 우려 대비 이 시장은 괜찮다. 다만 그 안에는 시장 자체 성장 외에 <strong>작은 업체들에서 큰 업체로 쉐어가 모이는 효과</strong>가 섞여 있다고 본다 — 규모와 품질을 갖춘 업체는 사실상 4개 정도다.</p>
+      <p>코로나 때 물량이 커지자 라인 1개짜리 OEM 공장이 우후죽순 생겼고 제약사들도 자체 생산에 뛰어들었는데, 지난 3~4년 물량이 빠지며 많이 나가떨어졌다. 제약사 자체 공장은 외부 영업을 해본 적이 없어 가동률을 못 채우는 문제가 최근 많이 보인다 — 그래서 대형사 위주로 물량이 몰리는 것 아닌가 한다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 6 QA 애터미 -->
+<section>
+  <h2><span class="num">6.</span>Q&amp;A ④ 애터미 — 캐시카우의 가시성</h2>
+
+  <div class="qa">
+    <div class="q">수출 성장은 애터미 물량인가? 애터미향은 앞으로 어떻게 보나?</div>
+    <div class="a"><div class="body">
+      <p>애터미는 오히려 <strong>기저 물량으로 깔고 가는 것</strong>이고, 수출 성장은 애터미 외 브랜드에서 나온다. 애터미는 작년에도 (국내 정체·소폭 감소에도) <strong>해외가 두 자릿수 성장</strong>했고, 해외 매출 비중이 60%대로 높다. 해외는 다단계 판매가 잘 되는 이머징 마켓 — 중국이 매우 크고 동남아 국가들도 커서 그쪽에서 성장한다.</p>
+      <p>올해도 애터미 물량이 빠지지는 않고 <strong>소폭 증가</strong>할 것으로 본다. 다만 솔직히 이 사업은 (애터미가) 노출된 사업이 아니라 <strong>우리도 예측 가시성이 높지 않다.</strong> 회원 대상 판매라 어느 정도 매출은 유지되지만, 향후 얼마나 갈지는 콜옵션이 큰 사업도 아니다. 그래서 채널 전략상 애터미는 <strong>싱글디짓 성장의 캐시카우</strong>로 보고, 마진이 매우 높으니 기저 물량과 이익을 지켜주는 역할이다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 7 QA 가동률 -->
+<section>
+  <h2><span class="num">7.</span>Q&amp;A ⑤ 가동률·캐파 — 공시 오류와 진짜 여유분</h2>
+
+  <div class="qa">
+    <div class="q">공시된 가동률을 보면 계산이 이상하다. 하루 8시간 기준인가? 100~150%로 기재된 것도 있는데.</div>
+    <div class="a"><div class="body">
+      <p>맞다, <strong>공시된 가동률이 잘못됐다.</strong> 와서 보니 숫자들이 잘못 잡혀 있었고, 정정 공시를 하려고 한다 — 이번 사업보고서에서 제대로 나올 것이다. 100~150%로 기재된 것도 잘못됐고 <strong>실제는 그 절반 정도로 보면 된다.</strong></p>
+      <p>정리하면: 현재 캐파는 <strong>1교대(원시프트) 기준 약 80% 가동</strong>이다. 보통 2교대(투시프트)까지 돌릴 수 있으므로 <strong>현재 매출 대비 약 2배의 캐파 여유</strong>가 있는 셈이다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">라인을 24시간 안 돌리는 이유는? SKU가 많아 라인을 짧게 짧게 돌릴 수밖에 없는 구조인가?</div>
+    <div class="a"><div class="body">
+      <p>8시간 기준은 실제로 8시간만 돌린다는 뜻이 아니라, 가동률의 <strong>기준점(원시프트 기준 몇 %인가)</strong>일 뿐이다. 현실적으로 하루 8시간씩 3교대 24시간 가동은 어렵고, (풀가동하는 경쟁사도) 2교대 가까이가 실질 맥시멈으로 보인다.</p>
+      <p>우리는 업계에서 <strong>공장을 지은 지가 가장 최근</strong>이라 캐파 여유가 있고, 지금부터 캐파를 채워가는 구간이 <strong>영업 레버리지 효과를 가장 크게 볼 수 있는 구간</strong>이다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">경쟁사(노바렉스 등)가 증설하는 것과 비교하면?</div>
+    <div class="a"><div class="body">
+      <p>당분간 우리는 캐펙스가 특별히 들어갈 일이 없다. 상대적으로 우리 영업이익률이 낮은 것도 <strong>공장 증설을 끝낸 지 가장 최근이기 때문</strong>(감가상각 부담)이다. 노바렉스는 신공장을 짓고 있어서, 완공 후 상각이 들어오면 영향이 있을 것 — <strong>상각 사이클에 시차</strong>가 있는 부분이다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 8 QA 해외 -->
+<section>
+  <h2><span class="num">8.</span>Q&amp;A ⑥ 해외 파이프라인 — Boots에서 Walgreens로</h2>
+
+  <div class="qa">
+    <div class="q">수출은 중국 중심인가? 미국·영국 등 서구권은?</div>
+    <div class="a"><div class="body">
+      <p>중국이 제일 큰 시장이고 처음 많이 진출한 곳이라 중국이 늘었지만, 최근에는 파이프라인을 매우 공격적으로 늘리고 있다.</p>
+      <ul>
+        <li><strong>Boots(영국):</strong> 인바운드로 들어와 <strong>PB 제품 공급을 시작</strong>했다. Boots에 <strong>K웰니스 섹션이 처음 생기는데</strong>, 거기 들어갈 제품들을 우리에게 의뢰해 초도 SKU를 생산했고 SKU를 늘려가는 중이다. Boots는 미국 <strong>Walgreens와 합병해 같은 그룹</strong>이므로, Boots에서 레퍼런스를 만들어 Walgreens로 들어가는 것, 그리고 Boots 레퍼런스로 유럽 내 다른 기업에 진출하는 것을 구상하고 있다. 유럽에 당장 직접 진출하기는 어려운데 자연스럽게 진출할 좋은 기회로 본다.</li>
+        <li><strong><span class="fix">[Haleon]</span>·GNC:</strong> 비슷한 개념으로 진행했고, 글로벌 브랜드·글로벌 리테일러 중심으로 파이프라인을 공격적으로 확대 중. <span class="fix">[네슬레]</span>나 중국 대형사 등과도 직접 컨택하며 피칭하고 있다.</li>
+        <li><strong>동남아:</strong> 베트남 최대 약국 체인 <span class="fix">[Pharmacity(퍼머시티)]</span>와 협의 중. 중국에서 잘 되면 중화권으로 볼 수 있는 동남아에도 기회가 많다.</li>
+      </ul>
+      <p>지역을 먼저 정해 가는 게 아니라 <strong>글로벌 대형 브랜드와 직접 접촉해 파이프라인을 만드는 방식</strong>이다. 글로벌 기업은 미국 담당·아시아 담당이 나뉘어 있는데, 아시아는 신규 진출 국가가 많고 SKU도 달리 가져가는 경우가 많아 협력이 더 쉽게 이뤄진다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">미국 시장 직접 공략은?</div>
+    <div class="a"><div class="body">
+      <p>미국은 한국과 시장이 다르다. 물량이 엄청 크고, 제형도 알약을 대용량으로 2만원대에 파는 <strong>규모·가격 게임</strong>이라 정면 경쟁이 쉽지 않다. 대신 우리는 통째로도 그렇지만 <strong>재미있는(톡톡 튀는) 제형</strong>이 많아서, Boots처럼 K섹션이 만들어지거나 그들이 우리 신제형에 관심을 보일 때 함께 들어가는 기회를 전방위로 보고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">노바렉스 대비 해외 진출이 늦었는데?</div>
+    <div class="a"><div class="body">
+      <p>맞다, 상대적으로 늦게 시작했다. 이유는 우리에겐 기댈 곳(애터미)이 있었기 때문이다. 노바렉스는 우리의 애터미 물량을 부러워했을 것이고, 그래서 절박하게 맨땅에서 해외를 먼저 개척해 <strong>5년 고생 끝에 최근 결실</strong>을 보는 것이다. 우리는 약 3년 전 <span class="fix">[Haleon]</span>과 시작하며 뛰어나갔는데, 늦은 대신 <strong>그들이 그라운드업 해놓은 길을 따라가므로 실패 비용이 덜하다.</strong> 그쪽 매출을 더 빨리 올리기 위해 파이프라인 확충에 집중하고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">해외 매출 규모와 목표는? 채널별 그림을 정리해 달라.</div>
+    <div class="a"><div class="body">
+      <p>크게 <strong>3개 채널 — 애터미 / 국내 / 해외</strong>다. 애터미는 싱글디짓 성장으로 안정적으로 보고, 성장은 국내와 해외에서 나온다.</p>
+      <table>
+        <tr><th>채널</th><th>'26E</th><th>2~3년 목표</th><th>코멘트</th></tr>
+        <tr><td>애터미</td><td>소폭 증가</td><td>싱글디짓 성장 유지</td><td>캐시카우 · 고마진 기저 물량 · 가시성 낮음</td></tr>
+        <tr class="self"><td>자체개척 해외</td><td>약 300억+α</td><td><strong>1,000~1,500억</strong></td><td>매년 ~100% 성장 중 · 기존 고객 성장만으로도 달성 가능 판단</td></tr>
+        <tr><td>국내(애터미 外)</td><td>—</td><td><strong>2,000억 이상</strong></td><td>제약사·인디·PB 3채널 확장</td></tr>
+      </table>
+      <p>해외는 하면 할수록 도움이 된다 — <strong>환율(달러 강세)도 유리해서, 초기 수주 계획 대비 마진율이 크게 올라갔다.</strong> 한국콜마(화장품) 시너지도 있다: K뷰티를 유통하는 해외 리테일러 대부분이 건기식도 하기 때문에 "너희 건기식도 한다며, 제안해 줄 수 있어?"라는 인바운드가 화장품 쪽에서 넘어온다. 화장품 사업부와의 협업을 늘릴 것이다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 9 QA 경쟁 -->
+<section>
+  <h2><span class="num">9.</span>Q&amp;A ⑦ 경쟁 구도 — 노바렉스 만석의 반사이익</h2>
+
+  <div class="qa">
+    <div class="q">업계 전반에 자신감이 느껴진다. 노바렉스 GNC 편중이나 캐파 소진이 콜마BNH에 유리하게 작용하나?</div>
+    <div class="a"><div class="body">
+      <p>시장이 커지는 상황에서 큰 업체들끼리 "누가 먼저 과실을 따먹느냐"의 게임이라 <strong>마진을 크게 훼손하지 않으면서 성장할 수 있는 환경</strong>이다. 고객을 뺏고 뺏기는 것이 조금 있긴 하지만 많지 않다 — 제약사 풀은 정해져 있고, 온라인 인디브랜드는 SKU가 계속 생기고 없어지므로 특정 ODM이 브랜드를 독점하는 경우가 드물어 자연스럽게 진입 기회가 나온다.</p>
+      <p>노바렉스는 수출이 잘 됐지만 <strong>GNC 비중이 너무 높아 스스로 리스크로 보고 다변화하려 할 것</strong>이다. 글로벌 벤더는 한 곳에 몰아주는 것을 싫어하고 듀얼소싱을 원하므로 (독점 유지가) 어렵다. 그리고 노바렉스 캐파가 한동안 차 있었기 때문에, <strong>여유 캐파를 가진 우리가 유리한 국면</strong>이라는 것은 느낀다.</p>
+      <p>그 여유 캐파 덕분에 <strong>공헌이익이 플러스이고 일정 수준 이상이면 공격적으로 수주</strong>하고 있다. 과거에는 내부 기준을 '영업이익률'로 잡아놓고 판관비를 임의 배부하는 식이어서, 실제 회사 이익 성장 기여와 무관한 논리로 수주를 거절하는 소극적 영업이 됐던 것 같다. 지금은 공헌이익 중심으로 바꿨고, 물론 전체 영업이익률을 훼손하지 않도록 그 이상의 버퍼를 두고 있다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 10 QA K브랜드/자체브랜드 -->
+<section>
+  <h2><span class="num">10.</span>Q&amp;A ⑧ K브랜드 부재, 인디 생태계, 자체 브랜드</h2>
+
+  <div class="qa">
+    <div class="q">화장품은 대표 K브랜드들이 끌고 가며 ODM에 낙수가 있는데 건기식은 그게 없다. 아쉽지 않나? 가능성 있는 고객은?</div>
+    <div class="a"><div class="body">
+      <p>맞는 지적이다. 우리는 ODM이라 직접 나갈 수 없고, 화장품처럼 똘똘한 브랜드가 튀어나와야 한다. 건기식은 <strong>화장품의 얼리 스테이지 단계</strong>로 보이고, 비슷한 성공 공식으로 누군가 튀어나갈 텐데 그걸 빨리 잡는 게 중요하다. 다만 아직 아마존·틱톡으로 해외에 확 나갈 만한 브랜드는 안 보인다. 화장품 쪽에 물어봐도 인디브랜드 폭발은 계획해서 되는 게 아니라 어느 날 갑자기 터지는 것이라, <strong>그것만 기다리는 천수답이 될 생각은 없다.</strong></p>
+      <p>대신 건기식이 화장품과 다른 점은 <strong>글로벌 브랜드 직납 시장이 더 열려 있다</strong>는 것이다. 화장품은 로레알·에스티로더가 자체 생산기지를 갖고 있어 ODM 시장이 크지 않았고, 한국콜마도 로레알과 오래 했지만 재미를 못 봤다고 안다. 그래서 우리는 <strong>투트랙 — 글로벌 건기식 브랜드 직납으로 해외 직접 진출 + 국내 인디 생태계를 서빙하며 튀어나갈 브랜드를 기다리는 것</strong> — 으로 간다. 어느 쪽이 더 빠를지는 모르겠다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">신시장을 개척하는 건 거의 인디 브랜드인가? 큰 회사들은?</div>
+    <div class="a"><div class="body">
+      <p>건기식 브랜드 중 정말 큰 회사는 많지 않다 — 제일 큰 곳이 수천억 규모(<span class="fix">[에스더포뮬러]</span>, <span class="fix">[종근당건강 등 2~3천억대]</span> 업체들)이고 그런 곳들이 도전하는 정도다.</p>
+      <p>최근 협업하며 키우는 곳이 <strong>온누리약국</strong>이다. '온누리스토어'라는 자체 브랜드가 있고 오너와 관계가 있어 출시 제품을 우리가 제조한다. 지금은 쿠팡으로 유통하고, 성공하는 제품은 <strong>약국 2,000~3,000개의 오프라인 매대</strong>로 확장하는 것도 생각 중이다. 그쪽은 해외 진출에도 관심이 크다 — 다만 인디 브랜드가 바로 해외로 나가는 그림은 아직 잘 보이지 않는다.</p>
+      <p>재밌는 것은 <strong>연예인 브랜드 인바운드</strong>도 있다는 점이다. 이름 대면 다 알 만한 한류 여자 아이돌 그룹의 멤버가 별도 브랜드를 만들어 "제조해 주면 (해외로) 나가 보겠다"는 식의 시도들이 들어온다 — 화장품과 똑같은 패턴이다.</p>
+      <p>그리고 <strong>화장품 회사들의 이너뷰티 진출</strong>에 주목하고 있다. 화장품사는 성장 모멘텀을 찾아야 하는데 자연스러운 인접 영역이 이너뷰티('먹고 바르는' 조합, 리쥬란 등)다. 이들은 <strong>글로벌 유통 플랫폼 접근성이 있어 국내 인디 건기식 브랜드보다 성공 가능성이 더 높을 수 있다.</strong> 계속 대화 중인데 아직 화장품 본업이 중요해 전문 브랜드만큼 적극적이진 않아서 지켜보고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">노바렉스도 그렇고 ODM들이 자체 브랜드를 안 내는 이유는?</div>
+    <div class="a"><div class="body">
+      <p>우리는 스스로를 <strong>"건기식의 TSMC"</strong>라고 생각한다. 고객과 경쟁하면 컨플릭트가 생긴다. 개인적으로 여러 업을 경험해 보니 <strong>B2B와 B2C는 업의 속성이 완전히 다르다</strong> — B2B 잘하던 회사가 B2C를 잘하기는 매우 어렵다. 기업 문화와 사람들의 스킬셋이 다르기 때문이다. B2B 하던 사람에게 B2C는 마진 높고 달콤해 보이지만 섣부르게 갈 일이 아니다.</p>
+      <p>오히려 요즘은 거꾸로 <strong>B2C 하던 대기업들이 B2B에 관심이 많다.</strong> B2C는 기사 하나, 말 한마디에 리스크가 커서 그룹사들은 B2B만 보고 있고, 우리에게 (인수·협력) 의사 타진도 많이 들어온다 — 깔끔해 보이고 매크로 성장도 꾸준해 보이니까.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 11 QA 경영진 거버넌스 밸류 -->
+<section>
+  <h2><span class="num">11.</span>Q&amp;A ⑨ 신임 경영진·거버넌스·밸류에이션·주주환원</h2>
+
+  <div class="qa">
+    <div class="q">언제 합류했고, 이전 커리어는?</div>
+    <div class="a"><div class="body">
+      <p><strong>2026년 2월 20일, 설 연휴 직후 합류</strong>했다. 직전에는 한샘에 약 4년 있었고, 약 7년간 <span class="fix">[PEF(사모펀드)]</span>와 함께 — 펀드가 투자한 회사에서 경영진으로 계속 일했다. 한샘 전에는 어피너티가 투자한 회사(<span class="fix">[전사상 '뉴베이스', 'IMM과 함께' 언급 — 표기 불명확]</span>)에 있었고, 그 전에는 컨설팅을 오래 했다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">작년 그룹 이슈(경영권 분쟁)의 현재 상태는?</div>
+    <div class="a"><div class="body">
+      <p>작년에는 지배구조 관련 소송·자문이 많았고 주식 반환 요구까지 있어 회사가 매우 혼란스러웠다. <strong>지금은 완전히 다르다 — 주식 반환 (소송은) 취하됐고 회장님이 다 정리하셨다.</strong> 기존 대표(<span class="fix">[전사상 '김영 대표' — 표기 불명확]</span>)도 사내이사로 있다가 <strong>최근 아예 퇴직</strong>했다. 거버넌스 측면의 불확실성은 해소됐고, 이제 경영은 영업 중심으로 돌아가고 있다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">주가·밸류에이션에 대한 시각은? 피어와 비교하면?</div>
+    <div class="a"><div class="body">
+      <p>주가가 너무 많이 떨어져 있긴 한데 어떻게 할 수 있는 게 아니니, 펀더멘털을 계속 개선하면 (재평가의) 시기가 올 것으로 본다. 요즘 반도체 장세가 워낙 강해 우리 같은 곳엔 자금이 흘러오지도 않는 환경이기도 하다.</p>
+      <p>그 사이 노바렉스와 <strong>코스맥스엔비티</strong> — 특히 엔비티는 장기 적자를 털어내는 과정에서 밸류에이션이 매우 낮았고 부채도 많았는데 — 주가가 많이 올라서, 우리가 고평가라고 생각했던 곳이 이제는 올해 기준 <span class="fix">[P/E·EV/EBITDA]</span>로 오히려 훨씬 높아졌다. <strong>지금은 우리가 저평가 상태</strong>이고 실적도 우상향할 수 있어, 시장이 다시 봐주기를 기대한다.</p>
+      <p><strong>PBR로만 봐도 말이 안 되는 수준</strong>이다. 자산이 많다 — 본사 건물은 창업주 윤동한 회장(대웅제약 부사장 출신으로 콜마 창업)이 <strong>대웅제약 옛 본사 부지를 인수해 신축</strong>한 것이고, 길 건너 건물 등 부동산 자산이 특이하게 많다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">주주환원 계획은?</div>
+    <div class="a"><div class="body">
+      <p>연초 사업보고서에 공시했듯 <strong>자사주를 갖고 있고, 그중 일부를 조만간 소각하려고 한다.</strong> 작년에는 (당기)순손실이라 배당을 못 했는데, <span class="fix">[배당 등]</span> <strong>긍정적인 시그널을 계속 보내려고 한다.</strong></p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">애널리스트 커버리지는? 작년에 다 멈췄던데.</div>
+    <div class="a"><div class="body">
+      <p>작년까지 커버하던 분들이 회사 상황 때문에 다 멈췄다. 1Q 실적 발표 후 <strong>스몰캡 애널리스트들을 개별적으로 만났다</strong>(하나증권, <span class="fix">[DS 추정 — 전사상 'DJ']</span> 등). 그쪽도 신뢰가 쌓이고 회사가 안정됐다는 시그널이 있어야 리포트를 낼 수 있으니, 좋은 것들을 계속 말씀드리려 한다. 사이드(바이사이드) 방문도 요즘 많이 늘었다.</p>
+    </div></div>
+  </div>
+
+  <div class="qa">
+    <div class="q">조직은 어떤 상태인가? 실행력이 받쳐주나?</div>
+    <div class="a"><div class="body">
+      <p>회사 구조가 매우 단순하다 — 좋은 물건 만들어서 잘 팔면 되는 회사다. 그게 안 돌아갔던 이유가 애터미에 대한 안심·의존으로 너무 편하게 생각했던 것인데, 작년의 회사 이슈와 "그동안 무시했던 업체들이 치고 올라오는" 상황이 오히려 자극이 됐다.</p>
+      <p>인력 구조도 많이 바뀌었다. 회사가 흔들리는 과정에서 고연차 인력이 많이 나가 <strong>의도치 않게 젊고 가벼운 조직</strong>이 됐고, 매니지먼트도 무겁지 않다. 외부 영입은 특히 R&amp;D — <strong>개별인정형 원료·소재</strong>(차별화 소재) 개발 쪽에 시장에서 유명한 분들을 모셔와 파이프라인을 강화하고 있다. 생산은 업력이 오래돼 흔들릴 부분이 아니다. 지금부터 관리 훈련만 잘하면 성과를 쭉 보여줄 수 있는 환경이다. 해외에서 의미 있는 것들을 쌓고, 국내 주요 브랜드들과 협업해 나가면 성장은 큰 문제 없이 만들어질 것이다.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- 12 투자 시사점 -->
+<section>
+  <h2><span class="num">12.</span>투자 시사점 <span class="tag">작성자 해석 — 발언 아님</span></h2>
+  <div class="box bull"><span class="bt">🐂 BULL</span>
+    <ul style="margin-bottom:0">
+      <li>비핵심 정리 완료 + 신공장 안정화 → <strong>캐펙스 없는 영업 레버리지 구간</strong>(1교대 기준 80%, 여유 2배)</li>
+      <li>애터미 고마진 기저 + 자체개척 해외 YoY ~100%(300억 → 2~3년 1,000~1,500억), Boots→Walgreens 확장 옵션</li>
+      <li>중국 CBEC 규제 차익 + K프리미엄의 구조적 수출 순풍, 상위 4사 쉐어 집중</li>
+      <li>피어 급등 후 상대 저평가 역전 + 부동산 자산가치(PBR) + 자사주 소각 임박 — 밸류업 문법 부합</li>
+      <li>PEF식 운영 개선(공헌이익 수주·헤드카운트 축소·가이던스 도입) + 거버넌스 불확실성 해소</li>
+    </ul>
+  </div>
+  <div class="box bear"><span class="bt">🐻 BEAR</span>
+    <ul style="margin-bottom:0">
+      <li>애터미(다단계 채널) 물량의 가시성 낮음 — 사측 스스로 예측력 한계 인정</li>
+      <li>턴어라운드 초입: 1~2개 분기로는 신뢰 회복 불충분("시간이 걸릴 것" — 사측 표현)</li>
+      <li>가동률 등 과거 공시 수치 오류 → 정정 전까지 데이터 신뢰 이슈</li>
+      <li>반도체 쏠림 장세의 스몰캡 수급 소외 + 커버리지 공백 지속 가능</li>
+      <li>다이소·PB 확대 시 믹스 악화 리스크, 해외는 후발주자로 레퍼런스 축적 단계</li>
+    </ul>
+  </div>
+  <div class="verdict">
+    <div class="vt">MEETING VERDICT & 체크포인트</div>
+    <p>'경영진 교체 + 자산 저평가 + 캐파 여유'의 3박자 턴어라운드 셋업. 검증 포인트는 ① <b>2Q26 별도 실적</b>에서 연 350억 페이스 확인 ② <b>사업보고서 가동률 정정 공시</b> 내용 ③ <b>자사주 소각</b> 규모·시점 공시 ④ Boots K웰니스 SKU 확대·Walgreens 진입 뉴스플로우 ⑤ 애널리스트 커버리지 재개(하나증권 등). 둘 이상 확인 시 리레이팅 개연성이 높고, 반대로 애터미 물량 이탈이나 정정 이후 추가 데이터 이슈가 나오면 저평가는 가치함정으로 남는다. <b>노바렉스와의 밸류에이션 갭 + 상각 사이클 시차(노바렉스 신공장 상각 개시 예정 vs 콜마BNH 상각 피크 통과)</b>가 페어 관점의 핵심 엣지.</p>
+  </div>
+</section>
+
+<footer>
+<b>작성 기준:</b> 2026.7.14 콜마비앤에이치 IR 미팅 녹취(약 54분, STT 변환본) 기반. 음성인식 오류가 다수 포함된 원문을 문맥에 따라 교정했으며, [ ] 표기는 교정·추정 부분입니다(예: '페일리온/헬리온' → [Haleon], '센트럴' → 센트룸, 'C100/CBDC' → [CBEC 크로스보더 이커머스], '퍼머시티' → [Pharmacity], '경비직/건피식' → 건기식, '공원이익' → 공헌이익, '에텀/배터리/애터미' → 애터미 등). 일부 고유명사(전임 대표명, 경영진 이전 소속 펀드·회사, 접촉 증권사, 국내 대형 브랜드명)와 수치(별도 OP 350억, 해외 300억/1,000~1,500억, 국내 2,000억, 가동률 80%)는 녹취 품질상 오인식 가능성이 있어 별도 검증이 필요합니다. 발언 내용은 회사 담당자의 구두 설명으로 공식 IR 자료·공시와 다를 수 있으며, Q&amp;A의 질문문은 전사에서 뭉개진 참석자 발언을 문맥상 재구성한 것입니다. '투자 시사점' 섹션은 발언이 아닌 작성자의 해석입니다. 본 노트는 내부 리서치 참고용이며 특정 종목의 매수·매도 권유가 아닙니다. · 2026-07-14 · HYPR Format
+</footer>
+
+</div>
+</body>
+</html>

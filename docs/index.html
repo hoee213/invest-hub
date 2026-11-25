@@ -1,84 +1,214 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KT 투자 지표</title>
+<title>KT 투자 허브</title>
 <style>
-:root{--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f4f6f9;--card:#fff;--navy:#1C3D5A;--orange:#E5601F}
+:root{--ink:#111827;--ink2:#374151;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f6f8;--card:#fff;--side:#fff;--hover:#f3f4f6;--act:#eef3f9;--actink:#1C3D5A;--accent:#E5601F;--navy:#1C3D5A;--up:#d0342c;--chip:#f3f4f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e5e7eb;--ink2:#c3c8d1;--muted:#9aa1ad;--line:#262c36;--bg:#0f1218;--card:#161a21;--side:#13171d;--hover:#1c2129;--act:#1d2a38;--actink:#9cc3ec;--accent:#f08a4b;--navy:#7fb0e0;--up:#ff6b61;--chip:#1f242c}}
+:root[data-theme="dark"]{--ink:#e5e7eb;--ink2:#c3c8d1;--muted:#9aa1ad;--line:#262c36;--bg:#0f1218;--card:#161a21;--side:#13171d;--hover:#1c2129;--act:#1d2a38;--actink:#9cc3ec;--accent:#f08a4b;--navy:#7fb0e0;--up:#ff6b61;--chip:#1f242c}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;line-height:1.55}
-.wrap{max-width:1040px;margin:0 auto;padding:28px 20px 48px}
-h1{font-size:22px;margin:0;font-weight:800}
-.lead{color:var(--muted);font-size:13px;margin:4px 0 22px}
-h2{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.02em;margin:26px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-a.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:inherit;text-decoration:none;transition:border-color .12s,box-shadow .12s}
-a.card:hover{border-color:#c7cdd6;box-shadow:0 2px 10px rgba(15,23,42,.06)}
-.card .t{font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px}
-.card .t i{width:10px;height:10px;border-radius:50%;display:inline-block}
-.card .d{font-size:12.5px;color:var(--muted);margin-top:4px}
-.kpis{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
-.kpi .k{font-size:11.5px;color:var(--muted)}.kpi .v{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums}
-.meta{font-size:11.5px;color:var(--muted);margin-top:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.tag{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted);font-weight:600}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+a{color:inherit}
+.app{display:flex;height:100vh}
+/* sidebar */
+.side{width:236px;flex:none;background:var(--side);border-right:1px solid var(--line);display:flex;flex-direction:column;transition:width .15s}
+.brand{height:56px;display:flex;align-items:center;gap:10px;padding:0 18px;font-weight:800;font-size:16px;text-decoration:none;border-bottom:1px solid var(--line);white-space:nowrap}
+.brand b{width:26px;height:26px;border-radius:7px;background:var(--navy);color:var(--side);display:grid;place-items:center;font-size:12px;flex:none}
+.menu{flex:1;overflow-y:auto;padding:10px 10px 16px}
+.grp{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;padding:14px 10px 6px;white-space:nowrap}
+.item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink2);font-size:13.5px;white-space:nowrap;position:relative}
+.item:hover{background:var(--hover)}
+.item.on{background:var(--act);color:var(--actink);font-weight:700}
+.item.on::before{content:"";position:absolute;left:-10px;top:7px;bottom:7px;width:3px;border-radius:2px;background:var(--accent)}
+.ic{width:22px;height:22px;border-radius:6px;background:var(--chip);display:grid;place-items:center;font-size:11px;font-weight:700;flex:none;color:var(--muted)}
+.item.on .ic{background:var(--navy);color:var(--side)}
+.item .n{margin-left:auto;font-size:11px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.item .ext{margin-left:auto;font-size:11px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);padding:8px 10px;display:flex;gap:6px}
+.foot button{flex:1;background:none;border:1px solid var(--line);border-radius:8px;padding:6px;color:var(--muted);font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
+.foot button:hover{background:var(--hover)}
+.app.mini .side{width:64px}
+.app.mini .lbl,.app.mini .grp span,.app.mini .item .n,.app.mini .item .ext,.app.mini .brand span{display:none}
+.app.mini .grp{padding:10px 0 4px;text-align:center}.app.mini .grp::after{content:"";display:block;border-top:1px solid var(--line);margin:0 8px}
+.app.mini .item{justify-content:center;padding:7px 0}
+.app.mini .foot{flex-direction:column}
+/* main */
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:56px;flex:none;display:flex;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid var(--line);background:var(--card)}
+.top h1{font-size:16px;margin:0;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crumb{font-size:12px;color:var(--muted);white-space:nowrap}
+.top .sp{flex:1}
+.btn{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:8px;padding:5px 11px;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--hover)}
+.burger{display:none}
+.view{flex:1;min-height:0;overflow:auto}
+.view.frame{overflow:hidden}
+.view iframe{width:100%;height:100%;border:0;display:block;background:var(--bg)}
+.pad{max-width:1120px;margin:0 auto;padding:24px 24px 48px}
+/* home */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+a.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;display:block}
+a.tile:hover{border-color:var(--muted)}
+.tile .k{font-size:12px;color:var(--muted);font-weight:600}
+.tile .v{font-size:24px;font-weight:800;margin-top:4px;font-variant-numeric:tabular-nums}
+.tile .v small{font-size:12px;color:var(--muted);font-weight:600;margin-left:4px}
+.tile .s{font-size:11.5px;color:var(--muted);margin-top:6px}
 .stale{color:#b45309;font-weight:700}
-@media(max-width:600px){.wrap{padding:18px 16px 36px}}
-</style></head><body><div class="wrap">
-<h1>KT 투자 지표</h1>
-<div class="lead">투자 판단에 쓰는 참고 지표 모음. 카드를 누르면 상세 페이지로 이동한다.</div>
-
-<h2>산업 지표</h2>
-<div class="grid">
-  <a class="card" href="drilling/">
-    <div class="t"><i style="background:var(--orange)"></i>해양시추 일당 용선료</div>
-    <div class="d">Transocean · Noble · Seadrill 리그별 계약 일당, 2011년부터. 매주 토요일 갱신</div>
-    <div class="kpis">
-      <div class="kpi"><div class="k">7G·8G 드릴십 최근 1년 중앙</div><div class="v" id="dr-med">–</div></div>
-      <div class="kpi"><div class="k">누적 계약</div><div class="v" id="dr-n">–</div></div>
-    </div>
-    <div class="meta"><span id="dr-through">데이터 기준 –</span><span class="tag">주간</span></div>
-  </a>
-</div>
-
-<h2>시장 폭</h2>
-<div class="grid">
-  <a class="card" href="highs/">
-    <div class="t"><i style="background:#d0342c"></i>KRX 20일·60일 신고가</div>
-    <div class="d">코스피·코스닥 신고가 종목 리스트, 날짜별 기록. 평일 장 마감 후 갱신</div>
-    <div class="kpis">
-      <div class="kpi"><div class="k">20일 신고가 (종가)</div><div class="v" id="hi-20">–</div></div>
-      <div class="kpi"><div class="k">60일 신고가 (종가)</div><div class="v" id="hi-60">–</div></div>
-    </div>
-    <div class="meta"><span id="hi-date">기준일 –</span><span class="tag">일간</span></div>
-  </a>
-</div>
-
-<h2>매크로 · 시장</h2>
-<div class="grid">
-  <a class="card" href="https://hoee213.github.io/macro-regime-watch/">
-    <div class="t"><i style="background:var(--navy)"></i>변곡점 대시보드</div>
-    <div class="d">재무부·연준 개입 체제, 장기금리, 인플레·재정, AI 크레딧 신호등</div>
-    <div class="meta"><span>매일 아침 갱신</span><span class="tag">일간</span></div>
-  </a>
-  <a class="card" href="https://hoee213.github.io/finviz-charts/">
-    <div class="t"><i style="background:#2A9D8F"></i>Finviz 차트</div>
-    <div class="d">관심 종목 일봉 차트 묶음, 카테고리별</div>
-    <div class="meta"><span>매일 아침 갱신</span><span class="tag">일간</span></div>
-  </a>
-</div>
+h2{font-size:14px;margin:30px 0 10px;font-weight:800;display:flex;align-items:baseline;gap:8px}
+h2 a{font-size:12px;color:var(--muted);font-weight:600;text-decoration:none;margin-left:auto}
+/* list */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools input{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:7px 11px;min-width:0;flex:1 1 220px;max-width:340px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--card);color:var(--ink2);border-radius:999px;padding:4px 11px;cursor:pointer}
+.chip.on{background:var(--navy);border-color:var(--navy);color:var(--side);font-weight:700}
+.row{display:grid;grid-template-columns:96px 72px 150px minmax(0,1fr);gap:14px;align-items:center;padding:11px 18px;border-top:1px solid var(--line);text-decoration:none}
+.row:first-child{border-top:0}
+.row:hover{background:var(--hover)}
+.row .d{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .c{font-weight:700}
+.row .c small{display:block;font-weight:500;font-size:11px;color:var(--muted)}
+.row .t{color:var(--ink2);font-size:13px}
+.badge{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;display:inline-block;text-align:center}
+.b-기업분석{background:#e8f0fa;color:#1C3D5A}.b-탐방{background:#fff1e8;color:#b4470f}.b-콥데이{background:#eef7ee;color:#2f6b35}.b-컨콜{background:#f2ecfb;color:#5b3c99}
+:root[data-theme="dark"] .badge{filter:invert(.88) hue-rotate(180deg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge{filter:invert(.88) hue-rotate(180deg)}}
+.mk{font-size:11px;color:var(--muted);margin-left:6px;font-weight:500}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+a.lk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;display:flex;gap:12px;align-items:flex-start}
+a.lk:hover{border-color:var(--muted)}
+a.lk .ic{width:30px;height:30px;font-size:13px}
+a.lk b{display:block;font-size:14px}a.lk span{font-size:12px;color:var(--muted)}
+.scrim{display:none}
+@media(max-width:860px){
+  .side{position:fixed;z-index:20;left:0;top:0;bottom:0;transform:translateX(-100%);transition:transform .18s;width:256px!important;box-shadow:0 0 30px rgba(0,0,0,.25)}
+  .app.open .side{transform:none}
+  .app.open .scrim{display:block;position:fixed;inset:0;z-index:15;background:rgba(0,0,0,.35)}
+  .app.mini .lbl,.app.mini .grp span,.app.mini .item .n,.app.mini .brand span{display:initial}
+  .burger{display:inline-block}
+  .foot .collapse{display:none}
+  .top{padding:0 12px}.crumb{display:none}
+  .pad{padding:16px 14px 40px}
+  .row{grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:11px 14px}
+  .row .d{grid-column:2;grid-row:1;text-align:right}.row .k{grid-column:2;grid-row:2;text-align:right}
+  .row .c{grid-column:1;grid-row:1}.row .t{grid-column:1;grid-row:2}
+}
+</style></head><body>
+<div class="app" id="app">
+<aside class="side">
+  <a class="brand" href="#/"><b>KT</b><span>KT 투자 허브</span></a>
+  <nav class="menu" id="menu"></nav>
+  <div class="foot"><button id="theme" title="테마">◐ <span class="lbl">테마</span></button><button class="collapse" id="mini" title="접기">⇤ <span class="lbl">접기</span></button></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="main">
+  <div class="top"><button class="btn burger" id="burger">☰</button><h1 id="ttl">홈</h1><span class="crumb" id="crumb"></span><span class="sp"></span><span id="acts"></span></div>
+  <div class="view" id="view"></div>
+</main>
 </div>
 <script>
-fetch("drilling/summary.json",{cache:"no-store"}).then(r=>r.json()).then(s=>{
-  document.getElementById("dr-med").textContent = s.uldw_median_1y ? "$"+Math.round(s.uldw_median_1y/1000)+"k" : "–";
-  document.getElementById("dr-n").textContent = s.contracts.toLocaleString("en-US")+"건";
-  const days = Math.round((Date.now()-new Date(s.checked+"T00:00:00+09:00"))/864e5);
-  const el = document.getElementById("dr-through");
-  el.innerHTML = "데이터 기준 "+s.through+" · 점검 "+s.checked + (days>9 ? ' <span class="stale">· '+days+'일째 갱신 없음</span>' : "");
-}).catch(()=>{});
-fetch("highs/index.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{
-  const d=j.days[j.days.length-1], p=j.days[j.days.length-2];
-  const df=(a,b)=>b==null?"":` <span style="font-size:12px;color:var(--muted);font-weight:600">${a-b>=0?"+":""}${a-b}</span>`;
-  document.getElementById("hi-20").innerHTML=d.c20+"개"+df(d.c20,p&&p.c20);
-  document.getElementById("hi-60").innerHTML=d.c60+"개"+df(d.c60,p&&p.c60);
-  document.getElementById("hi-date").textContent="기준일 "+d.date;
-}).catch(()=>{});
+const NAV=[
+ {g:"개요",items:[{r:"",l:"홈",i:"홈"}]},
+ {g:"시장",items:[
+   {r:"highs",l:"KRX 20·60일 신고가",i:"신",src:"highs/",d:"코스피·코스닥 신고가 종목, 평일 장 마감 후"},
+   {r:"macro",l:"변곡점 대시보드",i:"변",src:"https://hoee213.github.io/macro-regime-watch/",ext:1,d:"재무부·연준 개입 체제, 금리·크레딧 신호등"},
+   {r:"finviz",l:"Finviz 차트",i:"F",src:"https://hoee213.github.io/finviz-charts/",ext:1,d:"관심 종목 일봉 차트, 카테고리별"}]},
+ {g:"산업",items:[{r:"drilling",l:"해양시추 용선료",i:"시",src:"drilling/",d:"RIG·NE·SDRL 리그별 계약 일당, 주간"}]},
+ {g:"기업분석",items:[{r:"research/analysis/kr",l:"국내주식",i:"국"},{r:"research/analysis/us",l:"해외주식",i:"해"}]},
+ {g:"탐방 · 콥데이 · 컨콜",items:[{r:"research/meetings/kr",l:"국내주식",i:"국"},{r:"research/meetings/us",l:"해외주식",i:"해"}]},
+ {g:"아카이브",items:[{r:"research/all",l:"전체 자료",i:"전"},{r:"archive",l:"리서치 아카이브",i:"R",src:"https://hoee213.github.io/research-archive/",ext:1,d:"기업·산업 리포트 전문"}]},
+];
+const SEC={analysis:"기업분석",meetings:"탐방·콥데이·컨콜"},MK={kr:"국내주식",us:"해외주식"};
+let R={items:[]};
+const $=id=>document.getElementById(id), app=$("app"), view=$("view");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const flat=NAV.flatMap(g=>g.items.map(x=>({...x,g:g.g})));
+
+function menu(){
+  const cnt=r=>{const m=r.match(/^research\/(\w+)(?:\/(\w+))?/);if(!m)return"";const n=m[1]=="all"?R.items.length:R.items.filter(x=>x.section==m[1]&&x.market==m[2]).length;return `<span class="n">${n}</span>`};
+  $("menu").innerHTML=NAV.map(g=>`<div class="grp"><span>${g.g}</span></div>`+g.items.map(x=>`<a class="item" data-r="${x.r}" href="#/${x.r}" title="${esc(g.g+" · "+x.l)}"><span class="ic">${x.i}</span><span class="lbl">${x.l}</span>${x.ext?'<span class="ext">↗</span>':cnt(x.r)}</a>`).join("")).join("");
+}
+function setTop(t,crumb,acts){$("ttl").textContent=t;$("crumb").textContent=crumb||"";$("acts").innerHTML=acts||"";}
+function frame(src,local){
+  view.className="view frame";view.innerHTML=`<iframe src="${esc(src)}" title="content"></iframe>`;
+  if(local){const f=view.firstChild;f.onload=()=>{try{const d=f.contentDocument,s=d.createElement("style");
+    s.textContent='.nav>a[href="../"]{display:none}';d.head.appendChild(s);
+    const th=document.documentElement.dataset.theme;if(th)d.documentElement.dataset.theme=th;else delete d.documentElement.dataset.theme;}catch(e){}}}
+}
+function rowHtml(x,showMk){
+  return `<a class="row" href="#/doc/${encodeURIComponent(x.path)}"><span class="d">${x.date||"–"}</span><span class="k"><span class="badge b-${x.kind}">${x.kind}</span></span><span class="c">${esc(x.company)}${x.code?`<small>${x.code}</small>`:""}</span><span class="t">${esc(x.title)}${showMk?`<span class="mk">${MK[x.market]}</span>`:""}</span></a>`;
+}
+function list(sec,mk){
+  const all=sec=="all";
+  const base=all?R.items:R.items.filter(x=>x.section==sec&&x.market==mk);
+  const kinds=[...new Set(base.map(x=>x.kind))];
+  setTop(all?"전체 자료":`${SEC[sec]} · ${MK[mk]}`,`${base.length}건`);
+  view.className="view";
+  view.innerHTML=`<div class="pad"><div class="tools"><input id="q" placeholder="회사명·제목 검색" autocomplete="off"><div class="chips" id="chips">${kinds.length>1?["전체",...kinds].map((k,i)=>`<button class="chip${i?"":" on"}" data-k="${k}">${k}</button>`).join(""):""}</div></div><div class="panel" id="rows"></div></div>`;
+  let kf="전체";
+  const draw=()=>{const q=$("q").value.trim().toLowerCase();
+    const xs=base.filter(x=>(kf=="전체"||x.kind==kf)&&(!q||(x.company+" "+x.title+" "+x.code).toLowerCase().includes(q)));
+    $("rows").innerHTML=xs.length?xs.map(x=>rowHtml(x,all)).join(""):`<div class="empty">${base.length?"검색 결과 없음":"아직 자료가 없습니다. MYBOX 폴더에 HTML을 넣고 build_research.py --push"}</div>`;};
+  $("q").oninput=draw;
+  $("chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;kf=b.dataset.k;[...$("chips").children].forEach(c=>c.classList.toggle("on",c==b));draw();};
+  draw();
+}
+function doc(path){
+  const x=R.items.find(i=>i.path==path);
+  const src="research/"+path, back=x?`#/research/${x.section}/${x.market}`:"#/research/all";
+  setTop(x?x.title:"자료",x?`${SEC[x.section]} · ${MK[x.market]} · ${x.date}`:"",`<a class="btn" href="${back}">← 목록</a> <a class="btn" href="${esc(src)}" target="_blank" rel="noopener">새 탭 ↗</a>`);
+  frame(src,false);
+  if(x)mark(`research/${x.section}/${x.market}`);
+}
+function home(){
+  setTop("홈","투자 판단 참고 지표와 리서치 자료");
+  view.className="view";
+  const recent=R.items.slice(0,8);
+  view.innerHTML=`<div class="pad">
+  <div class="tiles">
+   <a class="tile" href="#/highs"><div class="k">20일 신고가 (종가)</div><div class="v" id="hi20">–</div><div class="s" id="hid">KRX</div></a>
+   <a class="tile" href="#/highs"><div class="k">60일 신고가 (종가)</div><div class="v" id="hi60">–</div><div class="s">코스피·코스닥</div></a>
+   <a class="tile" href="#/drilling"><div class="k">7G·8G 드릴십 최근 1년 중앙 일당</div><div class="v" id="drm">–</div><div class="s" id="drs">해양시추</div></a>
+   <a class="tile" href="#/research/all"><div class="k">리서치 자료</div><div class="v">${R.items.length}<small>건</small></div><div class="s">${["analysis","meetings"].map(s=>SEC[s]+" "+R.items.filter(x=>x.section==s).length).join(" · ")}</div></a>
+  </div>
+  <h2>최근 자료<a href="#/research/all">전체 보기 →</a></h2>
+  <div class="panel">${recent.length?recent.map(x=>rowHtml(x,true)).join(""):'<div class="empty">자료 없음</div>'}</div>
+  <h2>바로가기</h2>
+  <div class="cards">${flat.filter(x=>x.src).map(x=>`<a class="lk" href="#/${x.r}"><span class="ic">${x.i}</span><div><b>${x.l}${x.ext?" ↗":""}</b><span>${x.d||""}</span></div></a>`).join("")}</div>
+  </div>`;
+  fetch("highs/index.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{const d=j.days.at(-1),p=j.days.at(-2);
+    const df=(a,b)=>b==null?"":`<small>${a-b>=0?"+":""}${a-b}</small>`;
+    $("hi20").innerHTML=d.c20+df(d.c20,p&&p.c20);$("hi60").innerHTML=d.c60+df(d.c60,p&&p.c60);$("hid").textContent="기준일 "+d.date+(d.prelim?" · 장중 잠정":"");}).catch(()=>{});
+  fetch("drilling/summary.json",{cache:"no-store"}).then(r=>r.json()).then(s=>{
+    $("drm").textContent=s.uldw_median_1y?"$"+Math.round(s.uldw_median_1y/1000)+"k":"–";
+    const days=Math.round((Date.now()-new Date(s.checked+"T00:00:00+09:00"))/864e5);
+    $("drs").innerHTML="데이터 "+s.through+" · 누적 "+s.contracts.toLocaleString()+"건"+(days>9?` <span class="stale">· ${days}일째 갱신 없음</span>`:"");}).catch(()=>{});
+}
+function mark(r){document.querySelectorAll(".item").forEach(a=>a.classList.toggle("on",a.dataset.r==r));}
+function route(){
+  const h=decodeURIComponent(location.hash.replace(/^#\/?/,""));
+  app.classList.remove("open");mark(h);
+  if(h.startsWith("doc/"))return doc(h.slice(4));
+  let m=h.match(/^research\/(all|analysis|meetings)(?:\/(kr|us))?$/);
+  if(m)return list(m[1],m[2]||"kr");
+  const x=flat.find(i=>i.r==h&&i.src);
+  if(x){setTop(x.l,x.g,`<a class="btn" href="${x.src}" target="_blank" rel="noopener">새 탭 ↗</a>`);return frame(x.src,!x.ext);}
+  mark("");home();
+}
+// theme & sidebar state
+const TH=["","light","dark"];
+function applyTheme(t){if(t)document.documentElement.dataset.theme=t;else delete document.documentElement.dataset.theme;
+  $("theme").title="테마: "+({"":"시스템",light:"라이트",dark:"다크"}[t]);
+  const f=view.querySelector("iframe");try{const d=f&&f.contentDocument;if(d){if(t)d.documentElement.dataset.theme=t;else delete d.documentElement.dataset.theme;}}catch(e){}}
+let th=localStorage.getItem("hub-theme")||"";applyTheme(th);
+$("theme").onclick=()=>{th=TH[(TH.indexOf(th)+1)%3];localStorage.setItem("hub-theme",th);applyTheme(th);};
+if(localStorage.getItem("hub-mini")=="1")app.classList.add("mini");
+$("mini").onclick=()=>{app.classList.toggle("mini");localStorage.setItem("hub-mini",app.classList.contains("mini")?"1":"0");};
+$("burger").onclick=()=>app.classList.add("open");$("scrim").onclick=()=>app.classList.remove("open");
+// 옛 링크(#없이 들어온 경우)는 홈
+fetch("research/index.json",{cache:"no-store"}).then(r=>r.json()).then(j=>{R=j}).catch(()=>{}).finally(()=>{menu();route();});
+window.addEventListener("hashchange",route);
 </script>
 </body></html>

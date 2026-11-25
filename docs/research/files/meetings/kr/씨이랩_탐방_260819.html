@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>씨이랩(189330) IR 미팅노트 — 2026.8</title>
+<style>
+:root{--navy-deep:#0f1b2a;--navy:#1C3D5A;--orange:#E5601F;--bg:#f4f6f8;--card:#fff;--line:#dde3ea;--txt:#22303e;--sub:#5b6b7c;--bull:#1e7a4d;--bear:#b03a2e;--warn:#8a6d1a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.68;font-size:15px}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 60px}
+.cover{background:linear-gradient(135deg,var(--navy-deep),var(--navy) 70%,#2a5580);color:#fff;padding:38px 30px 32px;border-radius:0 0 14px 14px;margin-bottom:24px}
+.cover .ticker{font-size:12.5px;letter-spacing:.14em;color:#9fb4c9;text-transform:uppercase;margin-bottom:10px}
+.cover h1{font-size:27px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+.cover .subtitle{font-size:14px;color:#c8d5e2;margin-bottom:22px}
+.metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metagrid .m{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 12px 10px}
+.metagrid .m .k{font-size:11.5px;color:#9fb4c9;margin-bottom:4px}
+.metagrid .m .v{font-size:16px;font-weight:800}
+.metagrid .m .s{font-size:11px;color:#b9c8d7;margin-top:2px}
+section{margin-bottom:30px}
+h2{font-size:19px;font-weight:800;color:var(--navy);padding-left:12px;border-left:4px solid var(--orange);margin:34px 0 14px;letter-spacing:-.3px}
+h3{font-size:15.5px;font-weight:700;color:var(--navy);margin:20px 0 8px}
+p{margin-bottom:10px}
+.tldr{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+.tldr .t{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:.12em;margin-bottom:10px}
+.tldr ol{padding-left:20px}
+.tldr li{margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px}
+.card .h{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.card .b{font-size:13.5px;color:var(--sub)}
+.box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:14px 16px;margin:12px 0;font-size:14px}
+.box.warn{border-left-color:var(--warn);background:#fdfaf1}
+.box.bull{border-left-color:var(--bull);background:#f2faf5}
+.box.bear{border-left-color:var(--bear);background:#fdf4f3}
+.box .bt{font-weight:800;font-size:13px;margin-bottom:5px}
+.box.warn .bt{color:var(--warn)}
+.box.bull .bt{color:var(--bull)}
+.box.bear .bt{color:var(--bear)}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card);font-size:13.5px}
+th{background:var(--navy);color:#fff;padding:9px 10px;text-align:left;font-weight:700}
+td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}
+tr.self td{background:#fef4ec;font-weight:600}
+.badge{display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:800;border-radius:5px;padding:2px 8px;margin-right:6px;vertical-align:2px}
+.badge.nv{background:var(--navy)}
+blockquote.q{background:#f0f4f8;border-left:4px solid var(--navy);border-radius:0 10px 10px 0;padding:13px 16px;margin:12px 0;font-size:13.5px;color:#33475c}
+blockquote.q .who{display:block;font-size:12px;color:var(--sub);margin-top:6px}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:10px 0}
+.qa .qq{font-weight:700;color:var(--navy);margin-bottom:7px}
+.qa .qq::before{content:"Q";display:inline-block;background:var(--navy);color:#fff;font-size:11px;font-weight:800;border-radius:5px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qa .aa{color:var(--txt)}
+.qa .aa::before{content:"A";display:inline-block;background:var(--orange);color:#fff;font-size:11px;font-weight:800;border-radius:5px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qa .note{font-size:12.5px;color:var(--sub);margin-top:6px}
+.qahead{font-size:14px;font-weight:800;color:var(--orange);letter-spacing:.06em;margin:22px 0 6px}
+.verdict{background:linear-gradient(135deg,var(--navy-deep),var(--navy));color:#e8eef4;border-radius:12px;padding:20px 22px;margin:16px 0}
+.verdict .vt{font-size:13px;font-weight:800;color:var(--orange);letter-spacing:.12em;margin-bottom:8px}
+.footer{border-top:2px solid var(--line);margin-top:36px;padding-top:16px;font-size:12px;color:var(--sub)}
+.footer h4{font-size:12.5px;color:var(--navy);margin:10px 0 4px}
+ul{padding-left:20px;margin-bottom:10px}
+li{margin-bottom:5px}
+.small{font-size:12.5px;color:var(--sub)}
+@media (max-width:640px){.metagrid{grid-template-columns:repeat(2,1fr)}.grid3,.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">KOSDAQ 189330 · AI Infra / Vision AI / Digital Twin · NVIDIA Elite Partner</div>
+  <h1>씨이랩(Xiilab) IR 미팅노트</h1>
+  <div class="subtitle">2026.8.19 대면 미팅 · 삼성SDS 베라루빈(Vera Rubin) 대형 수주 직후 · STT 전사본 기반 정리</div>
+  <div class="metagrid">
+    <div class="m"><div class="k">삼성SDS 수주공시</div><div class="v">3,151억</div><div class="s">'26.7.7~'31.12.31 (공시 확정)</div></div>
+    <div class="m"><div class="k">2차 공시 (BNINC)</div><div class="v">307억</div><div class="s">NIPA VeraRubin S/W 공급</div></div>
+    <div class="m"><div class="k">'25 실적 (연결)</div><div class="v">매출 103억</div><div class="s">영업손실 -32억</div></div>
+    <div class="m"><div class="k">'26 상반기 매출</div><div class="v">+108% YoY</div><div class="s">수주 계약분 제외 기준 (전언)</div></div>
+  </div>
+</div>
+
+<!-- ═══════════ TL;DR ═══════════ -->
+<div class="tldr">
+  <div class="t">TL;DR — 한눈에 보기</div>
+  <ol>
+    <li><b>3,151억 삼성SDS 수주는 GPU 리셀 계약이 아니다.</b> 베라루빈 슈퍼팟(랙당 72 GPU·NVL 단위)의 설계–구축–인증–운영–SW 성능검증까지 총괄하는 <b>'베라루빈 프로페셔널 서비스'</b> 계약. 국내 첫 베라루빈 사례로, 후속 AI 데이터센터 프로젝트 협상에서 레퍼런스 레버리지 확보.</li>
+    <li><b>AstraGo가 반복매출 엔진.</b> GPU 1장당 200~300만원 라이선스 과금 — 국내에 깔리는 GPU 수 자체가 잠재 고객 수. 정부 GPU 확보 계획 6.5만장('24)→32만장('26), '29년까지 8.4GW 데이터센터. 포스코DX "활용률 80%" 내부 리포트가 대표 레퍼런스. 매출총이익률 80~90%+ (자체 SW).</li>
+    <li><b>매출인식은 계약기간 5년보다 앞단 집중 전망</b>(진행률 기준, 감사인 협의 중). 선금 50% 수령 구조로 현금 부담 없음 — 다만 수령 선금 대부분을 외주사 선급으로 지급(약 1,500억 전언), 자체 귀속분·SW 매출은 후행 반영 여지. 307억 건은 계약기간이 짧아 4Q26부터 본격 반영.</li>
+    <li><b>중장기 축은 Physical AI 2종 세트</b> — 옴니버스 디지털 트윈(국내 최대 반도체사 평택 공장 이식, 4년 연속 프로젝트)과 Vision AI 실시간 분석(자체 학습모델 ~130개). 가이던스는 미제공, 추후 공시 시점에 검토.</li>
+  </ol>
+</div>
+
+<div class="grid3">
+  <div class="card"><div class="h">📐 비즈니스 구조</div><div class="b">구축(프로페셔널 서비스)은 1회성이지만, 구축된 GPU 위에 AstraGo 라이선스가 "따박따박" 얹히는 <b>구축→운영 반복매출</b> 설계. 하드웨어 유통사와의 결정적 차별점.</div></div>
+  <div class="card"><div class="h">🤝 NVIDIA 관계</div><div class="b">'19년 SW사 최초 Preferred Partner → '26.4월 <b>Elite 파트너 승급</b>. '26 GTC 코리아나잇에서 젠슨 황이 직접 언급. 옴니버스 국내 최초 인증('23) 보유.</div></div>
+  <div class="card"><div class="h">⚠️ 관전 리스크</div><div class="b">원청 종속 + 외주 재하청 구조의 실질 마진, NVIDIA Run:ai 표준화 위협, '25 매출 103억 기업의 급격한 스케일업 실행력.</div></div>
+</div>
+
+<!-- ═══════════ 1 ═══════════ -->
+<h2>1. 회사 개요 — "10년간 GPU만 판 소프트웨어 회사"</h2>
+<p>AI·소프트웨어 섹터에 회사는 많지만, 씨이랩의 차별점은 <b>10년간 GPU에 집중</b>해왔다는 점이라고 강조. 영상 분석은 그래픽카드가 핵심인데, GPU가 게임→비트코인→AI로 용도가 확장되는 동안 GPU 반도체 자체의 처리·관리 이슈를 다뤄왔고, 그 과정에서 NVIDIA의 고객이자 파트너, 협력 대상이 되며 역량을 인정받았다는 설명.</p>
+
+<h3>연혁 요약</h3>
+<table>
+<tr><th style="width:110px">시기</th><th>내용</th></tr>
+<tr><td>2010</td><td>KT 출신 창업주가 빅데이터 분석 서비스로 창업. 소셜네트워크·마케팅 분석으로 시작, 글로벌 기업 대상 역량 축적</td></tr>
+<tr><td>2013 / 2021</td><td>코넥스 상장 → 코스닥 이전상장 <span class="small">(공시·기사 기준 보강)</span></td></tr>
+<tr><td>2016</td><td><b>국방과학연구소 프로젝트</b> — 다수 CCTV 영상을 동시 분석해 미사일 성능 개선·타겟 움직임 포착. 여기서 영상처리·Vision AI 기술 축적. 국내 최대 규모 GPU 구매·클러스터링 구성, GPU 데이터 처리 기술 개발</td></tr>
+<tr><td>2018</td><td>해당 기술 논문이 NVIDIA GTC 초청 발표 — 글로벌 인지도 확보의 계기</td></tr>
+<tr><td>2019</td><td>소프트웨어 회사 최초로 <b>NVIDIA Preferred Partner</b> (일반→Preferred→Elite 3단계 중 2단계). DGX 제품 취급 자격 확보 → DGX + 자사 SW 패키지 판매 가능</td></tr>
+<tr><td>2023</td><td>NVIDIA 옴니버스 출시와 함께 <b>국내 최초 옴니버스 인증</b> 취득(판매·프로젝트 수행 자격). 이후 국내 최대 반도체 기업에서 4년 연속 옴니버스 프로젝트 수행</td></tr>
+<tr><td>2026</td><td>GTC 코리아나잇에서 젠슨 황이 회사를 직접 언급. <b>4월 Elite 레벨 파트너 승급</b> — 이번 대형 수주의 배경으로 작용</td></tr>
+</table>
+
+<div class="box"><div class="bt">사업 포트폴리오 (3사업 · 5솔루션)</div>① <b>AI 인프라</b>: 베라루빈 프로페셔널 서비스 + GPU 운영 솔루션 AstraGo &nbsp;② <b>Vision AI</b>: XAIVA(Safety·온디바이스), VidiGo(영상검색) &nbsp;③ <b>디지털 트윈</b>: 옴니버스 프로젝트, 합성데이터 X-GEN. '25년 매출 103억 중 AI 인프라가 63억(61.5%).</div>
+
+<!-- ═══════════ 2 ═══════════ -->
+<h2>2. 베라루빈 시대 — "그래픽카드 장사에서 시스템 장사로"</h2>
+<p>호퍼('24)·블랙웰까지 NVIDIA 비즈니스는 GPU(칩·보드) 판매 중심이었으나, <b>베라루빈부터는 레퍼런스 아키텍처 기반의 슈퍼팟(시스템) 판매</b>로 전환. CPU·GPU·네트워킹·냉각·아키텍처 설계까지 NVIDIA가 표준을 만들어주고, 이를 따르면 기술 보증까지 해주는 시스템 판매 전략.</p>
+<div class="box"><div class="bt">판매 자격의 변화 = 씨이랩이 수주한 이유</div>기존에는 "GPU를 싸게, 많이 파는 업체"가 중요했다면, 베라루빈부터는 랙 단위(랙당 72 GPU, NVL 통합 구성)로 들어가기 때문에 <b>시스템 아키텍처를 이해하고 장애 시 기술지원이 가능한 업체</b>만 판매 영역을 가져갈 수 있음. "작년 매출 100억짜리 회사가 다른 대형 판매 채널을 제치고 계약을 딴 가장 큰 원인" — 시스템 엔지니어 역량. 단순 유통이 아니라 설계·구축·기술지원·운영까지 통합 수행하는 PM에 가까운 역할.</div>
+
+<h3>베라루빈이 만드는 산업 변화 3가지 (회사 시각)</h3>
+<ul>
+<li><b>① 슈퍼팟 표준화</b>: 향후 대규모 AI 데이터센터에는 베라루빈 이후 최신 GPU가 슈퍼팟 단위로 들어갈 가능성이 높고, 국가 3대 메가프로젝트급 대형 투자가 본격화될 전망</li>
+<li><b>② 운영 기술의 중요성 급증</b>: 시스템 단위로 들어가는 만큼 시스템을 최적화하는 운영 기술이 핵심 경쟁력화 → AstraGo의 시장</li>
+<li><b>③ 토큰당 비용 하락 → Physical AI 개화</b>: GPU 단가는 비싸지만 GPU당 토큰 성능이 크게 올라 토큰당 비용이 하락. 사람만 쓰던 AI를 현장 장비·기계가 온디바이스로 저비용 사용 가능 → 피지컬 AI 상용화 확산과 연결</li>
+</ul>
+
+<!-- ═══════════ 3 ═══════════ -->
+<h2>3. 삼성SDS 계약 — 베라루빈 프로페셔널 서비스</h2>
+<p>회사는 계약 상대방(삼성SDS)을 직접 거명하기 어려워 <b>"베라루빈 프로페셔널 서비스"</b>라는 명칭으로 설명. 계약 체결 전까지는 비밀 유지 때문에 AI 데이터센터 사업 자체를 공표하지 못했고, 이번 계약을 계기로 AI 데이터센터 프로페셔널 서비스 + AstraGo를 메인 비즈니스로 공식화. 갑작스러운 수주가 아니라 <b>약 1년간 NVIDIA와 협력하며 베라루빈 전문 역량을 쌓아온 결과</b>라고 설명.</p>
+
+<table>
+<tr><th style="width:140px">구분</th><th>내용</th></tr>
+<tr class="self"><td>공시 ① (7/7)</td><td>삼성SDS, <b>3,151.3억원</b> "AI컴퓨팅자원 활용기반 강화 사업" 공급계약. 기간 '26.7.7~'31.12.31(2,003일). '25년 매출(102.7억) 대비 3,068%</td></tr>
+<tr><td>대금 조건</td><td>선금 50% / 중도금 30% / 잔금 20% — "성공 후 50%를 받는 게 아니라" 선금 구조라 <b>회사의 현금 부담이 전혀 없음</b>. 외주 생산 방식 수행</td></tr>
+<tr><td>수행 범위</td><td>랙·서버 반입부터 GPU·CPU·네트워크·냉각 시스템 통합 구축 + 설계·인증·운영·SW 성능검증. 구축 이후 AI 프로젝트의 인프라 관리·기술지원으로 연결되는 구조</td></tr>
+<tr class="self"><td>공시 ② (8/4)</td><td>비엔아이엔씨(BNINC) 향 <b>307.0억원</b> "2026년 NIPA NVIDIA VeraRubin S/W 공급". 기간 '26.8.4~'27.3.31. SW 컨설팅–설치–운영까지 포함. BNINC가 전체 원청 물량 중 씨이랩 납품분에 해당한다는 취지의 설명</td></tr>
+</table>
+
+<blockquote class="q">"이 계약에 맞췄다고 생각하지 마시고, 저희가 하는 <b>베라루빈 프로페셔널 서비스</b>에 맞췄다고 생각해 주세요. 이번이 이벤트성 계약이 아니라, 향후 최신 GPU 시스템 판매의 축소판 계약이라고 생각합니다."<span class="who">— IR 발표 중 (STT 교정 인용)</span></blockquote>
+
+<!-- ═══════════ 4 ═══════════ -->
+<h2>4. 정책 환경 — 3대 메가 프로젝트와 씨이랩의 접점</h2>
+<ul>
+<li><b>AI 데이터센터</b>: 정부가 '29년까지 <b>8.4GW</b> 구축 계획 — 동해·포항·울산·광주·솔라시도 등 전국 분산 추진. GPU 확보 계획은 '24년 6.5만장 → '26년 <b>32만장</b>으로 5배 상향. 이를 뒷받침하는 메모리·차세대 반도체·NPU 지원책 병행</li>
+<li><b>Physical AI</b>: "LLM은 뒤처졌지만 피지컬 AI는 늦지 않았다"는 기조로 휴머노이드 점유율 20% 목표. 현장 데이터 취득의 비용·안전 문제 때문에 합성데이터를 활용한 월드 파운데이션 모델(WFM) 자체 개발 — 제조·안전·방산 등 굵직한 분야 우선</li>
+<li><b>씨이랩 접점</b>: 베라루빈 시스템 아키텍처·프로페셔널 서비스 역량(=GPU·반도체 확대), AstraGo의 클러스터링·자원배분·스케줄링(=데이터센터 효율화), XAIVA 실시간 분석 + X-GEN 합성데이터 + 옴니버스(=Physical AI)</li>
+</ul>
+<div class="box warn"><div class="bt">정책 지속성에 대한 회사 입장</div>"정권이 바뀌어도 AI 인프라는 국가 기본 자원화 단계라 계획이 변하지 않을 것. 줄어들기보다 늘어날 것" — 윤석열 정부 계획이 현 정부에서도 이어진 점을 근거로 제시. (정책 지속성은 회사 의견이므로 별도 검증 필요)</div>
+
+<!-- ═══════════ 5 ═══════════ -->
+<h2>5. AstraGo — GPU 설치기반에 비례하는 반복매출</h2>
+
+<h3>5-1. 문제 정의: "GPU 인프라, 실가동은 극히 낮다"</h3>
+<p>메타의 대형 클러스터(2.3만 GPU급) 연구를 인용하며, GPU 인프라 투자 대비 실제 유효 가동 시간이 매우 낮다고 설명(전언 수치는 STT상 불명확). 원인 3가지:</p>
+<div class="grid3">
+<div class="card"><div class="h">① 선점 예약</div><div class="b">GPU 공급 부족 → 3개월 뒤 쓸 프로젝트를 위해 미리 잡아두는 유휴 점유 발생</div></div>
+<div class="card"><div class="h">② 프래그멘테이션</div><div class="b">최신 GPU는 복잡 연산 최적화 칩 — 간단한 작업에 통째로 배정되면 리소스의 5~10%만 사용</div></div>
+<div class="card"><div class="h">③ 오케스트레이션 병목</div><div class="b">부서 간 순차 배정 구조에서 앞 부서가 비효율적으로 쓰면 뒤 부서는 대기 → 불필요한 추가 GPU 투자로 이어짐</div></div>
+</div>
+
+<h3>5-2. 핵심 기능 4가지</h3>
+<ul>
+<li><b>GPU 분할(Fractioning)</b>: GPU 1장을 논리적으로 10~30개로 분할 — 간단한 작업은 20명이 1장을 나눠 쓰고, 복잡한 프로젝트는 수십 장을 묶어 사용</li>
+<li><b>오토 스케줄링</b>: 유휴 리소스를 규정에 따라 강제 회수해 필요 부서에 자동 재배정</li>
+<li><b>컨테이너 오케스트레이션</b>: ML 엔지니어가 IT 관리자 신청·대기 없이 클릭 몇 번으로 GPU 할당·인프라 구성</li>
+<li><b>GUI 가시화</b>: 경영진·관리자가 "GPU 100장 중 몇 장을 실제로 쓰는지, 낭비·죽은 GPU가 무엇인지"를 대시보드로 확인. 워크로드별 메모리·온도·전력까지 모니터링. 일본향으로는 낭비 비용·사용료를 금액으로 표시하는 기능을 별도 개발</li>
+</ul>
+
+<h3>5-3. 고객 레퍼런스</h3>
+<table>
+<tr><th style="width:150px">고객</th><th>내용</th></tr>
+<tr class="self"><td>포스코 그룹</td><td><b>포스코DX가 AstraGo로 GPU 활용률 80% 달성</b>이라는 내부 분석 리포트 발간(보도자료 공개). DX를 시작으로 그룹 계열사 확산 중. 단, 현재 라이선스 약 300개 — 전사 침투는 초기 단계</td></tr>
+<tr><td>D그룹사 (비공개)</td><td>"젠슨 황 방한 시 회동했던 중공업 그룹, 주가도 가장 많이 오른 곳" 힌트만 제공. AI 투자에 매우 적극적</td></tr>
+<tr><td>금융 — 한국은행</td><td>한국은행 니즈 기반으로 금융권용 GPU 보안 기능 강화 버전 공급</td></tr>
+<tr><td>일본</td><td>AI EXPO 출품 계기, 일본 NVIDIA Elite 파트너의 요청·기술개발 협업으로 시장 진출 타진 중. "일본에 유사 GPU 매니지먼트 솔루션이 없다"는 평가. 레거시 IT 부담이 없어 AI 전환이 한국보다 빠를 수 있다는 시각</td></tr>
+</table>
+<p class="small">도입 효과(회사 제시): GPU 활용률 평균 30%p 이상 개선, 환경 구성 시간 대폭 단축, 미세 장애의 SW적 감지·자동 복구(오토 리커버리)로 NVIDIA 고가 엔지니어 서포트 의존 축소.</p>
+
+<h3>5-4. 매출이 발생하는 4가지 경로</h3>
+<ul>
+<li>① DGX/GPU 인프라 판매 시 동반 제안 — "10대를 사도 30대처럼 쓰게 해주겠다"</li>
+<li>② 프로페셔널 서비스(구축 프로젝트) 안에 운영 솔루션으로 포함 판매</li>
+<li>③ <b>타 NVIDIA 파트너가 판매한 GPU에도 침투</b> — 하드웨어만 파는 업체의 고객이 운영 효율화를 원할 때</li>
+<li>④ GPU 구매를 고민하는 AI 프로젝트 고객에 "구매량 자체를 절감해주겠다"는 제안</li>
+</ul>
+<div class="box bull"><div class="bt">과금 구조와 수익성</div>GPU 1장당 라이선스 <b>200~300만원</b> 정률 과금(대량 구매 시 볼륨 디스카운트 가능). GPU 1만 장이 깔리면 1만 장이 과금 대상 — 베라루빈 이후 구매 단위가 수십 장에서 <b>1,000장 단위</b>로 커지며 잠재 고객이 구조적으로 확대. 자체 SW라 원가가 거의 없어 <b>매출총이익률 80~90% 이상</b>. AstraGo 팀 약 20명, 대표 본인도 엔지니어 출신. 2014년 첫 출시 후 10년 업그레이드, '24년 대규모 GPU 기반으로 리뉴얼한 것이 현재의 AstraGo. <span class="small">(과금 단위가 연간인지 여부는 STT상 답변 유실 — 확인 필요)</span></div>
+
+<!-- ═══════════ 6 ═══════════ -->
+<h2>6. 디지털 트윈 — 옴니버스, "한국에서 실현하는 회사"</h2>
+<p>NVIDIA가 Physical AI에서 가장 중요하게 보는 것이 디지털 트윈(옴니버스). 씨이랩은 CAD·CATIA 등 3D 설계도를 <b>USD 포맷으로 변환</b>해 옴니버스 세계에 이식하고, 고객이 원하는 시뮬레이션 시나리오를 구축·완수해주는 역할. 물리엔진(PhysX)·로봇엔진이 적용돼 영하 40도 설원의 궤도 주행, 40도 사막의 모래 침하 같은 물리 특성까지 가상 재현 가능.</p>
+<div class="box"><div class="bt">국내 최대 반도체 기업 — 4년 연속 프로젝트</div>'23년 NVIDIA의 국내 옴니버스 사업 개시와 함께 POC 수행 → 성공 후 '24년 <b>신규 건설 공장 전체를 옴니버스에 이식</b>. 공정 라인·IP 장비·공학 장비·전력 장비와 장비 운영 데이터까지 구현. 작년부터는 물류로봇 자율주행·휴머노이드 협업 환경 시뮬레이션까지 확장, 현재 타 산업 POC 진행 중. 고객사 부사장이 올해 GTC에서 평택 공장 옴니버스 이식을 직접 발표(유튜브 공개 자료)해 이를 근거로 소개 — 에러 발생 시 시그널·모니터링 체계까지 적용 중.</div>
+<p>중장기 확장 방향: 반도체 → 자동차·물류 등 타 산업 프로젝트 확대. 내년부터 Physical AI 수요 개화 시 공장 라인당 프로젝트가 반복 수주로 누적되는 구조 기대.</p>
+
+<!-- ═══════════ 7 ═══════════ -->
+<h2>7. Vision AI — 상장의 원천, 130개 사전학습 모델</h2>
+<p>비전 AI는 LLM과 달리 공간별 물리적 피처가 복잡해 파운데이션 모델화에 시간·비용이 많이 들기 때문에, <b>핵심 피처만 추출해 빠르게 판단</b>하는 접근이 유효하다는 설명. 이 실시간성이 향후 Physical AI(밀리초 단위 판단)와 직결되는 부분.</p>
+<ul>
+<li><b>XAIVA Safety</b>: 대형 플랜트·건설 현장 대상 CCTV AI. 중대재해처벌법(경영진 형사처벌 리스크) 사전 예방 수요가 가장 높음. 사고 이벤트·안전장치 모델링 탑재</li>
+<li><b>온디바이스(키오스크)</b>: 현장 입구에서 안전장비 착용 여부 판별</li>
+<li><b>VidiGo</b>: 영상분석 모델 + 에이전틱 AI 모듈 — 24~36시간 녹화 영상에서 텍스트 질의로 원하는 구간만 추출</li>
+<li>자체 학습 모델 약 <b>130개</b> 보유(상장 당시 주력 사업). 차량 통행량·헤드카운팅 등 — 일본 교통 컨설팅사에 지하철 혼잡도 분석 모델 판매, 협착 사고 감지 등 산업안전 모델 시연. GPU와 고객이 원하는 모델을 골라 패키지 판매하는 구조로 라이선스형 수익성 개선 추진</li>
+</ul>
+
+<!-- ═══════════ 8 ═══════════ -->
+<h2>8. 실적 현황과 성장 전략</h2>
+<ul>
+<li><b>'26 상반기</b>: 매출 전년비 약 108% 성장(대형 수주 제외 기준) — AstraGo·XAIVA·디지털 트윈 등 전 사업 고른 성장. 1~2분기 인력 선제 채용으로 비용 선반영</li>
+<li><b>수주잔고</b>: 대형 계약으로 급증 (전년 수치는 STT 불명확). 하반기 프로젝트 진행하며 실적 반영 가속 계획</li>
+<li><b>하반기</b>: 베라루빈 프로페셔널 서비스 수행 + XAIVA·Safety 중심 엔터프라이즈 확대 + 디지털 트윈 타 산업 확장. 올해 목표는 "SDS 프로젝트 첫해 BEP 달성" 뉘앙스 (STT 일부 불명확)</li>
+</ul>
+<div class="grid2">
+<div class="card"><div class="h">단기 — AI 데이터센터</div><div class="b">국내 첫 베라루빈 계약 레퍼런스 → 향후 최신 GPU가 필요한 AI 데이터센터와의 협상 지위 강화. 구축이 늘수록 AstraGo 과금 기반(설치 GPU 수)이 함께 확대되는 이중 구조.</div></div>
+<div class="card"><div class="h">중장기 — Physical AI</div><div class="b">가상 시뮬레이션(옴니버스·X-GEN 합성데이터)과 현장 실시간 분석(XAIVA) 두 축에 집중. 토큰비용·데이터 부족·실시간성이라는 Physical AI 3대 난제에 각각 대응하는 포트폴리오.</div></div>
+</div>
+
+<!-- ═══════════ Q&A ═══════════ -->
+<h2>9. Q&amp;A — 주제별 정리</h2>
+
+<div class="qahead">A. 계약 구조·매출 인식</div>
+<div class="qa"><div class="qq">계약 세부 내용을 더 공개할 수 있나?</div><div class="aa">계약 초기라 NDA(비밀유지) 조항이 많아 공시 내용 외에는 언급이 제한적. 진행되며 공개 가능한 부분이 생길 것. 307억 공시(BNINC)는 SW 컨설팅–설치–운영을 포함하며, BNINC가 원청 전체 물량을 담당하고 그중 씨이랩 납품분이 잡히는 구조.</div></div>
+<div class="qa"><div class="qq">매출 인식 시기는? 계약기간이 5년인데.</div><div class="aa">계약기간은 5년이지만 <b>그보다 앞단에서 빨리 반영될 것</b>이라는 점은 확실. 다만 세부 내역은 감사인과 논의 중 — 기존 매출 100억 회사에 3,000억대 계약이라 진행률 인식 이슈를 적극 대응해 잘 반영되도록 하겠다는 입장. <b>307억 건은 계약기간이 짧아('27.3월까지) 4Q26부터 본격 반영</b> 전망.</div></div>
+<div class="qa"><div class="qq">단가·마진 수준은? 증권사 추정(GPU 1,000장, 관련 원가 등)이 있던데.</div><div class="aa">직접 확인은 어려우나 "SK증권 리포트가 잘 분석했으니 참고하되, <b>당사 단가는 그보다 조금 더 높다</b>"고 언급. 매입·매출 원가 구조는 이미 거의 고정돼 있어 구축 원가 상승 리스크는 제한적이라는 입장.</div></div>
+<div class="qa"><div class="qq">현금 흐름 구조는?</div><div class="aa">선금 50% 수령(중도금 30%·잔금 20%)이라 현금 부담이 전혀 없음. 다만 수령 선금(약 1,575억) 중 약 1,500억을 외주 파트너 선급금으로 지급, 잔여분은 60~70억 수준이라는 취지의 대화 — SW 등 자체 귀속 매출은 후행해서 점차 반영·공시될 여지. 외주 파트너 지급은 진행 중.</div><div class="note">※ 금액은 STT 전언 기준으로 공시 검증 불가 — 참고용.</div></div>
+<div class="qa"><div class="qq">비슷한 규모 수주가 또 오면 같은 흐름인가?</div><div class="aa">이번 건을 잘 수행하면 <b>표준 스킴</b>으로 계약 구조가 정리될 것. 이후 유사 규모 계약은 큰 차이 없이 같은 플로우로 진행될 것으로 기대.</div></div>
+
+<div class="qahead">B. AstraGo 사업모델</div>
+<div class="qa"><div class="qq">가격은 서비스 범위별 차등인가, 정률인가?</div><div class="aa">GPU당 200~300만원 정률로 간다. 만 장 단위 대량 주문 시 볼륨 디스카운트는 가능. GPU 수가 늘면 AstraGo 매출이 동반 성장하는 구조. (연/월 과금 단위 질문에 대한 답변은 STT상 유실)</div></div>
+<div class="qa"><div class="qq">고객사들이 도입을 망설이는 이유는?</div><div class="aa">딱 하나 — <b>아직 운영 고민을 시작하지 않아서</b>. 대부분 기업의 GPU 투자가 작년부터라 지금은 인프라 확보 단계. 구매 후 1~2년 지나면 "추가 구매 vs 기존 효율화"의 갈림길이 오는데, 지금은 GPU를 사도 입고까지 5~6개월 걸리는 상황이라 결국 효율화 니즈가 온다. 인프라가 먼저 깔리고 AstraGo 기회는 후행하는 세컨드 찬스 구조.</div></div>
+<div class="qa"><div class="qq">실제 전환(win) 사례는?</div><div class="aa">포스코(DX→계열 확산), D그룹사, 금융권(한국은행) 등. 공시 이전부터 대기업들과 논의가 이어지고 있고, GPU 대량 구매를 발표했던 H사와도 일부 진전이 있음 — 추후 공개 기회에 상세 언급 예정.</div></div>
+<div class="qa"><div class="qq">포스코 내 침투율은?</div><div class="aa">아직 전사 GPU 확대 적용은 아니고 현재 라이선스 약 300개 수준 — 초기 단계로 후속 확산 여지.</div></div>
+
+<div class="qahead">C. 경쟁 구도</div>
+<div class="qa"><div class="qq">NVIDIA가 Run:ai를 인수해 오케스트레이션까지 통합하려는 움직임 — 위협 아닌가?</div><div class="aa">글로벌 표준 솔루션과 이를 보완하는 솔루션의 관계로 본다. NVIDIA는 당연히 표준 패키지로 팔고 싶겠지만 <b>글로벌 표준은 로컬(고객별) 환경에 잘 적용되지 않는다</b> — 누군가 시스템 연동·커스터마이징을 해줘야 하고, Run:ai 사용 고객이 부족한 기능을 AstraGo로 보완하는 병행 사용도 가능하다는 입장.</div></div>
+<div class="qa"><div class="qq">아크릴(조나단) 등 서드파티 GPU 효율화 솔루션과의 차이는?</div><div class="aa">NVIDIA 인증 파트너로서 <b>최신 GPU 호환을 가장 먼저 확보</b>할 수 있는 것이 차별점 — 작년 블랙웰도 최선 대응. 아크릴은 사업보고서상 SW 라이선스보다는 구축형 프로젝트 성격의 비즈니스로 판단, 씨이랩은 라이선스형.</div></div>
+<div class="qa"><div class="qq">대기업 인하우스 솔루션과의 관계는?</div><div class="aa">인프라에는 여러 계층이 있고 기존 CPU 관리·전력 관리 솔루션들과 AstraGo가 연동 작업을 함. 향후 CPU·NPU·데이터센터 매니지먼트까지 포함하는 기능 개발 중. 대기업이 인하우스만 고집하면 어쩔 수 없지만, 본업 집중을 위해 외부 전문 솔루션을 쓰는 흐름이라면 기회가 있다. 시장이 좋으면 경쟁은 필연 — 기술 차별화, 고객 관계, 하드웨어 최적화 연동력으로 대응.</div></div>
+
+<div class="qahead">D. 파이프라인·확장성</div>
+<div class="qa"><div class="qq">다른 그룹사·데이터센터가 베라루빈을 도입하면 반드시 씨이랩을 거치나?</div><div class="aa">"무조건"이라고 단언할 수는 없다 — 다른 파트너를 통한 도입도 가능. 다만 <b>베라루빈 국내 사례는 씨이랩이 첫 번째</b>고, 기존 블랙웰·호퍼와 달리 취급 업체가 없어 씨이랩으로 올 확률이 높다고 본다. 베라루빈은 잘게 사는 것보다 슈퍼팟 레퍼런스 아키텍처로 사는 게 유리해 건당 규모도 클 것.</div></div>
+<div class="qa"><div class="qq">국가 AI 컴퓨팅 등 추가 발주 파이프라인은?</div><div class="aa">잠재 파이프라인으로 보고 있으나 건당 규모가 크고 고객 측 민감성이 있어 구체 언급은 자제. 이 사업 형태(대형 구축+운영)에 집중하겠다는 방향성만 확인. 글로벌에서 베라루빈 구축 경험이 있는 업체가 진입할 가능성은 있지만, 국내에서는 "유일하다고 말할 순 없어도 상당히 앞서 있다".</div></div>
+
+<div class="qahead">E. 캐파·인력·비용</div>
+<div class="qa"><div class="qq">이런 대형 프로젝트가 동시에 여러 개 오면 캐파가 되나?</div><div class="aa">SW 부분은 현 인력으로 충분히 소화 가능. 구축은 외주 벤더가 여럿 있어 선별·통합으로 대응 — 극단적으로 같은 사이즈 프로젝트가 하나 더 와도 외주 배분으로 가능하고, 내부는 PM급 엔지니어 2~3명 추가면 된다. SDS 이상 초대형이 오면 채용 확대 필요.</div></div>
+<div class="qa"><div class="qq">인력은 수주 후 뽑나, 선제적으로 뽑나?</div><div class="aa">수주 후면 늦다 — 수주 가시성이 생기면 선제 채용. 작년 말~올해 초 첫 사례라 전문가를 미리 대거 확보했고, 이제 레퍼런스가 생겨 향후엔 같은 규모로 선행 투자할 필요는 없을 것.</div></div>
+<div class="qa"><div class="qq">2분기 실적에 비용 부담이 있었나?</div><div class="aa">1~2분기 채용 확대 영향으로 비용 선반영. 올해부터 AI 사업을 본격화하는 초기 비용이며, 향후엔 인력 증원 없이 AI로 생산성을 올리는 구조를 지향.</div></div>
+
+<div class="qahead">F. 재무·주주·기타</div>
+<div class="qa"><div class="qq">가이던스를 제시할 계획은?</div><div class="aa">그동안 가이던스를 제공한 적이 없고 요즘은 동시 공정공시 이슈도 있어 지금은 어렵다. 가이던스를 공시로 제공하는 시점에 동일하게 제공될 것 — 당분간은 수주 공시 금액을 연도 배분해 추정해 달라는 취지.</div></div>
+<div class="qa"><div class="qq">전례 없는 현금이 쌓이면 어디에 쓰나?</div><div class="aa">가장 크게는 <b>그동안 자본 규모 때문에 참여하지 못했던 대형 프로젝트</b> 참여 — 예: 엣지 데이터센터성 사업 등 현재 사업의 확장 영역. 운영 경험을 레버리지한 추가 사업 기회. 해외 직접 진출도 언급.</div></div>
+<div class="qa"><div class="qq">창업주(오너)의 현재 역할은?</div><div class="aa">전략 총괄. 업계에서 가장 앞서 있던 인물로 회사 전체 방향을 이끌고 있다는 설명.</div></div>
+<div class="qa"><div class="qq">SW 납품 형태는 어플라이언스(박스)인가?</div><div class="aa">아니다 — <b>서버 구축형</b>. 박스 형태는 보안 이슈가 커서 고객 서버단에 구축하는 방식.</div></div>
+<div class="qa"><div class="qq">AI 가속기 메모리 관련 시각은?</div><div class="aa">현재는 가속기에 메모리가 대량 탑재되는 구조. NVIDIA가 차세대에서 메모리 절감을 언급하고 있어 향후 최적화 환경에서 테스트해봐야 할 영역이라는 원론적 답변.</div></div>
+<div class="qa"><div class="qq">사옥 관련 (여담)</div><div class="aa">강남 사옥은 건물 하부에 자체 데이터센터를 갖췄고 층고·수전 용량이 높아 흔치 않은 조건 — 이전 없이 계속 사용할 계획.</div></div>
+
+<!-- ═══════════ 투자 시사점 ═══════════ -->
+<h2>10. 투자 시사점 — Bull vs Bear</h2>
+<div class="grid2">
+<div class="box bull" style="margin:0"><div class="bt">🐂 Bull Case</div>
+<ul style="margin:0;padding-left:18px">
+<li>국내 첫 베라루빈 슈퍼팟 레퍼런스 + Elite 파트너 희소성 → 후속 대형 AI 데이터센터 수주의 우선 협상 지위</li>
+<li>GPU 설치기반 × GPU당 200~300만원 라이선스 = 정부 32만장·8.4GW 정책과 정비례하는 반복매출(GM 80~90%)</li>
+<li>선금 50% 구조로 대형 수주에도 현금 부담 없음, 원가 매입 고정으로 구축 마진 가시성</li>
+<li>옴니버스 4년 연속(국내 최대 반도체) + Vision AI 130개 모델 — Physical AI 개화 시 이중 수혜 옵션</li>
+</ul></div>
+<div class="box bear" style="margin:0"><div class="bt">🐻 Bear Case</div>
+<ul style="margin:0;padding-left:18px">
+<li>원청(삼성SDS) 종속 + 외주 재하청 구조 — 3,151억 중 자체 귀속 마진의 실체는 감사인 협의·후속 공시 전까지 미확정</li>
+<li>매출인식 시기·배분 불확실: "5년보다 빠르다"는 정성적 언급뿐 정량 가이던스 부재</li>
+<li>NVIDIA Run:ai 표준 스택 통합 시 서드파티 운영 SW의 구조적 입지 축소 위험</li>
+<li>'25년 매출 103억·영업적자 -32억 기업의 30배 규모 프로젝트 실행 리스크, 수주 모멘텀의 주가 선반영 가능성</li>
+<li>AstraGo 침투는 아직 라이선스 ~300개 — "GPU 수 = 고객 수" 등식은 현재로선 잠재력 단계</li>
+</ul></div>
+</div>
+
+<div class="verdict">
+<div class="vt">VERDICT — 미팅 종합</div>
+<p style="margin-bottom:8px">이번 미팅의 핵심 메시지는 명확하다. <b>"이것은 GPU 유통 계약이 아니라 베라루빈 시대의 시스템 구축·운영 사업 모델의 첫 표준 계약"</b>이라는 것. 베라루빈부터 NVIDIA의 판매 단위가 칩에서 슈퍼팟 시스템으로 바뀌면서, 아키텍처 이해와 기술지원 역량을 가진 Elite 파트너에게 판매 자격이 재배분됐고 씨이랩이 그 첫 수혜를 국내에서 가져갔다는 논리 구조는 일관성이 있다.</p>
+<p style="margin-bottom:8px">다만 투자 판단의 실질 변수는 ① 3,151억의 <b>기간별 매출인식과 자체 귀속 마진</b>(감사인 협의 결과·후속 공시), ② AstraGo의 라이선스 수 증가 속도(현 ~300개 → GPU 설치기반 비례 성장의 증명), ③ 후속 베라루빈 수주의 실현 여부다. 구축(일회성·저마진 추정)과 운영 SW(반복·고마진)를 분리해서 추적하는 것이 이 회사 실적 분석의 핵심 프레임이 될 것.</p>
+<p class="small" style="color:#9fb4c9">팔로업 포인트: 3Q26 실적의 수주분 인식 개시 여부 / 307억(NIPA) 4Q 반영 / AstraGo 라이선스 수·신규 그룹사 공시 / 가이던스 공시 개시 시점 / SK증권 추정 대비 단가 프리미엄 검증.</p>
+</div>
+
+<!-- ═══════════ 부록 ═══════════ -->
+<div class="footer">
+<h4>◼︎ STT 교정 사항 (주요)</h4>
+<p>SBS/SDS → 삼성SDS · 베라루핀/배럴림픽/메라노벨 → Vera Rubin(베라루빈) · 아스트라보/아트라고/아테라부 → AstraGo · 옴니버스/옵티머스/온리버스/오니버스 → Omniverse · 런던AI → Run:ai · 엑셀/세이프티 → XAIVA(Safety) · 비디오 → VidiGo · X램 → X-GEN · 직비/즉비/집필/치료율 → GPU · 프리파드 → Preferred · LH/엘리베이터 파트너 → Elite 파트너 · 넥스케일 → NVL(랙스케일) · 중국업 → 중공업 · 아크릴 "조나단" 관련 문맥 보정.</p>
+<h4>◼︎ 불명확 항목 (원문 대조 권장)</h4>
+<p>전년 수주잔고 수치("25.5억"으로 전사 — 단위 불명) / AstraGo 과금 단위(연·월 질의에 대한 답변 유실) / 메타 클러스터 실가동률 수치("5%"로 전사되었으나 통상 인용되는 연구 수치와 상이할 수 있음) / 랙당 서버 대수("14개"로 전사) / 올해 BEP 목표 관련 발언 일부 / D그룹·H사 등 익명 고객사의 실제 식별.</p>
+<h4>◼︎ 소싱 구분</h4>
+<p><b>확정(공시·보도 검증)</b>: 삼성SDS 3,151.3억 계약('26.7.7~'31.12.31, 선금50/중도금30/잔금20, 외주 생산 방식), BNINC 307.0억 NIPA VeraRubin S/W 공급('26.8.4~'27.3.31, 선급금 없음), '25년 연결 매출 102.7억·영업손실 32억, 2010 설립·2013 코넥스·2021 코스닥 이전상장, 3사업 5솔루션 구성. <b>전언(회사 발언)</b>: 상반기 +108%, 활용률·라이선스 수·고객사 힌트·매출인식 방향성·단가 코멘트 등 그 외 전부.</p>
+<h4>◼︎ Disclaimer</h4>
+<p>본 자료는 2026.8.19 씨이랩 IR 미팅의 STT 전사본을 재구성한 내부 참고용 노트로, 음성인식 특성상 수치·고유명사 오류가 잔존할 수 있습니다. 회사 측 발언은 회사의 주장이며 별도 검증되지 않았습니다. 본 자료는 투자 권유가 아니며, 투자 판단의 책임은 투자자 본인에게 있습니다.</p>
+</div>
+
+</div>
+</body>
+</html>

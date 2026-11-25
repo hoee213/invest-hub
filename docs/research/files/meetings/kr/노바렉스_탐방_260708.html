@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>노바렉스(194700) IR 미팅노트 — 2026.7.8</title>
+<style>
+:root{--navy-deep:#0f1b2a;--navy:#1C3D5A;--orange:#E5601F;--bg:#f4f6f8;--card:#fff;--line:#dde3ea;--txt:#22303e;--sub:#5b6b7c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;font-size:15px}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px 60px}
+.cover{background:linear-gradient(135deg,var(--navy-deep),var(--navy) 70%,#2a5580);color:#fff;padding:38px 30px 32px;border-radius:0 0 14px 14px;margin-bottom:24px}
+.cover .ticker{font-size:12.5px;letter-spacing:.08em;color:#9db8d0;margin-bottom:10px}
+.cover h1{font-size:25px;line-height:1.35;font-weight:800;margin-bottom:8px}
+.cover h1 em{color:var(--orange);font-style:normal}
+.cover .subtitle{font-size:14px;color:#c6d5e2;margin-bottom:22px}
+.metagrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metagrid .m{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:11px 8px;text-align:center}
+.metagrid .m b{display:block;font-size:16px}
+.metagrid .m span{font-size:11px;color:#9db8d0}
+@media(max-width:640px){.metagrid{grid-template-columns:repeat(2,1fr)}.cover{padding:28px 18px}.cover h1{font-size:21px}}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:20px}
+@media(max-width:640px){section{padding:18px 15px}}
+h2{font-size:18.5px;font-weight:800;color:var(--navy);margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid var(--navy)}
+h2 .num{color:var(--orange);margin-right:8px}
+h3{font-size:15px;font-weight:700;color:var(--navy);margin:16px 0 8px;padding-left:9px;border-left:3px solid var(--orange)}
+p{margin-bottom:9px}
+ul{margin:0 0 10px 20px}li{margin-bottom:5px}
+strong{color:var(--navy)}
+.tldr{background:#f2f6fa;border-left:4px solid var(--orange);border-radius:8px;padding:15px 17px;margin-bottom:14px}
+.tldr ol{margin-left:19px}.tldr li{margin-bottom:7px}
+.box{border-radius:10px;padding:13px 15px;margin:11px 0;font-size:13.5px}
+.box.blue{background:#eef4fa;border:1px solid #c3d6e8}
+.box.warn{background:#fdf3ec;border:1px solid #f0cdb4}
+.box .bt{font-weight:800;font-size:12.5px;margin-bottom:5px;display:block}
+.box.blue .bt{color:var(--navy)}.box.warn .bt{color:#b04a12}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:11px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:11px 0}
+@media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-size:13px}
+.card b.h{display:block;color:var(--navy);font-size:13.5px;margin-bottom:5px}
+table{width:100%;border-collapse:collapse;margin:11px 0;font-size:13px}
+th{background:var(--navy);color:#fff;padding:8px 10px;text-align:left;font-weight:700}
+td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.self td{background:#fdf3ec;font-weight:600}
+.tblwrap{overflow-x:auto}
+.badge{display:inline-block;background:var(--orange);color:#fff;font-size:10.5px;font-weight:700;border-radius:20px;padding:2px 9px;margin-right:5px;vertical-align:middle}
+.badge.navy{background:var(--navy)}
+/* QA */
+.qa{margin:14px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qa .q{background:#f2f6fa;padding:11px 15px;font-weight:700;color:var(--navy);font-size:14px}
+.qa .q::before{content:"Q. ";color:var(--orange);font-weight:800}
+.qa .a{padding:11px 15px;font-size:14px;background:#fff}
+.qa .a::before{content:"A. ";color:var(--navy);font-weight:800}
+.note{font-size:12px;color:var(--sub)}
+footer{font-size:12px;color:var(--sub);padding:16px 6px;border-top:1px solid var(--line)}
+footer b{color:var(--navy)}
+sup{color:var(--orange);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div class="ticker">KOSDAQ 194700 노바렉스 · 건강기능식품 ODM/OEM · IR 미팅노트 (NDR, 대면)</div>
+  <h1>2Q 눈높이 조정이 핵심 — <em>"1분기만큼은 안 나온다"</em><br>가이던스 4,300 → 4,500억 상향, 컨센 4,700억엔 난색</h1>
+  <div class="subtitle">미팅일 2026.7.8 (강남 사옥) | 대상: IR·공시·내부통제 담당자 | 정리: STT 녹취 기반 (오류 교정본)</div>
+  <div class="metagrid">
+    <div class="m"><b>4,500억</b><span>'26 내부 목표 (상향)</span></div>
+    <div class="m"><b>~5,000억</b><span>현 캐파 최대 매출</span></div>
+    <div class="m"><b>'28년</b><span>신공장 본격 가동</span></div>
+    <div class="m"><b>10% 초반</b><span>'26 OPM 가이드</span></div>
+  </div>
+</div>
+
+<!-- p.1 요약 -->
+<section>
+  <h2><span class="num">1p.</span>요약 — 한 페이지 브리핑</h2>
+  <div class="tldr">
+    <ol>
+      <li><strong>2Q 톤다운이 이번 미팅의 최대 정보.</strong> "1분기만큼은 잘 나올 것 같지 않고, 작년 2분기 대비 소폭 증가" 수준. 이유는 ① 중국 618 물량의 1Q 선반영 ② GNC 중국이 작년 과다 주문분 재고를 소진 중이라 발주 축소. 담당자 스스로 "실적 발표하면 주가 떨어질까 불안하다"고 언급 — 회사가 컨센서스(4,700억, 2Q 두자릿수 성장 가정)와의 괴리를 인지하고 눈높이 조정 중.</li>
+      <li><strong>연간 가이던스는 4,300억 → 4,500억으로 상향</strong>(현 캐파 기준 사실상 풀가동 수준). 다만 컨센 4,700억은 "좀 힘들지 않나". OPM은 작년 10.6%와 비슷하거나 10% 초반 — 고마진 수출(GPM 두자릿수 초중반 vs 내수 하이싱글) 비중이 2Q에 꺾이는 게 변수.</li>
+      <li><strong>캐파 논쟁 정리:</strong> 가동률 110%는 1일 8시간·월 20일 기준 착시. 현 설비로 "쥐어짜면" 5,000억까지 가능 → 시장이 우려하는 '27년 성장 공백'에 대한 회사의 방어 논리. 신공장(투자 600억 = 건물 400 + 설비 200)은 '27년 완공, '28년 본격 가동, 증분 감가상각 연 30억 수준이라 '21년 오송 증설기 같은 마진 훼손 재현 우려는 제한적이라는 입장.</li>
+      <li><strong>제2의 GNC 탐색이 진행 중.</strong> 지난달 상하이 HNC 박람회에서 중국 거래처 다수 미팅, "GNC 이상 체급"을 목표로 하며 중국 건기식 1위권 업체(녹취상 'ILS'<sup>*</sup>)와 접촉. 계약까지는 수개월+, 초기 물량은 작게 시작하는 구조. 확장 순서는 중국 내 다변화 → 동남아 → 미국 → 중동·유럽.</li>
+    </ol>
+  </div>
+  <div class="grid3">
+    <div class="card"><b class="h">📉 단기 (2~3Q)</b>2Q 수출 QoQ 감소 확정적, 3Q는 광군제(11월 대비 발주) 물량으로 회복 기대. 내수는 1Q의 +30% 추세가 대체로 유지.</div>
+    <div class="card"><b class="h">🏭 중기 ('27~'28)</b>'27년은 기존 설비 짜내기로 ~5,000억 방어, '28년 신공장 가동. 수주 선계약 없이 선제 증설 — '21년 오송(선증설 → GNC 수주로 채움) 성공 방정식의 반복 시도.</div>
+    <div class="card"><b class="h">💰 주주환원</b>올초 자사주 매입, 감액배당(비과세) 재원 180억 잔여, 주당배당 200→400원 인상, 중간배당 조항 신설(실시 미정). 실적 연동 증액 여지.</div>
+  </div>
+  <div class="box warn"><span class="bt">⚠️ 기존 리서치 대비 업데이트 포인트 (HYPR 노바렉스 리포트 대비)</span>
+  ① 2Q 서프라이즈 연장 가정은 폐기 필요 — 618 선반영+GNC 재고조정으로 분기 매출의 계절성이 1Q·3Q(4Q)로 재배치. ② 오송 2공장 회계 임팩트 구체화(감가 연 30억, 건물 40년/설비 5년 상각) — 고정비 레버리지 우려 완화. ③ 신규 변수 등장: 올리브영 웰니스 특화 매장 '올리브베러' 확장(현 2곳→5곳)과 K건기식 인바운드 수요. 단, 올영·다이소 채널은 저단가로 마진 희석적이라 회사는 보수적(다이소 납품사는 "적자 아닐까" 코멘트).</div>
+  <p class="note"><sup>*</sup> STT 녹취 기준 표기. 담당자는 "중국 건기식 시장 1위 업체"로 설명 — 정확한 사명은 별도 확인 필요. 본문 Q&A의 [ ] 표기는 녹취 오류 교정·추정 부분.</p>
+</section>
+
+<!-- QA 1 -->
+<section>
+  <h2><span class="num">Q&A 1.</span>1분기 실적 리뷰</h2>
+
+  <div class="qa"><div class="q">1분기는 내수·수출이 동반 호조였는데 각각의 원인은?</div>
+  <div class="a">내수는 거래처 다변화 효과다. 예전에는 대형 유통사 위주였다면 지금은 소형 유통사가 많이 늘었고, 인플루언서·SNS 채널을 통한 판매도 크게 증가하며 거래처 수 자체가 늘었다. 수출은 중국 비중이 70~80%인데, 6월 618 쇼핑축제 물량이 통상 2분기에 잡히던 것이 올해는 1분기에 선반영됐고, 작년 [발주] 물량 일부도 1분기에 인식되며 실적이 잘 나왔다.</div></div>
+
+  <div class="qa"><div class="q">올리브영에서 제품이 보이던데, 그런 신규 채널 매출이 늘어난 것인가?</div>
+  <div class="a">우리는 PB나 직접 판매 없이 유통사에 납품하면 유통사가 판매하는 구조다. 올리브영 내 우리 제품이 많지는 않은데, '올리브3'(올리브유 캡슐)가 매우 잘 나가는 제품이라 올리브영 메인에 입점한 것으로 안다. 액상 올리브유의 느끼함을 캡슐로 해결한 제품인데, 건강기능식품이 아닌 일반식품으로 분류된다. 반응이 좋아 수출 버전도 준비 중이다. 다만 올리브영·다이소향 비중은 아직 작고, 시장이 커지고 있어 확대를 검토하는 단계다.</div></div>
+
+  <div class="qa"><div class="q">매출 집계는 유통사 단위로 자체 파악하는 것인가? 자체 브랜드 계획은?</div>
+  <div class="a">그렇다(유통사향 납품 기준). 자체 브랜드는 없고 만들 계획도 없다. "잘하는 것(제조)만 잘하자"는 기조다.</div></div>
+</section>
+
+<!-- QA 2 -->
+<section>
+  <h2><span class="num">Q&A 2.</span>2분기 전망 · 연간 가이던스 <span class="badge">핵심</span></h2>
+
+  <div class="qa"><div class="q">1Q의 내수 +30%, 수출 +40% 추세가 2~3분기에도 이어지나?</div>
+  <div class="a">1분기 폭발적 성장으로 2분기 기대감이 매우 큰데, 솔직히 <strong>1분기만큼은 안 나올 것 같다.</strong> 분기 마감 전이라 정확하진 않지만, 작년 2분기 대비 소폭 증가 수준으로 본다.</div></div>
+
+  <div class="qa"><div class="q">2Q 부진은 618 선반영 효과로 이해하면 되나?</div>
+  <div class="a">그것도 있고, GNC 중국이 작년에 물량을 너무 많이 가져가서 현지 재고가 쌓여 있다. 그 재고를 먼저 소진하느라 올해 발주를 작년보다 줄인 것으로 안다. 다만 11월 중국 광군제 대비 물량이 있어 <strong>3분기에는 다시 올라올 것</strong>으로 본다. 고객사가 다변화되기 전까지는 618(6월)·광군제(11월) 사이클에 분기 실적이 좌우될 수밖에 없다. 내수는 현 성장세가 비슷하게 유지될 것 같다.</div></div>
+
+  <div class="qa"><div class="q">매출이 꺾이면 마진도 하락하나? 분기 편차가 있어도 OPM 9~11% 레인지는 지키나?</div>
+  <div class="a">그 범위에는 들어갈 것 같다. 다만 <strong>수출이 많이 나와야 많이 남는 구조</strong>인데(수출 [GPM] 두자릿수 초중반 vs 내수는 국내 경쟁이 심해 하이싱글 수준), 수출이 1분기·작년 4분기 대비 줄어서 최종 수치는 지켜봐야 한다.</div></div>
+
+  <div class="qa"><div class="q">올해 내부 목표 매출은? 컨센서스 4,700억과의 갭은?</div>
+  <div class="a">당초 4,300억으로 잡았다가 <strong>4,500억으로 상향</strong>해 커뮤니케이션 중이다(현 기준 거의 풀캐파). 작년에 워낙 폭발적으로 성장해 무리한 목표는 잡지 않았다. 4,700억은 우리가 얘기한 적이 없는 숫자다 — 4,300억을 말할 때 컨센이 4,500억으로 형성됐고, 4,500억으로 올리니 4,700억까지 올라갔다. 원래 보수적으로 소통하는 편이라 시장이 그걸 감안해 얹는 것 같은데, <strong>4,700억까지는 좀 힘들지 않나 싶다.</strong> OPM은 작년(10.6%)과 비슷하거나 10% 초반으로 본다.</div></div>
+
+  <div class="qa"><div class="q">(분위기) 컨센 대비 기대치 조정이 고민이겠다.</div>
+  <div class="a">그렇다. 실적을 실제 발표하면 주가가 떨어질까 봐 나도 불안하다. 개인적으로는 1분기 실적이 [분기별로] 나눠서 순차적으로 반영됐다면 투자자 입장에서도 좋았을 것 같다.</div></div>
+</section>
+
+<!-- QA 3 -->
+<section>
+  <h2><span class="num">Q&A 3.</span>캐파 · 오송 신공장 증설</h2>
+
+  <div class="qa"><div class="q">'27년까지 캐파를 약 2배(4천억→1조 언급)로 늘리는데, 완공·가동 스케줄과 램프업 구조는?</div>
+  <div class="a">현재 가동률 100%+는 <strong>1일 8시간·월 20일 기준</strong>이라 야근·특근 시 더 올릴 수 있다. 라인이 많아 잘 나가는 제형·포장 라인은 가동률이 높고 아닌 라인은 낮은데 평균치로 계산돼 높게 보이는 면도 있다. 신공장은 <strong>내년('27) 완공, 본격 생산은 내후년('28)</strong>으로 보고 있고, 가동률은 그때 수주 상황을 봐야 한다. 아직 수주가 확정되고 증설하는 게 아니다.</div></div>
+
+  <div class="qa"><div class="q">고객사와 사전 협의된 물량 없이 증설하는 것인가?</div>
+  <div class="a">그렇다. 다만 전례가 있다 — GNC 중국 물량이 늘기 전인 '21년에 오송 공장을 먼저 완공해 놨고, 환경을 만들어 놓으니 수출 물량을 받아낼 수 있었다. 지금도 캐파가 거의 100% 차서 신규·해외 거래처를 받을 여유가 없다 보니 선제적으로 준비하는 것이다.</div></div>
+
+  <div class="qa"><div class="q">현 설비 기준 최대 매출은? 3교대까지 돌리면?</div>
+  <div class="a">이론상 3교대면 300%(연 1.5조)까지 가능하지만, 현실적으로 비용·인력 부담 때문에 정규 시간 내 운영이 기본이고 수주가 밀릴 때만 연장한다. <strong>현재 기준 최대치는 약 5,000억</strong>으로 본다. 수주가 들어와서 "한다면" 쥐어짜서 그 이상도 가능은 하겠지만, 회사가 보는 맥스 캐파는 5,000억이다.</div></div>
+
+  <div class="qa"><div class="q">시장의 최대 우려가 "신공장 가동 전인 '27년 성장 공백"인데?</div>
+  <div class="a">내년에도 5,000억까지는 할 수 있으니, 수주만 많으면 짜내서 [5,000억을] 넘길 수도 있다고 본다.</div></div>
+
+  <div class="qa"><div class="q">'27년 이후 고정비가 크게 늘지 않나? 과거 증설기에 마진 훼손으로 주가가 눌린 적이 있는데.</div>
+  <div class="a">그렇지는 않을 것 같다. 총 투자 600억 = 건물 400억 + 설비 200억인데, 상각하면 <strong>연 30억 수준</strong>이다(건물 40년, 설비 5년 상각). 캐파가 크게 늘어나는 것 대비 비용 부담은 작아서, 매출만 받쳐주면 이익은 더 잘 나올 구조다. 참고로 원래 4층으로 계획했던 건물을 한 층 더 올려서 골조를 세워두고 설비는 추후 증설하자는 논의도 있어 투자액이 다소 늘 수 있다.</div></div>
+
+  <div class="qa"><div class="q">'21년 오송 증설 때는 캐파가 매출로 차는 데 얼마나 걸렸나?</div>
+  <div class="a">2~3년 걸렸다. GNC 중국이라는 대형 거래처 계약으로 매출이 크게 늘었고, 지금 <strong>'제2의 GNC'를 찾고 있다.</strong> 그 계약만 성사되면 문제없이 [램프업]할 것으로 본다.</div></div>
+</section>
+
+<!-- QA 4 -->
+<section>
+  <h2><span class="num">Q&A 4.</span>GNC · 제2의 GNC · 해외 확장</h2>
+
+  <div class="qa"><div class="q">5년 전 GNC 계약의 배경은? 우리가 영업한 것인가, 선택받은 것인가?</div>
+  <div class="a">GNC 미국과는 원래 오래 거래하고 있었다. GNC가 아시아로 확장하면서 아시아권에서 빠르고 제대로 생산할 수 있는 업체를 찾았고, 기존에 검토 관계였던 우리에게 맡겼는데 마침 타이밍이 맞아 제안한 제품이 잘 나왔다. 그 뒤로 계약이 계속 잘 유지되고 있다. GNC향을 우리가 전부 만드는 것은 아니고 다른 제조사도 있다.</div></div>
+
+  <div class="qa"><div class="q">계약 구조는 장기계약인가, 프로젝트성인가?</div>
+  <div class="a">프로젝트성은 아니고 <strong>1년 단위 갱신</strong>이다. 1년 안에서 수주·제품별로 건건이 계약 조건을 꼼꼼히 확인하는 구조다.</div></div>
+
+  <div class="qa"><div class="q">'제2의 GNC' 논의는 가시화 단계인가? 체급은?</div>
+  <div class="a">GNC 중국 쏠림 리스크가 커서 1차적으로 중국 내 다른 거래처를 접촉 중이다. 지난달 [상하이 HNC] 박람회에서 미팅을 많이 했고, <strong>몇 달은 걸릴 것</strong>이다. 체급은 <strong>GNC 이상</strong>을 보고 있다 — 중국 건기식 1위로 알고 있는 업체['ILS'로 언급]와 접촉했다고 들었는데 결과는 아직 모른다. 그런 대형사는 연결된 제조사가 많아서, 들어가더라도 처음엔 작은 물량으로 시작해 잘 되면 늘려가는 구조일 것이다.</div></div>
+
+  <div class="qa"><div class="q">중국 외 지역 진출 계획과 순서는?</div>
+  <div class="a">중국 내 거래처 다변화가 먼저고, 성사되면 <strong>동남아 → 미국 → 마지막으로 중동·유럽</strong> 순이다. 유럽은 자국 생산 선호가 강해 뚫기 어렵다고 해서 마지막이다. 작년에는 미국이 조금 늘었고 동남아도 조금씩 늘고 있다. 호주 블랙모어스와는 거래한 지 오래됐는데 비중이 크진 않다 — 호주는 청정국가 이미지 때문에 자국 생산을 선호한다. 뉴질랜드·호주 쪽 매출도 조금 있다. 북미는 현지 제조사 비중이 큰 것으로 안다.</div></div>
+
+  <div class="qa"><div class="q">한국 공장에서 해외 판매 시 인증 절차가 장벽인가?</div>
+  <div class="a">까다로운 편이다. 그래서 중국도 직수출이 아니라 [현지 파트너를 통한] 협업 방식으로 하고 있다.</div></div>
+
+  <div class="qa"><div class="q">화장품 ODM처럼 한국 건기식 ODM의 글로벌 포지셔닝이 가능하다고 보나?</div>
+  <div class="a">다른 지역은 모르겠지만 <strong>중국·동남아에서는 '메이드 인 코리아' 선호가 뚜렷하다.</strong> 중국은 자국산 식품 불신이 있고, 동남아도 한국산을 선호한다. 여기에 우리는 대응 속도가 강점이다 — 납기를 잘 맞추고 오히려 앞당기는 편이고 품질도 우위라 한국 업체를 선호한다고 들었다. 과거 뉴질랜드산이 유행했지만 요즘은 잠잠하다.</div></div>
+</section>
+
+<!-- QA 5 -->
+<section>
+  <h2><span class="num">Q&A 5.</span>산업 구조 · 채널 · 경쟁</h2>
+
+  <div class="qa"><div class="q">개별인정형 원료 인증이 산업의 해자가 되나?</div>
+  <div class="a">개별인정형 원료는 인정에 <strong>건당 5~10억원, 최소 2~3년</strong>이 소요되고, 획득하면 <strong>5~6년간 독점 생산</strong>이 가능하다. 그 기간 해당 원료 제품은 우리만 생산할 수 있어 해자가 된다. 한국 기준은 타국 대비 타이트한 것으로 안다. (국제 인증 상호인정을 통한 해외 판매 우위 여부는 확인해 줄 수 없었음)</div></div>
+
+  <div class="qa"><div class="q">건기식 유행 사이클에 따라 고객사·제품이 계속 바뀌나? 마진은 제품별로 비슷한가?</div>
+  <div class="a">다이어트·관절 등 유행에 따라 잘 나가는 제품이 조금씩 바뀐다. 마진은 대체로 비슷하지만 <strong>포장 형태에 따라 달라진다</strong> — 캡슐 PTP 같은 것은 부자재비가 낮지만, 상단 알약 + 하단 액상 이중 제형 같은 것은 부자재비가 비싸 [마진이 낮다].</div></div>
+
+  <div class="qa"><div class="q">경쟁 구도는? 코로나 이후 정리가 됐나?</div>
+  <div class="a">대형 경쟁사들([콜마비앤에이치·코스맥스엔비티·서흥 등] 상장사 메이저)은 다 잘 되고 있고, 그 아래 중소형은 비슷비슷한 것으로 안다.</div></div>
+
+  <div class="qa"><div class="q">시장이 다시 좋아진 이유를 내부적으로는 어떻게 보나?</div>
+  <div class="a">코로나 이후 잠깐 침체됐다가 소비 여력이 회복됐고, 과거 중장년·노년층 위주였던 수요가 <strong>젊은 층으로 확산</strong>됐다. 요즘 젊은 세대가 술자리 대신 건강을 챙기는 트렌드가 영향을 준 것 같다.</div></div>
+
+  <div class="qa"><div class="q">외국인 관광객(인바운드) 수요는 체감되나?</div>
+  <div class="a">명동에 대형 약국이 30여 개로 늘었는데 우리 제품이 많지는 않다. 다만 외국인들은 일주일~한 달치 소량을 사서 써보고 좋으면 추가 주문하는 패턴이라, 입소문이 나면 유통사들이 우리에게 발주를 늘리는 흐름이다. 건기식 인바운드 판매만 따로 집계한 데이터는 없다. 한국이 [일본 약국처럼] 건강 쇼핑 코스가 되어 가는 것 같다.</div></div>
+
+  <div class="qa"><div class="q">화장품처럼 인디브랜드 성공 → 생산물량 증가의 선순환이 건기식에도 있나? 인플루언서 대응 조직은?</div>
+  <div class="a">중국은 왕훙(인플루언서) 광고로 전파가 많이 된다. 지난달 박람회에서도 왕훙 라이브 부스를 따로 만들었고 그 채널로 주문이 많이 들어왔다. 국내도 SNS 홍보로 확산 중이지만 소형 셀럽 비중이 아직 크진 않다. 인플루언서 제품은 유통사가 기획·발주하고 우리는 제조만 한다 — 화장품 ODM처럼 인플루언서 대응 전담팀을 두고 중간마진을 가져가는 구조는 <strong>우리는 없다.</strong></div></div>
+
+  <div class="qa"><div class="q">올리브영 웰니스 매장 '올리브베러'에는 코스맥스엔비티 제품이 많던데, 우리도 입찰했었나?</div>
+  <div class="a">아니다. 올리브베러는 단가·판매가가 낮고 수량 위주 판매라 마진이 안 나와서 처음부터 참여하지 않았다. 다이소도 같은 이유다(5,000원대 저가 — 납품사가 남는 게 있을지 의문, 적자 아닐까 싶다). 다만 그 시장이 워낙 커지고 있어 "계속 외면할 수는 없다, 고려해 보자"는 쪽으로 <strong>검토 중</strong>이다. 올리브베러는 현재 2곳에서 5곳까지 오픈한다고 들었고, K뷰티가 올리브영 인바운드에서 시작해 커졌듯 K건기식 확산 기대가 있는 것은 사실이다. (질문자 코멘트: 결국 건기식에도 '대명사'가 될 인디브랜드 성공 사례가 하나 나와야 선순환이 시작될 것)</div></div>
+
+  <div class="qa"><div class="q">상위 고객사는 어떤 곳들인가?</div>
+  <div class="a">(대외비 성격이라면서도) 브랜드로는 [트리코어] 같은 홈쇼핑 채널 강세 브랜드가 상위권이다. 유명 연예인 광고를 쓰는 브랜드사들이 잘 되고 있다.</div></div>
+
+  <div class="qa"><div class="q">개인사업자·인플루언서의 소량 OEM 주문도 받나? 최소 주문 금액은?</div>
+  <div class="a">제품·제형마다 달라 일률적으로 말하기 어렵지만, 라인을 돌려야 하므로 초소량은 [어렵다]. 대략 수천만 원대 수준으로 추정되나 정확한 기준은 파악하지 못했다. 개인 문의가 매우 많지만 대응이 어려워 영업에서 선별하며, 실제 거래는 거의 업체 단위다.</div></div>
+</section>
+
+<!-- QA 6 -->
+<section>
+  <h2><span class="num">Q&A 6.</span>주주환원 · 기타</h2>
+
+  <div class="qa"><div class="q">현금이 잘 쌓이는데 주주환원 계획은?</div>
+  <div class="a">올해 초 자사주 [매입]을 했고, 작년에 감액배당(비과세)을 실시했으며, 이번 주총에서 <strong>중간배당 조항을 신설</strong>했다(실시 여부는 미정, 일단 정관에 근거를 마련). 배당은 작년 주당 200원에서 올해 400원으로 올렸고, 내년에는 비슷하거나 더 늘 수 있다. 감액배당 재원이 <strong>180억 정도 남아 있어</strong> 소진 시까지 비과세 배당이 가능하다. 실적이 좋으면 배당금은 더 늘지 않을까 한다. 그 외 다방면으로 보고 있지만 확정된 것은 없다.</div></div>
+
+  <div class="qa"><div class="q">요즘 기관 미팅에서 공통 질문은?</div>
+  <div class="a">다 비슷하다 — "매출이 왜 이렇게 늘었나", "1분기가 왜 좋았나", "2분기는 어떨 것 같나", "수출 비중과 성장률은". (질문자 코멘트: 성장은 당연해 보이는데 성장 각도를 가늠할 데이터가 없다 보니 모두 같은 걸 묻는 상황. 회사도 "주문 들어오는 걸 만들 뿐"이라 예측이 어렵다는 입장)</div></div>
+
+  <div class="qa"><div class="q">박람회(HNC 등)에서는 무엇을 어필하나?</div>
+  <div class="a">제형 기술 위주다. 이번에는 [스위치형] 먹으면 맛이 변하는 제형과 초소형 제형 등 특허 제형을 중심으로 어필했고, 대형 거래처 접촉이 참가 목적이라 미팅 일정을 촘촘히 잡았다.</div></div>
+
+  <div class="qa"><div class="q">수주가 매출로 이어지는 리드타임은?</div>
+  <div class="a">통상 2~3개월에서 6개월 수준[으로 논의됨 — 녹취상 명시적 확답은 없음].</div></div>
+
+  <div class="qa"><div class="q">(참고) 응대 관련</div>
+  <div class="a">담당자는 IR 외 공시·내부통제 겸임. 평소 IR팀장이 주로 미팅을 진행하나 금일은 단독 첫 진행이라고 밝힘 → 일부 답변(국제 인증 상호인정, 최소주문금액 등)은 "확인 필요" 수준에서 마무리됨.</div></div>
+</section>
+
+<footer>
+  <b>작성 기준:</b> 2026.7.8 노바렉스 본사 IR 미팅 녹취(48분, STT 변환본) 기반. 음성인식 오류가 다수 포함된 원문을 문맥에 따라 교정했으며, [ ] 표기는 교정·추정 부분입니다(예: 'GNC'가 '주엔씨/지인씨' 등으로, '블랙모어스'가 '블랙모스/일론 머스크' 등으로 인식된 부분 교정). 수치·고유명사(ILS, 트리코어, 최소주문금액 등)는 발언 그대로 옮긴 것으로 별도 검증이 필요합니다. 본 노트는 내부 리서치 참고용이며 회사의 공식 IR 자료가 아닙니다.
+</footer>
+
+</div>
+</body>
+</html>
