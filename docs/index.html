@@ -2,9 +2,8 @@
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KT 투자 허브</title>
 <style>
-:root{--ink:#111827;--ink2:#374151;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f6f8;--card:#fff;--side:#fff;--hover:#f3f4f6;--act:#eef3f9;--actink:#1C3D5A;--accent:#E5601F;--navy:#1C3D5A;--up:#d0342c;--chip:#f3f4f6}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e5e7eb;--ink2:#c3c8d1;--muted:#9aa1ad;--line:#262c36;--bg:#0f1218;--card:#161a21;--side:#13171d;--hover:#1c2129;--act:#1d2a38;--actink:#9cc3ec;--accent:#f08a4b;--navy:#7fb0e0;--up:#ff6b61;--chip:#1f242c}}
-:root[data-theme="dark"]{--ink:#e5e7eb;--ink2:#c3c8d1;--muted:#9aa1ad;--line:#262c36;--bg:#0f1218;--card:#161a21;--side:#13171d;--hover:#1c2129;--act:#1d2a38;--actink:#9cc3ec;--accent:#f08a4b;--navy:#7fb0e0;--up:#ff6b61;--chip:#1f242c}
+:root{--ink:#e6e9ef;--ink2:#c5ccd8;--muted:#97a1b3;--line:#354156;--bg:#1f2635;--card:#273142;--side:#1a2130;--hover:#2e394c;--act:#30405a;--actink:#b3d4f5;--accent:#f08a4b;--navy:#7fb0e0;--up:#ff7a70;--chip:#313c50}
+:root[data-theme="light"]{--ink:#111827;--ink2:#374151;--muted:#6b7280;--line:#e5e7eb;--bg:#f5f6f8;--card:#fff;--side:#fff;--hover:#f3f4f6;--act:#eef3f9;--actink:#1C3D5A;--accent:#E5601F;--navy:#1C3D5A;--up:#d0342c;--chip:#f3f4f6}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
@@ -71,9 +70,8 @@ h2 a{font-size:12px;color:var(--muted);font-weight:600;text-decoration:none;marg
 .row .c small{display:block;font-weight:500;font-size:11px;color:var(--muted)}
 .row .t{color:var(--ink2);font-size:13px}
 .badge{font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;display:inline-block;text-align:center}
-.b-기업분석{background:#e8f0fa;color:#1C3D5A}.b-탐방{background:#fff1e8;color:#b4470f}.b-콥데이{background:#eef7ee;color:#2f6b35}.b-컨콜{background:#f2ecfb;color:#5b3c99}
-:root[data-theme="dark"] .badge{filter:invert(.88) hue-rotate(180deg)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .badge{filter:invert(.88) hue-rotate(180deg)}}
+.b-기업분석{background:#2c4462;color:#b3d4f5}.b-탐방{background:#4a3226;color:#f5b088}.b-콥데이{background:#2b4533;color:#9fd8a8}.b-컨콜{background:#3d3358;color:#cdb8f2}
+:root[data-theme="light"] .b-기업분석{background:#e8f0fa;color:#1C3D5A}:root[data-theme="light"] .b-탐방{background:#fff1e8;color:#b4470f}:root[data-theme="light"] .b-콥데이{background:#eef7ee;color:#2f6b35}:root[data-theme="light"] .b-컨콜{background:#f2ecfb;color:#5b3c99}
 .mk{font-size:11px;color:var(--muted);margin-left:6px;font-weight:500}
 .empty{padding:28px;text-align:center;color:var(--muted)}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
@@ -134,8 +132,7 @@ function setTop(t,crumb,acts){$("ttl").textContent=t;$("crumb").textContent=crum
 function frame(src,local){
   view.className="view frame";view.innerHTML=`<iframe src="${esc(src)}" title="content"></iframe>`;
   if(local){const f=view.firstChild;f.onload=()=>{try{const d=f.contentDocument,s=d.createElement("style");
-    s.textContent='.nav>a[href="../"]{display:none}';d.head.appendChild(s);
-    const th=document.documentElement.dataset.theme;if(th)d.documentElement.dataset.theme=th;else delete d.documentElement.dataset.theme;}catch(e){}}}
+    s.textContent='.nav>a[href="../"]{display:none}'+SUBDARK;d.head.appendChild(s);syncFrame(d);}catch(e){}}}
 }
 function rowHtml(x,showMk){
   return `<a class="row" href="#/doc/${encodeURIComponent(x.path)}"><span class="d">${x.date||"–"}</span><span class="k"><span class="badge b-${x.kind}">${x.kind}</span></span><span class="c">${esc(x.company)}${x.code?`<small>${x.code}</small>`:""}</span><span class="t">${esc(x.title)}${showMk?`<span class="mk">${MK[x.market]}</span>`:""}</span></a>`;
@@ -197,12 +194,14 @@ function route(){
   if(x){setTop(x.l,x.g,`<a class="btn" href="${x.src}" target="_blank" rel="noopener">새 탭 ↗</a>`);return frame(x.src,!x.ext);}
   mark("");home();
 }
-// theme & sidebar state
-const TH=["","light","dark"];
+// theme & sidebar state — 기본은 어두운 슬레이트(검정 아님), 라이트 전환 가능
+const SUBDARK=':root[data-theme="dark"]{--bg:#1f2635;--card:#273142;--line:#354156;--grid:#2e394c;--head:#30405a;--chip:#313c50;--row:#2a3446;--selink:#1f2635;--ink:#e6e9ef;--ink2:#c5ccd8;--muted:#97a1b3}';
+function syncFrame(d){d.documentElement.dataset.theme=(th=="light"?"light":"dark");}
+const TH=["","light"];
 function applyTheme(t){if(t)document.documentElement.dataset.theme=t;else delete document.documentElement.dataset.theme;
-  $("theme").title="테마: "+({"":"시스템",light:"라이트",dark:"다크"}[t]);
-  const f=view.querySelector("iframe");try{const d=f&&f.contentDocument;if(d){if(t)d.documentElement.dataset.theme=t;else delete d.documentElement.dataset.theme;}}catch(e){}}
-let th=localStorage.getItem("hub-theme")||"";applyTheme(th);
+  $("theme").title="테마: "+(t=="light"?"라이트":"다크 슬레이트");
+  const f=view.querySelector("iframe");try{const d=f&&f.contentDocument;if(d)syncFrame(d);}catch(e){}}
+let th=localStorage.getItem("hub-theme")=="light"?"light":"";applyTheme(th);
 $("theme").onclick=()=>{th=TH[(TH.indexOf(th)+1)%3];localStorage.setItem("hub-theme",th);applyTheme(th);};
 if(localStorage.getItem("hub-mini")=="1")app.classList.add("mini");
 $("mini").onclick=()=>{app.classList.toggle("mini");localStorage.setItem("hub-mini",app.classList.contains("mini")?"1":"0");};
